@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens — "luz do dia na serra"
+   Colors, type and motion values live here so CSS and GSAP share them.
+   ------------------------------------------------------------------ */
+@theme {
+  --color-neblina: #e9e6df;
+  --color-papel: #f4efe6;
+  --color-musgo: #556621;
+  --color-oliva: #7d8e57;
+  --color-salvia: #88af93;
+  --color-mata: #1c2616;
+  --color-pinhao: #8c3b24;
+  --color-terra: #b5653a;
+  --color-tinta: #22221e;
+  --color-limao: #a8cf45;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+
+  /* Fluid type scale (360px → 1600px) */
+  --text-eyebrow: clamp(0.72rem, 0.68rem + 0.15vw, 0.82rem);
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.15rem);
+  --text-lead: clamp(1.2rem, 1.05rem + 0.6vw, 1.65rem);
+  --text-h2: clamp(2.2rem, 1.4rem + 3.4vw, 5.5rem);
+  --text-h1: clamp(3rem, 1rem + 8vw, 12rem);
+
+  --ease-vianei: cubic-bezier(0.65, 0.05, 0, 1);
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --bg: var(--color-papel);
+  --fg: var(--color-tinta);
+  --gutter: clamp(1rem, 0.6rem + 1.8vw, 2.5rem);
+  color-scheme: light;
+}
+
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+::selection {
+  background: var(--color-musgo);
+  color: var(--color-papel);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-pinhao);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* Lenis (smooth scroll) base styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Display type: variable axes are driven by GSAP through CSS vars */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "SOFT" var(--soft, 0);
+}
+
+/* Hero title: CSS-only masked word reveal. It needs no JS, so the LCP
+   element paints with the first frame instead of waiting for hydration. */
+.hero-word {
+  display: inline-block;
+  overflow: clip;
+  overflow-clip-margin: 0.12em;
+  vertical-align: top;
+  padding-bottom: 0.06em;
+}
+.hero-word > span {
+  display: inline-block;
+  animation: hero-rise 1.3s var(--ease-vianei) both;
+  animation-delay: calc(var(--i) * 55ms + 80ms);
+}
+.hero-fade {
+  animation: hero-fade 1.2s var(--ease-out-soft) 0.6s both;
+}
+@keyframes hero-fade {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+}
+@keyframes hero-rise {
+  from {
+    transform: translate3d(0, 108%, 0) rotate(3deg);
+  }
+}
+
+/* Paper grain: inline SVG noise, no extra request */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+/* Elements GSAP will reveal start hidden only when JS runs and motion is
+   allowed. Without JS, or with reduced motion, they are simply visible. */
+@media (prefers-reduced-motion: no-preference) {
+  html.js [data-reveal] {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
