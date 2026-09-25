@@ -5,7 +5,7 @@ import { Header } from "@/components/ui/Header";
 import { SkipLink } from "@/components/ui/SkipLink";
 import { site } from "@/config/site";
 import { fraunces, interTight } from "@/lib/fonts";
-import "./globals.css";
+import "../globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

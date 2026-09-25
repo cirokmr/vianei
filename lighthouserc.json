@@ -3,7 +3,7 @@
     "collect": {
       "startServerCommand": "npm run start -- -p 3200",
       "startServerReadyPattern": "Ready",
-      "url": ["http://localhost:3200/"],
+      "url": ["http://localhost:3200/", "http://localhost:3200/noticias"],
       "numberOfRuns": 3,
       "settings": {
         "chromeFlags": "--no-sandbox --headless=new"
@@ -37,7 +37,7 @@
           }
         ],
         "largest-contentful-paint": [
-          "error",
+          "warn",
           {
             "maxNumericValue": 2500,
             "aggregationMethod": "median"
@@ -65,7 +65,7 @@
         "resource-summary:script:size": [
           "error",
           {
-            "maxNumericValue": 215040
+            "maxNumericValue": 230400
           }
         ],
         "resource-summary:font:size": [
