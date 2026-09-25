@@ -10,6 +10,7 @@ import { Categorias } from "./payload/collections/Categorias";
 import { Documentos } from "./payload/collections/Documentos";
 import { Midia } from "./payload/collections/Midia";
 import { Noticias } from "./payload/collections/Noticias";
+import { Paginas } from "./payload/collections/Paginas";
 import { Parceiros } from "./payload/collections/Parceiros";
 import { Pessoas } from "./payload/collections/Pessoas";
 import { Projetos } from "./payload/collections/Projetos";
@@ -45,7 +46,19 @@ export default buildConfig({
     },
   },
   i18n: { supportedLanguages: { pt }, fallbackLanguage: "pt" },
-  collections: [Noticias, Projetos, Publicacoes, Videos, Categorias, Parceiros, Pessoas, Midia, Documentos, Usuarios],
+  collections: [
+    Noticias,
+    Projetos,
+    Publicacoes,
+    Paginas,
+    Videos,
+    Categorias,
+    Parceiros,
+    Pessoas,
+    Midia,
+    Documentos,
+    Usuarios,
+  ],
   globals: [Site, Numeros, Timeline],
   editor: lexicalEditor(),
   db: postgresAdapter({

@@ -1,7 +1,7 @@
 import "server-only";
 import { draftMode } from "next/headers";
 import { unstable_cache } from "next/cache";
-import type { Noticia, Site } from "@/payload-types";
+import type { Noticia, Pagina, Projeto, Site } from "@/payload-types";
 import { payload } from "./payload";
 import { cacheTags } from "./tags";
 
@@ -72,4 +72,94 @@ export async function getNoticiaSlugs(): Promise<string[]> {
     select: { slug: true },
   });
   return result.docs.map((doc) => doc.slug).filter(Boolean);
+}
+
+// Projects -------------------------------------------------------------------
+
+export async function getProjetos() {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "projetos",
+          where: { _status: { equals: "published" } },
+          sort: "-inicio",
+          limit: 100,
+          depth: 1,
+          select: { titulo: true, slug: true, resumo: true, capa: true, situacao: true },
+        })
+      ).docs,
+    ["projetos:list"],
+    { tags: [cacheTags.collection("projetos")] },
+  )();
+}
+
+export async function getProjeto(slug: string): Promise<Projeto | null> {
+  const { isEnabled: draft } = await draftMode();
+  const query = async () =>
+    (
+      await (
+        await payload()
+      ).find({
+        collection: "projetos",
+        where: { slug: { equals: slug } },
+        limit: 1,
+        depth: 2,
+        draft,
+        overrideAccess: draft,
+      })
+    ).docs[0] ?? null;
+  if (draft) return query();
+  return unstable_cache(query, ["projetos:doc", slug], {
+    tags: [cacheTags.collection("projetos"), cacheTags.doc("projetos", slug)],
+  })();
+}
+
+export async function getProjetoSlugs(): Promise<string[]> {
+  const result = await (
+    await payload()
+  ).find({
+    collection: "projetos",
+    where: { _status: { equals: "published" } },
+    pagination: false,
+    select: { slug: true },
+  });
+  return result.docs.map((doc) => doc.slug).filter(Boolean);
+}
+
+// Free-form pages ------------------------------------------------------------
+
+export async function getPagina(caminho: string): Promise<Pagina | null> {
+  const { isEnabled: draft } = await draftMode();
+  const query = async () =>
+    (
+      await (
+        await payload()
+      ).find({
+        collection: "paginas",
+        where: { caminho: { equals: caminho } },
+        limit: 1,
+        depth: 2,
+        draft,
+        overrideAccess: draft,
+      })
+    ).docs[0] ?? null;
+  if (draft) return query();
+  return unstable_cache(query, ["paginas:doc", caminho], {
+    tags: [cacheTags.collection("paginas"), cacheTags.doc("paginas", caminho)],
+  })();
+}
+
+export async function getPaginaCaminhos(prefix: string): Promise<string[]> {
+  const result = await (
+    await payload()
+  ).find({
+    collection: "paginas",
+    where: { and: [{ _status: { equals: "published" } }, { caminho: { like: `${prefix}%` } }] },
+    pagination: false,
+    select: { caminho: true },
+  });
+  return result.docs.map((doc) => doc.caminho);
 }

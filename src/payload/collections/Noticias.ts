@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated, publishedOrAuthenticated } from "../access";
 import { seoField } from "../fields/seo";
+import { legadoField } from "../fields/legado";
 import { slugField } from "../fields/slug";
 import { revalidateCollection, revalidateCollectionDelete } from "../hooks/revalidate";
 import { previewUrl } from "../preview";
@@ -60,5 +61,6 @@ export const Noticias: CollectionConfig = {
       admin: { position: "sidebar" },
     },
     seoField,
+    legadoField,
   ],
 };

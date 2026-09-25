@@ -12,3 +12,13 @@ Itens que dependem da equipe. Não inventar dados: o site mostra somente o que f
 - [ ] **Downloads:** a seção atual tem "Lorem ipsum". Definir quais arquivos entram.
 - [ ] **Confirmar perfis oficiais:** facebook.com/centrovianei, instagram.com/centrovianei e o canal do YouTube
       `UCkEIv_GvLhWyFuYBl_y5i8w`.
+
+## Da migração do WordPress (ver `data/wp-export/migration-report.md`)
+
+- [ ] **Descrever 180 imagens** que vieram sem texto alternativo. No painel: Imagens → filtro "Texto alternativo
+      provisório".
+- [ ] **PDFs que faltam no site atual:** os botões "BAIXAR AGORA" de "Revista ABEMA 8ª Edição", "Produção de pinhão em
+      sistemas tradicionais…" e "Cartilha de gestão administrativa…" não têm arquivo. Enviar os PDFs.
+- [ ] **"Construção social dos mercados no sul do Brasil" (2020):** o botão aponta para uma imagem (capa), não para o PDF.
+- [ ] **Projeto "Da Terra à Mesa | MDA":** sem situação no site antigo; foi marcado como concluído. Confirmar.
+- [ ] **Fotos de outros sites** em matérias republicadas (Cepagro, Mongabay…): confirmar se podemos usá-las.

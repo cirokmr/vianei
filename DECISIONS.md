@@ -111,3 +111,62 @@ O LCP simulado oscilou entre 2,0 e 2,6 s em execuções idênticas nesta máquin
 falha por ruído treina a equipe a ignorar o CI, então a nota de Performance (que já pondera o LCP) segue bloqueando e o
 LCP vira aviso. O `admin` não entra no bundle público: `/` e `/noticias` carregam os mesmos chunks do framework que
 antes, mais o `next/image`.
+
+## 2026-09-25 · Fase 3
+
+### Migração em duas etapas: snapshot versionado + importador idempotente
+
+- `npm run wp:export` lê o WordPress e grava `data/wp-export/snapshot.json` (commitado). O import fica reproduzível e
+  revisável mesmo depois que o site antigo for desligado.
+- `npm run wp:import` grava no Payload. Documentos casam por `legado.wpId` e arquivos por `origem` (URL original),
+  então dá para rodar de novo sem duplicar: só baixa o que falta.
+- Os tipos `noticias`, `projetos` e `publicacoes` foram criados com JetEngine **sem editor**: a API REST não traz o texto.
+  O exportador lê o HTML publicado (widgets do Elementor) e a API só para data, slug e imagem de destaque. Os PDFs das
+  publicações só existem nos botões "BAIXAR AGORA" da home.
+
+### Limpeza do conteúdo
+
+- HTML reduzido a tags semânticas (parágrafos, títulos, listas, links, ênfase), sem classes e estilos do Elementor.
+- Títulos sem emojis (o slug antigo com emoji ganha redirect para o novo, limpo).
+- Níveis de título normalizados: o corpo começa em `h2` (os posts pulavam de `h1` para `h3`, o que reprovava a acessibilidade).
+- Imagem de capa repetida no início do texto é descartada.
+- Links internos antigos reescritos para os novos endereços; PDFs linkados no texto são migrados e os links reescritos.
+- Link quebrado no original (ex.: `http://“Título”`) perde o link e mantém o texto.
+
+### Imagens
+
+- Original do WordPress (não a cópia redimensionada) → WebP de até 2560px: **188,7 MB → 37,4 MB (−80%)**.
+- Nas páginas, imagens do corpo passam por `next/image` (AVIF/WebP no tamanho da tela), e não mais por `<img>` com o original.
+- Sem texto alternativo no WordPress (180 imagens): recebem um texto provisório legível e o campo
+  `altProvisorio`, que o painel filtra e que se desmarca sozinho quando alguém edita o texto. Não usamos um prefixo
+  como "[descrever]" porque leitores de tela o leriam em voz alta.
+- Fotos de terceiros (matérias republicadas) recebem o crédito "Reprodução: site" e entram numa lista de verificação.
+
+### URLs de arquivos relativas
+
+O Payload devolve URLs absolutas com `serverURL` (`http://localhost:3000/...` em dev). Elas vinham gravadas no conteúdo
+e nos redirects, e o `next/image` recusava. `publicPath()` / `publicUrl()` guardam caminhos relativos para arquivos do
+próprio site; URLs do Vercel Blob continuam absolutas.
+
+### Cache após escrita fora do Next
+
+Escritas do import não disparam os hooks de revalidação (eles precisam de uma requisição Next), e o cache de dados
+persiste entre builds e deploys. O importador chama `POST /api/revalidate` (protegido por `REVALIDATE_SECRET`) no final.
+
+### Mini-site do Projeto Restaurar
+
+As páginas em `/projetos1/projeto-restaurar/...` viraram a coleção `paginas` em `/projetos/projeto-restaurar/...`.
+As 3 que eram só menus viraram redirects. Um padrão `/projetos1/:path*` cobre qualquer endereço não listado.
+
+### Redirects
+
+- 44 regras em `src/redirects.json` (geradas), mais os padrões. Next responde **308** (equivalente permanente do 301
+  para buscadores).
+- URLs antigas com barra final fazem 2 saltos (remove a barra → destino). Aceitável para buscadores e mais simples que
+  desligar a normalização de barra do Next.
+
+### Não migrado
+
+- `download` (6 itens "Arquivo 1…7" com Lorem ipsum): conteúdo de teste.
+- Páginas "Início", "Quem somos", "Fale conosco", "Galeria de vídeos" e "Obrigado": viram as novas páginas das fases
+  5 e 6 (os dados de "Quem somos" já estão no seed).

@@ -9,3 +9,5 @@ docs/PROMPT.md
 src/migrations
 src/payload-types.ts
 src/app/(payload)
+data/wp-export
+src/redirects.json

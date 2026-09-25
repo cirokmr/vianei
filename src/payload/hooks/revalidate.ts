@@ -2,7 +2,7 @@ import type { CollectionAfterChangeHook, CollectionAfterDeleteHook, GlobalAfterC
 import { revalidateTag } from "next/cache";
 import { cacheTags } from "@/lib/cms/tags";
 
-type Doc = { id: number | string; slug?: string | null; _status?: string | null };
+type Doc = { id: number | string; slug?: string | null; caminho?: string | null; _status?: string | null };
 
 /**
  * Expires cached pages that depend on a document. `expire: 0` makes the next
@@ -16,7 +16,8 @@ function expire(tags: string[]) {
 
 function docTags(collection: string, doc: Doc | undefined) {
   const tags = [cacheTags.collection(collection)];
-  if (doc?.slug) tags.push(cacheTags.doc(collection, doc.slug));
+  const key = doc?.slug ?? doc?.caminho;
+  if (key) tags.push(cacheTags.doc(collection, key));
   return tags;
 }
 

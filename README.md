@@ -49,10 +49,20 @@ Na primeira vez, rode `npx playwright install chromium` para ter o navegador dos
 3. `npm run migrate:create -- descricao-da-mudanca` e revise o SQL gerado.
 4. Commit dos três (config, tipos, migration). O CI falha se tipos ou import map estiverem desatualizados.
 
+### Migração do WordPress
+
+```bash
+npm run wp:export          # (opcional) atualiza data/wp-export/snapshot.json a partir do site antigo
+npm run wp:import          # importa o snapshot; idempotente, pode rodar de novo
+```
+
+Resultado em `data/wp-export/migration-report.md` e `src/redirects.json`. Rode o import com o site no ar e
+`REVALIDATE_SECRET` definido, para ele expirar o cache no final. Detalhes em `DECISIONS.md` (fase 3).
+
 ### Produção (Vercel)
 
 Variáveis: `DATABASE_URL` (Neon), `PAYLOAD_SECRET`, `PREVIEW_SECRET`, `NEXT_PUBLIC_SERVER_URL`,
-`NEXT_PUBLIC_SITE_URL`, `BLOB_READ_WRITE_TOKEN`. Build command: `npm run migrate && npm run build`.
+`NEXT_PUBLIC_SITE_URL`, `BLOB_READ_WRITE_TOKEN`, `REVALIDATE_SECRET`. Build command: `npm run migrate && npm run build`.
 
 ## Estrutura
 
@@ -74,7 +84,8 @@ src/
   payload/              collections, globals, acesso, hooks de revalidação
   payload.config.ts
   migrations/           migrations do Postgres (geradas, revisadas e commitadas)
-scripts/                seed, fontes
+scripts/                seed, fontes, migração do WordPress (wp-export, wp-import)
+data/wp-export/         snapshot do WordPress, relatório da migração
 tests/e2e/              Playwright + axe (fundação e fluxo editorial do CMS)
 docs/EDITORES.md        guia do painel para a equipe
 ```
@@ -91,7 +102,7 @@ docs/EDITORES.md        guia do painel para a equipe
 
 - [x] **1. Fundação:** tokens, fontes, Lenis + GSAP, reduced motion, CI com orçamento
 - [x] **2. Payload CMS:** painel `/admin`, collections, mídia, revalidação, preview e live preview
-- [ ] 3. Migração do WordPress + redirects
+- [x] **3. Migração do WordPress:** 65 notícias, 5 projetos, 14 publicações, 7 páginas, 226 imagens, 14 PDFs, 44 redirects
 - [ ] 4. Sistema de motion completo + `/lab`
 - [ ] 5. Home e Quem somos (capítulos com scroll hijacking)
 - [ ] 6. Páginas de conteúdo
