@@ -76,7 +76,16 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
-      - run: npm run lhci
+      # A cold `next start` skews the first Lighthouse run (TBT > 1.5 s on the
+      # runner). Warm the server up, then measure 5 runs and assert the median.
+      - name: Warm up server
+        run: |
+          npm run start -- -p 3200 &
+          npx -y wait-on@8 -t 60000 http://localhost:3200/
+          for path in / /noticias; do for i in 1 2 3; do curl -s -o /dev/null "http://localhost:3200$path"; done; done
+      - run: >-
+          npm run lhci -- --collect.startServerCommand=""
+          --collect.url=http://localhost:3200/ --collect.url=http://localhost:3200/noticias
       - uses: actions/upload-artifact@v4
         if: always()
         with:
