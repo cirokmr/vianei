@@ -6,3 +6,6 @@ test-results
 playwright-report
 .lighthouseci
 docs/PROMPT.md
+src/migrations
+src/payload-types.ts
+src/app/(payload)

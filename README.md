@@ -8,6 +8,7 @@ O briefing completo está em [`docs/PROMPT.md`](docs/PROMPT.md) e as decisões t
 ## Stack
 
 - Next.js 16 (App Router) · React 19 · TypeScript strict
+- **Payload CMS 3** embutido no próprio app (painel em `/admin`), Postgres, mídia no Vercel Blob
 - Tailwind CSS v4 (tokens em `src/app/globals.css`)
 - GSAP 3 (ScrollTrigger, SplitText, CustomEase) + Lenis, carregados **depois** do `load`
 - Fontes próprias com subset: Fraunces (display, eixo SOFT animável) e Inter Tight
@@ -15,36 +16,67 @@ O briefing completo está em [`docs/PROMPT.md`](docs/PROMPT.md) e as decisões t
 
 ## Rodando
 
+Pré-requisitos: Node 22 e um Postgres 16 local (ou Docker:
+`docker run -d -p 5432:5432 -e POSTGRES_USER=vianei -e POSTGRES_PASSWORD=vianei postgres:16`).
+
 ```bash
-nvm use            # Node 22
+nvm use
 npm install
-npm run dev        # http://localhost:3000
+cp .env.example .env    # preencha PAYLOAD_SECRET e PREVIEW_SECRET (openssl rand -hex 32)
+npm run migrate         # cria as tabelas
+SEED_ADMIN_EMAIL=voce@exemplo.org SEED_ADMIN_PASSWORD='senha-forte' npm run seed
+npm run dev             # site em http://localhost:3000, painel em /admin
 ```
 
-| Script             | O que faz                                       |
-| ------------------ | ----------------------------------------------- |
-| `npm run check`    | lint + typecheck + formatação                   |
-| `npm run build`    | build de produção                               |
-| `npm run test:e2e` | Playwright + axe (requer `npm run build` antes) |
-| `npm run lhci`     | Lighthouse CI com os orçamentos (requer build)  |
-| `npm run analyze`  | relatório do bundle                             |
+| Script                           | O que faz                                                   |
+| -------------------------------- | ----------------------------------------------------------- |
+| `npm run check`                  | lint + typecheck + formatação                               |
+| `npm run build`                  | build de produção (precisa do banco: páginas são estáticas) |
+| `npm run test:e2e`               | Playwright + axe (requer build, banco e seed)               |
+| `npm run lhci`                   | Lighthouse CI com os orçamentos (requer build)              |
+| `npm run migrate`                | aplica as migrations pendentes                              |
+| `npm run migrate:create -- nome` | gera migration depois de mudar collections/globals          |
+| `npm run generate:types`         | atualiza `src/payload-types.ts`                             |
+| `npm run seed`                   | dados institucionais (idempotente)                          |
+| `npm run analyze`                | relatório do bundle                                         |
 
 Na primeira vez, rode `npx playwright install chromium` para ter o navegador dos testes.
+
+### Mudando o modelo de conteúdo
+
+1. Edite a collection/global em `src/payload/`.
+2. `npm run generate:types && npm run generate:importmap`
+3. `npm run migrate:create -- descricao-da-mudanca` e revise o SQL gerado.
+4. Commit dos três (config, tipos, migration). O CI falha se tipos ou import map estiverem desatualizados.
+
+### Produção (Vercel)
+
+Variáveis: `DATABASE_URL` (Neon), `PAYLOAD_SECRET`, `PREVIEW_SECRET`, `NEXT_PUBLIC_SERVER_URL`,
+`NEXT_PUBLIC_SITE_URL`, `BLOB_READ_WRITE_TOKEN`. Build command: `npm run migrate && npm run build`.
 
 ## Estrutura
 
 ```
 src/
-  app/                  rotas (App Router); [secao] = placeholders das próximas fases
+  app/
+    (site)/             site público; [secao] = placeholders das próximas fases
+    (payload)/          painel /admin e API REST (arquivos gerados pelo Payload)
   components/
     motion/             primitivas de animação ('use client'): SmoothScroll, SplitReveal, ScrubWords…
+    cms/                RichText, barra de rascunho, live preview
     ui/                 header, footer, títulos
-  config/site.ts        dados institucionais (vão para o Payload na fase 2)
+  config/site.ts        navegação e metadados estáticos
   fonts/                woff2 gerados por scripts/build-fonts.py
   lib/
+    cms/                acesso a dados (Local API + cache por tags), mídia
     gsap.ts             registro único do GSAP e plugins (import dinâmico)
     use-motion.ts       hook que carrega o GSAP sob demanda e limpa tudo no unmount
-tests/e2e/              Playwright + axe
+  payload/              collections, globals, acesso, hooks de revalidação
+  payload.config.ts
+  migrations/           migrations do Postgres (geradas, revisadas e commitadas)
+scripts/                seed, fontes
+tests/e2e/              Playwright + axe (fundação e fluxo editorial do CMS)
+docs/EDITORES.md        guia do painel para a equipe
 ```
 
 ## Regras de motion
@@ -58,7 +90,7 @@ tests/e2e/              Playwright + axe
 ## Fases
 
 - [x] **1. Fundação:** tokens, fontes, Lenis + GSAP, reduced motion, CI com orçamento
-- [ ] 2. Payload CMS (painel `/admin`, collections, mídia, revalidação)
+- [x] **2. Payload CMS:** painel `/admin`, collections, mídia, revalidação, preview e live preview
 - [ ] 3. Migração do WordPress + redirects
 - [ ] 4. Sistema de motion completo + `/lab`
 - [ ] 5. Home e Quem somos (capítulos com scroll hijacking)

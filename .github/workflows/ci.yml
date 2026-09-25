@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   quality:
-    name: Lint · Types · Format · Build
+    name: Lint · Types · Format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,20 +23,41 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run format:check
-      - run: npm run build
-      - uses: actions/upload-artifact@v4
-        with:
-          name: next-build
-          path: |
-            .next
-            !.next/cache
-          include-hidden-files: true
-          retention-days: 1
+      - name: Payload types and import map are up to date
+        env:
+          PAYLOAD_SECRET: ci-only-secret
+          DATABASE_URL: postgres://unused
+        run: |
+          npm run generate:types
+          npm run generate:importmap
+          git diff --exit-code -- src/payload-types.ts "src/app/(payload)/admin/importMap.js"
 
-  e2e:
-    name: E2E + axe (a11y)
+  app:
+    name: Build · E2E + axe · Lighthouse
     needs: quality
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: vianei
+          POSTGRES_PASSWORD: vianei
+          POSTGRES_DB: vianei
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U vianei"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    # Test-only values; production secrets live in Vercel.
+    env:
+      DATABASE_URL: postgres://vianei:vianei@localhost:5432/vianei
+      PAYLOAD_SECRET: ci-only-payload-secret
+      PREVIEW_SECRET: ci-only-preview-secret
+      NEXT_PUBLIC_SERVER_URL: http://localhost:3100
+      NEXT_PUBLIC_SITE_URL: http://localhost:3100
+      SEED_ADMIN_EMAIL: ci@vianei.local
+      SEED_ADMIN_PASSWORD: ci-password-123
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -44,10 +65,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - uses: actions/download-artifact@v4
-        with:
-          name: next-build
-          path: .next
+      - run: npm run migrate
+      - run: npm run seed
+      - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
       - uses: actions/upload-artifact@v4
@@ -56,30 +76,16 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
-
-  lighthouse:
-    name: Lighthouse budgets (mobile)
-    needs: quality
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: npm
-      - run: npm ci
-      - uses: actions/download-artifact@v4
-        with:
-          name: next-build
-          path: .next
       # A cold `next start` skews the first Lighthouse run (TBT > 1.5 s on the
       # runner). Warm the server up, then measure 5 runs and assert the median.
       - name: Warm up server
         run: |
           npm run start -- -p 3200 &
           npx -y wait-on@8 -t 60000 http://localhost:3200/
-          for i in 1 2 3; do curl -s -o /dev/null http://localhost:3200/; done
-      - run: npm run lhci -- --collect.startServerCommand="" --collect.url=http://localhost:3200/
+          for path in / /noticias; do for i in 1 2 3; do curl -s -o /dev/null "http://localhost:3200$path"; done; done
+      - run: >-
+          npm run lhci -- --collect.startServerCommand=""
+          --collect.url=http://localhost:3200/ --collect.url=http://localhost:3200/noticias
       - uses: actions/upload-artifact@v4
         if: always()
         with:

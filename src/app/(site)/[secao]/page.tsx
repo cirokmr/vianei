@@ -7,12 +7,16 @@ import { site } from "@/config/site";
 // route (e.g. app/noticias) takes precedence over this dynamic segment.
 export const dynamicParams = false;
 
+// Sections that already have a real route are excluded here.
+const IMPLEMENTED = new Set(["/noticias"]);
+const pending = site.nav.filter((item) => !IMPLEMENTED.has(item.href));
+
 export function generateStaticParams() {
-  return site.nav.map((item) => ({ secao: item.href.slice(1) }));
+  return pending.map((item) => ({ secao: item.href.slice(1) }));
 }
 
 function findSection(slug: string) {
-  return site.nav.find((item) => item.href === `/${slug}`);
+  return pending.find((item) => item.href === `/${slug}`);
 }
 
 export async function generateMetadata({ params }: PageProps<"/[secao]">): Promise<Metadata> {

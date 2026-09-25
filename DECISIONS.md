@@ -61,3 +61,53 @@ efeito continua perceptível e o texto é legível desde o início.
 
 Os links do menu já apontam para as rotas finais. Enquanto elas não existem, `[secao]` gera páginas "Em breve" com
 `noindex`, para não haver 404 nem erros no console. Cada rota real criada nas próximas fases tem precedência.
+
+## 2026-09-25 · Fase 2
+
+### Payload 3 embutido, Postgres e migrations obrigatórias
+
+- O Payload roda no mesmo app Next (`src/app/(payload)`), então há um só deploy e um só repositório.
+- Postgres com `push: false`: toda mudança de schema passa por migration commitada e revisada.
+  O build da Vercel roda `npm run migrate` antes do `next build`.
+- GraphQL desligado, porque o site usa a Local API e o painel usa REST. Isso diminui a superfície de ataque e o tamanho do
+  servidor.
+
+### Cache: `unstable_cache` + tags, não `use cache`
+
+O Next 16 recomenda `cacheComponents` + `'use cache'`, mas o painel do Payload lê cookies e headers em toda a árvore do
+`/admin` e hoje não é compatível com esse modo. Usamos `unstable_cache` com tags (`src/lib/cms/tags.ts`); os hooks do
+Payload chamam `revalidateTag(tag, { expire: 0 })`. `expire: 0` (e não `"max"`) porque a equipe espera ver a
+notícia publicada na primeira visita, não na segunda. Reavaliar quando o Payload suportar Cache Components.
+
+### Rascunhos, preview e live preview
+
+- Notícias e projetos têm rascunho com autosave; publicações têm rascunho simples.
+- `/api/preview` exige `PREVIEW_SECRET` e só aceita caminhos internos (bloqueia `//dominio`, open redirect).
+- Em draft mode as consultas ignoram o cache e leem rascunhos. O `LivePreviewListener` é carregado com
+  `next/dynamic`, então visitantes comuns nunca baixam esse código (nem via prefetch).
+- Agendamento de publicação (`schedulePublish`) ficou de fora: exige um executor de jobs (cron) que o plano da Vercel
+  pode não cobrir. Pode ser ligado depois.
+
+### Privacidade
+
+- E-mails em `pessoas` só saem na API pública quando `emailPublico` está marcado (acesso por campo).
+- `usuarios` não é listável sem login. Login com bloqueio após 5 tentativas (15 min) e sessão de 8 h.
+- O seed não grava e-mails pessoais.
+
+### Mídia
+
+- O upload redimensiona o original para no máximo 2560px e converte para WebP (q82), e gera `miniatura` (480),
+  `cartao` (960), `destaque` (1920) e `og` (1200×630 JPEG). Limite de 15 MB por arquivo.
+- Em produção os arquivos vão para o Vercel Blob. Sem token (dev/CI), ficam no disco local (`/midia`, ignorado no git).
+
+### Orçamento de performance (revisto)
+
+| Métrica           | Fase 1   | Fase 2                                        |
+| ----------------- | -------- | --------------------------------------------- |
+| JS (inclui GSAP)  | ≤ 210 KB | ≤ 225 KB: `next/image` (~13 KB) nas listagens |
+| LCP (laboratório) | erro     | aviso em 2,5 s. O gate é Performance ≥ 95     |
+
+O LCP simulado oscilou entre 2,0 e 2,6 s em execuções idênticas nesta máquina (Performance entre 96 e 99). Um gate que
+falha por ruído treina a equipe a ignorar o CI, então a nota de Performance (que já pondera o LCP) segue bloqueando e o
+LCP vira aviso. O `admin` não entra no bundle público: `/` e `/noticias` carregam os mesmos chunks do framework que
+antes, mais o `next/image`.

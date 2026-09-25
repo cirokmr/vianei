@@ -1,4 +1,5 @@
-// Temporary source of truth until the Payload `site` global exists (phase 2).
+// Static defaults (navigation, metadata). Editable institutional data lives
+// in the Payload `site` global — see getSite().
 export const site = {
   name: "Centro Vianei de Educação Popular",
   shortName: "Centro Vianei",

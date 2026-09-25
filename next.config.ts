@@ -1,6 +1,10 @@
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import bundleAnalyzer from "@next/bundle-analyzer";
+import { withPayload } from "@payloadcms/next/withPayload";
 import type { NextConfig } from "next";
 
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 const withBundleAnalyzer = bundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
 
 const nextConfig: NextConfig = {
@@ -13,7 +17,11 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
+    // Local uploads (dev/CI) are served by Payload; production uses Vercel Blob.
+    localPatterns: [{ pathname: "/api/midia/file/**" }],
+    remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
   },
+  turbopack: { root: path.resolve(dirname) },
   async headers() {
     return [
       {
@@ -29,4 +37,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withBundleAnalyzer(nextConfig);
+export default withPayload(withBundleAnalyzer(nextConfig), { devBundleServerPackages: false });
