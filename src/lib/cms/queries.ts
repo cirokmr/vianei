@@ -88,7 +88,7 @@ export async function getProjetos() {
           sort: "-inicio",
           limit: 100,
           depth: 1,
-          select: { titulo: true, slug: true, resumo: true, capa: true, situacao: true },
+          select: { titulo: true, slug: true, resumo: true, capa: true },
         })
       ).docs,
     ["projetos:list"],

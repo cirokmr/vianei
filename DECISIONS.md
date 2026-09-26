@@ -170,3 +170,14 @@ As 3 que eram só menus viraram redirects. Um padrão `/projetos1/:path*` cobre 
 - `download` (6 itens "Arquivo 1…7" com Lorem ipsum): conteúdo de teste.
 - Páginas "Início", "Quem somos", "Fale conosco", "Galeria de vídeos" e "Obrigado": viram as novas páginas das fases
   5 e 6 (os dados de "Quem somos" já estão no seed).
+
+### Complementos da equipe (26/09)
+
+Material enviado depois do snapshot fica em `data/wp-export/complementos.json` (+ arquivos em
+`data/wp-export/complementos/`), chaveado pelo `wpId`, e o importador aplica. Assim a correção vale também para o
+import de produção, sem edição manual no painel. PDFs enviados passam por `scripts/pdf-extract.py` (recorte de páginas e
+recompressão das imagens; a cartilha de gestão caiu de 11,9 MB para 4,2 MB sem perder legibilidade).
+
+### Situação dos projetos fora do site
+
+A pedido da equipe, "em andamento/concluído" não aparece no site por enquanto. O campo continua no painel.

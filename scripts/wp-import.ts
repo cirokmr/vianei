@@ -30,6 +30,17 @@ const SIZES = path.resolve("data/wp-export/media-sizes.json");
 const ctx = { disableRevalidate: true };
 
 const snapshot = JSON.parse(await readFile(SNAPSHOT, "utf8")) as WpSnapshot;
+
+// Material the team sent after the snapshot (PDFs, links, corrections), keyed by wpId.
+type Complementos = {
+  publicacoes?: Record<string, { titulo?: string; arquivo?: string; linkExterno?: string }>;
+  projetos?: Record<string, { situacao?: "ativo" | "concluido" }>;
+};
+const COMPLEMENTOS_DIR = path.resolve("data/wp-export/complementos");
+const complementos = JSON.parse(
+  await readFile(path.resolve("data/wp-export/complementos.json"), "utf8"),
+) as Complementos;
+const resolvedTitles = new Set<string>(); // warnings about these are no longer open
 const payload = await getPayload({ config });
 const editorConfig = await editorConfigFactory.default({ config: payload.config });
 const source = new URL(snapshot.source);
@@ -46,7 +57,7 @@ const stats = {
 
   created: {} as Record<string, number>,
   updated: {} as Record<string, number>,
-  warnings: [...snapshot.warnings],
+  warnings: [] as string[],
 };
 const redirects = new Map<string, string>();
 const originalSizes: Record<string, number> = await readFile(SIZES, "utf8")
@@ -131,7 +142,7 @@ async function importImage(image: WpImage, fallbackAlt: string): Promise<number 
   const alt = image.alt || image.caption || fallbackAlt;
 
   // Photos hotlinked from partner sites (republished articles) keep a source
-  // credit, and the team confirms the right to use them.
+  // credit (use authorized by the team).
   const host = new URL(image.url).hostname.replace(/^www\./, "");
   const external = host !== source.hostname.replace(/^www\./, "");
 
@@ -177,6 +188,26 @@ async function importPdf(url: string, titulo: string) {
   });
   stats.pdfs++;
   return { id: doc.id, url: publicUrl(doc.url as string) };
+}
+
+/** Imports a PDF the team sent (data/wp-export/complementos/), once. */
+async function importLocalPdf(file: string, titulo: string) {
+  const origem = `complementos/${file}`;
+  const existing = await findByOrigem("documentos", origem);
+  if (existing) {
+    stats.pdfsReused++;
+    return existing.id as number;
+  }
+  if (DRY) return undefined;
+  const data = await readFile(path.join(COMPLEMENTOS_DIR, file));
+  const doc = await payload.create({
+    collection: "documentos",
+    data: { titulo, origem },
+    file: { data, mimetype: "application/pdf", name: file, size: data.length },
+    context: ctx,
+  });
+  stats.pdfs++;
+  return doc.id;
 }
 
 // URL mapping ----------------------------------------------------------------------
@@ -327,7 +358,8 @@ async function importNoticia(e: WpEntry) {
 async function importProjeto(e: WpEntry) {
   const titulo = cleanTitle(e.title);
   const capa = e.featured ? await importImage(e.featured, `Foto do projeto “${titulo}”`) : null;
-  const ativo = e.terms.some((t) => /executando|andamento/i.test(t));
+  const override = complementos.projetos?.[e.wpId]?.situacao;
+  const ativo = override ? override === "ativo" : e.terms.some((t) => /executando|andamento/i.test(t));
   await upsert("projetos", e.wpId, {
     titulo,
     resumo: excerpt(e.bodyHtml, 300) || undefined,
@@ -339,18 +371,28 @@ async function importProjeto(e: WpEntry) {
     legado: { wpId: e.wpId, wpUrl: e.url },
     _status: "published",
   });
-  if (!e.terms.length) stats.warnings.push(`projeto sem situação no WP (marcado como concluído): ${titulo}`);
+  if (!e.terms.length && !override) {
+    stats.warnings.push(`projeto sem situação no WP (marcado como concluído): ${titulo}`);
+  }
 }
 
 async function importPublicacao(e: WpEntry) {
   // "Pinhão na Culinária – Embrapa" → título + autoria
   const [first, ...rest] = cleanTitle(e.title).replace(/\.$/, "").split(" – ");
-  const titulo = first.trim();
+  const titulo = complementos.publicacoes?.[e.wpId]?.titulo ?? first.trim();
   const autoria = rest.join(" – ").trim() || undefined;
   const capa = e.featured ? await importImage(e.featured, `Capa de “${titulo}”`) : null;
 
   let arquivo: number | undefined;
-  if (e.pdfUrl && /\.pdf$/i.test(e.pdfUrl)) {
+  let linkExterno: string | undefined;
+  const extra = complementos.publicacoes?.[e.wpId];
+  if (extra?.arquivo) {
+    arquivo = await importLocalPdf(extra.arquivo, titulo);
+    resolvedTitles.add(e.title);
+  } else if (extra?.linkExterno) {
+    linkExterno = extra.linkExterno;
+    resolvedTitles.add(e.title);
+  } else if (e.pdfUrl && /\.pdf$/i.test(e.pdfUrl)) {
     const pdf = await importPdf(e.pdfUrl, titulo);
     arquivo = pdf?.id;
     if (pdf) redirects.set(new URL(e.pdfUrl).pathname, pdf.url);
@@ -362,7 +404,8 @@ async function importPublicacao(e: WpEntry) {
     titulo,
     autoria,
     capa: capa ?? undefined,
-    arquivo,
+    arquivo: arquivo ?? null,
+    linkExterno: linkExterno ?? null,
     slug: slugify(decodeURIComponent(e.slug)) || `publicacao-${e.wpId}`,
     ano: new Date(e.publishedAt).getUTCFullYear(),
     legado: { wpId: e.wpId, wpUrl: e.url },
@@ -431,6 +474,8 @@ async function reviewLists() {
 }
 
 function report(redirectCount: number, review: { altToReview: string[]; thirdParty: string[] }) {
+  const openSnapshotWarnings = snapshot.warnings.filter((w) => ![...resolvedTitles].some((t) => w.includes(t)));
+  stats.warnings.unshift(...openSnapshotWarnings);
   const counts = (type: string) => snapshot.entries.filter((e) => e.type === type).length;
   const saving = stats.bytesBefore ? Math.round((1 - stats.bytesAfter / stats.bytesBefore) * 100) : 0;
   const lines = [
@@ -476,7 +521,7 @@ function report(redirectCount: number, review: { altToReview: string[]; thirdPar
           "",
           `### Imagens de outros sites (${review.thirdParty.length})`,
           "",
-          "Vieram de matérias republicadas. Receberam o crédito “Reprodução: site”; confirme se podemos usá-las.",
+          "Vieram de matérias republicadas, com o crédito “Reprodução: site”. Uso autorizado pela equipe em 26/09/2026.",
           "",
           ...review.thirdParty.map((a) => `- ${a}`),
         ]

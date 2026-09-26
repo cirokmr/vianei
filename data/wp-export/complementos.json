@@ -1,0 +1,20 @@
+{
+  "$comment": "Material enviado pela equipe depois do snapshot. Lido por scripts/wp-import.ts (chaves = wpId). Arquivos em data/wp-export/complementos/.",
+  "publicacoes": {
+    "1104": {
+      "arquivo": "cartilha-gestao-administrativa-grupos-cooperacao.pdf",
+      "nota": "Enviado pela equipe em 26/09/2026 (original 11,9 MB, imagens recomprimidas para 4,2 MB). Título corrigido conforme a capa (o WordPress dizia \"coordenação\").",
+      "titulo": "Gestão administrativa para grupos de cooperação"
+    },
+    "1116": {
+      "linkExterno": "https://online.fliphtml5.com/ddctz/ypqk/",
+      "nota": "Revista ABEMA: leitura online; o PDF não é baixável no site da editora."
+    }
+  },
+  "projetos": {
+    "1129": {
+      "situacao": "ativo",
+      "nota": "Da Terra à Mesa segue em andamento (a websérie foi concluída)."
+    }
+  }
+}

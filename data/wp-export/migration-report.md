@@ -1,6 +1,6 @@
 # Relatório da migração do WordPress
 
-Snapshot: 2026-09-25T20:49:20.034Z · fonte: https://vianei.org.br · importado em 2026-09-25T21:49:25.861Z
+Snapshot: 2026-09-25T20:49:20.034Z · fonte: https://vianei.org.br · importado em 2026-09-26T00:14:53.251Z
 
 ## Conteúdo
 
@@ -16,7 +16,7 @@ As 3 páginas do mini-site que eram só menus (projetos1, projetos1/projeto-rest
 ## Arquivos
 
 - Imagens: **226** no site novo (0 nesta execução, 226 já existiam; falhas: 25)
-- PDFs: **14** (0 nesta execução)
+- PDFs: **15** (0 nesta execução)
 - Peso das imagens: **188.7 MB → 37.4 MB** (−80%), comparando o arquivo original do WordPress com o maior arquivo que o site novo guarda. Nas páginas, o site ainda serve versões menores (AVIF/WebP no tamanho da tela).
 - Média por imagem: 855 KB → 170 KB
 
@@ -212,12 +212,9 @@ Receberam um texto provisório (“Foto da notícia …”). No painel, em Image
 - #2 Imagem da página “Da Terra à Mesa | MDA”: https://vianei.org.br/wp-content/uploads/2025/03/sjose-cerrito-sc.png
 - #1 Imagem da página “Da Terra à Mesa | MDA”: https://vianei.org.br/wp-content/uploads/2025/03/areas-de-abrangencia.png
 
-### Avisos (5)
+### Avisos (2)
 
-- publicação sem PDF na home: "REVISTA ABEMA 8ª Edição. Associação Brasileira de Entidades Estaduais de Meio Ambiente."
 - publicação sem PDF na home: "Produção de pinhão em sistemas tradicionais no planalto serrano catarinense."
-- publicação sem PDF na home: "Cartilha de gestão administrativa para grupos de coordenação."
-- projeto sem situação no WP (marcado como concluído): Da Terra à Mesa | MDA
 - publicação aponta para um arquivo que não é PDF (https://vianei.org.br/wp-content/uploads/2024/06/Capa-livro.jpeg): Construção social dos mercados no sul do Brasil
 
 ### Imagens não importadas (25)
@@ -228,22 +225,22 @@ Rode `npm run wp:import` de novo numa rede sem bloqueios: o import é idempotent
 - https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8839-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145727/20220530_fellipeabreu_santacatarina_128946.jpg (download falhou)
 - https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8585-Copy.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.10.25.jpeg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180237/20220604_fellipeabreu_santacatarina_130108.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.15.17.jpeg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.10.25.jpeg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145742/20220531_fellipeabreu_santacatarina_129195.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.18.09.jpeg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.15.17.jpeg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145800/20220604_fellipeabreu_santacatarina_130026.jpeg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.26.43.jpeg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.18.09.jpeg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145739/20220531_fellipeabreu_santacatarina_129134.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8824-Copy.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.26.43.jpeg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145736/20220530_fellipeabreu_santacatarina_129014.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8787-Copy.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8824-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145746/20220601_fellipeabreu_santacatarina_129454.jpg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8801-Copy.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8787-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145757/20220604_fellipeabreu_santacatarina_129960.jpeg (download falhou)
-- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8826-Copy.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8801-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180604/20220530_fellipeabreu_santacatarina_128704-1.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8826-Copy.jpg (download falhou)
 - https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8814-Copy.jpg (download falhou)
 - https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8760.jpg (download falhou)
 - https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.38.09.jpeg (download falhou)

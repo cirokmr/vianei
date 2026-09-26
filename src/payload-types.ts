@@ -309,6 +309,9 @@ export interface Projeto {
    * Gerado a partir do título se ficar em branco. Mudar o slug de algo já publicado quebra links.
    */
   slug: string;
+  /**
+   * Uso interno por enquanto: a situação não aparece no site.
+   */
   situacao: 'ativo' | 'concluido';
   areas?: ('educacao-popular' | 'agroecologia' | 'restauracao-florestal' | 'cultura-sat-pinhao')[] | null;
   inicio?: string | null;

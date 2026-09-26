@@ -30,7 +30,8 @@ export default async function ProjetoPage({ params }: PageProps<"/projetos/[slug
   return (
     <ContentPage
       back={{ href: "/projetos", label: "Projetos" }}
-      eyebrow={projeto.situacao === "ativo" ? "Em andamento" : "Concluído"}
+      // Project status stays internal for now (see DECISIONS.md).
+      eyebrow="Projeto"
       title={projeto.titulo}
       lead={projeto.resumo}
       cover={asMidia(projeto.capa)}

@@ -17,8 +17,12 @@ Itens que dependem da equipe. Não inventar dados: o site mostra somente o que f
 
 - [ ] **Descrever 180 imagens** que vieram sem texto alternativo. No painel: Imagens → filtro "Texto alternativo
       provisório".
-- [ ] **PDFs que faltam no site atual:** os botões "BAIXAR AGORA" de "Revista ABEMA 8ª Edição", "Produção de pinhão em
-      sistemas tradicionais…" e "Cartilha de gestão administrativa…" não têm arquivo. Enviar os PDFs.
+- [x] ~~Revista ABEMA 8ª Edição~~: link de leitura online (fliphtml5), enviado em 26/09.
+- [x] ~~Cartilha de gestão administrativa~~: PDF enviado em 26/09 (título corrigido para "…grupos de cooperação").
+- [ ] **"Produção de pinhão em sistemas tradicionais…"**: aguardando o PDF PEAN0059 (cartilha nas páginas 175–190;
+      `scripts/pdf-extract.py` gera o arquivo separado).
 - [ ] **"Construção social dos mercados no sul do Brasil" (2020):** o botão aponta para uma imagem (capa), não para o PDF.
-- [ ] **Projeto "Da Terra à Mesa | MDA":** sem situação no site antigo; foi marcado como concluído. Confirmar.
-- [ ] **Fotos de outros sites** em matérias republicadas (Cepagro, Mongabay…): confirmar se podemos usá-las.
+- [x] ~~Projeto "Da Terra à Mesa"~~: em andamento (a websérie foi concluída). A situação dos projetos não aparece no
+      site por enquanto.
+- [x] ~~Fotos de outros sites~~ (Cepagro, Mongabay…): uso autorizado em 26/09. Falta só baixá-las: rodar
+      `npm run wp:import` numa rede sem bloqueio.

@@ -53,7 +53,10 @@ export const Projetos: CollectionConfig = {
         { label: "Em andamento", value: "ativo" },
         { label: "Concluído", value: "concluido" },
       ],
-      admin: { position: "sidebar" },
+      admin: {
+        position: "sidebar",
+        description: "Uso interno por enquanto: a situação não aparece no site.",
+      },
     },
     {
       name: "areas",
