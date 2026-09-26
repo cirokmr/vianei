@@ -181,3 +181,9 @@ recompressão das imagens; a cartilha de gestão caiu de 11,9 MB para 4,2 MB sem
 ### Situação dos projetos fora do site
 
 A pedido da equipe, "em andamento/concluído" não aparece no site por enquanto. O campo continua no painel.
+
+- PDFs enviados pelo GitHub foram reduzidos e os originais saíram do repositório. O PEAN0059 veio embrulhado num
+  envelope multipart (`ZENDHTTPCLIENT`) do repositório de origem; o PDF interno estava íntegro e o recorte gerado é
+  um PDF limpo.
+- "Construção social dos mercados" (2020, wpId 1102) recebeu o mesmo arquivo da publicação 1187 via `mesmoArquivoDe`,
+  sem duplicar o PDF no armazenamento.

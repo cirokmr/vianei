@@ -33,7 +33,7 @@ const snapshot = JSON.parse(await readFile(SNAPSHOT, "utf8")) as WpSnapshot;
 
 // Material the team sent after the snapshot (PDFs, links, corrections), keyed by wpId.
 type Complementos = {
-  publicacoes?: Record<string, { titulo?: string; arquivo?: string; linkExterno?: string }>;
+  publicacoes?: Record<string, { titulo?: string; arquivo?: string; linkExterno?: string; mesmoArquivoDe?: number }>;
   projetos?: Record<string, { situacao?: "ativo" | "concluido" }>;
 };
 const COMPLEMENTOS_DIR = path.resolve("data/wp-export/complementos");
@@ -389,6 +389,18 @@ async function importPublicacao(e: WpEntry) {
   if (extra?.arquivo) {
     arquivo = await importLocalPdf(extra.arquivo, titulo);
     resolvedTitles.add(e.title);
+  } else if (extra?.mesmoArquivoDe) {
+    // Same file as another publication: link it instead of storing a copy.
+    const other = await payload.find({
+      collection: "publicacoes",
+      where: { "legado.wpId": { equals: extra.mesmoArquivoDe } },
+      limit: 1,
+      depth: 0,
+    });
+    const id = other.docs[0]?.arquivo;
+    arquivo = typeof id === "number" ? id : undefined;
+    if (arquivo) resolvedTitles.add(e.title);
+    else stats.warnings.push(`publicação ${extra.mesmoArquivoDe} sem PDF para reaproveitar em "${titulo}"`);
   } else if (extra?.linkExterno) {
     linkExterno = extra.linkExterno;
     resolvedTitles.add(e.title);
@@ -577,7 +589,9 @@ async function main() {
         .docs[0]?.id as number | undefined);
 
   await mapLimit(byType("noticias"), 3, importNoticia);
-  for (const e of byType("publicacoes")) await importPublicacao(e);
+  const reusesFile = (e: WpEntry) => Boolean(complementos.publicacoes?.[e.wpId]?.mesmoArquivoDe);
+  for (const e of byType("publicacoes").filter((e) => !reusesFile(e))) await importPublicacao(e);
+  for (const e of byType("publicacoes").filter(reusesFile)) await importPublicacao(e);
   for (const e of byType("paginas")) await importPagina(e, restaurar);
 
   if (!DRY) await revalidateSite();
