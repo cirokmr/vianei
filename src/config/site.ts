@@ -23,6 +23,17 @@ export const site = {
     { href: "/publicacoes", label: "Publicações" },
     { href: "/contato", label: "Contato" },
   ],
+  // Everything the header has, plus the sections that only live here.
+  footerNav: [
+    { href: "/quem-somos", label: "Quem somos" },
+    { href: "/atuacao", label: "Atuação" },
+    { href: "/projetos", label: "Projetos" },
+    { href: "/noticias", label: "Notícias" },
+    { href: "/publicacoes", label: "Publicações" },
+    { href: "/videos", label: "Vídeos" },
+    { href: "/parceiros", label: "Parceiros" },
+    { href: "/contato", label: "Contato" },
+  ],
   social: [
     { href: "https://www.facebook.com/centrovianei", label: "Facebook" },
     { href: "https://www.instagram.com/centrovianei/", label: "Instagram" },

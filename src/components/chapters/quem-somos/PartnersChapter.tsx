@@ -4,11 +4,12 @@ import type { Parceiro } from "@/payload-types";
 
 const label = "mb-6 text-eyebrow tracking-[0.18em] text-limao uppercase";
 
-function Lista({ titulo, parceiros }: { titulo: string; parceiros: Parceiro[] }) {
+function Lista({ titulo, parceiros, nivel }: { titulo: string; parceiros: Parceiro[]; nivel: "h2" | "h3" }) {
   if (!parceiros.length) return null;
+  const Heading = nivel;
   return (
     <section aria-label={titulo} className="mt-14">
-      <h3 className={label}>{titulo}</h3>
+      <Heading className={label}>{titulo}</Heading>
       <ul className="grid border-t border-papel/15 sm:grid-cols-2 lg:grid-cols-3">
         {parceiros.map((p) => {
           const logo = asMidia(p.logo);
@@ -46,15 +47,30 @@ function Lista({ titulo, parceiros }: { titulo: string; parceiros: Parceiro[] })
 }
 
 /** Supporters (funders) and partners, from the `parceiros` collection. */
-export function PartnersChapter({ parceiros }: { parceiros: Parceiro[] }) {
+export function PartnersChapter({ parceiros, semTitulo = false }: { parceiros: Parceiro[]; semTitulo?: boolean }) {
   return (
-    <div data-header="dark" className="bg-mata px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)] text-papel">
-      <p className={label}>Apoiadores e parceiros</p>
-      <h2 className="max-w-4xl font-display text-h2 leading-[0.98] tracking-[-0.025em]">
-        Cooperação internacional, organismos públicos e privados, gente do lugar.
-      </h2>
-      <Lista titulo="Apoiadores" parceiros={parceiros.filter((p) => p.tipo === "apoiador")} />
-      <Lista titulo="Parceiros" parceiros={parceiros.filter((p) => p.tipo === "parceiro")} />
+    <div
+      data-header="dark"
+      className={`bg-mata px-[var(--gutter)] text-papel ${semTitulo ? "pb-[clamp(5rem,14vh,9rem)]" : "py-[clamp(5rem,14vh,9rem)]"}`}
+    >
+      {semTitulo ? null : (
+        <>
+          <p className={label}>Apoiadores e parceiros</p>
+          <h2 className="max-w-4xl font-display text-h2 leading-[0.98] tracking-[-0.025em]">
+            Cooperação internacional, organismos públicos e privados, gente do lugar.
+          </h2>
+        </>
+      )}
+      <Lista
+        titulo="Apoiadores"
+        nivel={semTitulo ? "h2" : "h3"}
+        parceiros={parceiros.filter((p) => p.tipo === "apoiador")}
+      />
+      <Lista
+        titulo="Parceiros"
+        nivel={semTitulo ? "h2" : "h3"}
+        parceiros={parceiros.filter((p) => p.tipo === "parceiro")}
+      />
     </div>
   );
 }

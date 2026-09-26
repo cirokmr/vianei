@@ -56,7 +56,7 @@ export default async function Home() {
       </Chapter>
 
       <Chapter {...fazemos}>
-        <WorkChapter projetos={projetos.map((p) => p.slug)} />
+        <WorkChapter />
       </Chapter>
 
       <Chapter {...emNumeros}>

@@ -24,11 +24,16 @@ const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     // 40/55: full-bleed hero photos (phone/desktop), mostly under the mist.
-    qualities: [40, 55, 75],
+    // 60: book covers and video thumbnails in grids.
+    qualities: [40, 55, 60, 75],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     // Local uploads (dev/CI) are served by Payload; production uses Vercel Blob.
     localPatterns: [{ pathname: "/api/midia/file/**" }],
-    remotePatterns: [{ protocol: "https", hostname: "*.public.blob.vercel-storage.com" }],
+    remotePatterns: [
+      { protocol: "https", hostname: "*.public.blob.vercel-storage.com" },
+      // YouTube thumbnails for the video facades.
+      { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" },
+    ],
   },
   turbopack: { root: path.resolve(dirname) },
   async redirects() {
