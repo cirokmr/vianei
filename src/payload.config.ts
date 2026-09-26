@@ -95,7 +95,12 @@ export default buildConfig({
       // Keep the storage fields (prefix, _objectKey) in the schema even when the
       // plugin is off, so migrations generated locally match production.
       alwaysInsertFields: true,
-      collections: { midia: true, documentos: true },
+      // Files are public: pages link straight to the Blob CDN instead of
+      // /api/<collection>/file, which ran a function and a database lookup per file.
+      collections: {
+        midia: { disablePayloadAccessControl: true },
+        documentos: { disablePayloadAccessControl: true },
+      },
       token: process.env.BLOB_READ_WRITE_TOKEN ?? "",
     }),
   ],

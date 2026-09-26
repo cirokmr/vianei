@@ -9,8 +9,15 @@ import { cacheTags } from "./tags";
 // (src/payload/hooks/revalidate.ts). Draft mode bypasses the cache and reads
 // drafts, which is what powers preview and Live Preview in the admin.
 
+// Vercel's Data Cache outlives deployments; keying entries by deployment
+// means a deploy that changes the schema or media URLs never serves data
+// cached by the previous one.
+const DEPLOY = process.env.VERCEL_DEPLOYMENT_ID ?? "local";
+const cached: typeof unstable_cache = (fn, keyParts, options) =>
+  unstable_cache(fn, [DEPLOY, ...(keyParts ?? [])], options);
+
 export async function getSite(): Promise<Site> {
-  return unstable_cache(async () => (await payload()).findGlobal({ slug: "site", depth: 1 }), ["global:site"], {
+  return cached(async () => (await payload()).findGlobal({ slug: "site", depth: 1 }), ["global:site"], {
     tags: [cacheTags.global("site")],
   })();
 }
@@ -27,7 +34,7 @@ export async function getNoticias({
   limit = NOTICIAS_POR_PAGINA,
   categoria,
 }: { page?: number; limit?: number; categoria?: number } = {}) {
-  return unstable_cache(
+  return cached(
     async () => {
       const result = await (
         await payload()
@@ -72,7 +79,7 @@ export async function getNoticiasRelacionadas(noticia: Noticia, limit = 3) {
   const projetos = ids(noticia.projetos);
   if (!categorias.length && !projetos.length) return [];
 
-  return unstable_cache(
+  return cached(
     async () => {
       const result = await (
         await payload()
@@ -104,7 +111,7 @@ export async function getNoticiasRelacionadas(noticia: Noticia, limit = 3) {
 
 /** News linked to a project (project page). */
 export async function getNoticiasDoProjeto(projetoId: number, limit = 6) {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
@@ -124,7 +131,7 @@ export async function getNoticiasDoProjeto(projetoId: number, limit = 6) {
 }
 
 export async function getCategorias() {
-  return unstable_cache(
+  return cached(
     async () =>
       (await (await payload()).find({ collection: "categorias", sort: "titulo", pagination: false, depth: 0 })).docs,
     ["categorias:list"],
@@ -150,7 +157,7 @@ export async function getNoticia(slug: string): Promise<Noticia | null> {
   };
 
   if (draft) return query();
-  return unstable_cache(query, ["noticias:doc", slug], {
+  return cached(query, ["noticias:doc", slug], {
     tags: [cacheTags.collection("noticias"), cacheTags.doc("noticias", slug)],
   })();
 }
@@ -171,7 +178,7 @@ export async function getNoticiaSlugs(): Promise<string[]> {
 // Projects -------------------------------------------------------------------
 
 export async function getProjetos() {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
@@ -206,7 +213,7 @@ export async function getProjeto(slug: string): Promise<Projeto | null> {
       })
     ).docs[0] ?? null;
   if (draft) return query();
-  return unstable_cache(query, ["projetos:doc", slug], {
+  return cached(query, ["projetos:doc", slug], {
     tags: [cacheTags.collection("projetos"), cacheTags.doc("projetos", slug)],
   })();
 }
@@ -241,14 +248,14 @@ export async function getPagina(caminho: string): Promise<Pagina | null> {
       })
     ).docs[0] ?? null;
   if (draft) return query();
-  return unstable_cache(query, ["paginas:doc", caminho], {
+  return cached(query, ["paginas:doc", caminho], {
     tags: [cacheTags.collection("paginas"), cacheTags.doc("paginas", caminho)],
   })();
 }
 
 /** Published pages under a path prefix, with titles (e.g. a project's subpages). */
 export async function getPaginas(prefix: string) {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
@@ -281,7 +288,7 @@ export async function getPaginaCaminhos(prefix: string): Promise<string[]> {
 // Institutional (home, quem somos) ---------------------------------------------
 
 function cachedGlobal<S extends "numeros" | "timeline">(slug: S) {
-  return unstable_cache(async () => (await payload()).findGlobal({ slug, depth: 1 }), [`global:${slug}`], {
+  return cached(async () => (await payload()).findGlobal({ slug, depth: 1 }), [`global:${slug}`], {
     tags: [cacheTags.global(slug)],
   })();
 }
@@ -290,7 +297,7 @@ export const getNumeros = () => cachedGlobal("numeros");
 export const getTimeline = () => cachedGlobal("timeline");
 
 export async function getParceiros() {
-  return unstable_cache(
+  return cached(
     async () =>
       (await (await payload()).find({ collection: "parceiros", sort: ["ordem", "nome"], pagination: false, depth: 1 }))
         .docs,
@@ -300,7 +307,7 @@ export async function getParceiros() {
 }
 
 export async function getPessoas() {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
@@ -322,7 +329,7 @@ export async function getPessoas() {
 // Library and videos ----------------------------------------------------------
 
 export async function getPublicacoes() {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
@@ -341,7 +348,7 @@ export async function getPublicacoes() {
 }
 
 export async function getVideos() {
-  return unstable_cache(
+  return cached(
     async () =>
       (
         await (
