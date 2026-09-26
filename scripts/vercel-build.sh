@@ -5,6 +5,25 @@
 # remove it. The import is idempotent, so a repeat run only fills what's missing.
 set -euo pipefail
 
+# Fail early, in plain words, when the project isn't fully configured (docs/DEPLOY.md).
+faltando=()
+for var in DATABASE_URL PAYLOAD_SECRET; do
+  [ -n "${!var:-}" ] || faltando+=("$var")
+done
+if [ ${#faltando[@]} -gt 0 ]; then
+  echo "ERRO: faltam variáveis de ambiente na Vercel: ${faltando[*]}"
+  echo "  DATABASE_URL: Storage → Neon (Postgres) → conectar ao projeto (Production e Preview)."
+  echo "  PAYLOAD_SECRET: Settings → Environment Variables."
+  echo "Depois, Deployments → este deploy → Redeploy. Passo a passo: docs/DEPLOY.md"
+  exit 1
+fi
+if [ -z "${BLOB_READ_WRITE_TOKEN:-}" ]; then
+  echo "AVISO: sem BLOB_READ_WRITE_TOKEN (Storage → Blob). Uploads e a importação de imagens não vão persistir."
+  if [ "${IMPORTAR_CONTEUDO:-}" = "1" ]; then
+    echo "ERRO: IMPORTAR_CONTEUDO=1 exige o Blob conectado." && exit 1
+  fi
+fi
+
 npm run migrate
 npm run seed
 
