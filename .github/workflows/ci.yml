@@ -58,6 +58,8 @@ jobs:
       NEXT_PUBLIC_SITE_URL: http://localhost:3100
       SEED_ADMIN_EMAIL: ci@vianei.local
       SEED_ADMIN_PASSWORD: ci-password-123
+      # Builds the internal /lab page so the motion primitives are tested.
+      ENABLE_LAB: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

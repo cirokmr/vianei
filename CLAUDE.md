@@ -19,3 +19,10 @@
 - Scripts que escrevem no banco fora do Next (seed, import) não revalidam o cache: chame `POST /api/revalidate`
   com `x-revalidate-secret`, como faz `scripts/wp-import.ts`.
 - Links e mídia do CMS: use `mediaSrc()` / `publicPath()` para caminhos relativos (o Payload devolve URLs absolutas).
+
+## Motion (fase 4)
+
+- Primitivas em `src/components/motion/`, todas via `useMotion()`. Teste qualquer mudança em `/lab`
+  (`ENABLE_LAB=1` no build de produção).
+- Seção escura: `data-header="dark"` (ou `dark` no `PinnedChapter`). Não recrie a lógica do header com ScrollTrigger.
+- Efeitos de cursor usam `FINE_POINTER` (`src/lib/motion.ts`); nada de cursor custom no celular.

@@ -90,6 +90,30 @@ tests/e2e/              Playwright + axe (fundação e fluxo editorial do CMS)
 docs/EDITORES.md        guia do painel para a equipe
 ```
 
+## Sistema de motion (`src/components/motion/`)
+
+Veja todas as primitivas funcionando em **`/lab`** (em dev, ou com `ENABLE_LAB=1`; em produção é 404).
+
+| Primitiva           | O que faz                                                                      |
+| ------------------- | ------------------------------------------------------------------------------ |
+| `SmoothScroll`      | Lenis sincronizado ao ticker do GSAP; `useSmoothScroll()` para `scrollTo/lock` |
+| `SplitReveal`       | revela texto linha a linha com máscara                                         |
+| `HeroTitle`         | título LCP com reveal em CSS puro (ui/)                                        |
+| `ScrubWords`        | fixa a seção e acende palavra por palavra                                      |
+| `PinnedChapter`     | o coração do hijacking: fixa e avança `[data-step]` com snap                   |
+| `HorizontalGallery` | scroll vertical vira horizontal (desktop); swipe nativo no celular             |
+| `StackCards`        | cards fixos que se empilham e recuam                                           |
+| `ClipImage`         | imagem revelada por clip-path + parallax interno                               |
+| `DrawTree`          | araucária desenhada com o scroll (DrawSVG)                                     |
+| `Counter`           | número que conta até o valor (valor final no HTML)                             |
+| `Marquee`           | faixa infinita que acelera com o scroll, pausável                              |
+| `Magnetic`          | botão atraído pelo cursor                                                      |
+| `CursorPreview`     | imagem flutuante ao passar sobre itens `[data-preview]`                        |
+| `ContextCursor`     | rótulo junto ao cursor em `[data-cursor="Ler"]`                                |
+| `Fog`               | neblina WebGL (OGL), só em telas grandes, depois do carregamento               |
+
+Transição de página: `<ViewTransition>` em `src/app/(site)/template.tsx` + CSS em `globals.css`.
+
 ## Regras de motion
 
 1. Todo conteúdo é renderizado no servidor. A animação só aprimora a página e nunca é pré-requisito para ler.
@@ -97,13 +121,15 @@ docs/EDITORES.md        guia do painel para a equipe
 3. O título LCP de cada página usa `HeroTitle` (reveal em CSS puro, sem esperar JS).
 4. Todo efeito respeita `prefers-reduced-motion`: sem Lenis, sem pin e sem scrub.
 5. Anime apenas `transform`, `opacity`, `clip-path` e variáveis CSS (`--soft`).
+6. Efeitos de cursor só com `(pointer: fine)`; no celular, pins mais curtos e galerias com swipe nativo.
+7. Seções escuras levam `data-header="dark"` (ou `dark` no `PinnedChapter`) para o header trocar de cor.
 
 ## Fases
 
 - [x] **1. Fundação:** tokens, fontes, Lenis + GSAP, reduced motion, CI com orçamento
 - [x] **2. Payload CMS:** painel `/admin`, collections, mídia, revalidação, preview e live preview
 - [x] **3. Migração do WordPress:** 65 notícias, 5 projetos, 14 publicações, 7 páginas, 226 imagens, 14 PDFs, 44 redirects
-- [ ] 4. Sistema de motion completo + `/lab`
+- [x] **4. Sistema de motion:** 15 primitivas, `/lab`, menu mobile, transição de página, neblina WebGL
 - [ ] 5. Home e Quem somos (capítulos com scroll hijacking)
 - [ ] 6. Páginas de conteúdo
 - [ ] 7. Polimento, SEO e lançamento

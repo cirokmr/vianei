@@ -9,6 +9,9 @@ type ScrollTarget = string | number | HTMLElement;
 type ScrollApi = {
   /** Smooth-scrolls with Lenis when active, natively otherwise. */
   scrollTo: (target: ScrollTarget, options?: { offset?: number; duration?: number }) => void;
+  /** Freezes page scrolling (e.g. while a modal menu is open). */
+  lock: () => void;
+  unlock: () => void;
 };
 
 // One smooth-scroll instance per document, owned by <SmoothScroll>.
@@ -24,6 +27,14 @@ const api: ScrollApi = {
   scrollTo: (target, options) => {
     if (activeLenis) activeLenis.scrollTo(target, options);
     else nativeScrollTo(target, options?.offset);
+  },
+  lock: () => {
+    activeLenis?.stop();
+    document.documentElement.style.overflow = "hidden";
+  },
+  unlock: () => {
+    activeLenis?.start();
+    document.documentElement.style.overflow = "";
   },
 };
 
