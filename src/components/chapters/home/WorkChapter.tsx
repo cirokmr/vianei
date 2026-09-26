@@ -48,7 +48,7 @@ export function WorkChapter({ projetos }: { projetos: string[] }) {
               </div>
             </div>
             <ClipImage className="min-h-64 md:min-h-full" from={i % 2 ? "right" : "bottom"}>
-              <Image src={area.foto} alt={area.alt} sizes="(min-width: 768px) 52vw, 100vw" placeholder="blur" />
+              <Image src={area.foto} alt={area.alt} sizes="(min-width: 768px) 52vw, 100vw" />
             </ClipImage>
           </article>
         ))}

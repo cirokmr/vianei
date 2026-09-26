@@ -116,6 +116,15 @@ html.lenis body {
   }
 }
 
+/* Long chapter pages: until the app boots, chapters after the first skip
+   style/layout (content-visibility), so the first paint only lays out the
+   hero. The rule lifts on `motion-ready`, before any ScrollTrigger measures
+   the page, so pins see real sizes; what changes is off-screen (no CLS). */
+html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100svh;
+}
+
 /* Home hero photo: fades in from the mist once decoded (see DawnPhoto) */
 .dawn-photo {
   animation: dawn-photo 1.6s var(--ease-out-soft) both;

@@ -94,7 +94,7 @@ export function SinceChapter({ marcos, projetos }: Props) {
             src={hoje}
             alt="Equipe e agricultores em área de restauração da Mata Atlântica, com a serra ao fundo"
             sizes="(min-width: 1024px) 32vw, (min-width: 768px) 38vw, 82vw"
-            placeholder="blur"
+
             className="order-first aspect-[4/3] w-full object-cover md:order-none md:max-h-[62svh]"
           />
         </article>

@@ -276,10 +276,22 @@ O elemento de LCP da home é o título. Três ajustes o mantêm rápido:
 Também: os setups de motion rodam um por tarefa (`scheduler.yield`/`setTimeout`), em vez de todos juntos logo
 após o `load`, e o GSAP só carrega depois do `load` **e** de um período ocioso (TBT da home: ~200 ms → ~90 ms).
 
+Depois do primeiro CI (home 0,93, LCP 3,1 s), mais três ajustes:
+
+- **CSS externo (`inlineCss: false`).** O Next inlinava o CSS duas vezes: num `<style>` e de novo no payload RSC
+  (~19 KB gzip por página). Externo, ele vai uma vez e fica em cache entre páginas; o LCP medido ficou igual.
+- **`content-visibility` até o boot.** Em páginas de capítulos, os capítulos depois do primeiro pulam estilo e
+  layout até o `motion-ready` (a regra sai antes de qualquer ScrollTrigger medir, então os pins veem tamanhos
+  reais; o que muda está fora da tela, sem CLS). A primeira pintura só calcula o hero (LCP observado ~100 ms).
+- **Sem placeholder de blur** nas fotos da home: o base64 entrava duas vezes no documento (HTML + payload).
+
+No Lighthouse, toda página tem um piso de ~2,7 s de LCP simulado, que vem dos ~150 KB de JS do Next pedidos antes
+do LCP; a home fica ~0,1 s acima por ter mais HTML.
+
 Tentado e descartado: envolver cada capítulo em `<Suspense>` para hidratar por partes. O TBT piorou (a
 hidratação continuou em uma tarefa e o HTML cresceu com os marcadores).
 
-Resultado local (mediana de 5, mobile, Lighthouse CI): home 95, quem-somos 97, notícias 96; CLS ≤ 0,022. O LCP
+Resultado local (mediana de 5, mobile, Lighthouse CI): home 95 (95–96 em todas as execuções), quem-somos 98, notícias 96; CLS ≤ 0,022. O LCP
 simulado varia entre 2,2 e 2,9 s de uma execução para outra nas três páginas (o Lantern soma todo o JS pedido
 antes do LCP); continua como alerta, não como bloqueio.
 
