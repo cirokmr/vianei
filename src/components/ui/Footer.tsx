@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { site as config } from "@/config/site";
 import { getSite } from "@/lib/cms/queries";
 
 export async function Footer() {
@@ -67,7 +69,19 @@ export async function Footer() {
         </ul>
       </div>
 
-      <p className="mt-16 border-t border-papel/15 pt-6 text-xs text-papel/60">
+      <nav aria-label="Mapa do site" className="mt-16">
+        <ul className="flex flex-wrap gap-x-8 gap-y-3 text-eyebrow tracking-[0.14em] uppercase">
+          {config.footerNav.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="text-papel/80 hover:text-limao">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <p className="mt-10 border-t border-papel/15 pt-6 text-xs text-papel/60">
         © {year} {site.nome}
       </p>
     </footer>

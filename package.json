@@ -22,10 +22,12 @@
     "migrate:create": "npm run payload migrate:create",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx --env-file-if-exists=.env scripts/seed.ts",
     "wp:export": "tsx scripts/wp-export.ts",
-    "wp:import": "cross-env NODE_OPTIONS=--no-deprecation tsx --env-file-if-exists=.env scripts/wp-import.ts"
+    "wp:import": "cross-env NODE_OPTIONS=--no-deprecation tsx --env-file-if-exists=.env scripts/wp-import.ts",
+    "wp:classify": "cross-env NODE_OPTIONS=--no-deprecation tsx --env-file-if-exists=.env scripts/wp-classify.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "3.90.2",
+    "@payloadcms/email-nodemailer": "3.90.2",
     "@payloadcms/live-preview-react": "3.90.2",
     "@payloadcms/next": "3.90.2",
     "@payloadcms/richtext-lexical": "3.90.2",

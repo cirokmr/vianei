@@ -15,6 +15,16 @@ Itens que dependem da equipe. Não inventar dados: o site mostra somente o que f
 - [ ] **Confirmar perfis oficiais:** facebook.com/centrovianei, instagram.com/centrovianei e o canal do YouTube
       `UCkEIv_GvLhWyFuYBl_y5i8w`.
 
+- [ ] **Revisar a classificação automática** das notícias (temas e projetos) e das áreas dos projetos:
+      `data/wp-export/classificacao.md`. O que for mudado no painel não é sobrescrito.
+- [ ] **Resumo do Projeto Restaurar:** hoje é "Arquivo download – PROJETO RESTAURAR – IBAMA – VIANEI" (veio assim
+      do WordPress). Escrever uma frase de apresentação no painel (Projetos → Projeto Restaurar → Resumo).
+- [ ] **Capas dos projetos:** "Saberes e Fazeres" e "Restaurar" usam o logotipo como capa; "Da Terra à Mesa" não
+      tem capa. Uma foto de campo fica melhor na capa fixa da página do projeto.
+- [ ] **E-mail do formulário de contato:** as mensagens já ficam no painel (Contato → Mensagens). Para receber
+      aviso por e-mail, configurar SMTP (`SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`) no Vercel.
+- [ ] **Telefone público** (campo em Dados institucionais): aparece em /contato quando preenchido.
+
 ## Da migração do WordPress (ver `data/wp-export/migration-report.md`)
 
 - [ ] **Descrever 180 imagens** que vieram sem texto alternativo. No painel: Imagens → filtro "Texto alternativo

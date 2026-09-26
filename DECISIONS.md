@@ -310,3 +310,57 @@ continua em ~212 KB.
 As etapas escondidas do `PinnedChapter` agora usam só `opacity` (antes `visibility`), para continuarem na árvore
 de acessibilidade: um leitor de tela lê a história inteira. Só a etapa visível recebe cliques, e o foco que entra
 em uma etapa escondida rola o capítulo até ela.
+
+## 2026-09-26 · Fase 6
+
+### Classificação das notícias migradas
+
+O WordPress não tinha taxonomia aproveitável: as 65 notícias chegaram sem tema e sem projeto, e os projetos sem
+área. `npm run wp:classify` sugere temas, projetos e áreas por palavras-chave no título e no resumo, **só em campos
+vazios** (o que a equipe muda no painel nunca é sobrescrito) e grava `data/wp-export/classificacao.md` para
+revisão. O nome da entidade ("…de Educação Popular") é ignorado para não marcar tudo como educação popular.
+Resultado: 63/65 notícias e 5/5 projetos classificados.
+
+### Notícias
+
+- `/noticias`, `/noticias/pagina/N` e `/noticias/categoria/X[/pagina/N]` são estáticas (ISR por tag); só a busca
+  (`/noticias/busca?q=`) é dinâmica e fica fora do índice (`noindex`). A busca é um formulário GET: funciona sem JS.
+- Paginação por caminho, não por `?pagina=`, para as páginas continuarem estáticas e rastreáveis.
+- Notícia: temas, projeto, "Leia também" (mesmo projeto ou tema) e JSON-LD `NewsArticle` + `BreadcrumbList`.
+
+### Vídeos sem chave de API
+
+`/videos` junta os vídeos cadastrados no painel (primeiro) com o feed RSS público do canal (cache de 6 h). Se o
+YouTube não responder, a página mostra só os do painel. Cada vídeo é uma fachada: miniatura (via `next/image`,
+`i.ytimg.com` liberado) e o player `youtube-nocookie` só depois do clique. Nas notícias, links soltos do YouTube
+(como o WordPress embutia) viram a mesma fachada, com o título real via oEmbed (cache de 1 semana).
+
+### Atuação e projetos
+
+- As quatro áreas são rotas de código (`src/config/areas.ts`), cada uma com suas frentes de trabalho (a lista a–p
+  de Quem somos, agora compartilhada), os projetos da área e as notícias do tema.
+- Projeto: capa fixa em CSS puro (`position: sticky`, sem GSAP) com o título subindo por cima; subpáginas
+  listadas com o título real, inclusive as que ficaram sem página-mãe na migração do mini-site do Restaurar.
+- A situação do projeto continua sem aparecer (pedido da equipe).
+
+### Contato
+
+Formulário com server action (funciona sem JS; com JS mostra erros no lugar e move o foco para o aviso). As
+mensagens ficam numa collection nova (`mensagens`, migration `contato`), que a API pública não aceita criar.
+Antispam: campo-isca e tempo mínimo de preenchimento, **depois** da validação (a pessoa sempre vê os erros; o robô
+recebe um "enviado" falso e nada é gravado), mais um limite por IP. Aviso por e-mail via SMTP
+(`@payloadcms/email-nodemailer`) quando configurado; sem SMTP, a mensagem fica no painel e o aviso vai para o log.
+Mapa: link para o OpenStreetMap, sem mapa embutido (nada de script de terceiros nem chave).
+
+### `dynamicParams = false` e revalidação
+
+Com `dynamicParams = false`, uma revalidação por tag fazia `/atuacao/[area]` responder 404 (`NoFallbackError` no
+Next 16.3). A opção saiu; áreas inexistentes continuam em 404 via `notFound()`. O placeholder `[secao]` foi
+removido: todas as seções do menu existem.
+
+### Desempenho das páginas novas
+
+Lighthouse mobile (mediana de 5, local): notícias 97, projetos 96, publicações 95, vídeos 95. Nas duas últimas, o
+que pesava eram imagens logo abaixo da dobra (o Chrome as busca cedo mesmo com `lazy` em conexão lenta): as capas
+ganharam largura máxima no celular e as miniaturas usam qualidade 60; a primeira imagem de cada página tem
+prioridade.

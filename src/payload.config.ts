@@ -2,6 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import { pt } from "@payloadcms/translations/languages/pt";
 import { buildConfig } from "payload";
@@ -16,6 +17,7 @@ import { Pessoas } from "./payload/collections/Pessoas";
 import { Projetos } from "./payload/collections/Projetos";
 import { Publicacoes } from "./payload/collections/Publicacoes";
 import { Usuarios } from "./payload/collections/Usuarios";
+import { Mensagens } from "./payload/collections/Mensagens";
 import { Videos } from "./payload/collections/Videos";
 import { Numeros } from "./payload/globals/Numeros";
 import { Site } from "./payload/globals/Site";
@@ -58,6 +60,7 @@ export default buildConfig({
     Midia,
     Documentos,
     Usuarios,
+    Mensagens,
   ],
   globals: [Site, Numeros, Timeline],
   editor: lexicalEditor(),
@@ -71,6 +74,18 @@ export default buildConfig({
   upload: { limits: { fileSize: 15 * 1024 * 1024 } },
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   graphQL: { disable: true },
+  // Contact notifications. Without SMTP_HOST, Payload logs e-mails to the console.
+  email: process.env.SMTP_HOST
+    ? nodemailerAdapter({
+        defaultFromAddress: process.env.SMTP_FROM ?? "site@vianei.org.br",
+        defaultFromName: "Site Centro Vianei",
+        transportOptions: {
+          host: process.env.SMTP_HOST,
+          port: Number(process.env.SMTP_PORT ?? 587),
+          auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+        },
+      })
+    : undefined,
   plugins: [
     // Production media lives in Vercel Blob; without a token (local dev, CI)
     // uploads fall back to the local disk.

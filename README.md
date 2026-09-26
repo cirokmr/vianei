@@ -74,10 +74,11 @@ src/
   components/
     motion/             primitivas de animação ('use client'): SmoothScroll, SplitReveal, ScrubWords…
     chapters/           capítulos da home e de Quem somos, Chapter (âncora) e ChapterRail (índice)
+    noticias/           lista, filtros, paginação e índice de notícias
     cms/                RichText, barra de rascunho, live preview
     ui/                 header, footer, títulos
   config/site.ts        navegação e metadados estáticos
-  config/areas.ts       as quatro áreas de atuação (texto, foto, link)
+  config/areas.ts       as quatro áreas de atuação e as frentes de trabalho de cada uma
   fonts/                woff2 gerados por scripts/build-fonts.py
   lib/
     cms/                acesso a dados (Local API + cache por tags), mídia
@@ -86,7 +87,7 @@ src/
   payload/              collections, globals, acesso, hooks de revalidação
   payload.config.ts
   migrations/           migrations do Postgres (geradas, revisadas e commitadas)
-scripts/                seed, fontes, migração do WordPress (wp-export, wp-import)
+scripts/                seed, fontes, migração do WordPress (wp-export, wp-import, wp-classify)
 data/wp-export/         snapshot do WordPress, relatório da migração
 public/fotos/           fotos curadas do acervo (hero, áreas); o next/image gera AVIF/WebP
 tests/e2e/              Playwright + axe (fundação, CMS, redirects, motion, capítulos)
@@ -134,5 +135,5 @@ Transição de página: `<ViewTransition>` em `src/app/(site)/template.tsx` + CS
 - [x] **3. Migração do WordPress:** 65 notícias, 5 projetos, 14 publicações, 7 páginas, 226 imagens, 14 PDFs, 44 redirects
 - [x] **4. Sistema de motion:** 15 primitivas, `/lab`, menu mobile, transição de página, neblina WebGL
 - [x] **5. Home e Quem somos:** 7 + 6 capítulos com scroll hijacking, índice de capítulos, versões mobile e reduced motion
-- [ ] 6. Páginas de conteúdo
+- [x] **6. Páginas de conteúdo:** notícias (paginação, temas, busca), atuação, projetos, publicações, vídeos, parceiros e contato
 - [ ] 7. Polimento, SEO e lançamento

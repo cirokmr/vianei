@@ -17,24 +17,118 @@ export async function getSite(): Promise<Site> {
 
 export type NoticiaResumo = Pick<Noticia, "id" | "titulo" | "slug" | "resumo" | "publicadoEm" | "capa">;
 
-export async function getNoticias({ page = 1, limit = 12 }: { page?: number; limit?: number } = {}) {
+const resumoSelect = { titulo: true, slug: true, resumo: true, publicadoEm: true, capa: true } as const;
+const publicada = { _status: { equals: "published" } } as const;
+
+export const NOTICIAS_POR_PAGINA = 12;
+
+export async function getNoticias({
+  page = 1,
+  limit = NOTICIAS_POR_PAGINA,
+  categoria,
+}: { page?: number; limit?: number; categoria?: number } = {}) {
   return unstable_cache(
     async () => {
       const result = await (
         await payload()
       ).find({
         collection: "noticias",
-        where: { _status: { equals: "published" } },
+        where: categoria ? { and: [publicada, { categorias: { in: [categoria] } }] } : publicada,
         sort: "-publicadoEm",
         page,
         limit,
         depth: 1,
-        select: { titulo: true, slug: true, resumo: true, publicadoEm: true, capa: true },
+        select: resumoSelect,
       });
       return { ...result, docs: result.docs as NoticiaResumo[] };
     },
-    ["noticias:list", String(page), String(limit)],
+    ["noticias:list", String(page), String(limit), String(categoria ?? "")],
     { tags: [cacheTags.collection("noticias")] },
+  )();
+}
+
+/** Title/summary search. Uncached: every query is different and the page is dynamic. */
+export async function searchNoticias(q: string, limit = 30) {
+  const termo = q.trim().slice(0, 80);
+  if (termo.length < 2) return [];
+  const result = await (
+    await payload()
+  ).find({
+    collection: "noticias",
+    where: { and: [publicada, { or: [{ titulo: { like: termo } }, { resumo: { like: termo } }] }] },
+    sort: "-publicadoEm",
+    limit,
+    depth: 1,
+    select: resumoSelect,
+  });
+  return result.docs as NoticiaResumo[];
+}
+
+/** Latest news sharing a category (or a project) with `noticia`, excluding it. */
+export async function getNoticiasRelacionadas(noticia: Noticia, limit = 3) {
+  const ids = (list: Noticia["categorias"] | Noticia["projetos"]) =>
+    (list ?? []).map((item) => (typeof item === "object" ? item.id : item));
+  const categorias = ids(noticia.categorias);
+  const projetos = ids(noticia.projetos);
+  if (!categorias.length && !projetos.length) return [];
+
+  return unstable_cache(
+    async () => {
+      const result = await (
+        await payload()
+      ).find({
+        collection: "noticias",
+        where: {
+          and: [
+            publicada,
+            { id: { not_equals: noticia.id } },
+            {
+              or: [
+                ...(projetos.length ? [{ projetos: { in: projetos } }] : []),
+                ...(categorias.length ? [{ categorias: { in: categorias } }] : []),
+              ],
+            },
+          ],
+        },
+        sort: "-publicadoEm",
+        limit,
+        depth: 1,
+        select: resumoSelect,
+      });
+      return result.docs as NoticiaResumo[];
+    },
+    ["noticias:relacionadas", String(noticia.id), categorias.join(","), projetos.join(",")],
+    { tags: [cacheTags.collection("noticias")] },
+  )();
+}
+
+/** News linked to a project (project page). */
+export async function getNoticiasDoProjeto(projetoId: number, limit = 6) {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "noticias",
+          where: { and: [publicada, { projetos: { in: [projetoId] } }] },
+          sort: "-publicadoEm",
+          limit,
+          depth: 1,
+          select: resumoSelect,
+        })
+      ).docs as NoticiaResumo[],
+    ["noticias:projeto", String(projetoId), String(limit)],
+    { tags: [cacheTags.collection("noticias")] },
+  )();
+}
+
+export async function getCategorias() {
+  return unstable_cache(
+    async () =>
+      (await (await payload()).find({ collection: "categorias", sort: "titulo", pagination: false, depth: 0 })).docs,
+    ["categorias:list"],
+    { tags: [cacheTags.collection("categorias")] },
   )();
 }
 
@@ -88,7 +182,7 @@ export async function getProjetos() {
           sort: "-inicio",
           limit: 100,
           depth: 1,
-          select: { titulo: true, slug: true, resumo: true, capa: true },
+          select: { titulo: true, slug: true, resumo: true, capa: true, areas: true, inicio: true },
         })
       ).docs,
     ["projetos:list"],
@@ -152,6 +246,26 @@ export async function getPagina(caminho: string): Promise<Pagina | null> {
   })();
 }
 
+/** Published pages under a path prefix, with titles (e.g. a project's subpages). */
+export async function getPaginas(prefix: string) {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "paginas",
+          where: { and: [{ _status: { equals: "published" } }, { caminho: { like: `${prefix}%` } }] },
+          sort: "caminho",
+          pagination: false,
+          select: { caminho: true, titulo: true },
+        })
+      ).docs.map((d) => ({ caminho: d.caminho, titulo: d.titulo })),
+    ["paginas:prefix", prefix],
+    { tags: [cacheTags.collection("paginas")] },
+  )();
+}
+
 export async function getPaginaCaminhos(prefix: string): Promise<string[]> {
   const result = await (
     await payload()
@@ -202,5 +316,44 @@ export async function getPessoas() {
       ).docs.map(({ email, emailPublico, ...pessoa }) => ({ ...pessoa, email: (emailPublico && email) || null })),
     ["pessoas:list"],
     { tags: [cacheTags.collection("pessoas")] },
+  )();
+}
+
+// Library and videos ----------------------------------------------------------
+
+export async function getPublicacoes() {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "publicacoes",
+          where: { _status: { equals: "published" } },
+          sort: ["-ano", "titulo"],
+          pagination: false,
+          depth: 1,
+        })
+      ).docs,
+    ["publicacoes:list"],
+    { tags: [cacheTags.collection("publicacoes")] },
+  )();
+}
+
+export async function getVideos() {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "videos",
+          sort: ["-destaque", "-publicadoEm"],
+          pagination: false,
+          depth: 0,
+        })
+      ).docs,
+    ["videos:list"],
+    { tags: [cacheTags.collection("videos")] },
   )();
 }
