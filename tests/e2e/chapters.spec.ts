@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "@playwright/test";
+import { collectErrors } from "./errors";
 
 // Phase 5: the Home and "Quem somos" chapters. CI runs against a seeded
 // database (no migrated news), so nothing here depends on imported content.
@@ -28,9 +29,7 @@ for (const path of ["/", "/quem-somos"]) {
     });
 
     test("rola do início ao fim sem erros no console e com um único h1", async ({ page }) => {
-      const errors: string[] = [];
-      page.on("pageerror", (e) => errors.push(e.message));
-      page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+      const errors = collectErrors(page);
       await page.goto(path);
       await expect(page.locator("h1")).toHaveCount(1);
       await expect(page.locator("html")).toHaveClass(/motion-ready/);

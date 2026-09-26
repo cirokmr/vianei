@@ -87,8 +87,9 @@ jobs:
           for path in / /quem-somos /noticias; do
             for i in 1 2 3; do curl -s -o /dev/null "http://localhost:3200$path"; done
             # Prime the image optimizer so the first run doesn't pay for AVIF encoding.
-            curl -s "http://localhost:3200$path" | grep -oE '/_next/image\?[^" ,]+' | sed 's/&amp;/\&/g' | sort -u |
-              xargs -P 4 -I{} curl -s -o /dev/null -H "Accept: image/avif,image/webp" "http://localhost:3200{}"
+            # Best effort: only srcset URLs from the HTML (the RSC payload escapes "&").
+            curl -s "http://localhost:3200$path" | grep -oE '/_next/image\?[^" ,\\]+' | sed 's/&amp;/\&/g' | sort -u |
+              xargs -P 4 -I{} curl -s -o /dev/null -H "Accept: image/avif,image/webp" "http://localhost:3200{}" || true
           done
       - run: >-
           npm run lhci -- --collect.startServerCommand=""

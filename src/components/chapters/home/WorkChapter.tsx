@@ -5,8 +5,15 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { StackCards } from "@/components/motion/StackCards";
 import { areas } from "@/config/areas";
 
-/** "O que fazemos": the four lines of work as cards that stack while scrolling. */
-export function WorkChapter() {
+/**
+ * "O que fazemos": the four lines of work as cards that stack while scrolling.
+ * A card pointing at a project that isn't published falls back to the list.
+ */
+export function WorkChapter({ projetos }: { projetos: string[] }) {
+  const link = (area: (typeof areas)[number]) => {
+    const slug = area.href.match(/^\/projetos\/([^/#?]+)/)?.[1];
+    return slug && !projetos.includes(slug) ? { href: "/projetos", cta: "Ver projetos" } : area;
+  };
   return (
     <div className="bg-neblina px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)]">
       <p className="mb-6 text-eyebrow tracking-[0.18em] text-musgo uppercase">O que fazemos</p>
@@ -32,11 +39,11 @@ export function WorkChapter() {
                 </h3>
                 <p className="mt-5 max-w-md text-lead leading-snug text-tinta/80">{area.texto}</p>
                 <Link
-                  href={area.href}
+                  href={link(area).href}
                   data-cursor="Ver"
                   className="mt-8 inline-flex items-center gap-3 text-eyebrow tracking-[0.16em] text-pinhao uppercase underline-offset-4 hover:underline"
                 >
-                  {area.cta} <span aria-hidden="true">→</span>
+                  {link(area).cta} <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>

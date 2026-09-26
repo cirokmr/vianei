@@ -1,5 +1,6 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
+import { collectErrors } from "./errors";
 
 test.describe("fundação", () => {
   test("home has no WCAG 2.2 AA violations", async ({ page }) => {
@@ -22,9 +23,7 @@ test.describe("fundação", () => {
   });
 
   test("motion layer boots without console errors", async ({ page }) => {
-    const errors: string[] = [];
-    page.on("pageerror", (e) => errors.push(e.message));
-    page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
+    const errors = collectErrors(page);
     await page.goto("/");
     await expect(page.locator("html")).toHaveClass(/motion-ready/);
     await page.mouse.wheel(0, 2000);
