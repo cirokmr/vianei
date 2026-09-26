@@ -266,11 +266,13 @@ agroecologia.") sozinho sobre o papel e coloca a foto numa moldura logo abaixo, 
 rolar (`clip-path` animado, sem fixar a seção). O texto de apoio vai para depois da foto, e a régua de capítulos
 só aparece depois da abertura.
 
-**O LCP agora é a foto**, não o título: a moldura é o maior elemento da primeira tela. Por isso a regra antiga
-(foto só depois do `load`, via `DawnPhoto`) virou o contrário: a foto sai no HTML com `fetchpriority="high"` e um
-`preload` por variante (`media` separa celular e desktop), sem fade de entrada. Medido: LCP ~3,7 s → ~2,4 s,
-performance 0,89 → 0,97 (mediana). A seção não é mais fixada, então o problema do `pinSpacer` não se aplica aqui;
-a regra continua valendo para qualquer pin acima da dobra.
+**LCP por tamanho de tela.** No desktop a moldura aparece sob o título e é o maior elemento da primeira tela: a
+variante larga sai com `preload` + `fetchpriority="high"` (com `media`, só em telas ≥ 768 px) e sem fade. No
+celular, que é o que o Lighthouse mede, o título ocupa a primeira tela como uma capa e a moldura começa logo
+abaixo da dobra: o LCP continua sendo o título, e a foto usa `loading="lazy"` para não entrar na primeira leva de
+requisições. Tentativas descartadas, medidas no CI e localmente: foto como LCP no celular com preload (0,94,
+LCP ~3,0 s, porque a simulação do Lighthouse soma todo o JS pedido antes da pintura), foto menor (sem efeito) e
+Fraunces sem preload (CLS 0,14). Resultado: mediana 0,98, LCP ~2,3–2,4 s, CLS 0.
 
 A animação do título continua em CSS puro (`HeroTitle`). Os rótulos da abertura usam `fromTo` no GSAP: com `.to()`,
 o timeline lia a opacidade 0 da animação CSS de entrada e os rótulos ficavam invisíveis.

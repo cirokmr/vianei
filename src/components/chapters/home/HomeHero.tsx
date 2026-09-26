@@ -9,21 +9,18 @@ import { Dawn } from "./Dawn";
 
 const alt = "Extrativista no alto de uma araucária, entre os galhos, colhendo pinhas na Serra Catarinense";
 
-// Art direction: a wide crown for desktop, a tall trunk for phones. The
-// framed photo is the largest thing on the first screen (the LCP element),
-// so it is requested up front with high priority and paints without a fade.
+// Art direction: a wide crown for desktop, a tall trunk for phones.
+// Desktop: the framed photo peeks under the title and is the largest thing on
+// the first screen (LCP), so it is preloaded with high priority, no fade.
+// Phones: the title fills the first screen like a cover and the photo starts
+// right below the fold, so the headline stays the LCP and the photo loads at
+// normal priority without competing with the display font.
 function HeroPhoto() {
-  const common = { alt, sizes: "100vw", loading: "eager", fetchPriority: "high" } as const;
-  const { props: wide } = getImageProps({ ...common, src: horizontal, quality: 55 });
-  const { props: tall } = getImageProps({ ...common, src: vertical, quality: 40 });
-  // Preload the variant this screen will use, so it starts with the HTML.
-  preload(tall.src, {
-    as: "image",
-    imageSrcSet: tall.srcSet,
-    imageSizes: "100vw",
-    media: "(max-width: 767px)",
-    fetchPriority: "high",
-  });
+  // Lazy: on phones the photo is below the fold and must not join the first
+  // round of requests; on desktop the preload above fetches it right away.
+  const common = { alt, loading: "lazy" } as const;
+  const { props: wide } = getImageProps({ ...common, src: horizontal, quality: 55, sizes: "100vw" });
+  const { props: tall } = getImageProps({ ...common, src: vertical, quality: 40, sizes: "100vw" });
   preload(wide.src, {
     as: "image",
     imageSrcSet: wide.srcSet,
@@ -51,14 +48,15 @@ const TITLE = "Educação popular e agroecologia.";
 export function HomeHero() {
   return (
     <Dawn className="relative bg-papel pt-[clamp(7rem,18vh,11rem)]">
-      <div className="flex items-end justify-between gap-8 px-[var(--gutter)]">
+      {/* Phones: a full first screen (minus the top padding) with the title at the bottom. */}
+      <div className="flex items-end justify-between gap-8 px-[var(--gutter)] max-md:min-h-[calc(100svh-clamp(7rem,18vh,11rem)-clamp(2rem,6vh,3rem))] max-md:flex-col max-md:items-start max-md:justify-end">
         <div>
           <p data-dawn-fade="" className="hero-fade mb-5 text-eyebrow tracking-[0.2em] text-musgo uppercase">
             Planalto Catarinense · desde {site.foundedYear}
           </p>
           <div data-dawn-title="" className="font-display">
             <HeroTitle
-              className="max-w-[12ch] text-[clamp(2.75rem,1rem+6.5vw,9.5rem)] leading-[0.95] font-light tracking-[-0.03em] text-mata"
+              className="max-w-[12ch] text-[clamp(2.75rem,13vw,4.5rem)] leading-[0.95] font-light tracking-[-0.03em] text-mata md:text-[clamp(2.75rem,1rem+6.5vw,9.5rem)]"
               text={TITLE}
             />
           </div>
@@ -66,7 +64,7 @@ export function HomeHero() {
         <span
           data-dawn-fade=""
           aria-hidden="true"
-          className="hero-fade hidden text-eyebrow tracking-[0.2em] text-tinta/70 uppercase md:block"
+          className="hero-fade text-eyebrow tracking-[0.2em] whitespace-nowrap text-tinta/70 uppercase"
         >
           Role ↓
         </span>
@@ -75,7 +73,7 @@ export function HomeHero() {
       {/* Framed by the gutters until it scrolls up (clip-path, so no layout shift). */}
       <div
         data-dawn-frame=""
-        className="relative mt-[clamp(2.5rem,7vh,5rem)] h-svh min-h-[28rem] overflow-hidden bg-neblina [clip-path:inset(0_var(--gutter))]"
+        className="relative mt-[clamp(2rem,6vh,3rem)] h-svh min-h-[28rem] overflow-hidden bg-neblina [clip-path:inset(0_var(--gutter))] md:mt-[clamp(2.5rem,7vh,5rem)]"
       >
         <HeroPhoto />
       </div>

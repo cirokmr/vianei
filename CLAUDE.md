@@ -33,7 +33,8 @@
   `ChapterRail` da página.
 - Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor. Sem isso o GSAP reinsere o
   elemento no DOM e o LCP vai para o momento em que o motion carrega.
-- A foto da abertura da home é o LCP: `fetchpriority="high"` + `preload` por variante, nunca adiada nem com fade.
+- Abertura da home: no desktop a foto é o LCP (`preload` com `media` + `fetchpriority="high"`, sem fade); no celular
+  o título é a capa e a foto fica abaixo da dobra com `loading="lazy"`. Ver DECISIONS.md antes de mexer.
 - Números e marcos vêm dos globals `numeros` e `timeline`. Nunca escreva um número institucional no código.
 
 ## Conteúdo (fase 6)

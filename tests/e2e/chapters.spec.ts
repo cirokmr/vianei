@@ -55,19 +55,26 @@ test.describe("home", () => {
     ]);
   });
 
-  test("a foto da abertura é o LCP: pré-carregada com prioridade alta", async ({ page, request }) => {
+  test("abertura: foto pré-carregada só no desktop; no celular o título é a capa (LCP)", async ({
+    page,
+    request,
+    isMobile,
+  }) => {
     const html = await (await request.get("/")).text();
-    // One preload per art-directed variant, each limited to its screen size.
-    expect(html).toMatch(
-      /<link rel="preload" as="image" fetchPriority="high"[^>]*araucaria-vertical[^>]*media="\(max-width: 767px\)"/,
-    );
+    // Desktop variant preloaded with high priority; the phone variant waits below the fold.
     expect(html).toMatch(
       /<link rel="preload" as="image" fetchPriority="high"[^>]*araucaria-catador[^>]*media="\(min-width: 768px\)"/,
     );
+    expect(html).not.toMatch(/<link rel="preload"[^>]*araucaria-vertical/);
     await page.goto("/");
+    const frame = page.locator("[data-dawn-frame]");
+    const top = await frame.evaluate((el) => el.getBoundingClientRect().top);
+    const vh = await page.evaluate(() => window.innerHeight);
+    if (isMobile) expect(top).toBeGreaterThanOrEqual(vh - 1);
+    else expect(top).toBeLessThan(vh);
     const photo = page.locator("[data-dawn-photo] img");
     await expect(photo).toHaveAttribute("alt", /araucária/);
-    await expect(photo).toHaveAttribute("fetchpriority", "high");
+    await photo.scrollIntoViewIfNeeded();
     await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
   });
 
