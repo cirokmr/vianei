@@ -66,15 +66,16 @@ test.describe("home", () => {
     await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
   });
 
-  test("o hero é fixado sem ser reinserido no DOM (LCP)", async ({ page }) => {
+  test("a moldura da foto se abre ao rolar, sem fixar a abertura", async ({ page }) => {
     await page.goto("/");
-    const hero = page.locator('section[aria-label="Amanhecer"]');
-    const wrapper = await hero.evaluateHandle((el) => el.parentElement!);
-    await expect(page.locator(".pin-spacer").first()).toBeAttached({ timeout: 8000 });
-    // GSAP reused the server-rendered wrapper as its pin spacer instead of
-    // wrapping the section in a new div (which would re-insert the headline).
-    expect(await wrapper.evaluate((el) => el.classList.contains("pin-spacer"))).toBe(true);
-    expect(await hero.evaluate((el, w) => el.parentElement === w, wrapper)).toBe(true);
+    await expect(page.locator("html")).toHaveClass(/motion-ready/);
+    const frame = page.locator("[data-dawn-frame]");
+    const inset = () => frame.evaluate((el) => getComputedStyle(el).clipPath);
+    await expect.poll(inset).not.toBe("inset(0px)");
+    await frame.evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY));
+    await expect.poll(inset, { timeout: 5000 }).toBe("inset(0px)");
+    const hero = page.locator('section[aria-label="Abertura"]');
+    expect(await hero.evaluate((el) => Boolean(el.closest(".pin-spacer")))).toBe(false);
   });
 
   test("anos de atuação vêm do ano de fundação, nunca de um número fixo", async ({ page }) => {

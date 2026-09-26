@@ -19,6 +19,8 @@ export function ChapterRail({ items }: { items: Item[] }) {
   const nav = useRef<HTMLElement>(null);
   const [current, setCurrent] = useState(0);
   const [onDark, setOnDark] = useState(false);
+  // Hidden over the opening screen, which should hold nothing but the title.
+  const [opening, setOpening] = useState(true);
   const { scrollTo } = useSmoothScroll();
 
   useEffect(() => {
@@ -34,6 +36,7 @@ export function ChapterRail({ items }: { items: Item[] }) {
         if (el.getBoundingClientRect().top <= line) index = i;
       });
       setCurrent(index);
+      setOpening(window.scrollY < window.innerHeight * 0.5);
       const probe = nav.current?.getBoundingClientRect();
       const y = probe ? probe.top + probe.height / 2 : line;
       setOnDark(
@@ -70,9 +73,9 @@ export function ChapterRail({ items }: { items: Item[] }) {
     <nav
       ref={nav}
       aria-label="Capítulos desta página"
-      className={`fixed top-1/2 right-[calc(var(--gutter)/2)] z-40 hidden -translate-y-1/2 transition-colors duration-500 lg:block ${
+      className={`fixed top-1/2 right-[calc(var(--gutter)/2)] z-40 hidden -translate-y-1/2 transition-[color,opacity] duration-500 lg:block ${
         onDark ? "text-papel" : "text-tinta"
-      }`}
+      } ${opening ? "opacity-0 focus-within:opacity-100" : "opacity-100"}`}
     >
       <p aria-hidden="true" className="mb-4 text-right font-display text-sm tabular-nums">
         {pad(current + 1)} <span className="opacity-60">/ {pad(items.length)}</span>
