@@ -33,7 +33,10 @@ const snapshot = JSON.parse(await readFile(SNAPSHOT, "utf8")) as WpSnapshot;
 
 // Material the team sent after the snapshot (PDFs, links, corrections), keyed by wpId.
 type Complementos = {
-  publicacoes?: Record<string, { titulo?: string; arquivo?: string; linkExterno?: string; mesmoArquivoDe?: number }>;
+  publicacoes?: Record<
+    string,
+    { titulo?: string; arquivo?: string; linkExterno?: string; mesmoArquivoDe?: number; omitir?: boolean }
+  >;
   projetos?: Record<string, { situacao?: "ativo" | "concluido" }>;
 };
 const COMPLEMENTOS_DIR = path.resolve("data/wp-export/complementos");
@@ -57,6 +60,7 @@ const stats = {
 
   created: {} as Record<string, number>,
   updated: {} as Record<string, number>,
+  omitted: {} as Record<string, number>,
   warnings: [] as string[],
 };
 const redirects = new Map<string, string>();
@@ -376,7 +380,18 @@ async function importProjeto(e: WpEntry) {
   }
 }
 
+/** Removes a document the team asked to drop (e.g. a duplicate listing), if a previous run created it. */
+async function omit(collection: CollectionSlug, e: WpEntry) {
+  resolvedTitles.add(e.title);
+  if (DRY) return;
+  const { docs } = await payload.find({ collection, where: { "legado.wpId": { equals: e.wpId } }, limit: 1, depth: 0 });
+  if (docs[0]) await payload.delete({ collection, id: docs[0].id, context: ctx });
+  bump(stats.omitted, collection);
+}
+
 async function importPublicacao(e: WpEntry) {
+  if (complementos.publicacoes?.[e.wpId]?.omitir) return omit("publicacoes", e);
+
   // "Pinhão na Culinária – Embrapa" → título + autoria
   const [first, ...rest] = cleanTitle(e.title).replace(/\.$/, "").split(" – ");
   const titulo = complementos.publicacoes?.[e.wpId]?.titulo ?? first.trim();
@@ -497,10 +512,10 @@ function report(redirectCount: number, review: { altToReview: string[]; thirdPar
     "",
     "## Conteúdo",
     "",
-    "| Tipo | No WordPress | Criados | Atualizados |",
-    "| --- | ---: | ---: | ---: |",
+    "| Tipo | No WordPress | Criados | Atualizados | Omitidos |",
+    "| --- | ---: | ---: | ---: | ---: |",
     ...["noticias", "projetos", "publicacoes", "paginas"].map(
-      (t) => `| ${t} | ${counts(t)} | ${stats.created[t] ?? 0} | ${stats.updated[t] ?? 0} |`,
+      (t) => `| ${t} | ${counts(t)} | ${stats.created[t] ?? 0} | ${stats.updated[t] ?? 0} | ${stats.omitted[t] ?? 0} |`,
     ),
     "",
     `As 3 páginas do mini-site que eram só menus (${[...NAV_ONLY_PAGES].join(", ")}) viraram redirects.`,

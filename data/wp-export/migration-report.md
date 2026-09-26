@@ -1,22 +1,22 @@
 # Relatório da migração do WordPress
 
-Snapshot: 2026-09-25T20:49:20.034Z · fonte: https://vianei.org.br · importado em 2026-09-26T00:34:37.993Z
+Snapshot: 2026-09-25T20:49:20.034Z · fonte: https://vianei.org.br · importado em 2026-09-26T00:50:19.291Z
 
 ## Conteúdo
 
-| Tipo | No WordPress | Criados | Atualizados |
-| --- | ---: | ---: | ---: |
-| noticias | 65 | 0 | 65 |
-| projetos | 5 | 0 | 5 |
-| publicacoes | 14 | 0 | 14 |
-| paginas | 10 | 0 | 7 |
+| Tipo | No WordPress | Criados | Atualizados | Omitidos |
+| --- | ---: | ---: | ---: | ---: |
+| noticias | 65 | 0 | 65 | 0 |
+| projetos | 5 | 0 | 5 | 0 |
+| publicacoes | 14 | 0 | 13 | 1 |
+| paginas | 10 | 0 | 7 | 0 |
 
 As 3 páginas do mini-site que eram só menus (projetos1, projetos1/projeto-restaurar, projetos1/projeto-restaurar/projetos-de-assentamento) viraram redirects.
 
 ## Arquivos
 
 - Imagens: **226** no site novo (0 nesta execução, 226 já existiam; falhas: 25)
-- PDFs: **16** (1 nesta execução)
+- PDFs: **16** (0 nesta execução)
 - Peso das imagens: **188.7 MB → 37.4 MB** (−80%), comparando o arquivo original do WordPress com o maior arquivo que o site novo guarda. Nas páginas, o site ainda serve versões menores (AVIF/WebP no tamanho da tela).
 - Média por imagem: 855 KB → 170 KB
 
@@ -219,8 +219,8 @@ Receberam um texto provisório (“Foto da notícia …”). No painel, em Image
 
 Rode `npm run wp:import` de novo numa rede sem bloqueios: o import é idempotente e só baixa o que falta.
 
-- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8839-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145749/20220603_fellipeabreu_santacatarina_129484.jpg (download falhou)
+- https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8839-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145727/20220530_fellipeabreu_santacatarina_128946.jpg (download falhou)
 - https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8585-Copy.jpg (download falhou)
 - https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180237/20220604_fellipeabreu_santacatarina_130108.jpg (download falhou)

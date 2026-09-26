@@ -185,5 +185,6 @@ A pedido da equipe, "em andamento/concluído" não aparece no site por enquanto.
 - PDFs enviados pelo GitHub foram reduzidos e os originais saíram do repositório. O PEAN0059 veio embrulhado num
   envelope multipart (`ZENDHTTPCLIENT`) do repositório de origem; o PDF interno estava íntegro e o recorte gerado é
   um PDF limpo.
-- "Construção social dos mercados" (2020, wpId 1102) recebeu o mesmo arquivo da publicação 1187 via `mesmoArquivoDe`,
-  sem duplicar o PDF no armazenamento.
+- "Construção social dos mercados" (2020, wpId 1102) era o mesmo livro da publicação 1187 (PDF idêntico). A pedido
+  da equipe, a entrada repetida é omitida (`complementos.omitir`); o endereço antigo cai no redirect
+  `/publicacoes/:slug`. O importador também sabe reaproveitar o arquivo de outra publicação (`mesmoArquivoDe`).

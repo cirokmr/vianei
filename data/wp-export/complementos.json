@@ -15,8 +15,8 @@
       "nota": "Cartilha de síntese (Apêndice C, págs. 175–190 do PDF PEAN0059, PPGEAN/UFSC), enviada em 26/09/2026. 8 MB → 1,1 MB."
     },
     "1102": {
-      "mesmoArquivoDe": 1187,
-      "nota": "A equipe enviou o PDF em 26/09/2026: é idêntico ao da publicação 1187 (\"Construção social dos mercados no sul do Brasil – Centro Vianei\"), então reaproveita o mesmo arquivo."
+      "omitir": true,
+      "nota": "Mesmo livro da publicação 1187 (PDF idêntico, enviado em 26/09/2026). A equipe pediu para manter só uma entrada; o endereço antigo redireciona para /publicacoes."
     }
   },
   "projetos": {

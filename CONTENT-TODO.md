@@ -20,7 +20,7 @@ Itens que dependem da equipe. Não inventar dados: o site mostra somente o que f
 - [x] ~~Revista ABEMA 8ª Edição~~: link de leitura online (fliphtml5), enviado em 26/09.
 - [x] ~~Cartilha de gestão administrativa~~: PDF enviado em 26/09 (título corrigido para "…grupos de cooperação").
 - [x] ~~"Produção de pinhão em sistemas tradicionais…"~~: cartilha extraída do PEAN0059 (págs. 175–190), 8 MB → 1,1 MB.
-- [x] ~~"Construção social dos mercados no sul do Brasil" (2020)~~: o PDF enviado é idêntico ao da publicação de 2025; as duas usam o mesmo arquivo. **Decidir:** manter as duas entradas ou deixar só uma.
+- [x] ~~"Construção social dos mercados no sul do Brasil" (2020)~~: o PDF enviado é idêntico ao da publicação de 2025; a entrada repetida (2020) foi removida a pedido da equipe; o endereço antigo redireciona para /publicacoes.
 - [x] ~~Projeto "Da Terra à Mesa"~~: em andamento (a websérie foi concluída). A situação dos projetos não aparece no
       site por enquanto.
 - [x] ~~Fotos de outros sites~~ (Cepagro, Mongabay…): uso autorizado em 26/09. Falta só baixá-las: rodar
