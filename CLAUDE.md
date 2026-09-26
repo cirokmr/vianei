@@ -31,8 +31,9 @@
 
 - Páginas compõem capítulos de `src/components/chapters/`; cada um dentro de `<Chapter id label>` e listado no
   `ChapterRail` da página.
-- Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor (ver `Dawn.tsx`). Sem isso o GSAP
-  reinsere o elemento no DOM e o LCP vai para o momento em que o motion carrega.
+- Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor. Sem isso o GSAP reinsere o
+  elemento no DOM e o LCP vai para o momento em que o motion carrega.
+- A foto da abertura da home é o LCP: `fetchpriority="high"` + `preload` por variante, nunca adiada nem com fade.
 - Números e marcos vêm dos globals `numeros` e `timeline`. Nunca escreva um número institucional no código.
 
 ## Conteúdo (fase 6)

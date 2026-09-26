@@ -55,14 +55,19 @@ test.describe("home", () => {
     ]);
   });
 
-  test("a foto do hero entra depois do load, sem disputar com o título (LCP)", async ({ page, request }) => {
-    // In the server HTML only as a <noscript> fallback: never in the first round of requests.
+  test("a foto da abertura é o LCP: pré-carregada com prioridade alta", async ({ page, request }) => {
     const html = await (await request.get("/")).text();
-    expect(html).toMatch(/<noscript>.*araucaria-vertical/s);
+    // One preload per art-directed variant, each limited to its screen size.
+    expect(html).toMatch(
+      /<link rel="preload" as="image" fetchPriority="high"[^>]*araucaria-vertical[^>]*media="\(max-width: 767px\)"/,
+    );
+    expect(html).toMatch(
+      /<link rel="preload" as="image" fetchPriority="high"[^>]*araucaria-catador[^>]*media="\(min-width: 768px\)"/,
+    );
     await page.goto("/");
     const photo = page.locator("[data-dawn-photo] img");
     await expect(photo).toHaveAttribute("alt", /araucária/);
-    await expect(page.locator('[data-dawn-photo] source[media="(min-width: 768px)"]')).toHaveCount(1);
+    await expect(photo).toHaveAttribute("fetchpriority", "high");
     await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
   });
 

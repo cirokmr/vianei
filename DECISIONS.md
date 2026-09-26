@@ -258,20 +258,22 @@ tamanho certo). O hero usa direção de arte (`<picture>`): copa horizontal no d
 vertical no celular (qualidade 40, porque ali só a copa aparece acima da névoa). Quando chegarem fotos novas (ver
 `ASSETS-NEEDED.md`), basta trocar os arquivos. O `/lab` passou a usar as mesmas fotos (a pasta `public/lab` saiu).
 
-### LCP da home: o título, não a foto
+### Abertura da home: tipografia sobre papel, foto em moldura (revisão com a equipe)
 
-O elemento de LCP da home é o título. Três ajustes o mantêm rápido:
+Na revisão página a página, a equipe achou a abertura antiga carregada: foto clara e cheia de galhos atrás de um
+título escuro de três linhas, com a neblina por cima. A nova abertura deixa o título curto ("Educação popular e
+agroecologia.") sozinho sobre o papel e coloca a foto numa moldura logo abaixo, que se abre à largura toda ao
+rolar (`clip-path` animado, sem fixar a seção). O texto de apoio vai para depois da foto, e a régua de capítulos
+só aparece depois da abertura.
 
-1. **Pin sem reinserir o DOM.** O hero é fixado pelo ScrollTrigger, que por padrão embrulha o elemento em um
-   `div` novo. Isso reinseria o título no DOM, o Chrome contava uma nova pintura e o LCP ia para o momento em que
-   o motion carrega (~3,2 s). O `Dawn` passa o próprio wrapper renderizado no servidor (`pinSpacer`) e o LCP
-   observado voltou a coincidir com o FCP. Regra: **pin acima da dobra sempre com `pinSpacer`**. (O wrapper
-   herda o `display: flex` da seção; por isso a seção leva `w-full`.)
-2. **A foto entra depois do `load`** (`DawnPhoto`), com fade, como a névoa se dissipando. Assim os ~40–60 KB da
-   foto saem da primeira leva de requisições, que fica com a fonte do título e o JS da página. Sem JS, uma cópia
-   em `<noscript>` mostra a foto.
-3. **Animação do título** com easing de saída rápida e sem atraso inicial: as letras entram na máscara nos
-   primeiros quadros.
+**O LCP agora é a foto**, não o título: a moldura é o maior elemento da primeira tela. Por isso a regra antiga
+(foto só depois do `load`, via `DawnPhoto`) virou o contrário: a foto sai no HTML com `fetchpriority="high"` e um
+`preload` por variante (`media` separa celular e desktop), sem fade de entrada. Medido: LCP ~3,7 s → ~2,4 s,
+performance 0,89 → 0,97 (mediana). A seção não é mais fixada, então o problema do `pinSpacer` não se aplica aqui;
+a regra continua valendo para qualquer pin acima da dobra.
+
+A animação do título continua em CSS puro (`HeroTitle`). Os rótulos da abertura usam `fromTo` no GSAP: com `.to()`,
+o timeline lia a opacidade 0 da animação CSS de entrada e os rótulos ficavam invisíveis.
 
 Também: os setups de motion rodam um por tarefa (`scheduler.yield`/`setTimeout`), em vez de todos juntos logo
 após o `load`, e o GSAP só carrega depois do `load` **e** de um período ocioso (TBT da home: ~200 ms → ~90 ms).

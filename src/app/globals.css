@@ -125,16 +125,6 @@ html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
   contain-intrinsic-size: auto 100svh;
 }
 
-/* Home hero photo: fades in from the mist once decoded (see DawnPhoto) */
-.dawn-photo {
-  animation: dawn-photo 1.6s var(--ease-out-soft) both;
-}
-@keyframes dawn-photo {
-  from {
-    opacity: 0;
-  }
-}
-
 /* PinnedChapter: steps stack in one cell only once JS pins the chapter */
 .chapter.is-pinned {
   height: 100svh;
