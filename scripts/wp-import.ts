@@ -27,7 +27,10 @@ const REPORT = path.resolve("data/wp-export/migration-report.md");
 const REDIRECTS = path.resolve("src/redirects.json");
 // origem URL → original size in bytes, so re-runs can still report savings.
 const SIZES = path.resolve("data/wp-export/media-sizes.json");
-const ctx = { disableRevalidate: true };
+// A fresh object per call: Payload hooks write into req.context (the cloud
+// storage plugin keeps the pending upload there), so a shared object makes
+// every upload after the first one skip Vercel Blob.
+const ctx = () => ({ disableRevalidate: true });
 
 const snapshot = JSON.parse(await readFile(SNAPSHOT, "utf8")) as WpSnapshot;
 
@@ -57,6 +60,7 @@ const stats = {
   bytesAfter: 0,
   pdfs: 0,
   pdfsReused: 0,
+  filesRestored: 0,
 
   created: {} as Record<string, number>,
   updated: {} as Record<string, number>,
@@ -125,6 +129,34 @@ async function findByOrigem(collection: "midia" | "documentos", origem: string) 
   return found.docs[0] ?? null;
 }
 
+/**
+ * True when a Vercel Blob file is missing (an earlier import stored the
+ * record without the upload). Local files are always considered present.
+ */
+async function semArquivo(doc: { url?: string | null }) {
+  if (!/^https?:\/\//.test(doc.url ?? "")) return false;
+  const res = await fetch(doc.url, { method: "HEAD" }).catch(() => null);
+  return res?.status === 404;
+}
+
+type Arquivo = { data: Buffer; mimetype: string };
+
+/** Re-sends a missing file for an existing record, keeping its id and name. */
+function reenviarAgora(collection: "midia" | "documentos", id: number, file: Arquivo, name: string) {
+  return payload.update({
+    collection,
+    id,
+    data: {},
+    file: { data: file.data, mimetype: file.mimetype, name, size: file.data.length },
+    context: ctx(),
+    depth: 0,
+    // Same name, so links to the file stored in content keep working.
+    overwriteExistingFiles: true,
+  });
+}
+// Outside the storing queue (importPdfNow already runs inside it).
+const reenviar = (...args: Parameters<typeof reenviarAgora>) => umPorVez(() => reenviarAgora(...args));
+
 // News are imported a few at a time. Two of them can share a photo (or photos
 // with the same file name, which must be unique), so storing a file runs one
 // at a time and re-checks for an existing copy first. Downloads stay parallel.
@@ -138,6 +170,13 @@ function umPorVez<T>(tarefa: () => Promise<T>): Promise<T> {
 /** Imports an image once (matched by original URL). Returns the midia id. */
 async function importImage(image: WpImage, fallbackAlt: string): Promise<number | null> {
   const existing = await findByOrigem("midia", image.url);
+  if (existing && !DRY && (await semArquivo(existing))) {
+    const file = await download([image.url, image.fallbackUrl].filter(Boolean) as string[]);
+    if (file && MIME_OK.has(file.mimetype)) {
+      await reenviar("midia", existing.id as number, file, existing.filename as string);
+      stats.filesRestored++;
+    } else stats.imagesFailed.push(`${image.url} (arquivo sumiu e o download falhou)`);
+  }
   if (existing) {
     stats.imagesReused++;
     stats.bytesBefore += originalSizes[image.url] ?? 0;
@@ -174,7 +213,7 @@ async function importImage(image: WpImage, fallbackAlt: string): Promise<number 
         origem: image.url,
       },
       file: { data: file.data, mimetype: file.mimetype, name: fileName(file.url), size: file.data.length },
-      context: ctx,
+      context: ctx(),
     });
   });
   stats.imagesImported++;
@@ -192,6 +231,13 @@ function importPdf(url: string, titulo: string) {
 
 async function importPdfNow(url: string, titulo: string) {
   const existing = await findByOrigem("documentos", url);
+  if (existing && !DRY && (await semArquivo(existing))) {
+    const file = await download([url]);
+    if (file?.mimetype === "application/pdf") {
+      await reenviarAgora("documentos", existing.id as number, file, existing.filename as string);
+      stats.filesRestored++;
+    } else stats.warnings.push(`PDF sumiu do armazenamento e não foi baixado de novo: ${url}`);
+  }
   if (existing) {
     stats.pdfsReused++;
     return { id: existing.id as number, url: publicUrl(existing.url as string) };
@@ -207,7 +253,7 @@ async function importPdfNow(url: string, titulo: string) {
     collection: "documentos",
     data: { titulo, origem: url },
     file: { data: file.data, mimetype: file.mimetype, name: fileName(url), size: file.data.length },
-    context: ctx,
+    context: ctx(),
   });
   stats.pdfs++;
   return { id: doc.id, url: publicUrl(doc.url as string) };
@@ -217,6 +263,16 @@ async function importPdfNow(url: string, titulo: string) {
 async function importLocalPdf(file: string, titulo: string) {
   const origem = `complementos/${file}`;
   const existing = await findByOrigem("documentos", origem);
+  if (existing && !DRY && (await semArquivo(existing))) {
+    const data = await readFile(path.join(COMPLEMENTOS_DIR, file));
+    await reenviarAgora(
+      "documentos",
+      existing.id as number,
+      { data, mimetype: "application/pdf" },
+      existing.filename as string,
+    );
+    stats.filesRestored++;
+  }
   if (existing) {
     stats.pdfsReused++;
     return existing.id as number;
@@ -227,7 +283,7 @@ async function importLocalPdf(file: string, titulo: string) {
     collection: "documentos",
     data: { titulo, origem },
     file: { data, mimetype: "application/pdf", name: file, size: data.length },
-    context: ctx,
+    context: ctx(),
   });
   stats.pdfs++;
   return doc.id;
@@ -329,10 +385,10 @@ async function upsert(collection: CollectionSlug, wpId: number, data: Record<str
   });
   if (existing.docs[0]) {
     bump(stats.updated, collection);
-    return payload.update({ collection, id: existing.docs[0].id, data, context: ctx, depth: 0, draft: false });
+    return payload.update({ collection, id: existing.docs[0].id, data, context: ctx(), depth: 0, draft: false });
   }
   bump(stats.created, collection);
-  return payload.create({ collection, data, context: ctx, depth: 0, draft: false } as Parameters<
+  return payload.create({ collection, data, context: ctx(), depth: 0, draft: false } as Parameters<
     typeof payload.create
   >[0]);
 }
@@ -404,7 +460,7 @@ async function omit(collection: CollectionSlug, e: WpEntry) {
   resolvedTitles.add(e.title);
   if (DRY) return;
   const { docs } = await payload.find({ collection, where: { "legado.wpId": { equals: e.wpId } }, limit: 1, depth: 0 });
-  if (docs[0]) await payload.delete({ collection, id: docs[0].id, context: ctx });
+  if (docs[0]) await payload.delete({ collection, id: docs[0].id, context: ctx() });
   bump(stats.omitted, collection);
 }
 
@@ -638,7 +694,7 @@ async function main() {
   await writeFile(REPORT, report(list.length, DRY ? { altToReview: [], thirdParty: [] } : await reviewLists()));
   console.log(`ok: ${JSON.stringify(stats.created)} criados, ${JSON.stringify(stats.updated)} atualizados`);
   console.log(
-    `imagens ${stats.imagesImported} (+${stats.imagesReused} reaproveitadas), PDFs ${stats.pdfs} (+${stats.pdfsReused})`,
+    `imagens ${stats.imagesImported} (+${stats.imagesReused} reaproveitadas), PDFs ${stats.pdfs} (+${stats.pdfsReused}), arquivos reenviados ${stats.filesRestored}`,
   );
   console.log(`${mb(stats.bytesBefore)} → ${mb(stats.bytesAfter)}; ${list.length} redirects; relatório em ${REPORT}`);
   process.exit(0);
