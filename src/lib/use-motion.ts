@@ -22,6 +22,18 @@ export function loadMotionKit(): Promise<MotionKit> {
   return kitPromise;
 }
 
+let refreshTimer: ReturnType<typeof setTimeout> | undefined;
+
+/**
+ * Pins add spacing that shifts every trigger below them. Components mount
+ * (and lazily set up) in any order, so after each setup we schedule a single,
+ * debounced ScrollTrigger.refresh() that recomputes all positions at once.
+ */
+function scheduleRefresh(kit: MotionKit) {
+  clearTimeout(refreshTimer);
+  refreshTimer = setTimeout(() => kit.ScrollTrigger.refresh(), 120);
+}
+
 /**
  * Runs GSAP setup code after GSAP is lazily loaded, scoped to `scope`.
  * Everything created inside (tweens, ScrollTriggers, SplitTexts registered
@@ -42,7 +54,11 @@ export function useMotion(setup: Setup, scope?: RefObject<Element | null>, deps:
     loadMotionKit().then((kit) => {
       if (cancelled) return;
       const ctx = kit.gsap.context(() => setupRef.current(kit), scope?.current ?? undefined);
-      revert = () => ctx.revert();
+      scheduleRefresh(kit);
+      revert = () => {
+        ctx.revert();
+        scheduleRefresh(kit);
+      };
     });
 
     return () => {

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { ContextCursor } from "@/components/motion/ContextCursor";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           <main id="conteudo">{children}</main>
           <Footer />
+          <ContextCursor />
         </SmoothScroll>
       </body>
     </html>

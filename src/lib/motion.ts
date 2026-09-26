@@ -10,3 +10,8 @@ export const MOTION_QUERIES = {
 export function prefersReducedMotion(): boolean {
   return typeof window !== "undefined" && window.matchMedia(REDUCED_MOTION).matches;
 }
+
+export const MOTION_OK = "(prefers-reduced-motion: no-preference)";
+
+/** Fine pointer (mouse/trackpad) + motion allowed: cursor-driven effects. */
+export const FINE_POINTER = "(pointer: fine) and (hover: hover) and (prefers-reduced-motion: no-preference)";

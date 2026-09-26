@@ -1,12 +1,13 @@
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
 
 // Single registration point. This module is only ever loaded through
 // useMotion()/SmoothScroll via dynamic import, so GSAP stays off the critical
 // rendering path: pages paint and hydrate first, motion arrives right after.
-gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, DrawSVGPlugin);
 
 // Signature easings, kept in sync with --ease-vianei / --ease-out-soft.
 CustomEase.create("vianei", "0.65, 0.05, 0, 1");

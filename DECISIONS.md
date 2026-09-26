@@ -188,3 +188,47 @@ A pedido da equipe, "em andamento/concluído" não aparece no site por enquanto.
 - "Construção social dos mercados" (2020, wpId 1102) era o mesmo livro da publicação 1187 (PDF idêntico). A pedido
   da equipe, a entrada repetida é omitida (`complementos.omitir`); o endereço antigo cai no redirect
   `/publicacoes/:slug`. O importador também sabe reaproveitar o arquivo de outra publicação (`mesmoArquivoDe`).
+
+## 2026-09-26 · Fase 4
+
+### Menu mobile com `<dialog>` nativo
+
+Até aqui o celular não tinha navegação (o menu era `hidden md:block`). O menu usa `<dialog>` com `showModal()`:
+foco preso, Esc, fundo inerte e retorno do foco vêm do navegador, sem biblioteca. A animação de entrada é CSS puro.
+
+### Cor do header medida ao vivo, não com ScrollTrigger
+
+A primeira versão calculava as posições das seções escuras com ScrollTrigger. Como o header monta antes do conteúdo,
+essas posições eram calculadas sem o espaço extra dos _pins_ e ficavam erradas (14 divergências em 70 amostras no
+`/lab`; nem `refreshPriority` resolveu por completo). O `HeaderShell` agora mede `getBoundingClientRect()` das seções
+`[data-header="dark"]` uma vez por frame de scroll: zero divergências, sem GSAP no header.
+
+### Recalcular posições depois de cada setup
+
+Primitivas montam e carregam o GSAP em ordens diferentes, e cada _pin_ desloca o que vem abaixo. `useMotion()` agenda
+um `ScrollTrigger.refresh()` único e agrupado (120 ms) depois de cada setup e de cada desmontagem.
+
+### Transição de página
+
+`<ViewTransition>` do React no `template.tsx` (que remonta a cada navegação): a página antiga sobe e some, a nova é
+revelada de baixo para cima. O header fica ancorado (`view-transition-name`). A "cortina cor de terra" do briefing não
+é possível só com CSS de view transitions (o snapshot da página nova cobre a raiz); o wipe limpo foi escolhido no lugar.
+Com `prefers-reduced-motion`, a troca é instantânea.
+
+### Neblina WebGL
+
+OGL (~10 KB) importado sob demanda depois do `load` e de `requestIdleCallback`; só em telas ≥ 768px, com movimento
+permitido e sem economia de dados. Pausa fora da tela e em abas escondidas; DPR limitado a 1,5.
+
+### Acessibilidade das primitivas
+
+- `HorizontalGallery` no celular é uma faixa rolável: recebeu `tabIndex=0` e rótulo, para rolar pelo teclado
+  (o axe apontou `scrollable-region-focusable`).
+- `Counter` entrega o valor final ao leitor de tela (texto `sr-only`); só os dígitos visuais animam.
+- `Marquee` duplica o conteúdo com `aria-hidden` e pausa ao receber foco ou hover.
+- Com movimento reduzido: nenhum _pin_, nenhum canvas, marquee estático, capítulos lidos em ordem.
+
+### `/lab`
+
+Vitrine interna com fotos reais (versões leves em `public/lab/`). Em produção responde 404, a menos que
+`ENABLE_LAB=1` (usado no CI para testar as primitivas).
