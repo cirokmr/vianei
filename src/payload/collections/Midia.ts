@@ -1,5 +1,12 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionConfig, FieldHook } from "payload";
 import { anyone, authenticated } from "../access";
+import { origemField } from "../fields/legado";
+
+/** Editing the alt text in the admin marks it as reviewed. */
+const clearProvisional: FieldHook = ({ value, data, originalDoc, req }) => {
+  if (req.user && originalDoc && data?.alt !== undefined && data.alt !== originalDoc.alt) return false;
+  return value;
+};
 
 export const Midia: CollectionConfig = {
   slug: "midia",
@@ -40,7 +47,20 @@ export const Midia: CollectionConfig = {
         description: "Descreva a imagem para quem não pode vê-la. Ex.: “Agricultora colhendo pinhão em Painel”.",
       },
     },
+    {
+      name: "altProvisorio",
+      label: "Texto alternativo provisório (revisar)",
+      type: "checkbox",
+      defaultValue: false,
+      index: true,
+      admin: {
+        position: "sidebar",
+        description: "Marcado pela migração quando a imagem veio sem descrição. Some ao editar o texto.",
+      },
+      hooks: { beforeChange: [clearProvisional] },
+    },
     { name: "legenda", type: "text" },
     { name: "credito", label: "Crédito da foto", type: "text" },
+    origemField,
   ],
 };

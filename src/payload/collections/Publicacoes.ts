@@ -1,5 +1,6 @@
 import type { CollectionConfig } from "payload";
 import { authenticated, publishedOrAuthenticated } from "../access";
+import { legadoField } from "../fields/legado";
 import { slugField } from "../fields/slug";
 import { revalidateCollection, revalidateCollectionDelete } from "../hooks/revalidate";
 
@@ -35,5 +36,6 @@ export const Publicacoes: CollectionConfig = {
     },
     slugField(),
     { name: "ano", type: "number", min: 1983, max: 2100, admin: { position: "sidebar" } },
+    legadoField,
   ],
 };

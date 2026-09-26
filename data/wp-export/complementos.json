@@ -1,0 +1,28 @@
+{
+  "$comment": "Material enviado pela equipe depois do snapshot. Lido por scripts/wp-import.ts (chaves = wpId). Arquivos em data/wp-export/complementos/.",
+  "publicacoes": {
+    "1104": {
+      "arquivo": "cartilha-gestao-administrativa-grupos-cooperacao.pdf",
+      "nota": "Enviado pela equipe em 26/09/2026 (original 11,9 MB, imagens recomprimidas para 4,2 MB). Título corrigido conforme a capa (o WordPress dizia \"coordenação\").",
+      "titulo": "Gestão administrativa para grupos de cooperação"
+    },
+    "1116": {
+      "linkExterno": "https://online.fliphtml5.com/ddctz/ypqk/",
+      "nota": "Revista ABEMA: leitura online; o PDF não é baixável no site da editora."
+    },
+    "1107": {
+      "arquivo": "producao-pinhao-sistemas-tradicionais-planalto-serrano.pdf",
+      "nota": "Cartilha de síntese (Apêndice C, págs. 175–190 do PDF PEAN0059, PPGEAN/UFSC), enviada em 26/09/2026. 8 MB → 1,1 MB."
+    },
+    "1102": {
+      "omitir": true,
+      "nota": "Mesmo livro da publicação 1187 (PDF idêntico, enviado em 26/09/2026). A equipe pediu para manter só uma entrada; o endereço antigo redireciona para /publicacoes."
+    }
+  },
+  "projetos": {
+    "1129": {
+      "situacao": "ativo",
+      "nota": "Da Terra à Mesa segue em andamento (a websérie foi concluída)."
+    }
+  }
+}

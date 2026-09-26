@@ -16,3 +16,6 @@
 - Coleção nova que aparece no site: adicione `revalidateCollection` / `revalidateCollectionDelete` nos hooks.
 - Nunca exponha e-mails de `pessoas` sem `emailPublico`.
 - Dev local: Postgres em `DATABASE_URL`; `npm run migrate && npm run seed`.
+- Scripts que escrevem no banco fora do Next (seed, import) não revalidam o cache: chame `POST /api/revalidate`
+  com `x-revalidate-secret`, como faz `scripts/wp-import.ts`.
+- Links e mídia do CMS: use `mediaSrc()` / `publicPath()` para caminhos relativos (o Payload devolve URLs absolutas).

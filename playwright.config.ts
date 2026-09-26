@@ -23,8 +23,9 @@ export default defineConfig({
   },
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
-    // CMS specs mutate shared data; running them once (desktop) avoids races.
-    { name: "mobile", use: { ...devices["Pixel 7"] }, testIgnore: /cms\.spec/ },
+    // CMS specs mutate shared data and redirect specs are device-agnostic:
+    // run them once (desktop).
+    { name: "mobile", use: { ...devices["Pixel 7"] }, testIgnore: /(cms|redirects)\.spec/ },
   ],
   webServer: {
     command: `npm run start -- -p ${PORT}`,

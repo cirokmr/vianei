@@ -30,18 +30,18 @@ export default async function NoticiasPage() {
           <p className="text-lead text-tinta/75">Nenhuma notícia publicada ainda.</p>
         ) : (
           <ul className="divide-y divide-tinta/15 border-y border-tinta/15">
-            {docs.map((noticia) => {
+            {docs.map((noticia, index) => {
               const capa = asMidia(noticia.capa);
               const img = capa ? mediaSrc(capa, "miniatura") : null;
               return (
                 <li key={noticia.id}>
                   <Link
                     href={`/noticias/${noticia.slug}`}
-                    className="group grid gap-4 py-8 md:grid-cols-[10rem_1fr_12rem] md:items-center md:gap-10"
+                    className="group grid grid-cols-[1fr_6rem] gap-x-5 gap-y-3 py-8 md:grid-cols-[10rem_1fr_12rem] md:items-center md:gap-10"
                   >
                     <time
                       dateTime={noticia.publicadoEm}
-                      className="text-eyebrow tracking-[0.14em] text-musgo uppercase"
+                      className="col-span-2 text-eyebrow tracking-[0.14em] text-musgo uppercase md:col-span-1"
                     >
                       {formatDate(noticia.publicadoEm)}
                     </time>
@@ -59,8 +59,9 @@ export default async function NoticiasPage() {
                         width={img.width}
                         height={img.height}
                         alt={capa.alt}
-                        sizes="(min-width: 768px) 12rem, 100vw"
-                        className="aspect-[4/3] w-full object-cover"
+                        sizes="(min-width: 768px) 12rem, 6rem"
+                        priority={index === 0}
+                        className="aspect-square w-full self-start object-cover md:aspect-[4/3] md:self-auto"
                       />
                     ) : null}
                   </Link>

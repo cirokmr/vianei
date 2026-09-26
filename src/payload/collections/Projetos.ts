@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 import { authenticated, publishedOrAuthenticated } from "../access";
 import { seoField } from "../fields/seo";
+import { legadoField } from "../fields/legado";
 import { slugField } from "../fields/slug";
 import { revalidateCollection, revalidateCollectionDelete } from "../hooks/revalidate";
 import { previewUrl } from "../preview";
@@ -52,7 +53,10 @@ export const Projetos: CollectionConfig = {
         { label: "Em andamento", value: "ativo" },
         { label: "Concluído", value: "concluido" },
       ],
-      admin: { position: "sidebar" },
+      admin: {
+        position: "sidebar",
+        description: "Uso interno por enquanto: a situação não aparece no site.",
+      },
     },
     {
       name: "areas",
@@ -78,5 +82,6 @@ export const Projetos: CollectionConfig = {
     },
     { name: "destaque", label: "Destacar na home", type: "checkbox", admin: { position: "sidebar" } },
     seoField,
+    legadoField,
   ],
 };

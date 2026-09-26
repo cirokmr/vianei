@@ -70,6 +70,7 @@ export interface Config {
     noticias: Noticia;
     projetos: Projeto;
     publicacoes: Publicacoe;
+    paginas: Pagina;
     videos: Video;
     categorias: Categoria;
     parceiros: Parceiro;
@@ -87,6 +88,7 @@ export interface Config {
     noticias: NoticiasSelect<false> | NoticiasSelect<true>;
     projetos: ProjetosSelect<false> | ProjetosSelect<true>;
     publicacoes: PublicacoesSelect<false> | PublicacoesSelect<true>;
+    paginas: PaginasSelect<false> | PaginasSelect<true>;
     videos: VideosSelect<false> | VideosSelect<true>;
     categorias: CategoriasSelect<false> | CategoriasSelect<true>;
     parceiros: ParceirosSelect<false> | ParceirosSelect<true>;
@@ -183,6 +185,13 @@ export interface Noticia {
     descricao?: string | null;
     imagem?: (number | null) | Midia;
   };
+  /**
+   * Preenchido pela migração do WordPress.
+   */
+  legado?: {
+    wpId?: number | null;
+    wpUrl?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -199,8 +208,13 @@ export interface Midia {
    * Descreva a imagem para quem não pode vê-la. Ex.: “Agricultora colhendo pinhão em Painel”.
    */
   alt: string;
+  /**
+   * Marcado pela migração quando a imagem veio sem descrição. Some ao editar o texto.
+   */
+  altProvisorio?: boolean | null;
   legenda?: string | null;
   credito?: string | null;
+  origem?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -295,6 +309,9 @@ export interface Projeto {
    * Gerado a partir do título se ficar em branco. Mudar o slug de algo já publicado quebra links.
    */
   slug: string;
+  /**
+   * Uso interno por enquanto: a situação não aparece no site.
+   */
   situacao: 'ativo' | 'concluido';
   areas?: ('educacao-popular' | 'agroecologia' | 'restauracao-florestal' | 'cultura-sat-pinhao')[] | null;
   inicio?: string | null;
@@ -308,6 +325,13 @@ export interface Projeto {
     titulo?: string | null;
     descricao?: string | null;
     imagem?: (number | null) | Midia;
+  };
+  /**
+   * Preenchido pela migração do WordPress.
+   */
+  legado?: {
+    wpId?: number | null;
+    wpUrl?: string | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -354,6 +378,13 @@ export interface Publicacoe {
    */
   slug: string;
   ano?: number | null;
+  /**
+   * Preenchido pela migração do WordPress.
+   */
+  legado?: {
+    wpId?: number | null;
+    wpUrl?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
@@ -365,6 +396,7 @@ export interface Publicacoe {
 export interface Documento {
   id: number;
   titulo: string;
+  origem?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -376,6 +408,54 @@ export interface Documento {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * Páginas avulsas, como as do mini-site do Projeto Restaurar.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "paginas".
+ */
+export interface Pagina {
+  id: number;
+  titulo: string;
+  conteudo?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  /**
+   * Sem barra inicial. Ex.: projetos/projeto-restaurar/galeria-de-especies
+   */
+  caminho: string;
+  projeto?: (number | null) | Projeto;
+  /**
+   * Preenchido pela migração do WordPress.
+   */
+  legado?: {
+    wpId?: number | null;
+    wpUrl?: string | null;
+  };
+  /**
+   * Opcional. Se vazio, usamos o título, o resumo e a capa.
+   */
+  seo?: {
+    titulo?: string | null;
+    descricao?: string | null;
+    imagem?: (number | null) | Midia;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
 }
 /**
  * Os vídeos do canal também são lidos automaticamente; cadastre aqui os que quer destacar ou legendar.
@@ -481,6 +561,10 @@ export interface PayloadLockedDocument {
         value: number | Publicacoe;
       } | null)
     | ({
+        relationTo: 'paginas';
+        value: number | Pagina;
+      } | null)
+    | ({
         relationTo: 'videos';
         value: number | Video;
       } | null)
@@ -570,6 +654,12 @@ export interface NoticiasSelect<T extends boolean = true> {
         descricao?: T;
         imagem?: T;
       };
+  legado?:
+    | T
+    | {
+        wpId?: T;
+        wpUrl?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -603,6 +693,12 @@ export interface ProjetosSelect<T extends boolean = true> {
         descricao?: T;
         imagem?: T;
       };
+  legado?:
+    | T
+    | {
+        wpId?: T;
+        wpUrl?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -620,6 +716,38 @@ export interface PublicacoesSelect<T extends boolean = true> {
   linkExterno?: T;
   slug?: T;
   ano?: T;
+  legado?:
+    | T
+    | {
+        wpId?: T;
+        wpUrl?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  _status?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "paginas_select".
+ */
+export interface PaginasSelect<T extends boolean = true> {
+  titulo?: T;
+  conteudo?: T;
+  caminho?: T;
+  projeto?: T;
+  legado?:
+    | T
+    | {
+        wpId?: T;
+        wpUrl?: T;
+      };
+  seo?:
+    | T
+    | {
+        titulo?: T;
+        descricao?: T;
+        imagem?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   _status?: T;
@@ -683,8 +811,10 @@ export interface PessoasSelect<T extends boolean = true> {
  */
 export interface MidiaSelect<T extends boolean = true> {
   alt?: T;
+  altProvisorio?: T;
   legenda?: T;
   credito?: T;
+  origem?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -747,6 +877,7 @@ export interface MidiaSelect<T extends boolean = true> {
  */
 export interface DocumentosSelect<T extends boolean = true> {
   titulo?: T;
+  origem?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
