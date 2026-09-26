@@ -1,5 +1,5 @@
 import { getImageProps } from "next/image";
-import { Fog } from "@/components/motion/Fog";
+import { LazyFog as Fog } from "../lazy";
 import { HeroTitle } from "@/components/ui/HeroTitle";
 import { site } from "@/config/site";
 import horizontal from "../../../../public/fotos/araucaria-catador.webp";

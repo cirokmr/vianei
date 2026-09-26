@@ -1,5 +1,5 @@
 import { Chapter } from "@/components/chapters/Chapter";
-import { ChapterRail } from "@/components/chapters/ChapterRail";
+import { LazyChapterRail as ChapterRail } from "@/components/chapters/lazy";
 import { HomeHero } from "@/components/chapters/home/HomeHero";
 import { NowChapter } from "@/components/chapters/home/NowChapter";
 import { NumbersChapter } from "@/components/chapters/home/NumbersChapter";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Chapter } from "@/components/chapters/Chapter";
-import { ChapterRail } from "@/components/chapters/ChapterRail";
+import { LazyChapterRail as ChapterRail } from "@/components/chapters/lazy";
 import { HistoryChapter } from "@/components/chapters/quem-somos/HistoryChapter";
 import { PartnersChapter } from "@/components/chapters/quem-somos/PartnersChapter";
 import { TeamChapter } from "@/components/chapters/quem-somos/TeamChapter";

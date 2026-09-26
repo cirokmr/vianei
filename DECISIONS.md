@@ -285,6 +285,10 @@ Depois do primeiro CI (home 0,93, LCP 3,1 s), mais três ajustes:
   reais; o que muda está fora da tela, sem CLS). A primeira pintura só calcula o hero (LCP observado ~100 ms).
 - **Sem placeholder de blur** nas fotos da home: o base64 entrava duas vezes no documento (HTML + payload).
 
+O índice de capítulos e a névoa WebGL (só desktop, nada a renderizar no servidor) carregam depois da hidratação
+via `next/dynamic` (`src/components/chapters/lazy.tsx`). Do JS inicial (~150 KB gzip), ~135 KB são React e o
+runtime do Next; o código do site é ~6 KB no layout e ~10 KB na home, então não há mais o que cortar ali.
+
 No Lighthouse, toda página tem um piso de ~2,7 s de LCP simulado, que vem dos ~150 KB de JS do Next pedidos antes
 do LCP; a home fica ~0,1 s acima por ter mais HTML.
 
