@@ -134,8 +134,9 @@ async function findByOrigem(collection: "midia" | "documentos", origem: string) 
  * record without the upload). Local files are always considered present.
  */
 async function semArquivo(doc: { url?: string | null }) {
-  if (!/^https?:\/\//.test(doc.url ?? "")) return false;
-  const res = await fetch(doc.url, { method: "HEAD" }).catch(() => null);
+  const url = doc.url ?? "";
+  if (!/^https?:\/\//.test(url)) return false;
+  const res = await fetch(url, { method: "HEAD" }).catch(() => null);
   return res?.status === 404;
 }
 
