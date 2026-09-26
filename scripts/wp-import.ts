@@ -125,6 +125,16 @@ async function findByOrigem(collection: "midia" | "documentos", origem: string) 
   return found.docs[0] ?? null;
 }
 
+// News are imported a few at a time. Two of them can share a photo (or photos
+// with the same file name, which must be unique), so storing a file runs one
+// at a time and re-checks for an existing copy first. Downloads stay parallel.
+let fila: Promise<unknown> = Promise.resolve();
+function umPorVez<T>(tarefa: () => Promise<T>): Promise<T> {
+  const resultado = fila.then(tarefa, tarefa);
+  fila = resultado.catch(() => undefined);
+  return resultado;
+}
+
 /** Imports an image once (matched by original URL). Returns the midia id. */
 async function importImage(image: WpImage, fallbackAlt: string): Promise<number | null> {
   const existing = await findByOrigem("midia", image.url);
@@ -150,17 +160,22 @@ async function importImage(image: WpImage, fallbackAlt: string): Promise<number 
   const host = new URL(image.url).hostname.replace(/^www\./, "");
   const external = host !== source.hostname.replace(/^www\./, "");
 
-  const doc = await payload.create({
-    collection: "midia",
-    data: {
-      alt,
-      altProvisorio: !image.alt && !image.caption,
-      legenda: image.caption || undefined,
-      credito: external ? `Reprodução: ${host}` : undefined,
-      origem: image.url,
-    },
-    file: { data: file.data, mimetype: file.mimetype, name: fileName(file.url), size: file.data.length },
-    context: ctx,
+  const doc = await umPorVez(async () => {
+    // Another news item may have stored the same photo while we downloaded it.
+    const again = await findByOrigem("midia", image.url);
+    if (again) return again;
+    return payload.create({
+      collection: "midia",
+      data: {
+        alt,
+        altProvisorio: !image.alt && !image.caption,
+        legenda: image.caption || undefined,
+        credito: external ? `Reprodução: ${host}` : undefined,
+        origem: image.url,
+      },
+      file: { data: file.data, mimetype: file.mimetype, name: fileName(file.url), size: file.data.length },
+      context: ctx,
+    });
   });
   stats.imagesImported++;
   originalSizes[image.url] = file.data.length;
@@ -171,7 +186,11 @@ async function importImage(image: WpImage, fallbackAlt: string): Promise<number 
 }
 
 /** Imports a PDF once. Returns { id, url } of the documentos entry. */
-async function importPdf(url: string, titulo: string) {
+function importPdf(url: string, titulo: string) {
+  return umPorVez(() => importPdfNow(url, titulo));
+}
+
+async function importPdfNow(url: string, titulo: string) {
   const existing = await findByOrigem("documentos", url);
   if (existing) {
     stats.pdfsReused++;
