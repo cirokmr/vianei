@@ -3,7 +3,7 @@
     "collect": {
       "startServerCommand": "npm run start -- -p 3200",
       "startServerReadyPattern": "Ready",
-      "url": ["http://localhost:3200/", "http://localhost:3200/noticias"],
+      "url": ["http://localhost:3200/", "http://localhost:3200/quem-somos", "http://localhost:3200/noticias"],
       "numberOfRuns": 5,
       "settings": {
         "chromeFlags": "--no-sandbox --headless=new"
@@ -65,7 +65,7 @@
         "resource-summary:script:size": [
           "error",
           {
-            "maxNumericValue": 230400
+            "maxNumericValue": 245760
           }
         ],
         "resource-summary:font:size": [

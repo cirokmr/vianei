@@ -3,6 +3,7 @@
 import { useRef, useState, type ReactNode } from "react";
 import { MOTION_OK } from "@/lib/motion";
 import { useMotion } from "@/lib/use-motion";
+import { useSmoothScroll } from "./SmoothScroll";
 
 type Props = {
   children: ReactNode;
@@ -43,6 +44,7 @@ export function PinnedChapter({
   const section = useRef<HTMLElement>(null);
   const [index, setIndex] = useState(0);
   const [total, setTotal] = useState(0);
+  const { scrollTo } = useSmoothScroll();
 
   useMotion(({ gsap }) => {
     const el = section.current!;
@@ -69,7 +71,13 @@ export function PinnedChapter({
             snap: snap
               ? { snapTo: "labelsDirectional", duration: { min: 0.25, max: 0.7 }, ease: "power2.inOut", delay: 0.1 }
               : undefined,
-            onUpdate: (self) => setIndex(Math.round(self.progress * (steps.length - 1))),
+            onUpdate: (self) => {
+              const current = Math.round(self.progress * (steps.length - 1));
+              setIndex(current);
+              // Only the step on screen takes clicks; the rest stay readable
+              // by assistive tech (opacity, not visibility).
+              if (mode === "replace") steps.forEach((s, i) => (s.style.pointerEvents = i === current ? "" : "none"));
+            },
           },
         });
 
@@ -78,15 +86,29 @@ export function PinnedChapter({
             tl.addLabel("step-0");
             return;
           }
-          gsap.set(step, { autoAlpha: 0, yPercent: 12 });
+          gsap.set(step, { opacity: 0, yPercent: 12 });
           const at = i - 1;
           if (mode === "replace") {
-            tl.to(steps[i - 1], { autoAlpha: 0, yPercent: -12, duration: 0.45 }, at + 0.1);
+            tl.to(steps[i - 1], { opacity: 0, yPercent: -12, duration: 0.45 }, at + 0.1);
           }
-          tl.to(step, { autoAlpha: 1, yPercent: 0, duration: 0.55 }, at + 0.4).addLabel(`step-${i}`, i);
+          tl.to(step, { opacity: 1, yPercent: 0, duration: 0.55 }, at + 0.4).addLabel(`step-${i}`, i);
         });
 
-        return () => el.classList.remove("is-pinned", `is-${mode}`);
+        // Keyboard and screen-reader focus moving into a hidden step scrolls
+        // the chapter to that step, so what has focus is what is on screen.
+        const onFocus = (event: FocusEvent) => {
+          const i = steps.findIndex((step) => step.contains(event.target as Node));
+          const st = tl.scrollTrigger;
+          if (i < 0 || !st) return;
+          scrollTo(st.labelToScroll(`step-${i}`), { duration: 0.6 });
+        };
+        el.addEventListener("focusin", onFocus);
+
+        return () => {
+          el.removeEventListener("focusin", onFocus);
+          steps.forEach((step) => (step.style.pointerEvents = ""));
+          el.classList.remove("is-pinned", `is-${mode}`);
+        };
       },
     );
 

@@ -8,7 +8,7 @@ import { site } from "@/config/site";
 export const dynamicParams = false;
 
 // Sections that already have a real route are excluded here.
-const IMPLEMENTED = new Set(["/noticias", "/projetos"]);
+const IMPLEMENTED = new Set(["/noticias", "/projetos", "/quem-somos"]);
 const pending = site.nav.filter((item) => !IMPLEMENTED.has(item.href));
 
 export function generateStaticParams() {

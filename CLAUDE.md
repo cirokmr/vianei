@@ -26,3 +26,11 @@
   (`ENABLE_LAB=1` no build de produção).
 - Seção escura: `data-header="dark"` (ou `dark` no `PinnedChapter`). Não recrie a lógica do header com ScrollTrigger.
 - Efeitos de cursor usam `FINE_POINTER` (`src/lib/motion.ts`); nada de cursor custom no celular.
+
+## Capítulos (fase 5)
+
+- Páginas compõem capítulos de `src/components/chapters/`; cada um dentro de `<Chapter id label>` e listado no
+  `ChapterRail` da página.
+- Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor (ver `Dawn.tsx`). Sem isso o GSAP
+  reinsere o elemento no DOM e o LCP vai para o momento em que o motion carrega.
+- Números e marcos vêm dos globals `numeros` e `timeline`. Nunca escreva um número institucional no código.

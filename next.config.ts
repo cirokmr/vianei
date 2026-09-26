@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+    // 40/55: full-bleed hero photos (phone/desktop), mostly under the mist.
+    qualities: [40, 55, 75],
     minimumCacheTTL: 60 * 60 * 24 * 30,
     // Local uploads (dev/CI) are served by Payload; production uses Vercel Blob.
     localPatterns: [{ pathname: "/api/midia/file/**" }],

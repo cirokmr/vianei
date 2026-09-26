@@ -17,13 +17,13 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { StackCards } from "@/components/motion/StackCards";
 import { HeroTitle } from "@/components/ui/HeroTitle";
 
-import araucaria from "../../../../public/lab/araucaria-copa.webp";
-import caminhada from "../../../../public/lab/caminhada.webp";
-import campo from "../../../../public/lab/campo.webp";
-import catador from "../../../../public/lab/catador.webp";
-import mistica from "../../../../public/lab/mistica.webp";
-import mudas from "../../../../public/lab/mudas.webp";
-import travessia from "../../../../public/lab/travessia.webp";
+import araucaria from "../../../../public/fotos/araucaria-catador.webp";
+import caminhada from "../../../../public/fotos/caminhada.webp";
+import campo from "../../../../public/fotos/restauracao-serra.webp";
+import catador from "../../../../public/fotos/catador-tronco.webp";
+import mistica from "../../../../public/fotos/mistica.webp";
+import mudas from "../../../../public/fotos/mudas.webp";
+import travessia from "../../../../public/fotos/mata.webp";
 
 export const metadata: Metadata = { title: "Laboratório de movimento", robots: { index: false, follow: false } };
 

@@ -50,8 +50,11 @@ test.describe("lab: primitivas de movimento", () => {
   test("contador termina no valor real", async ({ page }) => {
     await page.goto("/lab");
     const counter = page.getByText("de educação popular", { exact: true }).locator("..");
-    await counter.scrollIntoViewIfNeeded();
-    await expect(counter.locator("dd [aria-hidden]")).toHaveText("43 anos", { timeout: 6000 });
+    // Pins above it are set up lazily and push it down: keep bringing it into view.
+    await expect(async () => {
+      await counter.scrollIntoViewIfNeeded();
+      await expect(counter.locator("dd [aria-hidden]")).toHaveText("43 anos", { timeout: 1500 });
+    }).toPass({ timeout: 12_000 });
   });
 });
 
