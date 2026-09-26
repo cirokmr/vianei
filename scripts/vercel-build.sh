@@ -26,6 +26,10 @@ fi
 
 npm run migrate
 npm run seed
+# Re-sends any image/PDF whose file is missing from Blob (seconds when none is).
+if [ -n "${BLOB_READ_WRITE_TOKEN:-}" ]; then
+  npm run blob:reparar
+fi
 
 if [ "${IMPORTAR_CONTEUDO:-}" = "1" ]; then
   echo "IMPORTAR_CONTEUDO=1: importando o conteúdo do WordPress (snapshot em data/wp-export)"

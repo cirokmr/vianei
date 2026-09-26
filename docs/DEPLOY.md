@@ -24,8 +24,11 @@ nas prévias e o de produção em produção.
 
 1. `npm run migrate`: aplica as migrations commitadas (nunca altera o banco por conta própria);
 2. `npm run seed`: dados institucionais, parceiros, equipe e o admin (idempotente);
-3. com `IMPORTAR_CONTEUDO=1`: `wp:import` (notícias, projetos, publicações, páginas, imagens e PDFs a partir de
+3. com o Blob conectado: `blob:reparar` confere (HEAD) se cada imagem e PDF do banco existe no Blob e reenvia o
+   que faltar, a partir da URL de origem no WordPress ou de `data/wp-export/complementos`, mantendo ids e nomes.
+   Leva segundos quando está tudo lá;
+4. com `IMPORTAR_CONTEUDO=1` (só no ambiente **Preview** ou **Production** onde se quer carregar): `wp:import` (notícias, projetos, publicações, páginas, imagens e PDFs a partir de
    `data/wp-export/snapshot.json`) e `wp:classify`. Os dois são idempotentes;
-4. `next build`.
+5. `next build`.
 
 Cada PR ganha um link de prévia. Prévias da Vercel já saem com `noindex`.
