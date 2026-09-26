@@ -3,12 +3,14 @@
 Itens que dependem da equipe. Não inventar dados: o site mostra somente o que for confirmado aqui.
 
 - [ ] **Diretoria e mandato atuais.** O site antigo mostra o mandato de 08/02/2023 a 07/02/2026, já vencido.
-- [ ] **Números da home:** anos de atuação, hectares em restauração (o site cita 127 ha do Projeto Restaurar),
-      número de projetos e de parceiros.
+- [ ] **Números da home:** hectares em restauração (o site cita 127 ha do Projeto Restaurar), número de projetos,
+      famílias atendidas etc. Os anos de atuação já são calculados automaticamente. Painel: Institucional →
+      Números da home.
 - [ ] **Texto revisado de "Quem somos".** A home antiga cita a assembleia de 2020 e "Quem somos" cita a de 2022.
 - [ ] **Quais e-mails podem ser públicos.** Hoje os e-mails pessoais da equipe estão expostos; a proposta é usar
       `contato@vianei.org.br` + formulário.
-- [ ] **Marcos da linha do tempo** (1983 → hoje) com ano, título e uma frase cada.
+- [ ] **Marcos da linha do tempo** (1983 → hoje) com ano, título e uma frase cada. Aparecem na home e em Quem
+      somos assim que cadastrados no painel (Institucional → Linha do tempo), com foto opcional.
 - [ ] **Downloads:** a seção atual tem "Lorem ipsum". Definir quais arquivos entram.
 - [ ] **Confirmar perfis oficiais:** facebook.com/centrovianei, instagram.com/centrovianei e o canal do YouTube
       `UCkEIv_GvLhWyFuYBl_y5i8w`.

@@ -232,3 +232,81 @@ permitido e sem economia de dados. Pausa fora da tela e em abas escondidas; DPR 
 
 Vitrine interna com fotos reais (versões leves em `public/lab/`). Em produção responde 404, a menos que
 `ENABLE_LAB=1` (usado no CI para testar as primitivas).
+
+## 2026-09-26 · Fase 5
+
+### Home em sete capítulos, Quem somos em seis
+
+As páginas são Server Components que só buscam dados e compõem capítulos (`src/components/chapters/`). Cada
+capítulo fica dentro de um `<Chapter>`: um wrapper fora de qualquer pin, com `id` (âncora) e `data-chapter`
+(índice). O `ChapterRail` (desktop) mostra "03 / 07" e leva a cada capítulo pelo Lenis, depois move o foco para
+ele. As etiquetas só aparecem no hover/foco, para o índice nunca cobrir conteúdo.
+
+### Dados reais, nunca inventados
+
+- Linha do tempo: global `timeline` (hoje só 1983 e 1988). O capítulo cresce sozinho quando a equipe cadastra
+  marcos. O painel "Hoje" lista os projetos publicados, sem dizer se estão em andamento (pedido da equipe).
+- Números: os anos de atuação são calculados a partir de 1983 (um fato, que não envelhece). Os demais vêm do
+  global `numeros`, hoje vazio, e aparecem assim que a equipe preencher.
+- Textos de Quem somos, áreas de atuação (a–p) e propósito: do site atual, levemente editados para leitura.
+  Equipe, diretoria e parceiros: das collections, com e-mail só quando marcado como público.
+
+### Fotos curadas em `public/fotos/`
+
+Dez fotos do acervo migrado, recortadas e reencodadas (2,9 MB no repositório; o `next/image` serve AVIF/WebP no
+tamanho certo). O hero usa direção de arte (`<picture>`): copa horizontal no desktop (qualidade 55), tronco
+vertical no celular (qualidade 40, porque ali só a copa aparece acima da névoa). Quando chegarem fotos novas (ver
+`ASSETS-NEEDED.md`), basta trocar os arquivos. O `/lab` passou a usar as mesmas fotos (a pasta `public/lab` saiu).
+
+### LCP da home: o título, não a foto
+
+O elemento de LCP da home é o título. Três ajustes o mantêm rápido:
+
+1. **Pin sem reinserir o DOM.** O hero é fixado pelo ScrollTrigger, que por padrão embrulha o elemento em um
+   `div` novo. Isso reinseria o título no DOM, o Chrome contava uma nova pintura e o LCP ia para o momento em que
+   o motion carrega (~3,2 s). O `Dawn` passa o próprio wrapper renderizado no servidor (`pinSpacer`) e o LCP
+   observado voltou a coincidir com o FCP. Regra: **pin acima da dobra sempre com `pinSpacer`**. (O wrapper
+   herda o `display: flex` da seção; por isso a seção leva `w-full`.)
+2. **A foto entra depois do `load`** (`DawnPhoto`), com fade, como a névoa se dissipando. Assim os ~40–60 KB da
+   foto saem da primeira leva de requisições, que fica com a fonte do título e o JS da página. Sem JS, uma cópia
+   em `<noscript>` mostra a foto.
+3. **Animação do título** com easing de saída rápida e sem atraso inicial: as letras entram na máscara nos
+   primeiros quadros.
+
+Também: os setups de motion rodam um por tarefa (`scheduler.yield`/`setTimeout`), em vez de todos juntos logo
+após o `load`, e o GSAP só carrega depois do `load` **e** de um período ocioso (TBT da home: ~200 ms → ~90 ms).
+
+Depois do primeiro CI (home 0,93, LCP 3,1 s), mais três ajustes:
+
+- **CSS externo (`inlineCss: false`).** O Next inlinava o CSS duas vezes: num `<style>` e de novo no payload RSC
+  (~19 KB gzip por página). Externo, ele vai uma vez e fica em cache entre páginas; o LCP medido ficou igual.
+- **`content-visibility` até o boot.** Em páginas de capítulos, os capítulos depois do primeiro pulam estilo e
+  layout até o `motion-ready` (a regra sai antes de qualquer ScrollTrigger medir, então os pins veem tamanhos
+  reais; o que muda está fora da tela, sem CLS). A primeira pintura só calcula o hero (LCP observado ~100 ms).
+- **Sem placeholder de blur** nas fotos da home: o base64 entrava duas vezes no documento (HTML + payload).
+
+O índice de capítulos e a névoa WebGL (só desktop, nada a renderizar no servidor) carregam depois da hidratação
+via `next/dynamic` (`src/components/chapters/lazy.tsx`). Do JS inicial (~150 KB gzip), ~135 KB são React e o
+runtime do Next; o código do site é ~6 KB no layout e ~10 KB na home, então não há mais o que cortar ali.
+
+No Lighthouse, toda página tem um piso de ~2,7 s de LCP simulado, que vem dos ~150 KB de JS do Next pedidos antes
+do LCP; a home fica ~0,1 s acima por ter mais HTML.
+
+Tentado e descartado: envolver cada capítulo em `<Suspense>` para hidratar por partes. O TBT piorou (a
+hidratação continuou em uma tarefa e o HTML cresceu com os marcadores).
+
+Resultado local (mediana de 5, mobile, Lighthouse CI): home 95 (95–96 em todas as execuções), quem-somos 98, notícias 96; CLS ≤ 0,022. O LCP
+simulado varia entre 2,2 e 2,9 s de uma execução para outra nas três páginas (o Lantern soma todo o JS pedido
+antes do LCP); continua como alerta, não como bloqueio.
+
+### Orçamento de JS: 225 → 240 KB
+
+`/quem-somos` virou página real, e o `<Link>` do header pré-carrega o código dela em qualquer página (~8 KB).
+O Lighthouse conta esse prefetch como script da página, então `/noticias` passou de 225 KB. O JS da própria home
+continua em ~212 KB.
+
+### Capítulo fixo acessível
+
+As etapas escondidas do `PinnedChapter` agora usam só `opacity` (antes `visibility`), para continuarem na árvore
+de acessibilidade: um leitor de tela lê a história inteira. Só a etapa visível recebe cliques, e o foco que entra
+em uma etapa escondida rola o capítulo até ela.

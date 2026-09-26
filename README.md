@@ -73,9 +73,11 @@ src/
     (payload)/          painel /admin e API REST (arquivos gerados pelo Payload)
   components/
     motion/             primitivas de animação ('use client'): SmoothScroll, SplitReveal, ScrubWords…
+    chapters/           capítulos da home e de Quem somos, Chapter (âncora) e ChapterRail (índice)
     cms/                RichText, barra de rascunho, live preview
     ui/                 header, footer, títulos
   config/site.ts        navegação e metadados estáticos
+  config/areas.ts       as quatro áreas de atuação (texto, foto, link)
   fonts/                woff2 gerados por scripts/build-fonts.py
   lib/
     cms/                acesso a dados (Local API + cache por tags), mídia
@@ -86,7 +88,8 @@ src/
   migrations/           migrations do Postgres (geradas, revisadas e commitadas)
 scripts/                seed, fontes, migração do WordPress (wp-export, wp-import)
 data/wp-export/         snapshot do WordPress, relatório da migração
-tests/e2e/              Playwright + axe (fundação e fluxo editorial do CMS)
+public/fotos/           fotos curadas do acervo (hero, áreas); o next/image gera AVIF/WebP
+tests/e2e/              Playwright + axe (fundação, CMS, redirects, motion, capítulos)
 docs/EDITORES.md        guia do painel para a equipe
 ```
 
@@ -130,6 +133,6 @@ Transição de página: `<ViewTransition>` em `src/app/(site)/template.tsx` + CS
 - [x] **2. Payload CMS:** painel `/admin`, collections, mídia, revalidação, preview e live preview
 - [x] **3. Migração do WordPress:** 65 notícias, 5 projetos, 14 publicações, 7 páginas, 226 imagens, 14 PDFs, 44 redirects
 - [x] **4. Sistema de motion:** 15 primitivas, `/lab`, menu mobile, transição de página, neblina WebGL
-- [ ] 5. Home e Quem somos (capítulos com scroll hijacking)
+- [x] **5. Home e Quem somos:** 7 + 6 capítulos com scroll hijacking, índice de capítulos, versões mobile e reduced motion
 - [ ] 6. Páginas de conteúdo
 - [ ] 7. Polimento, SEO e lançamento

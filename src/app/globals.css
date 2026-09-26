@@ -96,8 +96,10 @@ html.lenis body {
 }
 .hero-word > span {
   display: inline-block;
-  animation: hero-rise 1.3s var(--ease-vianei) both;
-  animation-delay: calc(var(--i) * 55ms + 80ms);
+  /* Fast-out easing and no initial delay: glyphs enter the mask on the first
+     frames, so the headline registers as painted (LCP) right away. */
+  animation: hero-rise 1.2s var(--ease-out-soft) both;
+  animation-delay: calc(var(--i) * 50ms);
 }
 .hero-fade {
   animation: hero-fade 1.2s var(--ease-out-soft) 0.6s both;
@@ -111,6 +113,25 @@ html.lenis body {
 @keyframes hero-rise {
   from {
     transform: translate3d(0, 108%, 0) rotate(3deg);
+  }
+}
+
+/* Long chapter pages: until the app boots, chapters after the first skip
+   style/layout (content-visibility), so the first paint only lays out the
+   hero. The rule lifts on `motion-ready`, before any ScrollTrigger measures
+   the page, so pins see real sizes; what changes is off-screen (no CLS). */
+html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 100svh;
+}
+
+/* Home hero photo: fades in from the mist once decoded (see DawnPhoto) */
+.dawn-photo {
+  animation: dawn-photo 1.6s var(--ease-out-soft) both;
+}
+@keyframes dawn-photo {
+  from {
+    opacity: 0;
   }
 }
 

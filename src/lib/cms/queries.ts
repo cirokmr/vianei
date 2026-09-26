@@ -163,3 +163,44 @@ export async function getPaginaCaminhos(prefix: string): Promise<string[]> {
   });
   return result.docs.map((doc) => doc.caminho);
 }
+
+// Institutional (home, quem somos) ---------------------------------------------
+
+function cachedGlobal<S extends "numeros" | "timeline">(slug: S) {
+  return unstable_cache(async () => (await payload()).findGlobal({ slug, depth: 1 }), [`global:${slug}`], {
+    tags: [cacheTags.global(slug)],
+  })();
+}
+
+export const getNumeros = () => cachedGlobal("numeros");
+export const getTimeline = () => cachedGlobal("timeline");
+
+export async function getParceiros() {
+  return unstable_cache(
+    async () =>
+      (await (await payload()).find({ collection: "parceiros", sort: ["ordem", "nome"], pagination: false, depth: 1 }))
+        .docs,
+    ["parceiros:list"],
+    { tags: [cacheTags.collection("parceiros")] },
+  )();
+}
+
+export async function getPessoas() {
+  return unstable_cache(
+    async () =>
+      (
+        await (
+          await payload()
+        ).find({
+          collection: "pessoas",
+          sort: ["ordem", "nome"],
+          pagination: false,
+          depth: 1,
+          // E-mails only leave the server when the team marked them public.
+          select: { nome: true, grupo: true, cargo: true, formacao: true, foto: true, email: true, emailPublico: true },
+        })
+      ).docs.map(({ email, emailPublico, ...pessoa }) => ({ ...pessoa, email: (emailPublico && email) || null })),
+    ["pessoas:list"],
+    { tags: [cacheTags.collection("pessoas")] },
+  )();
+}
