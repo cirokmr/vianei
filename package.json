@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "vercel-build": "bash scripts/vercel-build.sh",
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",

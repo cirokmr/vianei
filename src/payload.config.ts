@@ -22,9 +22,10 @@ import { Videos } from "./payload/collections/Videos";
 import { Numeros } from "./payload/globals/Numeros";
 import { Site } from "./payload/globals/Site";
 import { Timeline } from "./payload/globals/Timeline";
+import { serverUrl } from "./lib/server-url";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
-const serverURL = process.env.NEXT_PUBLIC_SERVER_URL ?? "http://localhost:3000";
+const serverURL = serverUrl();
 
 export default buildConfig({
   serverURL,
