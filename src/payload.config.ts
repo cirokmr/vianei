@@ -92,6 +92,9 @@ export default buildConfig({
     // uploads fall back to the local disk.
     vercelBlobStorage({
       enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      // Keep the storage fields (prefix, _objectKey) in the schema even when the
+      // plugin is off, so migrations generated locally match production.
+      alwaysInsertFields: true,
       collections: { midia: true, documentos: true },
       token: process.env.BLOB_READ_WRITE_TOKEN ?? "",
     }),

@@ -145,10 +145,12 @@ test.describe("contato", () => {
   test("uma mensagem válida é salva no painel", async ({ page, request }) => {
     await page.goto("/contato");
     await expect(page.locator("html")).toHaveClass(/motion-ready/);
+    // The fill-time trap starts when the form hydrates; wait for it under load.
+    await expect(page.locator('input[name="iniciado"]')).not.toHaveValue("");
     await page.getByRole("textbox", { name: "Nome" }).fill(unique);
     await page.getByRole("textbox", { name: "E-mail" }).fill("teste@example.com");
     await page.getByRole("textbox", { name: "Mensagem" }).fill("Mensagem de teste automatizado do formulário.");
-    await page.waitForTimeout(2600); // the form rejects submissions faster than a person could type
+    await page.waitForTimeout(3000); // the form rejects submissions faster than a person could type
     await page.getByRole("button", { name: "Enviar mensagem" }).click();
     await expect(page.getByRole("status")).toContainText("Mensagem enviada");
     const { docs, apagar } = await mensagens(request, unique);

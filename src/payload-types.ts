@@ -217,6 +217,8 @@ export interface Midia {
   legenda?: string | null;
   credito?: string | null;
   origem?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -399,6 +401,8 @@ export interface Documento {
   id: number;
   titulo: string;
   origem?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -837,6 +841,8 @@ export interface MidiaSelect<T extends boolean = true> {
   legenda?: T;
   credito?: T;
   origem?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -900,6 +906,8 @@ export interface MidiaSelect<T extends boolean = true> {
 export interface DocumentosSelect<T extends boolean = true> {
   titulo?: T;
   origem?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
