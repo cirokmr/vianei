@@ -10,7 +10,29 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { HeroTitle } from "@/components/ui/HeroTitle";
 import { frentes } from "@/config/areas";
 import { getParceiros, getPessoas, getSite, getTimeline } from "@/lib/cms/queries";
-import mistica from "../../../../public/fotos/mistica.webp";
+import { FullBleedPhoto } from "@/components/ui/FullBleedPhoto";
+import painel from "../../../../public/fotos/araucaria-painel.webp";
+import festa from "../../../../public/fotos/festa-da-colheita.webp";
+import saida from "../../../../public/fotos/saida-de-campo.webp";
+import sapecada from "../../../../public/fotos/sapecada-de-pinhao.webp";
+
+const montagem = [
+  {
+    src: saida,
+    legenda: "Saída de campo.",
+    alt: "Grupo caminhando entre araucárias em uma saída de campo, sob céu azul",
+  },
+  {
+    src: festa,
+    legenda: "Festa da Colheita do Pinhão.",
+    alt: "Pinhões e pinhas debulhadas sobre a grama durante a Festa da Colheita",
+  },
+  {
+    src: sapecada,
+    legenda: "Sapecada de pinhão.",
+    alt: "Roda de pessoas observando a sapecada de pinhão sobre grimpas de araucária",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Quem somos",
@@ -55,25 +77,37 @@ export default async function QuemSomos() {
             AVICITECS – Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde.
           </p>
         </header>
+        {/* Three field photos (800 px originals): a modest, staggered montage
+            rather than one large image, so they stay sharp. */}
         <div className="bg-neblina px-[var(--gutter)] pb-[clamp(4rem,12vh,8rem)]">
-          <ClipImage className="aspect-[16/9] max-h-[80svh] w-full">
-            <Image
-              src={mistica}
-              alt="Mística de bênção das sementes em roda, durante um encontro de agroecologia"
-              sizes="calc(100vw - 2 * var(--gutter))"
-              placeholder="blur"
-            />
-          </ClipImage>
-          <p className="mt-3 text-sm text-tinta/70">
-            Mística de bênção das sementes.{" "}
-            <span className="tracking-[0.12em] uppercase">Renato Kovalski Ribeiro / AS-PTA</span>
-          </p>
+          <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-[clamp(0.75rem,2vw,1.75rem)] md:grid-cols-3 md:items-start">
+            {montagem.map((foto, i) => (
+              <li
+                key={foto.legenda}
+                className={i === 0 ? "col-span-2 md:col-span-1 md:mt-16" : i === 2 ? "md:mt-28" : ""}
+              >
+                <figure>
+                  <ClipImage className="aspect-[3/2]" from={i === 1 ? "top" : "bottom"} parallax={false}>
+                    <Image src={foto.src} alt={foto.alt} sizes="(min-width: 768px) 24rem, 50vw" />
+                  </ClipImage>
+                  <figcaption className="mt-2 text-sm text-tinta/70">{foto.legenda}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </div>
       </Chapter>
 
       <Chapter {...historia}>
         <HistoryChapter marcos={timeline.marcos ?? []} />
       </Chapter>
+
+      <FullBleedPhoto
+        src={painel}
+        alt="Araucária adulta de copa larga em Painel, na Serra Catarinense"
+        legenda="Araucária em Painel, Serra Catarinense."
+        foco="50% 35%"
+      />
 
       <Chapter {...proposito}>
         <section aria-label="Propósito" className="bg-papel px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)]">

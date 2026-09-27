@@ -1,11 +1,15 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 import { useMotion } from "@/lib/use-motion";
 
 type Props = {
   text: string;
   className?: string;
+  /** Attribution under the quote, in the text face. */
+  cite?: string;
+  /** Rendered behind the words (e.g. a darkened photo). */
+  background?: ReactNode;
 };
 
 /**
@@ -13,7 +17,7 @@ type Props = {
  * This is the hijacking pattern the chapters build on: scroll advances the
  * scene instead of moving the page. Reduced motion shows the final state.
  */
-export function ScrubWords({ text, className }: Props) {
+export function ScrubWords({ text, className, cite, background }: Props) {
   const section = useRef<HTMLElement>(null);
   const quote = useRef<HTMLParagraphElement>(null);
 
@@ -45,9 +49,17 @@ export function ScrubWords({ text, className }: Props) {
 
   return (
     <section ref={section} className={className} aria-label="Manifesto" data-header="dark">
-      <p ref={quote} className="font-display text-h2 leading-[1.02] tracking-[-0.02em]">
-        {text}
-      </p>
+      {background}
+      <figure className="relative">
+        <blockquote>
+          <p ref={quote} className="max-w-5xl font-display text-h2 leading-[1.04] tracking-[-0.02em]">
+            {text}
+          </p>
+        </blockquote>
+        {cite ? (
+          <figcaption className="mt-8 text-eyebrow tracking-[0.2em] text-papel/80 uppercase">{cite}</figcaption>
+        ) : null}
+      </figure>
     </section>
   );
 }

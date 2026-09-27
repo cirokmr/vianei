@@ -36,5 +36,9 @@ if [ "${IMPORTAR_CONTEUDO:-}" = "1" ]; then
   npm run wp:import
   npm run wp:classify
 fi
+# Team-supplied fixes on top of the import (checks first; no-op once applied).
+if [ -n "${BLOB_READ_WRITE_TOKEN:-}" ]; then
+  npm run conteudo:ajustes
+fi
 
 npm run build

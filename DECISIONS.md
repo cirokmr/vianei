@@ -391,3 +391,24 @@ Revisão pedida pela equipe: textos grandes demais e imagens pequenas. O que mud
 - **Capa de notícia inteira**, sem corte: muitas são cartazes com data e local.
 - Publicações em quatro colunas; parceiros com nomes menores na faixa; a seção de números usa a mesma ilustração
   das araucárias, apagada no rodapé.
+
+### Fotos, logo e conteúdo enviados pela equipe (27/09/2026)
+
+- **Quem somos** abre com uma montagem de três fotos (saída de campo, Festa da Colheita, sapecada de pinhão) em
+  tamanho contido e escalonado: os originais têm baixa resolução. A araucária de Painel entra em tela cheia antes
+  do "Propósito".
+- **Home**: a pinha aberta em tela cheia antes dos números; a floresta de araucárias vira fundo da citação de Paulo
+  Freire; o logotipo do Centro Vianei fica ao lado do texto de apresentação. No celular, o logo tem no máximo 11 rem:
+  o título é dividido em palavras e cada uma concorre ao LCP separadamente. Com o logo maior, ele virava o LCP
+  (desempenho 0,94).
+- **Favicon**: só o emblema do logo (o círculo verde com a araucária), sem o texto. Também gera o `apple-icon`.
+- **Contato**: foto "Resista como uma araucária" abaixo das redes.
+- **Imagens presas em títulos** (Pixurum, Da Terra à Mesa, Saberes e Fazeres do Pinhão, Galeria de Espécies): o
+  WordPress punha algumas imagens dentro de `<h2>`/`<h3>`, e a importação deixava o marcador `[[image:N]]` como
+  texto. O importador agora troca qualquer bloco que seja só o marcador. Nos dados que já estão no ar,
+  `scripts/ajustes-conteudo.ts` corrige a cada deploy, e na segunda execução não faz nada. Quando a equipe mandou
+  o arquivo (`complementos.json` → `imagens`), ele é usado no lugar do download.
+- **Da Terra à Mesa**: seções "O primeiro ano, em números", "Na Serra Catarinense" e "Tecnologias sociais na
+  websérie", mais uma galeria de 13 fotos. Tudo vem do relatório parcial de 2025. Só entrou informação pública:
+  números de processo, valores repassados entre entidades e nomes de agricultores ficaram de fora. As fotos da
+  websérie são quadros de vídeo de 595 px; a galeria as mostra em ~40 vw.

@@ -335,7 +335,7 @@ function nodeText(node: LexNode): string {
 }
 
 /**
- * HTML → Lexical, replacing `[[image:N]]` paragraphs with upload nodes.
+ * HTML → Lexical, replacing `[[image:N]]` blocks with upload nodes.
  * `skipUrl` drops an inline copy of the cover (WordPress posts often repeat it).
  */
 async function toLexical(html: string, images: WpImage[], title: string, skipUrl?: string) {
@@ -345,12 +345,11 @@ async function toLexical(html: string, images: WpImage[], title: string, skipUrl
 
   const children: LexNode[] = [];
   for (const node of root.children ?? []) {
-    const marker =
-      node.type === "paragraph"
-        ? nodeText(node)
-            .trim()
-            .match(/^\[\[image:(\d+)\]\]$/)
-        : null;
+    // Any top-level block whose whole text is the marker: WordPress sometimes
+    // wraps the image in a heading (<h2><p>[[image:0]]</p></h2>).
+    const marker = nodeText(node)
+      .trim()
+      .match(/^\[\[image:(\d+)\]\]$/);
     if (!marker) {
       children.push(node);
       continue;

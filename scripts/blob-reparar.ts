@@ -3,7 +3,7 @@
  * local disk in dev, when there is no Blob token).
  * Runs on every Vercel deploy (scripts/vercel-build.sh): checks each file with
  * a HEAD request and re-sends the missing ones from their source (the old
- * WordPress URL in `origem`, or the team's PDFs in data/wp-export/complementos),
+ * WordPress URL in `origem`, or the team's files in data/wp-export/complementos),
  * keeping ids and file names so links in content keep working.
  *
  *   npm run blob:reparar
@@ -39,7 +39,8 @@ async function fonte(doc: Doc): Promise<{ data: Buffer; mimetype: string } | nul
   const origem = doc.origem ?? "";
   if (origem.startsWith("complementos/")) {
     const data = await readFile(path.join(COMPLEMENTOS_DIR, origem.slice("complementos/".length))).catch(() => null);
-    return data ? { data, mimetype: "application/pdf" } : null;
+    const tipos: Record<string, string> = { ".pdf": "application/pdf", ".webp": "image/webp", ".png": "image/png" };
+    return data ? { data, mimetype: tipos[path.extname(origem)] ?? "image/jpeg" } : null;
   }
   if (!/^https?:\/\//.test(origem)) return null;
   const res = await fetch(origem, { signal: AbortSignal.timeout(60_000) }).catch(() => null);

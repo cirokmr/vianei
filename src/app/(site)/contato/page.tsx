@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { getSite } from "@/lib/cms/queries";
 import { organization } from "@/lib/seo";
 import { ContatoForm } from "./ContatoForm";
+import resista from "../../../../public/fotos/resista-como-uma-araucaria.webp";
 
 export const metadata: Metadata = {
   title: "Contato",
@@ -87,6 +89,14 @@ export default async function ContatoPage() {
               </ul>
             </div>
           ) : null}
+          <figure className="max-w-md pt-4">
+            <Image
+              src={resista}
+              alt="Pessoa com camiseta “Resista como uma araucária” segurando uma pinha aberta"
+              sizes="(min-width: 1024px) 28rem, 90vw"
+              className="h-auto w-full"
+            />
+          </figure>
         </div>
         <section aria-labelledby="escreva" className="relative">
           <h2 id="escreva" className="mb-10 font-display text-h2 leading-none tracking-[-0.02em] text-mata">
