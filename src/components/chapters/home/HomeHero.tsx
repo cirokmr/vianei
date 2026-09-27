@@ -61,8 +61,7 @@ export function HomeHero() {
             alt="Centro Vianei de Educação Popular: atuando em educação popular e agroecologia desde 1983"
             sizes="(min-width: 768px) 22rem, 11rem"
             // The title is split into word spans, each its own LCP candidate: on
-            // phones the logo stays smaller than a word, and is preloaded anyway.
-            priority
+            // phones the logo stays smaller than a word, so the title stays the LCP.
             className="h-auto w-full max-w-[11rem] md:max-w-[22rem]"
           />
         </div>

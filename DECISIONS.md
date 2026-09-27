@@ -400,7 +400,7 @@ Revisão pedida pela equipe: textos grandes demais e imagens pequenas. O que mud
 - **Home**: a pinha aberta em tela cheia antes dos números; a floresta de araucárias vira fundo da citação de Paulo
   Freire; o logotipo do Centro Vianei fica ao lado do texto de apresentação. No celular, o logo tem no máximo 11 rem:
   o título é dividido em palavras e cada uma concorre ao LCP separadamente. Com o logo maior, ele virava o LCP
-  (desempenho 0,94).
+  (desempenho 0,94). Sem preload: nada compete com o título.
 - **Favicon**: só o emblema do logo (o círculo verde com a araucária), sem o texto. Também gera o `apple-icon`.
 - **Contato**: foto "Resista como uma araucária" abaixo das redes.
 - **Imagens presas em títulos** (Pixurum, Da Terra à Mesa, Saberes e Fazeres do Pinhão, Galeria de Espécies): o
