@@ -126,7 +126,14 @@ html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
 }
 
 /* Home opening illustration (Araucarias): the ridge and ground lines draw,
-   then each tree rises from the ground. */
+   then each tree rises from the ground. The file sets a fallback colour for
+   <img> use; inlined, it takes the text colour of its container. */
+.araucarias > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+}
 @media (prefers-reduced-motion: no-preference) {
   .araucarias-line {
     stroke-dasharray: 1;

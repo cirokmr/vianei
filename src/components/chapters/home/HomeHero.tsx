@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HeroTitle } from "@/components/ui/HeroTitle";
 import { site } from "@/config/site";
-import { LazyAraucarias as Araucarias } from "../lazy";
+import { Araucarias } from "./Araucarias";
 import { Dawn } from "./Dawn";
 
 const TITLE = "Educação popular e agroecologia.";
@@ -9,8 +9,8 @@ const TITLE = "Educação popular e agroecologia.";
 /**
  * Opening: the title alone on paper and, under it, the Planalto's araucárias
  * as an illustration traced from a photo (Araucarias). The headline is the LCP;
- * the illustration is inline SVG loaded after hydration, with a static copy
- * for no-JS. Phones crop the scene around the main tree.
+ * the drawing is a static SVG inlined after load, with an <img> copy for
+ * no-JS. Phones crop the scene around the main tree.
  */
 export function HomeHero() {
   return (

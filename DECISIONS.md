@@ -267,17 +267,18 @@ ilustração das araucárias do Planalto. O texto de apoio vem depois, e a régu
 da abertura.
 
 **A ilustração é traçada de uma foto nossa, não desenhada à mão.** A equipe pediu que a araucária fosse idêntica à
-real; desenhos procedurais (galhos e tufos gerados) não passaram. `scripts/ilustracoes/` recorta araucárias adultas
-de `public/fotos/caminhada.webp` (céu cinza liso, fácil de separar), vetoriza a silhueta com marching squares e
-estende os troncos até o chão. Saída: `src/components/chapters/home/araucarias-data.ts` (usado pelo site) e
-`public/ilustracoes/araucarias.svg` (cópia para quem está sem JS).
+real; desenhos procedurais (galhos e tufos gerados) não passaram. `scripts/ilustracoes/` recorta araucárias
+adultas de `public/fotos/caminhada.webp` (céu cinza liso, fácil de separar), vetoriza a silhueta com marching
+squares e estende os troncos até o chão. Saída: `public/ilustracoes/araucarias.svg`.
 
-**Desempenho.** A ilustração é SVG inline carregado só depois da hidratação (`next/dynamic` com `ssr: false`,
-~23 KB gzip): não pesa no HTML e SVG inline não concorre ao LCP, que continua sendo o título. O espaço é reservado
-por `aspect-ratio`, então não há CLS. As árvores sobem do chão com uma animação em CSS (sem GSAP), desligada com
-movimento reduzido. No celular, `preserveAspectRatio="xMidYMax slice"` recorta a cena em volta da árvore
-principal. Tentativas anteriores com a foto: como LCP no celular (CI 0,94, porque a simulação do Lighthouse soma
-todo o JS pedido antes da pintura) e como capa só no celular (passava, mas a foto ficava enorme no desktop).
+**Desempenho.** O desenho é um SVG estático (~23 KB gzip, em cache) buscado depois do `load` e inserido inline no
+DOM (`Araucarias`): SVG inline não concorre ao LCP, que continua sendo o título, e nada entra no bundle de JS
+(a primeira versão importava os caminhos como módulo e estourou o orçamento de script do CI, 252 KB > 240 KB).
+O espaço é reservado por `aspect-ratio`, então não há CLS. As árvores sobem do chão com animação em CSS (sem
+GSAP), desligada com movimento reduzido; sem JS, um `<img>` mostra o mesmo arquivo. No celular,
+`preserveAspectRatio="xMidYMax slice"` recorta a cena em volta da árvore principal. Tentativas anteriores com a
+foto: como LCP no celular (CI 0,94, porque a simulação do Lighthouse soma todo o JS pedido antes da pintura) e
+como capa só no celular (passava, mas a foto ficava enorme no desktop).
 
 A animação do título continua em CSS puro (`HeroTitle`). Os rótulos da abertura usam `fromTo` no GSAP: com `.to()`,
 o timeline lia a opacidade 0 da animação CSS de entrada e os rótulos ficavam invisíveis.

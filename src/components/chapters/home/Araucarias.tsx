@@ -1,44 +1,36 @@
 "use client";
 
-import { ARAUCARIAS as A } from "./araucarias-data";
+import { useEffect, useRef } from "react";
+
+const SRC = "/ilustracoes/araucarias.svg";
 
 /**
- * Opening illustration: three real araucárias traced from our own photo
- * (scripts/ilustracoes), on the Planalto's ridge line. Client-only (see
- * lazy.tsx): no weight in the HTML, and inline SVG never competes with the
- * headline for LCP. On mount the ridge draws and the trees rise from the
- * ground one after another (CSS only; skipped with reduced motion).
+ * Opening illustration: real araucárias traced from our own photo
+ * (scripts/ilustracoes). The drawing is a static SVG file (~23 KB gzip,
+ * cached), fetched after the page loads and inlined so each tree can rise
+ * from the ground (CSS in globals.css, off with reduced motion). Inline SVG
+ * is never an LCP candidate and adds nothing to the JS bundle; the space is
+ * reserved by the parent, so there is no layout shift.
  */
 export function Araucarias({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      viewBox={`0 0 ${A.width} ${A.height}`}
-      preserveAspectRatio="xMidYMax slice"
-      aria-hidden="true"
-      className={`araucarias ${className}`}
-    >
-      <path
-        className="araucarias-line"
-        d={A.hill}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.2"
-        opacity="0.35"
-        pathLength={1}
-      />
-      <g className="araucarias-tree" style={{ animationDelay: "0.35s" }} fill="var(--color-musgo)" opacity="0.55">
-        <path fillRule="evenodd" d={A.far.crown} />
-        <path d={A.far.trunk} />
-      </g>
-      <g className="araucarias-tree" style={{ animationDelay: "0.75s" }} fill="currentColor" opacity="0.85">
-        <path fillRule="evenodd" d={A.pair.crown} />
-        <path d={A.pair.trunk} />
-      </g>
-      <g className="araucarias-tree" style={{ animationDelay: "0.55s" }} fill="currentColor">
-        <path fillRule="evenodd" d={A.main.crown} />
-        <path d={A.main.trunk} />
-      </g>
-      <path className="araucarias-line" d={A.ground} stroke="currentColor" strokeWidth="1.4" pathLength={1} />
-    </svg>
-  );
+  const box = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const load = () =>
+      fetch(SRC, { signal: controller.signal })
+        .then((res) => (res.ok ? res.text() : ""))
+        .then((svg) => {
+          if (svg && box.current) box.current.innerHTML = svg;
+        })
+        .catch(() => {});
+    if (document.readyState === "complete") load();
+    else window.addEventListener("load", load, { once: true });
+    return () => {
+      controller.abort();
+      window.removeEventListener("load", load);
+    };
+  }, []);
+
+  return <div ref={box} aria-hidden="true" className={`araucarias ${className}`} />;
 }
