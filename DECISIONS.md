@@ -412,3 +412,16 @@ Revisão pedida pela equipe: textos grandes demais e imagens pequenas. O que mud
   websérie", mais uma galeria de 13 fotos. Tudo vem do relatório parcial de 2025. Só entrou informação pública:
   números de processo, valores repassados entre entidades e nomes de agricultores ficaram de fora. As fotos da
   websérie são quadros de vídeo de 595 px; a galeria as mostra em ~40 vw.
+
+### Agenda e miniaturas no texto
+
+As notícias importadas trazem cronogramas como parágrafos soltos ("11/08, às 14h – PA Butiá Verde, Fraiburgo…") e,
+às vezes, uma pilha de imagens quase iguais, como um convite por data. O `RichText` reconhece essas estruturas na
+hora de mostrar, sem mudar o conteúdo guardado:
+
+- **3 ou mais datas seguidas** viram uma agenda: dia grande em Fraunces, mês abreviado, local em destaque, horário
+  em pinhão e o resto do endereço.
+- **3 ou mais imagens seguidas** viram uma grade de miniaturas quadradas. Cada uma abre grande num `<dialog>`
+  nativo, com setas do teclado, Esc e botões anterior/próxima/fechar.
+
+A equipe continua escrevendo do jeito de sempre no painel; o site cuida da forma.

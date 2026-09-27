@@ -7,7 +7,7 @@ import { expect, test, type APIRequestContext } from "@playwright/test";
 const email = process.env.SEED_ADMIN_EMAIL ?? "dev@vianei.local";
 const password = process.env.SEED_ADMIN_PASSWORD ?? "dev-password-123";
 
-function paragraph(text: string) {
+function paragraph(...texts: string[]) {
   return {
     root: {
       type: "root",
@@ -15,17 +15,15 @@ function paragraph(text: string) {
       direction: null,
       format: "",
       indent: 0,
-      children: [
-        {
-          type: "paragraph",
-          version: 1,
-          direction: null,
-          format: "",
-          indent: 0,
-          textFormat: 0,
-          children: [{ type: "text", version: 1, text, format: 0, mode: "normal", style: "", detail: 0 }],
-        },
-      ],
+      children: texts.map((text) => ({
+        type: "paragraph",
+        version: 1,
+        direction: null,
+        format: "",
+        indent: 0,
+        textFormat: 0,
+        children: [{ type: "text", version: 1, text, format: 0, mode: "normal", style: "", detail: 0 }],
+      })),
     },
   };
 }
@@ -68,6 +66,24 @@ test.describe("CMS: notícias", () => {
 
     await page.goto("/noticias");
     await expect(page.getByRole("link", { name: new RegExp(titulo) })).toBeVisible();
+  });
+
+  test("datas soltas no texto viram agenda", async ({ page, request }) => {
+    const conteudo = paragraph(
+      "Cronograma:",
+      "11/08, às 14h – PA São João Maria II, Fraiburgo, na sede",
+      "14/08, às 9h – PA Butiá Verde, Fraiburgo",
+      "21/08 – PA Primeiro de Maio, Curitibanos",
+    );
+    const res = await request.patch(`/api/noticias/${id}`, { headers, data: { conteudo } });
+    expect(res.ok()).toBeTruthy();
+
+    await page.goto(`/noticias/${slug}`);
+    const agenda = page.locator("ol").filter({ hasText: "PA Butiá Verde" });
+    await expect(agenda.locator("li")).toHaveCount(3);
+    await expect(agenda.locator("li").first()).toContainText("11ago");
+    await expect(agenda.locator("li").first()).toContainText("14h");
+    await expect(page.getByText("Cronograma:")).toBeVisible();
   });
 
   test("editar revalida a página na hora", async ({ page, request }) => {
