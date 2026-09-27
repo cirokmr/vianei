@@ -1,5 +1,4 @@
 import { Counter } from "@/components/motion/Counter";
-import { DrawTree } from "@/components/motion/DrawTree";
 import { site } from "@/config/site";
 import type { Numero } from "@/payload-types";
 
@@ -19,7 +18,15 @@ export function NumbersChapter({ itens }: Props) {
 
   return (
     <div className="relative overflow-hidden bg-papel px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)]">
-      <DrawTree className="pointer-events-none absolute right-[4vw] bottom-0 hidden h-[88%] w-auto text-oliva/60 md:block" />
+      {/* The opening's araucárias again, faint along the bottom edge. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/ilustracoes/araucarias.svg"
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] w-full object-cover object-bottom opacity-[0.09]"
+      />
       <p className="mb-6 text-eyebrow tracking-[0.18em] text-musgo uppercase">Em números</p>
       <h2 className="max-w-3xl font-display text-h2 leading-[0.98] tracking-[-0.025em] text-mata">
         O tempo da araucária é o tempo do trabalho de base.
@@ -27,8 +34,8 @@ export function NumbersChapter({ itens }: Props) {
       <dl className="relative mt-[clamp(3rem,10vh,6rem)] grid gap-x-10 gap-y-14 md:max-w-[70%] md:grid-cols-2">
         {numeros.map((n) => (
           <div key={n.id ?? n.rotulo} className="flex flex-col-reverse border-t border-tinta/20 pt-6">
-            <dt className="mt-3 text-lead text-tinta/80">{n.rotulo}</dt>
-            <dd className="font-display text-[clamp(4rem,10vw,9rem)] leading-none font-light tracking-[-0.04em] text-mata">
+            <dt className="mt-3 text-tinta/75">{n.rotulo}</dt>
+            <dd className="font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-none font-light tracking-[-0.04em] text-mata">
               <Counter value={n.valor} prefix={n.prefixo ?? undefined} suffix={spaced(n.sufixo)} />
             </dd>
           </div>

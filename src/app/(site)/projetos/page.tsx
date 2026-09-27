@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ClipImage } from "@/components/motion/ClipImage";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { areas } from "@/config/areas";
 import { asMidia, mediaSrc } from "@/lib/cms/media";
@@ -41,29 +40,35 @@ export default async function ProjetosPage() {
                 }`}
               >
                 {img && capa ? (
-                  <ClipImage className="aspect-[16/10]" from={i % 2 ? "right" : "left"}>
+                  // Covers are the projects' logos: shown whole, on white, with room around them.
+                  <div className="relative grid aspect-[16/10] place-items-center overflow-hidden bg-white">
                     <Image
                       src={img.url}
                       width={img.width}
                       height={img.height}
                       alt=""
-                      sizes="(min-width: 768px) 48vw, 100vw"
+                      sizes="(min-width: 768px) 34vw, 70vw"
                       priority={i === 0}
+                      className="max-h-[62%] w-auto max-w-[72%] object-contain transition-transform duration-700 ease-[var(--ease-out-soft)] group-hover:scale-[1.04]"
                     />
-                  </ClipImage>
+                  </div>
                 ) : (
-                  <div
-                    aria-hidden="true"
-                    className="grid aspect-[16/10] place-items-center bg-neblina font-display text-[clamp(4rem,10vw,9rem)] font-light text-musgo"
-                  >
-                    {String(i + 1).padStart(2, "0")}
+                  // No cover yet: the Planalto's araucárias, faint, instead of an empty box.
+                  <div aria-hidden="true" className="relative aspect-[16/10] overflow-hidden bg-neblina">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/ilustracoes/araucarias.svg"
+                      alt=""
+                      loading="lazy"
+                      className="absolute inset-x-0 bottom-0 h-[70%] w-full object-cover object-bottom opacity-25"
+                    />
                   </div>
                 )}
                 <div>
                   {temas.length ? (
                     <p className="text-eyebrow tracking-[0.14em] text-musgo uppercase">{temas.join(" · ")}</p>
                   ) : null}
-                  <h2 className="mt-4 font-display text-[clamp(2rem,1.3rem+2.6vw,3.8rem)] leading-[1] tracking-[-0.02em] text-mata">
+                  <h2 className="mt-3 font-display text-[clamp(1.75rem,1.2rem+1.8vw,2.9rem)] leading-[1.05] tracking-[-0.02em] text-mata">
                     <Link
                       href={`/projetos/${projeto.slug}`}
                       data-cursor="Ver"
@@ -73,7 +78,7 @@ export default async function ProjetosPage() {
                     </Link>
                   </h2>
                   {projeto.resumo ? (
-                    <p className="mt-5 max-w-xl text-lead leading-snug text-tinta/80">{projeto.resumo}</p>
+                    <p className="mt-4 line-clamp-4 max-w-xl leading-relaxed text-tinta/75">{projeto.resumo}</p>
                   ) : null}
                 </div>
               </article>

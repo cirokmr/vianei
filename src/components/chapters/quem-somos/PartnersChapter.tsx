@@ -51,7 +51,7 @@ export function PartnersChapter({ parceiros, semTitulo = false }: { parceiros: P
   return (
     <div
       data-header="dark"
-      className={`bg-mata px-[var(--gutter)] text-papel ${semTitulo ? "pb-[clamp(5rem,14vh,9rem)]" : "py-[clamp(5rem,14vh,9rem)]"}`}
+      className={`bg-mata px-[var(--gutter)] text-papel ${semTitulo ? "pt-px pb-[clamp(5rem,14vh,9rem)]" : "py-[clamp(5rem,14vh,9rem)]"}`}
     >
       {semTitulo ? null : (
         <>

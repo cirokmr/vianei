@@ -74,7 +74,7 @@ export function RichText({ data, className = "" }: Props) {
     <LexicalRichText
       data={data}
       converters={converters}
-      className={`rich-text max-w-[68ch] text-lead leading-relaxed text-tinta/90 ${className}`}
+      className={`rich-text max-w-[66ch] text-tinta/90 ${className}`}
     />
   );
 }

@@ -27,7 +27,8 @@ export type NoticiaResumo = Pick<Noticia, "id" | "titulo" | "slug" | "resumo" | 
 const resumoSelect = { titulo: true, slug: true, resumo: true, publicadoEm: true, capa: true } as const;
 const publicada = { _status: { equals: "published" } } as const;
 
-export const NOTICIAS_POR_PAGINA = 12;
+// 13: on page 1 the lead story plus four full rows of three cards.
+export const NOTICIAS_POR_PAGINA = 13;
 
 export async function getNoticias({
   page = 1,

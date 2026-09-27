@@ -60,11 +60,11 @@ export default async function ProjetoPage({ params }: PageProps<"/projetos/[slug
         </Link>
       </p>
       <HeroTitle
-        className="max-w-6xl font-display text-[clamp(2.6rem,1.2rem+5vw,7rem)] leading-[0.95] font-light tracking-[-0.03em]"
+        className="max-w-5xl font-display text-[clamp(2.3rem,1.2rem+3.6vw,5.25rem)] leading-[0.98] font-light tracking-[-0.03em]"
         text={projeto.titulo}
       />
       {projeto.resumo ? (
-        <p className="hero-fade mt-8 max-w-2xl text-lead leading-snug opacity-90">{projeto.resumo}</p>
+        <p className="hero-fade mt-6 line-clamp-5 max-w-2xl text-lead leading-snug opacity-85">{projeto.resumo}</p>
       ) : null}
     </>
   );
@@ -79,18 +79,27 @@ export default async function ProjetoPage({ params }: PageProps<"/projetos/[slug
         ])}
       />
 
-      {img && capa ? (
-        // Pinned cover: the photo holds still (CSS sticky) while the title rises over it.
-        <header data-header="dark" className="relative h-[165svh] bg-mata text-papel">
-          <div className="sticky top-0 h-svh overflow-hidden">
-            <Image src={img.url} alt={capa.alt} fill priority sizes="100vw" className="object-cover" />
-            <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-mata via-mata/55 to-mata/10" />
+      {/* Split opening: the title, and the project's logo whole on a white card
+          (covers are logos; full-bleed they turned into a blurred backdrop). */}
+      <header
+        data-header="dark"
+        className="grid gap-10 bg-mata px-[var(--gutter)] pt-[clamp(8rem,20vh,12rem)] pb-[clamp(3rem,9vh,6rem)] text-papel md:grid-cols-12 md:items-end"
+      >
+        <div className={img && capa ? "md:col-span-7" : "md:col-span-10"}>{titulo}</div>
+        {img && capa ? (
+          <div className="relative grid aspect-[4/3] place-items-center bg-white md:col-span-5">
+            <Image
+              src={img.url}
+              width={img.width}
+              height={img.height}
+              alt={capa.alt}
+              priority
+              sizes="(min-width: 768px) 30vw, 70vw"
+              className="max-h-[68%] w-auto max-w-[76%] object-contain"
+            />
           </div>
-          <div className="absolute inset-x-0 bottom-0 px-[var(--gutter)] pb-[clamp(3rem,10vh,6rem)]">{titulo}</div>
-        </header>
-      ) : (
-        <header className="bg-neblina px-[var(--gutter)] pt-40 pb-14 text-mata">{titulo}</header>
-      )}
+        ) : null}
+      </header>
 
       <div className="grid gap-16 px-[var(--gutter)] py-16 lg:grid-cols-[minmax(0,68ch)_1fr] lg:gap-[calc(var(--gutter)*2)]">
         <RichText data={projeto.conteudo} />

@@ -1,5 +1,6 @@
 /**
- * Makes sure every image and PDF record has its file in Vercel Blob.
+ * Makes sure every image and PDF record has its file in Vercel Blob (or on the
+ * local disk in dev, when there is no Blob token).
  * Runs on every Vercel deploy (scripts/vercel-build.sh): checks each file with
  * a HEAD request and re-sends the missing ones from their source (the old
  * WordPress URL in `origem`, or the team's PDFs in data/wp-export/complementos),
@@ -8,7 +9,7 @@
  *   npm run blob:reparar
  */
 import config from "@payload-config";
-import { readFile } from "node:fs/promises";
+import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { getPayload } from "payload";
 
@@ -25,8 +26,12 @@ type Doc = {
   origem?: string | null;
 };
 
-async function faltando(url: string) {
-  const res = await fetch(url, { method: "HEAD" }).catch(() => null);
+// Without a Blob token, files live on the local disk (dev): check there instead.
+const BLOB = Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+
+async function faltando(collection: string, doc: Doc) {
+  if (!BLOB) return !(await stat(path.resolve(collection, doc.filename!)).catch(() => null));
+  const res = await fetch(doc.url!, { method: "HEAD" }).catch(() => null);
   return res?.status === 404;
 }
 
@@ -49,14 +54,14 @@ const falhas: string[] = [];
 
 for (const collection of COLLECTIONS) {
   const { docs } = await payload.find({ collection, pagination: false, depth: 0 });
-  const comUrl = (docs as Doc[]).filter((d) => /^https?:\/\//.test(d.url ?? "") && d.filename);
+  const comUrl = (docs as Doc[]).filter((d) => d.filename && (!BLOB || /^https?:\/\//.test(d.url ?? "")));
   verificados += comUrl.length;
 
   // HEAD checks in small parallel batches; uploads one at a time.
   const ausentes: Doc[] = [];
   for (let i = 0; i < comUrl.length; i += 16) {
     const lote = comUrl.slice(i, i + 16);
-    const res = await Promise.all(lote.map((d) => faltando(d.url!)));
+    const res = await Promise.all(lote.map((d) => faltando(collection, d)));
     lote.forEach((d, j) => res[j] && ausentes.push(d));
   }
 

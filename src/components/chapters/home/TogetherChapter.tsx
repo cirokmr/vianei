@@ -17,7 +17,10 @@ export function TogetherChapter({ parceiros, email }: Props) {
       {parceiros.length ? (
         <Marquee label="Parceiros e apoiadores do Centro Vianei" className="mt-[clamp(2.5rem,8vh,5rem)] py-6">
           {parceiros.map((p) => (
-            <span key={p.id} className="px-8 font-display text-[clamp(2rem,5vw,4.5rem)] font-light whitespace-nowrap">
+            <span
+              key={p.id}
+              className="px-6 font-display text-[clamp(1.5rem,2.8vw,2.75rem)] font-light whitespace-nowrap"
+            >
               {p.nome} <span className="text-salvia">·</span>
             </span>
           ))}
@@ -25,7 +28,7 @@ export function TogetherChapter({ parceiros, email }: Props) {
       ) : null}
 
       <div className="grid gap-10 border-t border-papel/15 px-[var(--gutter)] py-[clamp(4rem,12vh,8rem)] md:grid-cols-[1.3fr_1fr] md:items-end">
-        <p className="max-w-2xl font-display text-[clamp(2rem,1.3rem+2.8vw,4.2rem)] leading-[1.02] tracking-[-0.02em]">
+        <p className="max-w-2xl font-display text-[clamp(1.9rem,1.3rem+2vw,3.4rem)] leading-[1.04] tracking-[-0.02em]">
           Quer somar ao trabalho no Planalto? <span className="text-salvia">Vamos conversar.</span>
         </p>
         <div className="flex flex-wrap items-center gap-6 md:justify-end">

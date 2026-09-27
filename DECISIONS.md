@@ -374,3 +374,20 @@ Lighthouse mobile (mediana de 5, local): notícias 97, projetos 96, publicaçõe
 que pesava eram imagens logo abaixo da dobra (o Chrome as busca cedo mesmo com `lazy` em conexão lenta): as capas
 ganharam largura máxima no celular e as miniaturas usam qualidade 60; a primeira imagem de cada página tem
 prioridade.
+
+### Revisão de layout (tipografia e imagens)
+
+Revisão pedida pela equipe: textos grandes demais e imagens pequenas. O que mudou:
+
+- **Escala tipográfica mais contida.** `--text-h1` 12 rem → 9 rem no máximo; `--text-h2` 5,5 → 4,5 rem;
+  `--text-lead` 1,65 → 1,375 rem. A hierarquia vem dos títulos em Fraunces, não de parágrafos grandes.
+- **Leitura longa (`.rich-text`)** em ~17–18 px, entrelinha 1,7, ~66 caracteres por linha, centralizada; intertítulos
+  em Fraunces, listas com marcador oliva, legendas menores. Antes o corpo das notícias usava o tamanho de "lead".
+- **Notícias em grade de cartões** (`NoticiaLista`): a foto lidera (3:2), título curto e resumo de duas linhas. Na
+  primeira página, uma notícia em destaque com foto grande; 13 por página fecha quatro fileiras de três. A home
+  ("Agora no território") usa os mesmos cartões. Sem capa, as araucárias aparecem apagadas no lugar.
+- **Capas de projeto são logos**: aparecem inteiras sobre branco, com respiro, na lista e na abertura do projeto
+  (antes, em tela cheia, o logo virava um fundo desfocado).
+- **Capa de notícia inteira**, sem corte: muitas são cartazes com data e local.
+- Publicações em quatro colunas; parceiros com nomes menores na faixa; a seção de números usa a mesma ilustração
+  das araucárias, apagada no rodapé.

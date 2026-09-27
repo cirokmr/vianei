@@ -84,7 +84,7 @@ export default async function NoticiaPage({ params }: PageProps<"/noticias/[slug
       {categorias.length || projetos.length ? (
         <aside
           aria-label="Sobre esta notícia"
-          className="mt-16 grid gap-8 border-t border-tinta/15 pt-8 sm:grid-cols-2"
+          className="mx-auto grid max-w-[66ch] gap-8 border-t border-tinta/15 pt-8 sm:grid-cols-2"
         >
           {categorias.length ? (
             <div>
@@ -121,10 +121,13 @@ export default async function NoticiaPage({ params }: PageProps<"/noticias/[slug
       ) : null}
 
       {relacionadas.length ? (
-        <section aria-labelledby="leia-tambem" className="mt-20">
+        <section
+          aria-labelledby="leia-tambem"
+          className="mt-[clamp(4rem,10vh,6rem)] border-t border-tinta/15 pt-[clamp(3rem,7vh,4.5rem)]"
+        >
           <h2
             id="leia-tambem"
-            className="mb-6 font-display text-[clamp(1.8rem,1.3rem+1.8vw,3rem)] leading-none tracking-[-0.02em] text-mata"
+            className="mb-10 font-display text-[clamp(1.8rem,1.3rem+1.8vw,3rem)] leading-none tracking-[-0.02em] text-mata"
           >
             Leia também
           </h2>

@@ -39,7 +39,7 @@ export default async function PublicacoesPage() {
             >
               {ano || "Sem data"}
             </h2>
-            <ul className="grid gap-x-[var(--gutter)] gap-y-14 sm:grid-cols-2 xl:grid-cols-3">
+            <ul className="grid grid-cols-2 gap-x-[clamp(1rem,2.5vw,2.5rem)] gap-y-12 md:grid-cols-3 xl:grid-cols-4">
               {publicacoes
                 .filter((p) => (p.ano ?? 0) === ano)
                 .map((p, i) => {
@@ -51,7 +51,7 @@ export default async function PublicacoesPage() {
                   return (
                     <li key={p.id}>
                       <article className="group relative flex h-full flex-col">
-                        <div className="relative aspect-[3/4] w-full max-w-[18rem] overflow-hidden bg-neblina shadow-[0_18px_40px_-24px_rgb(28_38_22/0.55)] sm:max-w-none">
+                        <div className="relative aspect-[3/4] w-full overflow-hidden bg-neblina shadow-[0_18px_40px_-24px_rgb(28_38_22/0.55)]">
                           {img && capa ? (
                             <Image
                               src={img.url}
@@ -59,14 +59,18 @@ export default async function PublicacoesPage() {
                               fill
                               priority={secao === 0 && i === 0}
                               quality={60}
-                              sizes="(min-width: 1280px) 22vw, (min-width: 640px) 40vw, 18rem"
+                              sizes="(min-width: 1280px) 20vw, (min-width: 768px) 30vw, 45vw"
                               className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                             />
                           ) : null}
                         </div>
-                        <h3 className="mt-5 font-display text-2xl leading-tight text-mata">{p.titulo}</h3>
+                        <h3 className="mt-4 font-display text-[clamp(1.05rem,0.95rem+0.4vw,1.35rem)] leading-snug text-mata">
+                          {p.titulo}
+                        </h3>
                         {p.autoria ? <p className="mt-2 text-sm text-tinta/70">{p.autoria}</p> : null}
-                        {p.descricao ? <p className="mt-3 line-clamp-4 text-tinta/80">{p.descricao}</p> : null}
+                        {p.descricao ? (
+                          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-tinta/70">{p.descricao}</p>
+                        ) : null}
                         {href ? (
                           <a
                             href={href}

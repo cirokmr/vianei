@@ -8,7 +8,7 @@ export function PageHeader({ eyebrow, title, lead, children, dark = false }: Pro
   return (
     <header
       data-header={dark ? "dark" : undefined}
-      className={`px-[var(--gutter)] pt-40 pb-14 ${dark ? "bg-mata text-papel" : "bg-neblina"}`}
+      className={`px-[var(--gutter)] pt-[clamp(8rem,20vh,11rem)] pb-[clamp(3rem,7vh,4.5rem)] ${dark ? "bg-mata text-papel" : "bg-neblina"}`}
     >
       <p className={`mb-6 text-eyebrow tracking-[0.18em] uppercase ${dark ? "text-limao" : "text-musgo"}`}>{eyebrow}</p>
       <HeroTitle
@@ -16,7 +16,7 @@ export function PageHeader({ eyebrow, title, lead, children, dark = false }: Pro
         text={title}
       />
       {lead ? (
-        <p className={`hero-fade mt-8 max-w-2xl text-lead leading-snug ${dark ? "text-papel/85" : "text-tinta/80"}`}>
+        <p className={`hero-fade mt-6 max-w-2xl text-lead leading-snug ${dark ? "text-papel/85" : "text-tinta/80"}`}>
           {lead}
         </p>
       ) : null}
