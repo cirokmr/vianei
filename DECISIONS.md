@@ -258,21 +258,26 @@ tamanho certo). O hero usa direção de arte (`<picture>`): copa horizontal no d
 vertical no celular (qualidade 40, porque ali só a copa aparece acima da névoa). Quando chegarem fotos novas (ver
 `ASSETS-NEEDED.md`), basta trocar os arquivos. O `/lab` passou a usar as mesmas fotos (a pasta `public/lab` saiu).
 
-### Abertura da home: tipografia sobre papel, foto em moldura (revisão com a equipe)
+### Abertura da home: tipografia sobre papel e araucárias traçadas de foto (revisão com a equipe)
 
-Na revisão página a página, a equipe achou a abertura antiga carregada: foto clara e cheia de galhos atrás de um
-título escuro de três linhas, com a neblina por cima. A nova abertura deixa o título curto ("Educação popular e
-agroecologia.") sozinho sobre o papel e coloca a foto numa moldura logo abaixo, que se abre à largura toda ao
-rolar (`clip-path` animado, sem fixar a seção). O texto de apoio vai para depois da foto, e a régua de capítulos
-só aparece depois da abertura.
+Na revisão página a página, a equipe achou a abertura antiga carregada (foto clara cheia de galhos atrás de um
+título escuro de três linhas, com neblina por cima) e depois achou a foto em moldura grande demais. A abertura
+final deixa o título curto ("Educação popular e agroecologia.") sozinho sobre o papel e, abaixo dele, uma
+ilustração das araucárias do Planalto. O texto de apoio vem depois, e a régua de capítulos só aparece depois
+da abertura.
 
-**LCP por tamanho de tela.** No desktop a moldura aparece sob o título e é o maior elemento da primeira tela: a
-variante larga sai com `preload` + `fetchpriority="high"` (com `media`, só em telas ≥ 768 px) e sem fade. No
-celular, que é o que o Lighthouse mede, o título ocupa a primeira tela como uma capa e a moldura começa logo
-abaixo da dobra: o LCP continua sendo o título, e a foto usa `loading="lazy"` para não entrar na primeira leva de
-requisições. Tentativas descartadas, medidas no CI e localmente: foto como LCP no celular com preload (0,94,
-LCP ~3,0 s, porque a simulação do Lighthouse soma todo o JS pedido antes da pintura), foto menor (sem efeito) e
-Fraunces sem preload (CLS 0,14). Resultado: mediana 0,98, LCP ~2,3–2,4 s, CLS 0.
+**A ilustração é traçada de uma foto nossa, não desenhada à mão.** A equipe pediu que a araucária fosse idêntica à
+real; desenhos procedurais (galhos e tufos gerados) não passaram. `scripts/ilustracoes/` recorta araucárias adultas
+de `public/fotos/caminhada.webp` (céu cinza liso, fácil de separar), vetoriza a silhueta com marching squares e
+estende os troncos até o chão. Saída: `src/components/chapters/home/araucarias-data.ts` (usado pelo site) e
+`public/ilustracoes/araucarias.svg` (cópia para quem está sem JS).
+
+**Desempenho.** A ilustração é SVG inline carregado só depois da hidratação (`next/dynamic` com `ssr: false`,
+~23 KB gzip): não pesa no HTML e SVG inline não concorre ao LCP, que continua sendo o título. O espaço é reservado
+por `aspect-ratio`, então não há CLS. As árvores sobem do chão com uma animação em CSS (sem GSAP), desligada com
+movimento reduzido. No celular, `preserveAspectRatio="xMidYMax slice"` recorta a cena em volta da árvore
+principal. Tentativas anteriores com a foto: como LCP no celular (CI 0,94, porque a simulação do Lighthouse soma
+todo o JS pedido antes da pintura) e como capa só no celular (passava, mas a foto ficava enorme no desktop).
 
 A animação do título continua em CSS puro (`HeroTitle`). Os rótulos da abertura usam `fromTo` no GSAP: com `.to()`,
 o timeline lia a opacidade 0 da animação CSS de entrada e os rótulos ficavam invisíveis.

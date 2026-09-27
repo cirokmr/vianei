@@ -125,6 +125,29 @@ html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
   contain-intrinsic-size: auto 100svh;
 }
 
+/* Home opening illustration (Araucarias): the ridge and ground lines draw,
+   then each tree rises from the ground. */
+@media (prefers-reduced-motion: no-preference) {
+  .araucarias-line {
+    stroke-dasharray: 1;
+    animation: araucarias-draw 1.6s var(--ease-out-soft) both;
+  }
+  .araucarias-tree {
+    animation: araucarias-rise 1.8s var(--ease-out-soft) both;
+  }
+}
+@keyframes araucarias-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+}
+@keyframes araucarias-rise {
+  from {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(1.5%);
+  }
+}
+
 /* PinnedChapter: steps stack in one cell only once JS pins the chapter */
 .chapter.is-pinned {
   height: 100svh;

@@ -1,62 +1,28 @@
-import { getImageProps } from "next/image";
 import Link from "next/link";
-import { preload } from "react-dom";
 import { HeroTitle } from "@/components/ui/HeroTitle";
 import { site } from "@/config/site";
-import horizontal from "../../../../public/fotos/araucaria-catador.webp";
-import vertical from "../../../../public/fotos/araucaria-vertical.webp";
+import { LazyAraucarias as Araucarias } from "../lazy";
 import { Dawn } from "./Dawn";
-
-const alt = "Extrativista no alto de uma araucária, entre os galhos, colhendo pinhas na Serra Catarinense";
-
-// Art direction: a wide crown for desktop, a tall trunk for phones.
-// Desktop: the framed photo peeks under the title and is the largest thing on
-// the first screen (LCP), so it is preloaded with high priority, no fade.
-// Phones: the title fills the first screen like a cover and the photo starts
-// right below the fold, so the headline stays the LCP and the photo loads at
-// normal priority without competing with the display font.
-function HeroPhoto() {
-  // Lazy: on phones the photo is below the fold and must not join the first
-  // round of requests; on desktop the preload above fetches it right away.
-  const common = { alt, loading: "lazy" } as const;
-  const { props: wide } = getImageProps({ ...common, src: horizontal, quality: 55, sizes: "100vw" });
-  const { props: tall } = getImageProps({ ...common, src: vertical, quality: 40, sizes: "100vw" });
-  preload(wide.src, {
-    as: "image",
-    imageSrcSet: wide.srcSet,
-    imageSizes: "100vw",
-    media: "(min-width: 768px)",
-    fetchPriority: "high",
-  });
-
-  return (
-    <div data-dawn-photo="" className="absolute inset-0">
-      <picture>
-        <source media="(min-width: 768px)" srcSet={wide.srcSet} sizes="100vw" />
-        <img {...tall} alt={alt} className="h-full w-full object-cover object-[50%_20%]" />
-      </picture>
-    </div>
-  );
-}
 
 const TITLE = "Educação popular e agroecologia.";
 
 /**
- * Opening: the title alone on paper, the photo waiting below in a frame that
- * opens to the full width as it scrolls up (Dawn).
+ * Opening: the title alone on paper and, under it, the Planalto's araucárias
+ * as an illustration traced from a photo (Araucarias). The headline is the LCP;
+ * the illustration is inline SVG loaded after hydration, with a static copy
+ * for no-JS. Phones crop the scene around the main tree.
  */
 export function HomeHero() {
   return (
     <Dawn className="relative bg-papel pt-[clamp(7rem,18vh,11rem)]">
-      {/* Phones: a full first screen (minus the top padding) with the title at the bottom. */}
-      <div className="flex items-end justify-between gap-8 px-[var(--gutter)] max-md:min-h-[calc(100svh-clamp(7rem,18vh,11rem)-clamp(2rem,6vh,3rem))] max-md:flex-col max-md:items-start max-md:justify-end">
+      <div className="flex items-end justify-between gap-8 px-[var(--gutter)]">
         <div>
           <p data-dawn-fade="" className="hero-fade mb-5 text-eyebrow tracking-[0.2em] text-musgo uppercase">
             Planalto Catarinense · desde {site.foundedYear}
           </p>
           <div data-dawn-title="" className="font-display">
             <HeroTitle
-              className="max-w-[12ch] text-[clamp(2.75rem,13vw,4.5rem)] leading-[0.95] font-light tracking-[-0.03em] text-mata md:text-[clamp(2.75rem,1rem+6.5vw,9.5rem)]"
+              className="max-w-[12ch] text-[clamp(2.75rem,1rem+6.5vw,9.5rem)] leading-[0.95] font-light tracking-[-0.03em] text-mata"
               text={TITLE}
             />
           </div>
@@ -64,18 +30,26 @@ export function HomeHero() {
         <span
           data-dawn-fade=""
           aria-hidden="true"
-          className="hero-fade text-eyebrow tracking-[0.2em] whitespace-nowrap text-tinta/70 uppercase"
+          className="hero-fade hidden text-eyebrow tracking-[0.2em] whitespace-nowrap text-tinta/70 uppercase md:block"
         >
           Role ↓
         </span>
       </div>
 
-      {/* Framed by the gutters until it scrolls up (clip-path, so no layout shift). */}
+      {/* Space reserved up front, so the client-only drawing causes no layout shift. */}
       <div
-        data-dawn-frame=""
-        className="relative mt-[clamp(2rem,6vh,3rem)] h-svh min-h-[28rem] overflow-hidden bg-neblina [clip-path:inset(0_var(--gutter))] md:mt-[clamp(2.5rem,7vh,5rem)]"
+        data-dawn-scene=""
+        className="relative mt-[clamp(1.5rem,5vh,3.5rem)] aspect-[5/4] w-full text-mata sm:aspect-[2/1] lg:aspect-[11/4]"
       >
-        <HeroPhoto />
+        <Araucarias className="absolute inset-0 h-full w-full" />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/ilustracoes/araucarias.svg"
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover object-bottom"
+          />
+        </noscript>
       </div>
 
       <div className="grid gap-6 px-[var(--gutter)] py-[clamp(4rem,12vh,8rem)] md:grid-cols-12">

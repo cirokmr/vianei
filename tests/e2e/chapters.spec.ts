@@ -55,37 +55,21 @@ test.describe("home", () => {
     ]);
   });
 
-  test("abertura: foto pré-carregada só no desktop; no celular o título é a capa (LCP)", async ({
+  test("abertura: título é o LCP e a ilustração das araucárias entra depois, sem deslocar o layout", async ({
     page,
     request,
-    isMobile,
   }) => {
     const html = await (await request.get("/")).text();
-    // Desktop variant preloaded with high priority; the phone variant waits below the fold.
-    expect(html).toMatch(
-      /<link rel="preload" as="image" fetchPriority="high"[^>]*araucaria-catador[^>]*media="\(min-width: 768px\)"/,
-    );
-    expect(html).not.toMatch(/<link rel="preload"[^>]*araucaria-vertical/);
+    // Nothing competes with the headline: no preloaded image, only the no-JS copy of the drawing.
+    expect(html).not.toMatch(/<link rel="preload" as="image"/);
+    expect(html).toMatch(/<noscript>.*ilustracoes\/araucarias\.svg/s);
     await page.goto("/");
-    const frame = page.locator("[data-dawn-frame]");
-    const top = await frame.evaluate((el) => el.getBoundingClientRect().top);
-    const vh = await page.evaluate(() => window.innerHeight);
-    if (isMobile) expect(top).toBeGreaterThanOrEqual(vh - 1);
-    else expect(top).toBeLessThan(vh);
-    const photo = page.locator("[data-dawn-photo] img");
-    await expect(photo).toHaveAttribute("alt", /araucária/);
-    await photo.scrollIntoViewIfNeeded();
-    await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
-  });
-
-  test("a moldura da foto se abre ao rolar, sem fixar a abertura", async ({ page }) => {
-    await page.goto("/");
-    await expect(page.locator("html")).toHaveClass(/motion-ready/);
-    const frame = page.locator("[data-dawn-frame]");
-    const inset = () => frame.evaluate((el) => getComputedStyle(el).clipPath);
-    await expect.poll(inset).not.toBe("inset(0px)");
-    await frame.evaluate((el) => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY));
-    await expect.poll(inset, { timeout: 5000 }).toBe("inset(0px)");
+    const scene = page.locator("[data-dawn-scene]");
+    const before = await scene.boundingBox();
+    await expect(scene.locator("svg path").first()).toBeAttached();
+    expect(await scene.locator("svg path").count()).toBeGreaterThanOrEqual(8);
+    const after = await scene.boundingBox();
+    expect(after?.height).toBeCloseTo(before!.height, 0);
     const hero = page.locator('section[aria-label="Abertura"]');
     expect(await hero.evaluate((el) => Boolean(el.closest(".pin-spacer")))).toBe(false);
   });
