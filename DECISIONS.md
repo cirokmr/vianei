@@ -258,20 +258,30 @@ tamanho certo). O hero usa direção de arte (`<picture>`): copa horizontal no d
 vertical no celular (qualidade 40, porque ali só a copa aparece acima da névoa). Quando chegarem fotos novas (ver
 `ASSETS-NEEDED.md`), basta trocar os arquivos. O `/lab` passou a usar as mesmas fotos (a pasta `public/lab` saiu).
 
-### LCP da home: o título, não a foto
+### Abertura da home: tipografia sobre papel e araucárias traçadas de foto (revisão com a equipe)
 
-O elemento de LCP da home é o título. Três ajustes o mantêm rápido:
+Na revisão página a página, a equipe achou a abertura antiga carregada (foto clara cheia de galhos atrás de um
+título escuro de três linhas, com neblina por cima) e depois achou a foto em moldura grande demais. A abertura
+final deixa o título curto ("Educação popular e agroecologia.") sozinho sobre o papel e, abaixo dele, uma
+ilustração das araucárias do Planalto. O texto de apoio vem depois, e a régua de capítulos só aparece depois
+da abertura.
 
-1. **Pin sem reinserir o DOM.** O hero é fixado pelo ScrollTrigger, que por padrão embrulha o elemento em um
-   `div` novo. Isso reinseria o título no DOM, o Chrome contava uma nova pintura e o LCP ia para o momento em que
-   o motion carrega (~3,2 s). O `Dawn` passa o próprio wrapper renderizado no servidor (`pinSpacer`) e o LCP
-   observado voltou a coincidir com o FCP. Regra: **pin acima da dobra sempre com `pinSpacer`**. (O wrapper
-   herda o `display: flex` da seção; por isso a seção leva `w-full`.)
-2. **A foto entra depois do `load`** (`DawnPhoto`), com fade, como a névoa se dissipando. Assim os ~40–60 KB da
-   foto saem da primeira leva de requisições, que fica com a fonte do título e o JS da página. Sem JS, uma cópia
-   em `<noscript>` mostra a foto.
-3. **Animação do título** com easing de saída rápida e sem atraso inicial: as letras entram na máscara nos
-   primeiros quadros.
+**A ilustração é traçada de uma foto nossa, não desenhada à mão.** A equipe pediu que a araucária fosse idêntica à
+real; desenhos procedurais (galhos e tufos gerados) não passaram. `scripts/ilustracoes/` recorta araucárias
+adultas de `public/fotos/caminhada.webp` (céu cinza liso, fácil de separar), vetoriza a silhueta com marching
+squares e estende os troncos até o chão. Saída: `public/ilustracoes/araucarias.svg`.
+
+**Desempenho.** O desenho é um SVG estático (~23 KB gzip, em cache) buscado depois do `load` e inserido inline no
+DOM (`Araucarias`): SVG inline não concorre ao LCP, que continua sendo o título, e nada entra no bundle de JS
+(a primeira versão importava os caminhos como módulo e estourou o orçamento de script do CI, 252 KB > 240 KB).
+O espaço é reservado por `aspect-ratio`, então não há CLS. As árvores sobem do chão com animação em CSS (sem
+GSAP), desligada com movimento reduzido; sem JS, um `<img>` mostra o mesmo arquivo. No celular,
+`preserveAspectRatio="xMidYMax slice"` recorta a cena em volta da árvore principal. Tentativas anteriores com a
+foto: como LCP no celular (CI 0,94, porque a simulação do Lighthouse soma todo o JS pedido antes da pintura) e
+como capa só no celular (passava, mas a foto ficava enorme no desktop).
+
+A animação do título continua em CSS puro (`HeroTitle`). Os rótulos da abertura usam `fromTo` no GSAP: com `.to()`,
+o timeline lia a opacidade 0 da animação CSS de entrada e os rótulos ficavam invisíveis.
 
 Também: os setups de motion rodam um por tarefa (`scheduler.yield`/`setTimeout`), em vez de todos juntos logo
 após o `load`, e o GSAP só carrega depois do `load` **e** de um período ocioso (TBT da home: ~200 ms → ~90 ms).
@@ -310,3 +320,131 @@ continua em ~212 KB.
 As etapas escondidas do `PinnedChapter` agora usam só `opacity` (antes `visibility`), para continuarem na árvore
 de acessibilidade: um leitor de tela lê a história inteira. Só a etapa visível recebe cliques, e o foco que entra
 em uma etapa escondida rola o capítulo até ela.
+
+## 2026-09-26 · Fase 6
+
+### Classificação das notícias migradas
+
+O WordPress não tinha taxonomia aproveitável: as 65 notícias chegaram sem tema e sem projeto, e os projetos sem
+área. `npm run wp:classify` sugere temas, projetos e áreas por palavras-chave no título e no resumo, **só em campos
+vazios** (o que a equipe muda no painel nunca é sobrescrito) e grava `data/wp-export/classificacao.md` para
+revisão. O nome da entidade ("…de Educação Popular") é ignorado para não marcar tudo como educação popular.
+Resultado: 63/65 notícias e 5/5 projetos classificados.
+
+### Notícias
+
+- `/noticias`, `/noticias/pagina/N` e `/noticias/categoria/X[/pagina/N]` são estáticas (ISR por tag); só a busca
+  (`/noticias/busca?q=`) é dinâmica e fica fora do índice (`noindex`). A busca é um formulário GET: funciona sem JS.
+- Paginação por caminho, não por `?pagina=`, para as páginas continuarem estáticas e rastreáveis.
+- Notícia: temas, projeto, "Leia também" (mesmo projeto ou tema) e JSON-LD `NewsArticle` + `BreadcrumbList`.
+
+### Vídeos sem chave de API
+
+`/videos` junta os vídeos cadastrados no painel (primeiro) com o feed RSS público do canal (cache de 6 h). Se o
+YouTube não responder, a página mostra só os do painel. Cada vídeo é uma fachada: miniatura (via `next/image`,
+`i.ytimg.com` liberado) e o player `youtube-nocookie` só depois do clique. Nas notícias, links soltos do YouTube
+(como o WordPress embutia) viram a mesma fachada, com o título real via oEmbed (cache de 1 semana).
+
+### Atuação e projetos
+
+- As quatro áreas são rotas de código (`src/config/areas.ts`), cada uma com suas frentes de trabalho (a lista a–p
+  de Quem somos, agora compartilhada), os projetos da área e as notícias do tema.
+- Projeto: capa fixa em CSS puro (`position: sticky`, sem GSAP) com o título subindo por cima; subpáginas
+  listadas com o título real, inclusive as que ficaram sem página-mãe na migração do mini-site do Restaurar.
+- A situação do projeto continua sem aparecer (pedido da equipe).
+
+### Contato
+
+Formulário com server action (funciona sem JS; com JS mostra erros no lugar e move o foco para o aviso). As
+mensagens ficam numa collection nova (`mensagens`, migration `contato`), que a API pública não aceita criar.
+Antispam: campo-isca e tempo mínimo de preenchimento, **depois** da validação (a pessoa sempre vê os erros; o robô
+recebe um "enviado" falso e nada é gravado), mais um limite por IP. Aviso por e-mail via SMTP
+(`@payloadcms/email-nodemailer`) quando configurado; sem SMTP, a mensagem fica no painel e o aviso vai para o log.
+Mapa: link para o OpenStreetMap, sem mapa embutido (nada de script de terceiros nem chave).
+
+### `dynamicParams = false` e revalidação
+
+Com `dynamicParams = false`, uma revalidação por tag fazia `/atuacao/[area]` responder 404 (`NoFallbackError` no
+Next 16.3). A opção saiu; áreas inexistentes continuam em 404 via `notFound()`. O placeholder `[secao]` foi
+removido: todas as seções do menu existem.
+
+### Desempenho das páginas novas
+
+Lighthouse mobile (mediana de 5, local): notícias 97, projetos 96, publicações 95, vídeos 95. Nas duas últimas, o
+que pesava eram imagens logo abaixo da dobra (o Chrome as busca cedo mesmo com `lazy` em conexão lenta): as capas
+ganharam largura máxima no celular e as miniaturas usam qualidade 60; a primeira imagem de cada página tem
+prioridade.
+
+### Revisão de layout (tipografia e imagens)
+
+Revisão pedida pela equipe: textos grandes demais e imagens pequenas. O que mudou:
+
+- **Escala tipográfica mais contida.** `--text-h1` 12 rem → 9 rem no máximo; `--text-h2` 5,5 → 4,5 rem;
+  `--text-lead` 1,65 → 1,375 rem. A hierarquia vem dos títulos em Fraunces, não de parágrafos grandes.
+- **Leitura longa (`.rich-text`)** em ~17–18 px, entrelinha 1,7, ~66 caracteres por linha, centralizada; intertítulos
+  em Fraunces, listas com marcador oliva, legendas menores. Antes o corpo das notícias usava o tamanho de "lead".
+- **Notícias em grade de cartões** (`NoticiaLista`): a foto lidera (3:2), título curto e resumo de duas linhas. Na
+  primeira página, uma notícia em destaque com foto grande; 13 por página fecha quatro fileiras de três. A home
+  ("Agora no território") usa os mesmos cartões. Sem capa, as araucárias aparecem apagadas no lugar.
+- **Capas de projeto são logos**: aparecem inteiras sobre branco, com respiro, na lista e na abertura do projeto
+  (antes, em tela cheia, o logo virava um fundo desfocado).
+- **Capa de notícia inteira**, sem corte: muitas são cartazes com data e local.
+- Publicações em quatro colunas; parceiros com nomes menores na faixa; a seção de números usa a mesma ilustração
+  das araucárias, apagada no rodapé.
+
+### Fotos, logo e conteúdo enviados pela equipe (27/09/2026)
+
+- **Quem somos** abre com uma montagem de três fotos (saída de campo, Festa da Colheita, sapecada de pinhão) em
+  tamanho contido e escalonado: os originais têm baixa resolução. A araucária de Painel entra em tela cheia antes
+  do "Propósito".
+- **Home**: a pinha aberta em tela cheia antes dos números; a floresta de araucárias vira fundo da citação de Paulo
+  Freire; o logotipo do Centro Vianei fica ao lado do texto de apresentação. No celular, o logo tem no máximo 11 rem:
+  o título é dividido em palavras e cada uma concorre ao LCP separadamente. Com o logo maior, ele virava o LCP
+  (desempenho 0,94). Sem preload: nada compete com o título.
+- **Favicon**: só o emblema do logo (o círculo verde com a araucária), sem o texto. Também gera o `apple-icon`.
+- **Contato**: foto "Resista como uma araucária" abaixo das redes.
+- **Imagens presas em títulos** (Pixurum, Da Terra à Mesa, Saberes e Fazeres do Pinhão, Galeria de Espécies): o
+  WordPress punha algumas imagens dentro de `<h2>`/`<h3>`, e a importação deixava o marcador `[[image:N]]` como
+  texto. O importador agora troca qualquer bloco que seja só o marcador. Nos dados que já estão no ar,
+  `scripts/ajustes-conteudo.ts` corrige a cada deploy, e na segunda execução não faz nada. Quando a equipe mandou
+  o arquivo (`complementos.json` → `imagens`), ele é usado no lugar do download.
+- **Da Terra à Mesa**: seções "O primeiro ano, em números", "Na Serra Catarinense" e "Tecnologias sociais na
+  websérie", mais uma galeria de 13 fotos. Tudo vem do relatório parcial de 2025. Só entrou informação pública:
+  números de processo, valores repassados entre entidades e nomes de agricultores ficaram de fora. As fotos da
+  websérie são quadros de vídeo de 595 px; a galeria as mostra em ~40 vw.
+
+### Agenda e miniaturas no texto
+
+As notícias importadas trazem cronogramas como parágrafos soltos ("11/08, às 14h – PA Butiá Verde, Fraiburgo…") e,
+às vezes, uma pilha de imagens quase iguais, como um convite por data. O `RichText` reconhece essas estruturas na
+hora de mostrar, sem mudar o conteúdo guardado:
+
+- **3 ou mais datas seguidas** viram uma agenda: dia grande em Fraunces, mês abreviado, local em destaque, horário
+  em pinhão e o resto do endereço.
+- **3 ou mais imagens seguidas** viram uma grade de miniaturas quadradas. Cada uma abre grande num `<dialog>`
+  nativo, com setas do teclado, Esc e botões anterior/próxima/fechar.
+
+A equipe continua escrevendo do jeito de sempre no painel; o site cuida da forma.
+
+### Logo no cabeçalho
+
+O "Vianei." em texto deu lugar ao logotipo completo (emblema + "Atuando em Educação Popular e Agroecologia desde
+1983"), com 40 px de altura no celular e 48 px no computador; também no menu do celular. Cuidados de desempenho (o
+logo aparece em toda página, e o Lighthouse do CI caiu para 0,94 na primeira versão):
+
+- `LogoCabecalho` pede o arquivo (versão de 288 px feita para esse lugar, 10 KB) só depois do `load`, com o espaço
+  reservado e um fade curto; sem JavaScript, uma cópia em `<noscript>` aparece direto.
+- A cópia grande do logo na apresentação da home saiu: repetia o cabeçalho, logo abaixo, e era baixada junto com o
+  título (LCP).
+- Links visíveis na primeira tela (menu e "Conheça o Vianei") pré-carregam a página ao passar o mouse, tocar ou
+  focar (`NavLink`), e não ao aparecer: eram 7 requisições no início de toda página, disputando a rede com o título
+  e gastando dados móveis com páginas que ninguém abriu.
+- A montagem de fotos do Quem somos usa qualidade 60 (os originais já são de baixa resolução).
+
+### Manifesto: texto ao lado da foto, não por cima
+
+A citação de Paulo Freire sobre a floresta escurecida ficava difícil de ler, principalmente no celular com o brilho
+baixo, e a serifa fina brigava com a textura das copas. Agora o texto fica num painel liso em verde-mata, com
+contraste garantido, e a foto aparece inteira e sem véu: ao lado no computador (metade da tela) e embaixo no
+celular. A autoria ganhou um fio em musgo. As palavras começam em 50% de opacidade (antes 42%) e acendem com a
+rolagem.

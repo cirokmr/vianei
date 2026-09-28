@@ -78,6 +78,7 @@ export interface Config {
     midia: Midia;
     documentos: Documento;
     usuarios: Usuario;
+    mensagens: Mensagen;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -96,6 +97,7 @@ export interface Config {
     midia: MidiaSelect<false> | MidiaSelect<true>;
     documentos: DocumentosSelect<false> | DocumentosSelect<true>;
     usuarios: UsuariosSelect<false> | UsuariosSelect<true>;
+    mensagens: MensagensSelect<false> | MensagensSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -215,6 +217,8 @@ export interface Midia {
   legenda?: string | null;
   credito?: string | null;
   origem?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -397,6 +401,8 @@ export interface Documento {
   id: number;
   titulo: string;
   origem?: string | null;
+  prefix?: string | null;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -525,6 +531,22 @@ export interface Usuario {
   collection: 'usuarios';
 }
 /**
+ * Enviadas pelo formulário de contato do site.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "mensagens".
+ */
+export interface Mensagen {
+  id: number;
+  nome: string;
+  email: string;
+  assunto?: string | null;
+  mensagem: string;
+  lida?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -591,6 +613,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'usuarios';
         value: number | Usuario;
+      } | null)
+    | ({
+        relationTo: 'mensagens';
+        value: number | Mensagen;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -815,6 +841,8 @@ export interface MidiaSelect<T extends boolean = true> {
   legenda?: T;
   credito?: T;
   origem?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -878,6 +906,8 @@ export interface MidiaSelect<T extends boolean = true> {
 export interface DocumentosSelect<T extends boolean = true> {
   titulo?: T;
   origem?: T;
+  prefix?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -914,6 +944,19 @@ export interface UsuariosSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "mensagens_select".
+ */
+export interface MensagensSelect<T extends boolean = true> {
+  nome?: T;
+  email?: T;
+  assunto?: T;
+  mensagem?: T;
+  lida?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

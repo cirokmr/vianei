@@ -1,4 +1,5 @@
 import type { Midia } from "@/payload-types";
+import { serverUrl } from "@/lib/server-url";
 
 type SizeName = keyof NonNullable<Midia["sizes"]>;
 
@@ -13,7 +14,7 @@ export function asMidia(value: number | Midia | null | undefined): Midia | null 
  * Vercel Blob URLs (production) stay absolute and match `remotePatterns`.
  */
 export function publicPath(url: string): string {
-  const server = process.env.NEXT_PUBLIC_SERVER_URL;
+  const server = serverUrl();
   if (server && url.startsWith(server)) return url.slice(server.length) || "/";
   return url;
 }

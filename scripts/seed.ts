@@ -10,15 +10,18 @@
 import config from "@payload-config";
 import { getPayload, type CollectionSlug, type Where } from "payload";
 
-const ctx = { disableRevalidate: true };
+// A fresh object per call: Payload hooks write into req.context (the cloud
+// storage plugin keeps the pending upload there), so a shared object makes
+// every upload after the first one skip Vercel Blob.
+const ctx = () => ({ disableRevalidate: true });
 const payload = await getPayload({ config });
 
 async function upsert<T extends Record<string, unknown>>(collection: CollectionSlug, where: Where, data: T) {
   const existing = await payload.find({ collection, where, limit: 1, depth: 0 });
   if (existing.docs[0]) {
-    return payload.update({ collection, id: existing.docs[0].id, data, context: ctx, depth: 0 });
+    return payload.update({ collection, id: existing.docs[0].id, data, context: ctx(), depth: 0 });
   }
-  return payload.create({ collection, data, context: ctx, depth: 0 } as Parameters<typeof payload.create>[0]);
+  return payload.create({ collection, data, context: ctx(), depth: 0 } as Parameters<typeof payload.create>[0]);
 }
 
 // First admin ---------------------------------------------------------------
@@ -29,7 +32,7 @@ if (adminEmail && adminPassword) {
     await payload.create({
       collection: "usuarios",
       data: { email: adminEmail, password: adminPassword, nome: "Administração", roles: ["admin"] },
-      context: ctx,
+      context: ctx(),
     });
     payload.logger.info(`admin criado: ${adminEmail}`);
   }
@@ -38,7 +41,7 @@ if (adminEmail && adminPassword) {
 // Globals ---------------------------------------------------------------------
 await payload.updateGlobal({
   slug: "site",
-  context: ctx,
+  context: ctx(),
   data: {
     nome: "Centro Vianei de Educação Popular",
     razaoSocial: "AVICITECS – Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde",
@@ -62,7 +65,7 @@ await payload.updateGlobal({
 // Only milestones stated on the current site; the team completes the rest.
 await payload.updateGlobal({
   slug: "timeline",
-  context: ctx,
+  context: ctx(),
   data: {
     marcos: [
       {

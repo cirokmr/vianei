@@ -31,6 +31,17 @@
 
 - Páginas compõem capítulos de `src/components/chapters/`; cada um dentro de `<Chapter id label>` e listado no
   `ChapterRail` da página.
-- Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor (ver `Dawn.tsx`). Sem isso o GSAP
-  reinsere o elemento no DOM e o LCP vai para o momento em que o motion carrega.
+- Pin acima da dobra: passe `pinSpacer` com um wrapper renderizado no servidor. Sem isso o GSAP reinsere o
+  elemento no DOM e o LCP vai para o momento em que o motion carrega.
+- Abertura da home: o título é o LCP; a ilustração das araucárias (`Araucarias`, traçada de foto por
+  `scripts/ilustracoes/`) é um SVG estático inserido inline depois do `load` (fora do bundle de JS). Não troque por imagem acima da dobra.
 - Números e marcos vêm dos globals `numeros` e `timeline`. Nunca escreva um número institucional no código.
+
+## Conteúdo (fase 6)
+
+- Rotas de índice compartilham componentes: `NoticiasIndex` (lista, tema e paginação), `PageHeader`.
+- Não use `dynamicParams = false` em rotas revalidadas por tag: no Next 16 a revalidação faz a página cair em
+  404 (NoFallbackError). Trate slugs inválidos com `notFound()`.
+- Vídeos: sempre pela fachada `YouTube` (miniatura até o clique, `youtube-nocookie`). Um link solto do YouTube num
+  parágrafo do editor vira player automaticamente (`RichText`).
+- Mensagens de contato só são criadas pela server action (`overrideAccess`); a API pública não aceita `create`.

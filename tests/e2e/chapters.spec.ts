@@ -55,26 +55,23 @@ test.describe("home", () => {
     ]);
   });
 
-  test("a foto do hero entra depois do load, sem disputar com o título (LCP)", async ({ page, request }) => {
-    // In the server HTML only as a <noscript> fallback: never in the first round of requests.
+  test("abertura: título é o LCP e a ilustração das araucárias entra depois, sem deslocar o layout", async ({
+    page,
+    request,
+  }) => {
     const html = await (await request.get("/")).text();
-    expect(html).toMatch(/<noscript>.*araucaria-vertical/s);
+    // Nothing competes with the headline: no preloaded image, only the no-JS copy of the drawing.
+    expect(html).not.toMatch(/<link rel="preload" as="image"/);
+    expect(html).toMatch(/<noscript>.*ilustracoes\/araucarias\.svg/s);
     await page.goto("/");
-    const photo = page.locator("[data-dawn-photo] img");
-    await expect(photo).toHaveAttribute("alt", /araucária/);
-    await expect(page.locator('[data-dawn-photo] source[media="(min-width: 768px)"]')).toHaveCount(1);
-    await expect.poll(() => photo.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBe(true);
-  });
-
-  test("o hero é fixado sem ser reinserido no DOM (LCP)", async ({ page }) => {
-    await page.goto("/");
-    const hero = page.locator('section[aria-label="Amanhecer"]');
-    const wrapper = await hero.evaluateHandle((el) => el.parentElement!);
-    await expect(page.locator(".pin-spacer").first()).toBeAttached({ timeout: 8000 });
-    // GSAP reused the server-rendered wrapper as its pin spacer instead of
-    // wrapping the section in a new div (which would re-insert the headline).
-    expect(await wrapper.evaluate((el) => el.classList.contains("pin-spacer"))).toBe(true);
-    expect(await hero.evaluate((el, w) => el.parentElement === w, wrapper)).toBe(true);
+    const scene = page.locator("[data-dawn-scene]");
+    const before = await scene.boundingBox();
+    await expect(scene.locator("svg path").first()).toBeAttached();
+    expect(await scene.locator("svg path").count()).toBeGreaterThanOrEqual(8);
+    const after = await scene.boundingBox();
+    expect(after?.height).toBeCloseTo(before!.height, 0);
+    const hero = page.locator('section[aria-label="Abertura"]');
+    expect(await hero.evaluate((el) => Boolean(el.closest(".pin-spacer")))).toBe(false);
   });
 
   test("anos de atuação vêm do ano de fundação, nunca de um número fixo", async ({ page }) => {

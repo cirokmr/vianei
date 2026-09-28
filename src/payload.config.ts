@@ -2,6 +2,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
+import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import { pt } from "@payloadcms/translations/languages/pt";
 import { buildConfig } from "payload";
@@ -16,13 +17,15 @@ import { Pessoas } from "./payload/collections/Pessoas";
 import { Projetos } from "./payload/collections/Projetos";
 import { Publicacoes } from "./payload/collections/Publicacoes";
 import { Usuarios } from "./payload/collections/Usuarios";
+import { Mensagens } from "./payload/collections/Mensagens";
 import { Videos } from "./payload/collections/Videos";
 import { Numeros } from "./payload/globals/Numeros";
 import { Site } from "./payload/globals/Site";
 import { Timeline } from "./payload/globals/Timeline";
+import { serverUrl } from "./lib/server-url";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
-const serverURL = process.env.NEXT_PUBLIC_SERVER_URL ?? "http://localhost:3000";
+const serverURL = serverUrl();
 
 export default buildConfig({
   serverURL,
@@ -58,6 +61,7 @@ export default buildConfig({
     Midia,
     Documentos,
     Usuarios,
+    Mensagens,
   ],
   globals: [Site, Numeros, Timeline],
   editor: lexicalEditor(),
@@ -71,12 +75,32 @@ export default buildConfig({
   upload: { limits: { fileSize: 15 * 1024 * 1024 } },
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },
   graphQL: { disable: true },
+  // Contact notifications. Without SMTP_HOST, Payload logs e-mails to the console.
+  email: process.env.SMTP_HOST
+    ? nodemailerAdapter({
+        defaultFromAddress: process.env.SMTP_FROM ?? "site@vianei.org.br",
+        defaultFromName: "Site Centro Vianei",
+        transportOptions: {
+          host: process.env.SMTP_HOST,
+          port: Number(process.env.SMTP_PORT ?? 587),
+          auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+        },
+      })
+    : undefined,
   plugins: [
     // Production media lives in Vercel Blob; without a token (local dev, CI)
     // uploads fall back to the local disk.
     vercelBlobStorage({
       enabled: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
-      collections: { midia: true, documentos: true },
+      // Keep the storage fields (prefix, _objectKey) in the schema even when the
+      // plugin is off, so migrations generated locally match production.
+      alwaysInsertFields: true,
+      // Files are public: pages link straight to the Blob CDN instead of
+      // /api/<collection>/file, which ran a function and a database lookup per file.
+      collections: {
+        midia: { disablePayloadAccessControl: true },
+        documentos: { disablePayloadAccessControl: true },
+      },
       token: process.env.BLOB_READ_WRITE_TOKEN ?? "",
     }),
   ],

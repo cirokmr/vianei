@@ -57,7 +57,7 @@ export function HorizontalGallery({ children, label, className = "" }: Props) {
         tabIndex={0}
         role="group"
         aria-label={`${label}: use as setas para percorrer`}
-        className="hgallery-track flex snap-x snap-mandatory [scrollbar-width:none] gap-[var(--gutter)] overflow-x-auto px-[var(--gutter)]"
+        className="hgallery-track flex snap-x snap-mandatory scroll-px-[var(--gutter)] [scrollbar-width:none] gap-[var(--gutter)] overflow-x-auto px-[var(--gutter)]"
       >
         {children}
       </div>

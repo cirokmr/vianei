@@ -6,7 +6,11 @@ import { NumbersChapter } from "@/components/chapters/home/NumbersChapter";
 import { SinceChapter } from "@/components/chapters/home/SinceChapter";
 import { TogetherChapter } from "@/components/chapters/home/TogetherChapter";
 import { WorkChapter } from "@/components/chapters/home/WorkChapter";
+import Image from "next/image";
 import { ScrubWords } from "@/components/motion/ScrubWords";
+import { FullBleedPhoto } from "@/components/ui/FullBleedPhoto";
+import floresta from "../../../public/fotos/floresta-araucaria.webp";
+import pinha from "../../../public/fotos/pinha.webp";
 import { getNoticias, getNumeros, getParceiros, getProjetos, getSite, getTimeline } from "@/lib/cms/queries";
 
 const chapters = [
@@ -46,8 +50,19 @@ export default async function Home() {
 
       <Chapter {...manifesto}>
         <ScrubWords
-          className="flex min-h-svh items-center bg-mata px-[var(--gutter)] text-papel"
-          text="“Ninguém nasce feito, é experimentando-nos no mundo que nós nos fazemos.” — Paulo Freire"
+          className="bg-mata text-papel"
+          text="“Ninguém nasce feito, é experimentando-nos no mundo que nós nos fazemos.”"
+          cite="Paulo Freire"
+          image={
+            <Image
+              src={floresta}
+              alt="Araucárias contra o céu ao amanhecer, no Planalto Catarinense"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              quality={60}
+              className="object-cover object-[50%_45%]"
+            />
+          }
         />
       </Chapter>
 
@@ -56,8 +71,15 @@ export default async function Home() {
       </Chapter>
 
       <Chapter {...fazemos}>
-        <WorkChapter projetos={projetos.map((p) => p.slug)} />
+        <WorkChapter />
       </Chapter>
+
+      <FullBleedPhoto
+        src={pinha}
+        alt="Duas pinhas de araucária abertas sobre tábuas de madeira, mostrando os pinhões"
+        legenda="Pinha aberta: o pinhão, alimento e renda da Serra Catarinense."
+        foco="35% 55%"
+      />
 
       <Chapter {...emNumeros}>
         <NumbersChapter itens={numeros.itens ?? []} />

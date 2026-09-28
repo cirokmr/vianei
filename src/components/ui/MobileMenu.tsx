@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useSmoothScroll } from "@/components/motion/SmoothScroll";
+import logo from "../../../public/marca/centro-vianei-cabecalho.webp";
 
 type Item = { href: string; label: string };
 
@@ -55,9 +57,13 @@ export function MobileMenu({ items, email }: { items: readonly Item[]; email: st
       >
         <div className="flex h-full flex-col px-[var(--gutter)] pt-5 pb-10">
           <div className="flex items-center justify-between">
-            <span className="font-display text-xl tracking-tight">
-              Vianei<span aria-hidden="true">.</span>
-            </span>
+            <Image
+              src={logo}
+              // 288 px file made for this spot (2x): no resizing round trip on every page.
+              unoptimized
+              alt="Centro Vianei de Educação Popular"
+              className="h-10 w-auto"
+            />
             <button
               type="button"
               onClick={close}

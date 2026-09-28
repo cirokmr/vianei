@@ -8,33 +8,37 @@ import { TeamChapter } from "@/components/chapters/quem-somos/TeamChapter";
 import { ClipImage } from "@/components/motion/ClipImage";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { HeroTitle } from "@/components/ui/HeroTitle";
+import { frentes } from "@/config/areas";
 import { getParceiros, getPessoas, getSite, getTimeline } from "@/lib/cms/queries";
-import mistica from "../../../../public/fotos/mistica.webp";
+import { FullBleedPhoto } from "@/components/ui/FullBleedPhoto";
+import painel from "../../../../public/fotos/araucaria-painel.webp";
+import festa from "../../../../public/fotos/festa-da-colheita.webp";
+import saida from "../../../../public/fotos/saida-de-campo.webp";
+import sapecada from "../../../../public/fotos/sapecada-de-pinhao.webp";
+
+const montagem = [
+  {
+    src: saida,
+    legenda: "Saída de campo.",
+    alt: "Grupo caminhando entre araucárias em uma saída de campo, sob céu azul",
+  },
+  {
+    src: festa,
+    legenda: "Festa da Colheita do Pinhão.",
+    alt: "Pinhões e pinhas debulhadas sobre a grama durante a Festa da Colheita",
+  },
+  {
+    src: sapecada,
+    legenda: "Sapecada de pinhão.",
+    alt: "Roda de pessoas observando a sapecada de pinhão sobre grimpas de araucária",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Quem somos",
   description:
     "Desde 1983, o Centro Vianei de Educação Popular trabalha com educação popular, agroecologia e restauração florestal no Planalto Catarinense.",
 };
-
-// "Durante os 40 anos de existência, o Centro Vianei ocupou-se em:" (vianei.org.br/quem-somos)
-const atuacao = [
-  "Criar e assessorar cooperativas de crédito com interação solidária",
-  "Assessorar o associativismo e o cooperativismo de iniciativas agroecológicas",
-  "Formar jovens pela pedagogia da alternância nas Casas Familiares Rurais",
-  "Capacitar lideranças, técnica e politicamente, nos Cursos de Educação Popular (CEPs) e outros cursos",
-  "Assessorar a produção agroecológica de alimentos",
-  "Assessorar a comercialização direta da produção",
-  "Assessorar a agroindustrialização artesanal",
-  "Assessorar a certificação de produtos agroecológicos",
-  "Promover a incidência política em soberania e segurança alimentar e nutricional",
-  "Assessorar grupos de consumo consciente, aproximando o campo e a cidade",
-  "Capacitar professores e gestores da educação do campo",
-  "Implementar projetos socioambientais de produção, processamento e comercialização de alimentos agroecológicos da agricultura familiar",
-  "Implementar projetos de restauração florestal que conservam as espécies por meio do seu uso sustentável",
-  "Promover o extrativismo sustentável da biodiversidade e a bioeconomia, principalmente com sistemas agroflorestais",
-  "Reconhecer e valorizar o Sistema Agrícola Tradicional (SAT) do pinhão da Serra Catarinense",
-];
 
 const chapters = [
   { id: "inicio", label: "Quem somos" },
@@ -73,25 +77,37 @@ export default async function QuemSomos() {
             AVICITECS – Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde.
           </p>
         </header>
+        {/* Three field photos (800 px originals): a modest, staggered montage
+            rather than one large image, so they stay sharp. */}
         <div className="bg-neblina px-[var(--gutter)] pb-[clamp(4rem,12vh,8rem)]">
-          <ClipImage className="aspect-[16/9] max-h-[80svh] w-full">
-            <Image
-              src={mistica}
-              alt="Mística de bênção das sementes em roda, durante um encontro de agroecologia"
-              sizes="calc(100vw - 2 * var(--gutter))"
-              placeholder="blur"
-            />
-          </ClipImage>
-          <p className="mt-3 text-sm text-tinta/70">
-            Mística de bênção das sementes.{" "}
-            <span className="tracking-[0.12em] uppercase">Renato Kovalski Ribeiro / AS-PTA</span>
-          </p>
+          <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-[clamp(0.75rem,2vw,1.75rem)] md:grid-cols-3 md:items-start">
+            {montagem.map((foto, i) => (
+              <li
+                key={foto.legenda}
+                className={i === 0 ? "col-span-2 md:col-span-1 md:mt-16" : i === 2 ? "md:mt-28" : ""}
+              >
+                <figure>
+                  <ClipImage className="aspect-[3/2]" from={i === 1 ? "top" : "bottom"} parallax={false}>
+                    <Image src={foto.src} alt={foto.alt} sizes="(min-width: 768px) 24rem, 45vw" quality={60} />
+                  </ClipImage>
+                  <figcaption className="mt-2 text-sm text-tinta/70">{foto.legenda}</figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
         </div>
       </Chapter>
 
       <Chapter {...historia}>
         <HistoryChapter marcos={timeline.marcos ?? []} />
       </Chapter>
+
+      <FullBleedPhoto
+        src={painel}
+        alt="Araucária adulta de copa larga em Painel, na Serra Catarinense"
+        legenda="Araucária em Painel, Serra Catarinense."
+        foco="50% 35%"
+      />
 
       <Chapter {...proposito}>
         <section aria-label="Propósito" className="bg-papel px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)]">
@@ -127,7 +143,7 @@ export default async function QuemSomos() {
             Mais de quatro décadas de trabalho de base.
           </h2>
           <ol className="mt-[clamp(3rem,8vh,5rem)] grid gap-x-12 border-t border-tinta/15 md:grid-cols-2 xl:grid-cols-3">
-            {atuacao.map((item, i) => (
+            {frentes.map(({ texto: item }, i) => (
               <li key={item} className="flex gap-5 border-b border-tinta/15 py-5">
                 <span aria-hidden="true" className="w-6 shrink-0 pt-1 font-display text-sm text-musgo tabular-nums">
                   {String(i + 1).padStart(2, "0")}

@@ -22,7 +22,110 @@
   "projetos": {
     "1129": {
       "situacao": "ativo",
-      "nota": "Da Terra à Mesa segue em andamento (a websérie foi concluída)."
+      "nota": "Da Terra à Mesa segue em andamento (a websérie foi concluída). Galeria e seção de resultados a partir do relatório parcial de 2025, enviado pela equipe em 27/09/2026 (só informação pública; números de processo e repasses omitidos).",
+      "acrescentar": "da-terra-a-mesa/resultados-2025.html",
+      "galeria": [
+        {
+          "arquivo": "da-terra-a-mesa/oficina-mulheres-cruzeirinho.webp",
+          "legenda": "Oficina de encerramento do ano com as mulheres agricultoras do Cruzeirinho, Cerro Negro/SC, dezembro de 2025.",
+          "alt": "Mulheres agricultoras reunidas em roda, sorrindo, na comunidade do Cruzeirinho",
+          "credito": "Centro Vianei"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/pinhao-cruzeirinho.webp",
+          "legenda": "Processamento artesanal do pinhão com as mulheres do Cruzeirinho, Cerro Negro/SC (tecnologia social 1).",
+          "alt": "Mulheres agachadas recolhendo pinhões do chão numa bacia",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/mulheres-cruzeirinho.webp",
+          "legenda": "Agroextrativistas do Cruzeirinho durante as gravações da websérie, julho de 2025.",
+          "alt": "Cinco mulheres em pé num campo, com casas ao fundo",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/milho-crioulo.webp",
+          "legenda": "Milho crioulo de uma família guardiã de sementes, Teixeira Soares/PR.",
+          "alt": "Mãos segurando espigas de milho crioulo roxo e amarelo",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/feira-sementes-teixeira-soares.webp",
+          "legenda": "20ª Feira Regional de Sementes Crioulas e da Agrobiodiversidade, Teixeira Soares/PR, agosto de 2025.",
+          "alt": "Vista de cima de uma mandala de sementes cercada de pessoas",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/rede-cinco-entidades.webp",
+          "legenda": "Representantes das organizações da rede no lançamento do projeto, Teixeira Soares/PR, agosto de 2025.",
+          "alt": "Grupo de pessoas em pé diante de araucárias"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/beiju-casa-da-casquinha.webp",
+          "legenda": "Casa da Casquinha, da Comunidade Cafuza, José Boiteux/SC: o milho vira beiju (tecnologia social 3).",
+          "alt": "Mulher preparando beiju num forno de barro",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/spdh-palhada.webp",
+          "legenda": "Plantio direto de hortaliças (SPDH) sobre a palhada, Alto Vale do Itajaí/SC (tecnologia social 4).",
+          "alt": "Agricultor deitado sobre a palha que cobre o solo, visto de cima",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/spdh-familia.webp",
+          "legenda": "Família agricultora do Alto Vale do Itajaí/SC que trabalha com SPDH, outubro de 2025.",
+          "alt": "Casal de agricultores segurando pés de morango numa estufa",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/composteira-caixa-dagua.webp",
+          "legenda": "Composteira em caixa d’água no Quilombo Morro do Fortunato, Garopaba/SC (tecnologia social 5).",
+          "alt": "Homem sorridente ao lado de caixas d'água usadas como composteira, numa horta",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/morro-do-fortunato.webp",
+          "legenda": "Equipe e entrevistados no Quilombo Morro do Fortunato, Garopaba/SC, novembro de 2025.",
+          "alt": "Grupo de pessoas junto à placa do Morro do Fortunato, com morros ao fundo",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/abelhas-nativas.webp",
+          "legenda": "Meliponário de abelhas nativas sem ferrão, Noroeste do Rio Grande do Sul (tecnologia social 6).",
+          "alt": "Pessoas examinando caixas de abelhas nativas sob as árvores",
+          "credito": "Tombô Produtora / websérie Da Terra à Mesa"
+        },
+        {
+          "arquivo": "da-terra-a-mesa/conferencia-lages.webp",
+          "legenda": "Oficina com delegadas e delegados da Conferência Estadual de Desenvolvimento Rural Sustentável e Solidário, Lages/SC, dezembro de 2025.",
+          "alt": "Auditório cheio de pessoas comemorando com os braços erguidos",
+          "credito": "Centro Vianei"
+        }
+      ]
+    }
+  },
+  "imagens": {
+    "$comment": "URL original no WordPress → arquivo enviado pela equipe (usado no lugar do download).",
+    "https://vianei.org.br/wp-content/uploads/2026/04/pixurum.png": {
+      "arquivo": "pixurum/pixurum.webp",
+      "alt": "Pixurum – jornal do Centro Vianei de Educação Popular"
+    },
+    "https://vianei.org.br/wp-content/uploads/2025/08/Coletania-Pixurum-1986-a-2000.png": {
+      "arquivo": "pixurum/coletanea-pixurum-1989-2000.webp",
+      "alt": "Capa da coletânea do Pixurum, edições de 1989 a 2000"
+    },
+    "https://mcusercontent.com/b3bb80010fa6252bd5def4f82/images/afcb4887-4ff7-f2ec-13bd-9d0a865181e6.png": {
+      "arquivo": "pixurum/logotipos-apoio.webp",
+      "alt": "Logotipos das organizações que apoiam o Pixurum e o Projeto Restaurar"
+    }
+  },
+  "paginas": {
+    "1295": {
+      "nota": "Rodapé de logotipos do Pixurum: o download do Mailchimp falhou na importação; arquivo enviado pela equipe em 27/09/2026.",
+      "imagensNoFim": [
+        "https://mcusercontent.com/b3bb80010fa6252bd5def4f82/images/afcb4887-4ff7-f2ec-13bd-9d0a865181e6.png"
+      ]
     }
   }
 }

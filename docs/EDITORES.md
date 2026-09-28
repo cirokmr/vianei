@@ -36,6 +36,20 @@ O painel salva sozinho enquanto você escreve. Isso é um **rascunho**: o públi
 | Números da home        | Os números animados da página inicial                    |
 | Linha do tempo         | Marcos desde 1983                                        |
 
+## Temas, projetos e vídeos nas notícias
+
+- Na barra lateral da notícia, escolha **Categorias** (os temas que aparecem como filtro em /noticias) e
+  **Projetos relacionados** (a notícia passa a aparecer na página do projeto e em "Leia também").
+- Para mostrar um vídeo do YouTube dentro da notícia, cole o link **sozinho num parágrafo**. O site troca o link
+  por um player leve, com o título do vídeo.
+- A página /videos lê o canal do YouTube sozinha. Em **Vídeos**, cadastre só o que quer destacar (marque
+  "Destaque") ou vídeos de outros canais.
+
+## Mensagens do site
+
+O formulário de /contato grava as mensagens em **Contato → Mensagens**. Marque "Lida" depois de responder.
+Responda pelo e-mail que a pessoa informou.
+
 ## Cuidados
 
 - **Não mude o "Endereço (slug)"** de algo já publicado: isso quebra links compartilhados.

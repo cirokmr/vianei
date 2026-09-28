@@ -1,11 +1,8 @@
 import Link from "next/link";
-import { CursorPreview } from "@/components/motion/CursorPreview";
-import { asMidia, mediaSrc } from "@/lib/cms/media";
+import { NoticiaLista } from "@/components/noticias/NoticiaLista";
 import type { NoticiaResumo } from "@/lib/cms/queries";
 
-const date = new Intl.DateTimeFormat("pt-BR", { day: "2-digit", month: "long", year: "numeric" });
-
-/** "Agora no território": the latest news, with an image that follows the cursor. */
+/** "Agora no território": the three latest news as photo-led cards. */
 export function NowChapter({ noticias }: { noticias: NoticiaResumo[] }) {
   return (
     <div className="bg-papel px-[var(--gutter)] py-[clamp(5rem,14vh,9rem)]">
@@ -24,40 +21,9 @@ export function NowChapter({ noticias }: { noticias: NoticiaResumo[] }) {
         </Link>
       </div>
 
-      <CursorPreview className="mt-[clamp(2.5rem,8vh,5rem)]">
-        <ul className="border-t border-tinta/15">
-          {noticias.map((noticia) => {
-            const capa = asMidia(noticia.capa);
-            const thumb = capa ? mediaSrc(capa, "cartao") : null;
-            return (
-              <li key={noticia.id} className="border-b border-tinta/15">
-                <Link
-                  href={`/noticias/${noticia.slug}`}
-                  data-preview={thumb?.url}
-                  data-cursor="Ler"
-                  className="group grid gap-3 py-8 md:grid-cols-[12rem_1fr] md:gap-10"
-                >
-                  {noticia.publicadoEm ? (
-                    <time dateTime={noticia.publicadoEm} className="pt-2 text-sm text-tinta/70">
-                      {date.format(new Date(noticia.publicadoEm))}
-                    </time>
-                  ) : (
-                    <span />
-                  )}
-                  <span>
-                    <span className="block font-display text-[clamp(1.5rem,1.1rem+1.6vw,2.8rem)] leading-[1.05] tracking-[-0.02em] text-mata transition-colors group-hover:text-pinhao">
-                      {noticia.titulo}
-                    </span>
-                    {noticia.resumo ? (
-                      <span className="mt-3 block max-w-2xl text-tinta/75">{noticia.resumo}</span>
-                    ) : null}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </CursorPreview>
+      <div className="mt-[clamp(2.5rem,7vh,4.5rem)]">
+        <NoticiaLista noticias={noticias} headingLevel="h3" />
+      </div>
     </div>
   );
 }
