@@ -440,3 +440,11 @@ logo aparece em toda página, e o Lighthouse do CI caiu para 0,94 na primeira ve
   focar (`NavLink`), e não ao aparecer: eram 7 requisições no início de toda página, disputando a rede com o título
   e gastando dados móveis com páginas que ninguém abriu.
 - A montagem de fotos do Quem somos usa qualidade 60 (os originais já são de baixa resolução).
+
+### Manifesto: texto ao lado da foto, não por cima
+
+A citação de Paulo Freire sobre a floresta escurecida ficava difícil de ler, principalmente no celular com o brilho
+baixo, e a serifa fina brigava com a textura das copas. Agora o texto fica num painel liso em verde-mata, com
+contraste garantido, e a foto aparece inteira e sem véu: ao lado no computador (metade da tela) e embaixo no
+celular. A autoria ganhou um fio em musgo. As palavras começam em 50% de opacidade (antes 42%) e acendem com a
+rolagem.

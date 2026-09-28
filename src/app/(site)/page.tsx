@@ -50,14 +50,18 @@ export default async function Home() {
 
       <Chapter {...manifesto}>
         <ScrubWords
-          className="relative flex min-h-svh items-center overflow-hidden bg-mata px-[var(--gutter)] text-papel"
+          className="bg-mata text-papel"
           text="“Ninguém nasce feito, é experimentando-nos no mundo que nós nos fazemos.”"
           cite="Paulo Freire"
-          background={
-            <>
-              <Image src={floresta} alt="" fill sizes="100vw" quality={60} className="object-cover object-[50%_40%]" />
-              <div aria-hidden="true" className="absolute inset-0 bg-mata/70" />
-            </>
+          image={
+            <Image
+              src={floresta}
+              alt="Araucárias contra o céu ao amanhecer, no Planalto Catarinense"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              quality={60}
+              className="object-cover object-[50%_45%]"
+            />
           }
         />
       </Chapter>
