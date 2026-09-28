@@ -425,3 +425,10 @@ hora de mostrar, sem mudar o conteúdo guardado:
   nativo, com setas do teclado, Esc e botões anterior/próxima/fechar.
 
 A equipe continua escrevendo do jeito de sempre no painel; o site cuida da forma.
+
+### Logo no cabeçalho
+
+O "Vianei." em texto deu lugar ao logotipo completo (emblema + "Atuando em Educação Popular e Agroecologia desde
+1983"), com 40 px de altura no celular e 48 px no computador, também no menu do celular. O arquivo é uma versão de
+288 px feita para esse lugar (10 KB, sem passar pelo redimensionador) e não é pré-carregado: na home, o título
+continua sendo o LCP.
