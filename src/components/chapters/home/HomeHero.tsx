@@ -1,8 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
 import { HeroTitle } from "@/components/ui/HeroTitle";
+import { NavLink } from "@/components/ui/NavLink";
 import { site } from "@/config/site";
-import logo from "../../../../public/marca/centro-vianei.webp";
 import { Araucarias } from "./Araucarias";
 import { Dawn } from "./Dawn";
 
@@ -55,27 +53,17 @@ export function HomeHero() {
       </div>
 
       <div className="grid gap-10 px-[var(--gutter)] py-[clamp(4rem,12vh,8rem)] md:grid-cols-12 md:items-center">
-        <div className="md:col-span-4">
-          <Image
-            src={logo}
-            alt="Centro Vianei de Educação Popular: atuando em educação popular e agroecologia desde 1983"
-            sizes="(min-width: 768px) 22rem, 11rem"
-            // The title is split into word spans, each its own LCP candidate: on
-            // phones the logo stays smaller than a word, so the title stays the LCP.
-            className="h-auto w-full max-w-[11rem] md:max-w-[22rem]"
-          />
-        </div>
-        <div className="md:col-span-8 lg:col-span-6">
+        <div className="md:col-span-8 md:col-start-5 lg:col-span-6">
           <p className="text-lead leading-snug text-tinta/85">
             Há mais de quatro décadas cultivando autonomia, justiça social e a floresta de araucárias junto a quem vive
             da terra.
           </p>
-          <Link
+          <NavLink
             href="/quem-somos"
             className="mt-8 inline-block text-eyebrow tracking-[0.2em] text-mata uppercase underline decoration-musgo/40 underline-offset-8 hover:decoration-musgo"
           >
             Conheça o Vianei →
-          </Link>
+          </NavLink>
         </div>
       </div>
     </Dawn>

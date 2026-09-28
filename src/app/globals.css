@@ -388,3 +388,18 @@ html:not(.motion-ready) [data-chapter] ~ [data-chapter] {
     scroll-behavior: auto !important;
   }
 }
+
+/* Header logo: arrives after load (LogoCabecalho), so it fades in. */
+.logo-entra {
+  animation: logo-entra 0.5s ease-out both;
+}
+@keyframes logo-entra {
+  from {
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-entra {
+    animation: none;
+  }
+}

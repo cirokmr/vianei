@@ -88,7 +88,7 @@ export default async function QuemSomos() {
               >
                 <figure>
                   <ClipImage className="aspect-[3/2]" from={i === 1 ? "top" : "bottom"} parallax={false}>
-                    <Image src={foto.src} alt={foto.alt} sizes="(min-width: 768px) 24rem, 50vw" />
+                    <Image src={foto.src} alt={foto.alt} sizes="(min-width: 768px) 24rem, 45vw" quality={60} />
                   </ClipImage>
                   <figcaption className="mt-2 text-sm text-tinta/70">{foto.legenda}</figcaption>
                 </figure>

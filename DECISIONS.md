@@ -429,6 +429,14 @@ A equipe continua escrevendo do jeito de sempre no painel; o site cuida da forma
 ### Logo no cabeçalho
 
 O "Vianei." em texto deu lugar ao logotipo completo (emblema + "Atuando em Educação Popular e Agroecologia desde
-1983"), com 40 px de altura no celular e 48 px no computador, também no menu do celular. O arquivo é uma versão de
-288 px feita para esse lugar (10 KB, sem passar pelo redimensionador) e não é pré-carregado: na home, o título
-continua sendo o LCP.
+1983"), com 40 px de altura no celular e 48 px no computador; também no menu do celular. Cuidados de desempenho (o
+logo aparece em toda página, e o Lighthouse do CI caiu para 0,94 na primeira versão):
+
+- `LogoCabecalho` pede o arquivo (versão de 288 px feita para esse lugar, 10 KB) só depois do `load`, com o espaço
+  reservado e um fade curto; sem JavaScript, uma cópia em `<noscript>` aparece direto.
+- A cópia grande do logo na apresentação da home saiu: repetia o cabeçalho, logo abaixo, e era baixada junto com o
+  título (LCP).
+- Links visíveis na primeira tela (menu e "Conheça o Vianei") pré-carregam a página ao passar o mouse, tocar ou
+  focar (`NavLink`), e não ao aparecer: eram 7 requisições no início de toda página, disputando a rede com o título
+  e gastando dados móveis com páginas que ninguém abriu.
+- A montagem de fotos do Quem somos usa qualidade 60 (os originais já são de baixa resolução).
