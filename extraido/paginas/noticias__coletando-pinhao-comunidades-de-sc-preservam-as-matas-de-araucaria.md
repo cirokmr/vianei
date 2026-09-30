@@ -1,0 +1,167 @@
+---
+url_antiga: "https://vianei.org.br/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-araucaria/"
+titulo: "Coletando pinhão, comunidades de SC preservam as matas de araucária. - Centro Vianei"
+descricao: ""
+h1: "NOTÍCIA"
+screenshot: "../screenshots/noticias__coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-araucaria.jpg"
+tem_formulario: false
+---
+![](https://vianei.org.br/wp-content/uploads/2022/11/favicon1.png)
+
+# NOTÍCIA
+
+![](https://vianei.org.br/wp-content/uploads/2023/06/Coletando-pinhao-comunidades-de-SC-preservam-as-matas-de-araucaria..png)
+
+### Coletando pinhão, comunidades de SC preservam as matas de araucária.
+
+#### Sua semente, o pinhão – símbolo da cultura e culinária regionais – movimenta uma cadeia produtiva em mais de uma dezena de municípios do sudoeste catarinense. Lages, Bocaina do Sul, Painel, São Joaq
+
+Confira a matéria junto a Mongabay no link a baixo:
+
+[https://brasil.mongabay.com/by/carolina-pinheiro/](https://brasil.mongabay.com/by/carolina-pinheiro/)
+
+Assista o documentário que acompanha a matéria no link a baixo:
+
+[https://www.youtube.com/watch?v=5B_Ik_JtYdA&t=2s](http://xn--coletando%20pinho,%20comunidades%20de%20sc%20preservam%20as%20matas%20de%20araucria-dzg9h/)
+
+- O pinhão, semente da araucária, movimenta uma cadeia produtiva sustentável que envolve mais de uma dezena de municípios da serra catarinense.
+- As florestas com araucária tiveram 98% de sua extensão original devastada pela indústria madeireira; hoje, manter as árvores em pé tem se provado melhor alternativa de renda para as comunidades serranas.
+- Há entraves legais, porém: de 70% a 90% da comercialização é informal, o que abre caminho aos atravessadores; o baixo grau de mecanização da cadeia também é um obstáculo ao crescimento.
+
+Os primeiros raios de sol cortam o horizonte de um alaranjado sereno. O céu límpido encosta no chão coberto por uma camada fina de gelo. Durante o amanhecer, o vapor de água seco e frio levanta do solo, criando uma cortina de ar tenra e ligeiramente branca. A paisagem esfumaçada caracteriza a geada, fenômeno meteorológico típico do inverno no alto da serra. Na cozinha da casa de Sara Aparecida e Silvino de Liz Rosa, o fogão a lenha aceso aquece o ambiente enquanto o casal se serve do mate quente, o inseparável chimarrão – bebida tradicional dos povos do Sul.
+
+O dia de trabalho começa cedo na Fazenda Santo Antônio do Caveiras, localizada na comunidade da Mortandade, em Painel, interior de Santa Catarina. Da porta entreaberta, vê-se, a poucos passos da soleira, o tronco da araucária que se ergue por 20 metros de altura. Ela é fêmea e tem 45 anos de idade. “Quando construíram a casa, o pinheiro não passava de dois metros. Hoje, ele é um guardião do terreno, além de relíquia, pois dá mais de 200 pinhas por ano”, conta o filho dos agroextrativistas, Jaison de Liz Rosa.
+
+Proprietário de um sítio no Morro do Bacheiro, situado a poucos quilômetros dali, o agricultor familiar e seu pai são extrativistas do pinhão desde que se conhecem por gente. A prática é geracional na região que abriga a maior reserva de araucária do estado. No território que abrange o Planalto Serrano Catarinense, a *Araucaria angustifolia* é espécie predominante. Ela é o principal componente da floresta ombrófila mista, um dos ecossistemas que constituem a Mata Atlântica, além de ser também a única de seu gênero com ocorrência natural no país.
+
+Sua semente, o pinhão – símbolo da cultura e culinária regionais – movimenta uma cadeia produtiva em mais de uma dezena de municípios do sudoeste catarinense. Lages, Bocaina do Sul, Painel, São Joaquim, Bom Retiro, Urupema, Urubici, São José do Cerrito e Bom Jardim da Serra contabilizam cerca de 75% do pinhão comercializado em Santa Catarina.
+
+Na zona rural, atores de diferentes segmentos da sociedade, tais como instituições não governamentais e organizações de agricultores promovem, de forma colaborativa, ações que visam aliar ciência empírica e acadêmica, valorizar os saberes e fazeres tradicionais e fortalecer cadeias produtivas sustentáveis que conservem e restaurem a vegetação nativa, garantindo a subsistência das comunidades locais.
+
+O extrativismo do pinhão, integrado ao sistema agroecológico, gera renda para inúmeras famílias na serra e cria perspectivas para o fomento da agricultura inclusiva, consciência coletiva e preservação ambiental. O investimento em comida de verdade aliado ao associativismo apontam um caminho para o futuro das pessoas e florestas.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145749/20220603_fellipeabreu_santacatarina_129484-768x512.jpg)
+
+Floresta de araucárias no município de Urubici (SC). Foto: Fellipe Abreu/Mongabay
+
+**O entrave legal**
+
+Natal João Magnanti, coordenador do Centro Vianei de Educação Popular – associação que, há quarenta anos, atua na assessoria da agricultura familiar, agroecologia e segurança alimentar na região – esclarece que boa parte das iniciativas foram sendo discutidas ao longo do tempo. “Tudo é parte do processo de desenvolvimento sustentável do território. O crescimento é gradativo, pois estamos falando de uma cadeia que ainda se encontra em um cenário de marginalidade, dentro de um mercado que só visa o lucro”, diz.
+
+Em 2009, os produtores rurais conquistaram a isenção do ICMS, que onerava o preço final do produto e prejudicava ainda mais a formalização da cadeia, que ainda é muito baixa. “Trata-se de uma cadeia produtiva majoritariamente informal, abrindo-se raras exceções. A comercialização legalizada gira em torno de 10% a 30%”, afirma Magnanti. Centenas de extrativistas vendem o pinhão in natura ou processado sem documento fiscal. Grande parte da safra é escoada na clandestinidade. A legislação é um dos principais gargalos da cadeia produtiva.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145727/20220530_fellipeabreu_santacatarina_128946.jpg)
+
+Jaison de Liz Rosa no galpão de armazenamento das pinhas em sua propriedade, localizada no município de Painel (SC). Foto: Fellipe Abreu/Mongabay
+
+De acordo com Adilsom de Oliveira Branco, auditor do movimento econômico da Associação dos Municípios da Região Serrana, os dados disponíveis para análise são difusos. “Com base nas notas fiscais que passaram pelas prefeituras de cada município, temos o registro de 234 produtores no ano de 2022, que comercializaram 1,5 mil toneladas por uma média de R$ 3,37 o quilo, o que corresponde a um total de R$ 6 milhões”, diz.
+
+Magnanti, porém, estima que a movimentação financeira da cadeia tenha sido, na realidade, de R$ 20 milhões no ano passado. O levantamento feito pela Empresa de Pesquisa Agropecuária e Extensão Rural de Santa Catarina mostra que, em 2022, somente Painel comercializou 1,7 mil toneladas.
+
+Para se ter uma ideia, o último censo realizado pelo IBGE indica que 3.386 estabelecimentos agropecuários declararam que têm pinhão na sua propriedade. “Há aí uma projeção da capacidade produtiva geral, que pode ser dividida entre a parte que tem a venda registrada, a que sai sem registro nenhum, e também a que não é comercializada porque não há pessoal suficiente para fazer a extração”, esclarece Branco.
+
+**Desafios do mercado**
+
+Por ser um alimento de época, com período de safra entre abril e julho, a renda que provém do extrativismo e beneficiamento do pinhão dificilmente mantém uma família o ano inteiro. Uma das soluções surgiu do insight de Aldo Niehues: uma máquina de descascar pinhão, cujo protótipo foi idealizado por ele. A extração da amêndoa necessitava de mão de obra redobrada por conta da casca dura do pinhão. O aumento da capacidade de trabalho era um ponto a resolver, uma vez que o processamento viabiliza a comercialização do pinhão durante a entressafra.
+
+Niehues mora na comunidade de São Pedro, em Urubici, e integra a Associação Agroecológica Renascer. O projeto foi desenvolvido de 2014 até 2017 na Universidade Federal de Santa Catarina (UFSC), em parceria com a Cooperativa Ecoserra, de Lages, SC. Também em Urubici foi implantada a primeira agroindústria de processamento do pinhão.
+
+“Lá por 2010, conseguimos uma verba com o Ministério de Desenvolvimento Agrário e Agricultura Familiar (MDA) para montar uma pequena estrutura em terreno público, que era da prefeitura” comenta Magnanti. A Associação Renascer, junto com a Cooperativa Ecológica Ecoserra, planejaram um esquema de rodízio entre famílias da comunidade para tocar o trabalho.
+
+O passo adiante foi a distribuição de aproximadamente 15 kits entre os agricultores, os quais incluíam máquinas de descascar, de moer e seladoras – que servem para fechar o saco plástico onde se empacota o pinhão cozido. A finalidade foi a de ampliar a escala do processamento e dar maior vida útil ao pinhão, que, se fica estocado, acaba gerando perda para o produtor rural tanto em peso quanto em qualidade, já que ele pode se infestar com uma praga, a broca-do-pinhão.
+
+Mesmo com todo o esforço, ainda são pouquíssimas unidades legalizadas que fazem o processamento para venda. Segundo dados do Consórcio Intermunicipal Serra Catarinense, o total é de 13 com registro em municípios como São Joaquim, Lages, Correia Pinto e São José do Cerrito, onde a Agroindústria Pinhão Garcia, a maior de todas elas, processa cerca de 30 toneladas de pinhão por safra.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180237/20220604_fellipeabreu_santacatarina_130108-768x512.jpg)
+
+Máquina de extração do pinhão em funcionamento na comunidade de Rincão do Tigre, município de São Joaquim (SC). Foto: Fellipe Abreu/Mongabay
+
+**Alimento de origem**
+
+A amêndoa, parte comestível do pinhão, é consumida há séculos pelos habitantes das serras meridionais. A “sapecada”, feita com pinhão assado em fogo aceso na “grimpa” – o galho seco da araucária – traduz a forma mais arcaica de preparo da semente do pinheiro-brasileiro. O método antigo era utilizado pelos povos originários e, posteriormente, pelos tropeiros que percorriam as campinas a transportar víveres para o comércio local. A prática ainda é a melhor opção para os agroextrativistas durante a safra. Quando saem para a mata, em dia de coleta, os homens não abrem mão do prato típico para que se mantenham bem alimentados enquanto trabalham.
+
+A extração, transporte e processamento do pinhão nas propriedades tem baixo grau de mecanização. Todo o trabalho de extração é manual e arriscado. Em 2022, as propriedades de Jaison e Silvino de Liz Rosa comercializaram 10 toneladas de pinhão. Juntas somam 47 hectares. “Vendemos direto para o consumidor final, numa feira de porta a porta. O pessoal passa mensagem, pedindo a quantidade e vem pegar aqui conosco”, explica Silvino. Fizeram por R$ 5,00 o quilo.
+
+Quando a safra é boa, tiram em torno de 600 pinhas por dia. “É um serviço pesado e perigoso, que cansa bastante. Queremos diversificar a produção, fazer pinhão cozido, inteiro ou moído, ou mesmo a farinha para vender o produto o ano todo. Aí vai ser mais fácil e a gente corre menos risco”, reitera Jaison, incumbido da coleta há 30 anos.
+
+Os extrativistas sobem os pinheiros na cara e na coragem, fazendo uso apenas de um par de esporas. Há que se ter muita habilidade para subir em 15 a 30 árvores por dia. Os movimentos são calculados a cada etapa. Depois de escalar o tronco por 20 a 30 metros de altura, o extrativista alcança a copa e precisa estar assegurado de que o galho onde está pisando não vai lascar, o que pode provocar a sua queda, ferimentos graves ou até a morte.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145742/20220531_fellipeabreu_santacatarina_129195-768x512.jpg)
+
+Plínio Rogério Mota de Souza coletando pinhão em São José do Cerrito (SC). Foto: Fellipe Abreu/Mongabay
+
+Além do mais, ele tem que se mover pelos galhos da árvore e as grimpas são espinhentas. Por fim, com o auxílio de uma taquara ou haste de alumínio, bate nas pinhas para derrubá-las lá de cima. Ainda assim, não coleta nem a metade do que as araucárias produzem. “Se coletamos uns 40% da safra foi muito. Não damos conta de tirar tudo”, conta Silvino.
+
+O que debulha e se espalha pelo chão alimenta a fauna silvestre. A gralha-azul ( *Cyanocorax caeruleus* ) é o bicho que mais auxilia na dispersão das sementes. Ela tem por hábito enterrar o pinhão para comer mais tarde, mas nem sempre lembra de voltar ao local onde o escondeu. “Sobre plantio, ela é nossa camarada”, relata o agroextrativista, complementando: “Tem também o papagaio-charão ( *Amazona pretrei* ), que vem em bando do Rio Grande do Sul pra cá e fica só na época do pinhão, mas esse só come.”
+
+Há outros nomes para o pinhão. Cada comunidade batiza a semente da araucária de acordo com características como a aparência e o período de maturação. Pinhão São José, pinhão macaco, pinhão cajuvá branco e vermelho, pinhão do cedo, pinhão do tarde e pinhão de 25 de março. A temporada abre com o princípio da colheita, liberada, por lei, a partir de 1 de abril. Mas os extrativistas, que têm uma relação íntima com o ambiente, alegam que parte da safra se perde porque em março já há pinha no pé. Cada pinha pesa, em média, 2 kg e contém de 100 a 150 pinhões. Varia muito de árvore para árvore e de ano para ano por causa da polinização, que pode ser maior ou menor a depender das condições climáticas.
+
+Entre as variedades, o cajuvá é considerado o ápice da safra. Belo e no ponto ideal de maturação, este tipo de pinhão é um tesouro da gastronomia. Tanto que há uma infinidade de pratos preparados à base de pinhão. O entrevero – carne bovina e suína com pinhão fritos na banha do porco – e a paçoca (farofa de pinhão) são os mais requisitados.. Outros exemplos são croquete, nhoque, suflê, torta, pudim, bombom e até pesto de pinhão.
+
+Em 2008, o pinhão catarinense foi inserido na Arca do Gosto, uma lista elaborada pelo Slow Food, entidade italiana que busca incentivar agroextrativistas, salvaguardando produtos da sociobiodiversidade – geralmente alimentos ameaçados de extinção ao redor do mundo. “O Slow Food foi uma possibilidade de ter uma conexão internacional. Há 20 anos, o mercado do pinhão era incipiente. Há 40, nem se fala. O Slow Food abriu uma vitrine para um ingrediente que era novidade para muitos. Foi uma excelente jogada”, relata Magnanti. No mesmo ano, a região produtora de pinhão se tornou uma Fortaleza do Slow Food, a única do Sul do Brasil.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145800/20220604_fellipeabreu_santacatarina_130026-768x512.jpeg)
+
+Maria Elizabete Oliveira Damas cozinhando entrevero, prato típico à base de pinhão da serra catarinense Foto: Fellipe Abreu/Mongabay
+
+**Comida em extinção**
+
+Ancestralidade e segurança alimentar estão atreladas ao [manejo das matas pelas populações tradicionais](https://brasil.mongabay.com/2022/10/perda-da-araucaria-ameaca-cultura-indigena-kaingang/) . A serra catarinense, antes terra sem fronteiras, era habitada por indígenas de etnias como Xokleng, Kaingáng e Guarani. Os mais velhos contam que, no período de ocupação da zona rural, o governo do estado pagava para os “bugreiros” aniquilarem a população indígena. Tal marco é presente na memória dos camponeses. “O nome Mortandade, local onde fica a fazenda do pai, é decorrente deste episódio”, recorda Jaison
+
+Com os passar dos anos, os agricultores perceberam a importância de manter a floresta em pé, além da integração entre espécies, que eles já faziam intuitivamente nas suas propriedades, sem saber que aquilo era um SAF (Sistema Agroflorestal). . Manejaram as matas em prol da manutenção da paisagem.
+
+Na outra ponta, a expansão da fronteira agrícola sobre a floresta é uma realidade que gera uma série de entraves na evolução da cadeia produtiva. A conversão das matas em pasto, o arrendamento de terra para o plantio de pínus, a monocultura de grãos como a soja em áreas campestres, e a construção de Pequenas Centrais Hidroelétricas (PCHs) são grandes ameaças à paisagem cultural da serra catarinense.
+
+Natal Magnanti enfatiza que o território é geográfico, mas também cultural. “A partir de 500 metros de altitude, de Rancho Queimado para cima, já há presença da araucária. Essa região toda teve um histórico de ocupação diferente de outros lugares de Santa Catarina. Trata-se de um espaço que pertencia à província de São Paulo. Só foi se tornar parte do estado muito tempo depois, então a formação é ética, étnica e também política. Não é um território dado, mas sim construído”, afirma.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145739/20220531_fellipeabreu_santacatarina_129134-768x512.jpg)
+
+Pinha em broto no galho de araucária. Foto: Fellipe Abreu/Mongabay
+
+Grande parte dos fragmentos florestais que incluem a araucária estão dentro de propriedades privadas. A cobertura vegetal que ocupava cerca de 200 mil km2 dos campos de altitude foi dizimada. Durante cem anos, a exploração predatória dos recursos naturais que alimentou a indústria madeireira do Sul reduziu em 98% a extensão de florestas com araucária. Apenas em 2001, o Conselho Nacional do Meio Ambiente (Conama) proibiu o corte de exemplares da árvore – tão antiga quanto os dinossauros. Há vestígios dela com data aproximada de 250 milhões de anos. São fósseis do período Triássico, o primeiro da era Mesozoica.
+
+Hoje, somente 1% dos 3% de áreas remanescentes corresponde ao dossel original. A espécie corre risco crítico de extinção e foi incluída na Lista Oficial das Espécies Brasileiras Ameaçadas de Extinção e na Lista Vermelha da União Internacional para a Conservação da Natureza (IUCN). Seu desaparecimento está previsto para daqui a cinco décadas caso nenhuma ação de preservação e recuperação seja realizada.
+
+De acordo com Marciano Coelho Correa, administrador da Cooperativa Ecológica Ecoserra, por mais que a derrubada do pinheiro seja ilegal, o [desmatamento clandestino](https://brasil.mongabay.com/2022/03/araucarias-em-rota-de-extincao-sao-cortadas-com-aval-dos-orgaos-publicos/) existe. “Os moradores precisam ser treinados. Quando falo treinados, quero dizer, respaldados pela ciência e pela lei para que promovam o manejo das árvores em suas propriedades.”
+
+Os extrativistas que fazem o manejo dos recursos da floresta, portanto, têm um papel imprescindível na construção de paisagens plurais. Na fazenda de Silvino de Liz Rosa, o manejo de plantas integrado a pequenos cultivos agroecológicos caracteriza a conservação de uma agrofloresta. Araucária, xaxim, erva-mate, goiabeira-serrana e bracatinga coabitam as matas. “A conexão entre florestas de araucária e agroecologia muda a vida de quem depende da terra porque dá perspectiva para que as pessoas façam usufruto daquilo que lhes é caro”, ratifica Correa.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145736/20220530_fellipeabreu_santacatarina_129014-768x512.jpg)
+
+O casal Adriana e Jaison de Liz Rosa em sua casa, no município de Painel (SC). Foto: Fellipe Abreu/Mongabay
+
+**O manejo da agrofloresta**
+
+Entretanto, há demandas que vão além da salvaguarda de espécies nativas. Uma delas se refere ao superpovoamento de pinheiros em propriedades como a de Silvino. Ele e o filho observaram que a produção de pinhão diminuiu ao longo do tempo. “Sobreviver do extrativismo está ficando difícil, porque tem muita concentração de araucária. E onde elas se amontoam dá pouco pinhão”, relata Jaison de Liz Rosa. Do apelo da família, foi elaborado o projeto de pesquisa [“Conservação pelo uso da *Araucaria angustifolia* em Sistemas Agroflorestais para produção do pinhão”](https://repositorio.ufsc.br/handle/123456789/239268) .
+
+O estudo, desenvolvido pelo Programa de Pós-graduação em Ecossistemas Agrícolas e Naturais da UFSC, tem como objetivo estabelecer estratégias de conservação pelo uso para a manutenção da espécie na paisagem e na cultura. De acordo com o coordenador Alexandre Siminski, a avaliação dos aspectos históricos, econômicos e sociais visam contribuir para a proposição de Unidades de Referência em Manejo Agroflorestal com Araucária.
+
+O projeto em andamento conta com o financiamento da Fapesc, e a parceria do Centro Vianei de Educação, do Instituto do Meio Ambiente (IMA) de Santa Catarina e da Udesc de Lages. Na maior parte das propriedades que compõem o cenário em análise, pelo menos 50% da área é coberta por indivíduos da araucária. A fazenda de Silvino possui 24 mil árvores – 600 indivíduos por hectare. É um número bastante significativo. Representa três vezes mais do que o que se esperaria de uma floresta de araucária sem intervenção.
+
+“Eles realizam atividades que interferem na paisagem há muito tempo. O que precisariam adicionar ao que tradicionalmente promovem é a feitura do desbaste nas zonas onde há alta densidade de mata”, conta Siminski. O que o estudo defende é que a condição que os agricultores daquela região têm é diferenciada. “Os extrativistas não vão substituir a área deles por soja ou gado. O que querem é manejar a araucária no sentido de manter a produção de pinhão a longo prazo. E a legislação precisa estar modernizada para atender a essa situação, que é bem específica”, reflete.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145746/20220601_fellipeabreu_santacatarina_129454-768x512.jpg)
+
+José Natalino Ribeiro, extrativista de pinhão , organiza pinhas e lenha para consumo doméstico na propriedade da família, em Urubici (SC). Foto: Fellipe Abreu/Mongabay
+
+**Ciclo em construção**
+
+Bem-estar econômico e social e defesa da vida são conceitos basilares da agroecologia. Na comunidade de Cruzeiro, em São Joaquim, o sítio de Joelce da Rosa Damas e Maria Elizabete Oliveira Damas integra a rota de agroturismo ecológico Acolhida na Colônia. Os moradores abrem as suas casas, compartilhando histórias e cultura. O núcleo regional – composto por cerca de 200 famílias – tem como princípio a valorização do modo de vida no campo.
+
+O casal de agroextrativistas coletou cerca de 80 sacos de 50 quilos em 2022. Umas quatro toneladas de pinhão. “Um pouco eu tirei no nosso sítio (9 hectares) e o restante fiz como meeiro no sítio do vizinho”, afirma Damas. Joelce é um exímio marceneiro. Ele constrói os galpões das cercanias e fabricou uma máquina artesanal para separar o pinhão da falha depois de ter recebido os ensinamentos de um antigo camponês. Um senhor da época em que, para subir nas araucárias, os extrativistas faziam uma escada com o facão no tronco do pinheiro. O método está em desuso por ser ainda mais arriscado do que o atual.
+
+Joelce migrou do modelo tradicional para o agroecológico depois de três internações por infecção grave devido ao uso recorrente de insumos químicos. “Eu quase morri. Foram experiências muito traumáticas para mim e minha família. Dinheiro algum substitui a saúde e qualidade de vida das plantas, dos animais que se nutrem delas e de quem tira o seu sustento da terra”, comenta. A retomada de um entendimento integrador e sistêmico mudou a cabeça e a relação do agricultor com a natureza. Ele e Maria cultivam uma variedade de hortaliças e frutas, tais como o morango e a maçã. “A maior fonte de renda vem da venda da maça, que é de época, e do morango, que dá o ano inteiro”, diz.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145757/20220604_fellipeabreu_santacatarina_129960-768x512.jpeg)
+
+Joelce da Rosa Damas, extrativista de pinhão, em um dos galpões de armazenamento e beneficiamento de São Joaquim (SC) construídos por ele. Foto: Fellipe Abreu/Mongabay
+
+Com a necessidade de uma estrutura que transcendesse o comércio local é que os produtores rurais se uniram para criar a Cooperativa Ecológica Ecoserra. A marca territorial fortalece a agricultura orgânica há vinte anos. “Havia pouca demanda para um grande volume de produtos à venda. Era preciso ter um interlocutor que ultrapassasse o domínio da venda direta, principalmente no que diz respeito a mercado institucional, por meio do qual temos acesso a políticas públicas como o Programa de Aquisição de Alimentos (PAA) e o Programa Nacional de Alimentação Escolar (PNAE)”, esclarece Marciano Coelho Correa, que administra a cooperativa, responsável pelo escoamento anual de 40 a 80 toneladas de cada produto de safra e entressafra a incluir o pinhão processado em pacotes de 500 gramas e 1 quilo.
+
+De modo geral, os agricultores conseguem comercializar no mercado local, em feiras, mercearias, integrados aos programas do Governo Federal. Porém, parte considerável da safra é vendida para fora. “Importante lembrar que a grande maioria da safra do pinhão, vendida in natura, circula via atravessadores”, pondera Natal Magnanti. Localidades como Painel, São José do Cerrito, São Joaquim e Capão Alto escoam a sua mercadoria para o Ceasa de Florianópolis, outras regiões de Santa Catarina e para estados como Paraná, São Paulo e Minas Gerais.
+
+Outro meio indispensável de escoamento é a venda direta realizada na beira das rodovias. A Banca Santa Ceia, localizada no Km 182 da BR-282, em Bocaina do Sul, literalmente desagua pinhão. Há 16 anos, o proprietário Antônio Milton Amarante comercializa a semente da araucária para consumidores de diferentes perfis. “Na minha banca eu vendo todos os tipos de produtos coloniais, como salame, feijão, mel, cebola e erva-mate, mas o pinhão corresponde a 90% do meu faturamento. No ano passado, só para ter uma noção, eu vendi 55 toneladas”, conta. Um campeão de vendas que, do começo da safra em diante, não fecha a barraca nem por um dia.
+
+![](https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180604/20220530_fellipeabreu_santacatarina_128704-1-768x512.jpg)
+
+Antônio Milton Amarante vende pinhões em sua banca à beira da BR-282, em Bocaina do Sul (SC). Foto: Fellipe Abreu/Mongabay [https://brasil.mongabay.com/2023/04/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-araucaria/](http://mongabay/)
