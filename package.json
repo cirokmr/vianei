@@ -1,0 +1,34 @@
+{
+  "name": "fabrica-sites-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/gerar-redirects.mjs && next build",
+    "start": "npx serve out",
+    "extrair": "node scripts/extrair.mjs",
+    "imagens": "node scripts/otimizar-imagens.mjs",
+    "checar": "node scripts/checar.mjs",
+    "redirects": "node scripts/gerar-redirects.mjs",
+    "novo": "node scripts/novo-cliente.mjs",
+    "lote": "node scripts/lote.mjs",
+    "proposta": "node scripts/comparar.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/instrument-serif": "^5.3.0",
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.0",
+    "next": "^16.3.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  },
+  "description": "Molde da fábrica de sites: reconstrói sites antigos em Next.js (export estático) + GSAP."
+}

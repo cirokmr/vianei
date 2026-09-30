@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "git": {
+    "deploymentEnabled": {
+      "prints": false,
+      "fabrica": false
+    }
+  },
+  "redirects": [
+    {
+      "source": "/quem-somos.html",
+      "destination": "/sobre/",
+      "permanent": true
+    },
+    {
+      "source": "/fale-conosco.php",
+      "destination": "/contato/",
+      "permanent": true
+    }
+  ]
+}
