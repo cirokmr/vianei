@@ -1,0 +1,2279 @@
+[
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Sao-Joao-Maria-II-Fraiburgo-1.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/Sao-Joao-Maria-II-Fraiburgo-1.webp",
+    "kb": 167,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Butia-Verde-Fraiburgo.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/Butia-Verde-Fraiburgo.webp",
+    "kb": 167,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Indio-Galdino-Curitibanos.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/Indio-Galdino-Curitibanos.webp",
+    "kb": 172,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Primeiro-de-Maio-Curitibanos.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/Primeiro-de-Maio-Curitibanos.webp",
+    "kb": 167,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Florestan-Fernandes-Monte-Carlo.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/Florestan-Fernandes-Monte-Carlo.webp",
+    "kb": 168,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/PA-Vida-Nova-Santa-Cecilia.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/PA-Vida-Nova-Santa-Cecilia.webp",
+    "kb": 167,
+    "largura": 1400,
+    "altura": 1400,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/08/Sao-Joao-Maria-II-Fraiburgo.jpg",
+    "destino": "public/img/noticias/projeto-restaurar-apresenta-novo-projeto-finalistico-aos-ass/capa.webp",
+    "kb": 197,
+    "largura": 1600,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/ecoserra-1-e1783073983324.jpeg",
+    "destino": "public/img/noticias/oficina-sobre-pncf/ecoserra-1-e1783073983324.webp",
+    "kb": 80,
+    "largura": 1280,
+    "altura": 531,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/ecoserra-2-e1783073946874.jpeg",
+    "destino": "public/img/noticias/oficina-sobre-pncf/ecoserra-2-e1783073946874.webp",
+    "kb": 78,
+    "largura": 1280,
+    "altura": 582,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/ecoserra-3-e1783074275322.jpeg",
+    "destino": "public/img/noticias/oficina-sobre-pncf/ecoserra-3-e1783074275322.webp",
+    "kb": 65,
+    "largura": 1200,
+    "altura": 869,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/ecoserra-4-e1783074339523.jpeg",
+    "destino": "public/img/noticias/oficina-sobre-pncf/ecoserra-4-e1783074339523.webp",
+    "kb": 79,
+    "largura": 1200,
+    "altura": 997,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/capa-lages.png",
+    "destino": "public/img/noticias/oficina-sobre-pncf/capa.webp",
+    "kb": 62,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-1.-Apresentacao-do-projeto-capao-alto-e1782939964794.jpeg",
+    "destino": "public/img/noticias/oficina-em-capao-alto-2/Foto-1-Apresentacao-do-projeto-capao-alto-e1782939964794.webp",
+    "kb": 51,
+    "largura": 1400,
+    "altura": 467,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-2.-Atividade-participativa-ca-e1782939925864.jpeg",
+    "destino": "public/img/noticias/oficina-em-capao-alto-2/Foto-2-Atividade-participativa-ca-e1782939925864.webp",
+    "kb": 44,
+    "largura": 1400,
+    "altura": 444,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-3.-Apresentacao-sobre-a-estruturacao-e1782939889755.jpeg",
+    "destino": "public/img/noticias/oficina-em-capao-alto-2/Foto-3-Apresentacao-sobre-a-estruturacao-e1782939889755.webp",
+    "kb": 41,
+    "largura": 1400,
+    "altura": 394,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/06/capa-com-logo.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto-2/capa.webp",
+    "kb": 45,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-1.-Apresentacao-do-projeto.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-em-bom-retiro/Foto-1-Apresentacao-do-projeto.webp",
+    "kb": 85,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-2.-Atividade-participativa.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-em-bom-retiro/Foto-2-Atividade-participativa.webp",
+    "kb": 72,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-3.-Charles-Grutner-e-Agenor-Scarabelot.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-em-bom-retiro/Foto-3-Charles-Grutner-e-Agenor-Scarabelot.webp",
+    "kb": 43,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/Foto-4.-Apresentacao-sobre-a-estruturacao.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-em-bom-retiro/Foto-4-Apresentacao-sobre-a-estruturacao.webp",
+    "kb": 66,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/07/destaque-da-terra-a-mesa-bom-retiro.png",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-em-bom-retiro/capa.webp",
+    "kb": 45,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/06/IMG_20260527_145525408_HDR-scaled.jpg",
+    "destino": "public/img/noticias/centro-vianei-participa-de-encontro-com-entidades-executoras/capa.webp",
+    "kb": 216,
+    "largura": 1200,
+    "altura": 904,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep1-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep1-pre.webp",
+    "kb": 66,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep2-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep2-pre.webp",
+    "kb": 207,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep3-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep3-pre.webp",
+    "kb": 181,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep4-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep4-pre.webp",
+    "kb": 236,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 46
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep5-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep5-pre.webp",
+    "kb": 177,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep6-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep6-pre.webp",
+    "kb": 188,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep7-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep7-pre.webp",
+    "kb": 222,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/capa-ep8-pre.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa-ep8-pre.webp",
+    "kb": 249,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 54
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/imagem-destaque-webserie.png",
+    "destino": "public/img/noticias/webserie-da-terra-a-mesa/capa.webp",
+    "kb": 57,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-11-at-09.03.18.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/WhatsApp-Image-2026-05-11-at-09-03-18.webp",
+    "kb": 136,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-11-at-09.03.23.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/WhatsApp-Image-2026-05-11-at-09-03-23.webp",
+    "kb": 77,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-11-at-09.03.27.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/WhatsApp-Image-2026-05-11-at-09-03-27.webp",
+    "kb": 74,
+    "largura": 1280,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-11-at-09.03.32.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/WhatsApp-Image-2026-05-11-at-09-03-32.webp",
+    "kb": 125,
+    "largura": 1280,
+    "altura": 960,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/WhatsApp-Image-2026-05-11-at-09.03.34.jpeg",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/WhatsApp-Image-2026-05-11-at-09-03-34.webp",
+    "kb": 59,
+    "largura": 1066,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/05/imagem-destaque-site-centro-vianei-800x583px-4.png",
+    "destino": "public/img/noticias/projeto-da-terra-a-mesa-promove-formacao-sobre-politicas-pub/capa.webp",
+    "kb": 64,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/mudas-entrega.jpg",
+    "destino": "public/img/noticias/parceria-com-produtores-fortalece-acoes-do-projeto-restaurar/mudas-entrega.webp",
+    "kb": 237,
+    "largura": 1400,
+    "altura": 1055,
+    "qualidade": 62
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/WhatsApp-Image-2026-03-26-at-20.03.19.jpeg",
+    "destino": "public/img/noticias/parceria-com-produtores-fortalece-acoes-do-projeto-restaurar/WhatsApp-Image-2026-03-26-at-20-03-19.webp",
+    "kb": 234,
+    "largura": 960,
+    "altura": 1280,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/2.png",
+    "destino": "public/img/noticias/parceria-com-produtores-fortalece-acoes-do-projeto-restaurar/capa.webp",
+    "kb": 68,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/02/foto-2.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto/foto-2.webp",
+    "kb": 74,
+    "largura": 1400,
+    "altura": 800,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/02/foto-7.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto/foto-7.webp",
+    "kb": 116,
+    "largura": 1400,
+    "altura": 943,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/02/foto-1.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto/foto-1.webp",
+    "kb": 130,
+    "largura": 1400,
+    "altura": 736,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/02/foto-3-5.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto/foto-3-5.webp",
+    "kb": 46,
+    "largura": 1400,
+    "altura": 309,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/02/imagem-destaque-site-centro-vianei-800x583px-1.png",
+    "destino": "public/img/noticias/oficina-em-capao-alto/capa.webp",
+    "kb": 68,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/ecoserra-25-anos.png",
+    "destino": "public/img/noticias/cooperativa-ecoserra-25-anos/capa.webp",
+    "kb": 45,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/encontro-mulheres-cerro-negro.png",
+    "destino": "public/img/noticias/encontro-celebra-resultados-do-projeto-terra-a-mesa-mda-cent/capa.webp",
+    "kb": 78,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/araucaria-viveiro.jpeg",
+    "destino": "public/img/noticias/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-muda/araucaria-viveiro.webp",
+    "kb": 182,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/viveiro.jpeg",
+    "destino": "public/img/noticias/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-muda/viveiro.webp",
+    "kb": 242,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/viveireista.jpeg",
+    "destino": "public/img/noticias/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-muda/viveireista.webp",
+    "kb": 241,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/8.png",
+    "destino": "public/img/noticias/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-muda/capa.webp",
+    "kb": 107,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.17.30.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-17-30.webp",
+    "kb": 57,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.17.56.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-17-56.webp",
+    "kb": 39,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.18.13.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-18-13.webp",
+    "kb": 39,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.18.28.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-18-28.webp",
+    "kb": 38,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.18.54.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-18-54.webp",
+    "kb": 57,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.23.10.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-23-10.webp",
+    "kb": 46,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.22.46.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-22-46.webp",
+    "kb": 58,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.21.45.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-21-45.webp",
+    "kb": 45,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.21.32.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-21-32.webp",
+    "kb": 68,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.20.47.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-20-47.webp",
+    "kb": 70,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.20.01.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-20-01.webp",
+    "kb": 55,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.19.23.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-19-23.webp",
+    "kb": 46,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-10-at-23.23.36.jpeg",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/WhatsApp-Image-2025-11-10-at-23-23-36.webp",
+    "kb": 110,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/11/oficina-mda.png",
+    "destino": "public/img/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-m/capa.webp",
+    "kb": 52,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-15.06.19.jpeg",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/WhatsApp-Image-2025-10-14-at-15-06-19.webp",
+    "kb": 229,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-15.06.13.jpeg",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/WhatsApp-Image-2025-10-14-at-15-06-13.webp",
+    "kb": 201,
+    "largura": 903,
+    "altura": 1200,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-15.06.14-1.jpeg",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/WhatsApp-Image-2025-10-14-at-15-06-14-1.webp",
+    "kb": 244,
+    "largura": 1204,
+    "altura": 1600,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-15.06.14-2.jpeg",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/WhatsApp-Image-2025-10-14-at-15-06-14-2.webp",
+    "kb": 190,
+    "largura": 903,
+    "altura": 1200,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-14-at-15.06.14.jpeg",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/WhatsApp-Image-2025-10-14-at-15-06-14.webp",
+    "kb": 260,
+    "largura": 903,
+    "altura": 1200,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/9.png",
+    "destino": "public/img/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-mane/capa.webp",
+    "kb": 120,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.01-1.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-01-1.webp",
+    "kb": 90,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.02.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-02.webp",
+    "kb": 27,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.02-1.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-02-1.webp",
+    "kb": 35,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.02-2.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-02-2.webp",
+    "kb": 38,
+    "largura": 1400,
+    "altura": 1217,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.03.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-03.webp",
+    "kb": 31,
+    "largura": 1400,
+    "altura": 940,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-15-at-14.41.03-1.jpeg",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/WhatsApp-Image-2025-10-15-at-14-41-03-1.webp",
+    "kb": 128,
+    "largura": 1400,
+    "altura": 1038,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/outra-oficina.png",
+    "destino": "public/img/noticias/oficina-do-projeto-da-terra-a-mesa-realizada-no-municipio-de/capa.webp",
+    "kb": 46,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Eng.-Agronoma-Cintia-Hoffer.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Eng-Agronoma-Cintia-Hoffer.webp",
+    "kb": 58,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Engenheiro-Agronomo-Fabio-Anderson.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Engenheiro-Agronomo-Fabio-Anderson.webp",
+    "kb": 50,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Engenheira-Agronoma-Julia-Goetten-Wagner.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Engenheira-Agronoma-Julia-Goetten-Wagner.webp",
+    "kb": 68,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Carolina-Couto.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Carolina-Couto.webp",
+    "kb": 41,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/equipe-da-Secretaria-Municipal-de-Agricultura.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/equipe-da-Secretaria-Municipal-de-Agricultura.webp",
+    "kb": 66,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Claudia-Aparecida-Cordova-Barbosa-da-Secretaria-Municipal-de-Educacao.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Claudia-Aparecida-Cordova-Barbosa-da-Secretaria-Municipal-de-Educacao.webp",
+    "kb": 50,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Elaine-Vicente.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Elaine-Vicente.webp",
+    "kb": 32,
+    "largura": 1296,
+    "altura": 864,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Nilton-Nunes-de-Jesus-extensionista-da-EPAGRI.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Nilton-Nunes-de-Jesus-extensionista-da-EPAGRI.webp",
+    "kb": 61,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim.webp",
+    "kb": 77,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim-1.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim-1.webp",
+    "kb": 24,
+    "largura": 604,
+    "altura": 403,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim-2.jpg",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/Publico-presente-na-Oficina-realizada-no-projeto-Da-Terra-a-mesa-no-municipio-de-Sao-Joaquim-2.webp",
+    "kb": 26,
+    "largura": 607,
+    "altura": 405,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/10/2a-oficina.png",
+    "destino": "public/img/noticias/realizada-a-segunda-oficina-do-projeto-da-terra-a-mesa-no-mu/capa.webp",
+    "kb": 44,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/09/WhatsApp-Image-2025-08-31-at-23.21.03-scaled.jpeg",
+    "destino": "public/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/WhatsApp-Image-2025-08-31-at-23-21-03-scaled.webp",
+    "kb": 128,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/09/Geane-Natal-e-Gisa.jpg",
+    "destino": "public/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/Geane-Natal-e-Gisa.webp",
+    "kb": 232,
+    "largura": 1400,
+    "altura": 1283,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/09/reuniao-com-MDA.jpg",
+    "destino": "public/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/reuniao-com-MDA.webp",
+    "kb": 224,
+    "largura": 1400,
+    "altura": 1415,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/09/Mistica-2-scaled.jpg",
+    "destino": "public/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/Mistica-2-scaled.webp",
+    "kb": 165,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/09/12.png",
+    "destino": "public/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/capa.webp",
+    "kb": 92,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/11.png",
+    "destino": "public/img/noticias/projeto-que-fortalece-agroecologia-no-sul-do-brasil-sera-lan/capa.webp",
+    "kb": 65,
+    "largura": 800,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/Foto-02-Oficina-Painel-SC.png",
+    "destino": "public/img/noticias/oficina-sobre-politicas-publicas-no-municipio-de-painel-sc/Foto-02-Oficina-Painel-SC.webp",
+    "kb": 52,
+    "largura": 802,
+    "altura": 700,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Oficina-em-Painel-SC.png",
+    "destino": "public/img/noticias/oficina-sobre-politicas-publicas-no-municipio-de-painel-sc/Oficina-em-Painel-SC.webp",
+    "kb": 55,
+    "largura": 720,
+    "altura": 695,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/WhatsApp-Image-2025-07-21-at-11.54.24.jpeg",
+    "destino": "public/img/noticias/centro-vianei-realiza-oficina-sobre-mercados-institucionais/capa.webp",
+    "kb": 76,
+    "largura": 764,
+    "altura": 1073,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/Oficina-Abelardo-3.jpeg",
+    "destino": "public/img/noticias/vianei-participa-de-oficina-construcao-indicadores-mata-atla/Oficina-Abelardo-3.webp",
+    "kb": 242,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/Oficina-Abelardo-2.jpeg",
+    "destino": "public/img/noticias/vianei-participa-de-oficina-construcao-indicadores-mata-atla/Oficina-Abelardo-2.webp",
+    "kb": 237,
+    "largura": 900,
+    "altura": 1200,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/capa-Oficina-Abelardo-1.jpg",
+    "destino": "public/img/noticias/vianei-participa-de-oficina-construcao-indicadores-mata-atla/capa.webp",
+    "kb": 210,
+    "largura": 1200,
+    "altura": 900,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/Foto-6.jpg",
+    "destino": "public/img/noticias/projeto-restaurar/Foto-6.webp",
+    "kb": 133,
+    "largura": 1280,
+    "altura": 960,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/07/capa-projeto-restaurar.jpg",
+    "destino": "public/img/noticias/projeto-restaurar/capa.webp",
+    "kb": 237,
+    "largura": 1252,
+    "altura": 809,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/05/Doc-Pat.png",
+    "destino": "public/img/noticias/serie-ima-pat-panalto-sul/capa.webp",
+    "kb": 53,
+    "largura": 1023,
+    "altura": 667,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/05/Logo-daterra-a-mesa-2-1.ai_.jpg",
+    "destino": "public/img/noticias/projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do/capa.webp",
+    "kb": 127,
+    "largura": 1600,
+    "altura": 898,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/09/image.png",
+    "destino": "public/img/noticias/sementes-crioulas-guardias-da-biodiversidade-e-da-agroecolog/capa.webp",
+    "kb": 114,
+    "largura": 798,
+    "altura": 799,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/09/Design-sem-nome-4.jpg",
+    "destino": "public/img/noticias/o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-e/capa.webp",
+    "kb": 56,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/08/Capa-Revista-Abema.png",
+    "destino": "public/img/noticias/revista-abema-8a-edicao-2024/capa.webp",
+    "kb": 55,
+    "largura": 634,
+    "altura": 894,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/WhatsApp-Image-2024-03-28-at-12.58.10-PM.jpeg",
+    "destino": "public/img/noticias/bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarin/capa.webp",
+    "kb": 71,
+    "largura": 1111,
+    "altura": 520,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome-8.jpg",
+    "destino": "public/img/noticias/24-de-julho-hoje-e-dia-da-araucaria/capa.webp",
+    "kb": 214,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome.jpg",
+    "destino": "public/img/noticias/semeando-saude-agroecologia-e-alimentacao-solidaria/Design-sem-nome.webp",
+    "kb": 146,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/caminhada.jpg",
+    "destino": "public/img/noticias/seminario-sat-pinhao-e-iii-festa-da-colheita-do-pinhao-de-sa/caminhada.webp",
+    "kb": 229,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 62
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/IMG_6089.jpg",
+    "destino": "public/img/noticias/seminario-sat-pinhao-e-iii-festa-da-colheita-do-pinhao-de-sa/IMG_6089.webp",
+    "kb": 368,
+    "largura": 1050,
+    "altura": 1575,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/tres-etapas-da-bio-construcao-do-banheiro-seco-aqui-na-Casa-de-Barro-SC-Assentamento-1°-de-Maio-MST-Curitibanos.-1.jpg",
+    "destino": "public/img/noticias/seminario-sat-pinhao-e-iii-festa-da-colheita-do-pinhao-de-sa/capa.webp",
+    "kb": 152,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/Sao-JoaquimSC-Seminario-SAT-Pinhao-da-Serra-Catarinense-CASA-DA-CULTURA-e-III-FESTA-DA-COLHEITA-DO-PINHAO-COMUNIDADE-DO-CRUZEIRO-1.jpg",
+    "destino": "public/img/noticias/seminario-territorial-sobre-o-sistema-agricola-tradicional-s/capa.webp",
+    "kb": 110,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/tres-etapas-da-bio-construcao-do-banheiro-seco-aqui-na-Casa-de-Barro-SC-Assentamento-1°-de-Maio-MST-Curitibanos.jpg",
+    "destino": "public/img/noticias/bioconstrucao-e-saneamento-ecologico-a-terceira-etapa-do-pro/capa.webp",
+    "kb": 161,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/Oficina-de-bioconstrucao-e-saneamento-ecologico-1.jpg",
+    "destino": "public/img/noticias/2a-etapa-da-oficina-de-saneamento-ecologico-e-bioconstrucao/capa.webp",
+    "kb": 266,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/02/Modelo-para-postagens-.jpg",
+    "destino": "public/img/noticias/uma-revolucao-com-origem/capa.webp",
+    "kb": 91,
+    "largura": 910,
+    "altura": 910,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/202404181115_capa.jpeg",
+    "destino": "public/img/noticias/oficinas-de-bioconstrucao-e-saneamento-ecologico-promovida-p/202404181115_capa.webp",
+    "kb": 55,
+    "largura": 1280,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/Oficina-de-bioconstrucao-e-saneamento-ecologico.jpg",
+    "destino": "public/img/noticias/oficinas-de-bioconstrucao-e-saneamento-ecologico-promovida-p/capa.webp",
+    "kb": 228,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/04/Card-midias-1.jpg",
+    "destino": "public/img/noticias/oficina-de-saneamento-ecologico-e-bio-construcao-assentament/capa.webp",
+    "kb": 83,
+    "largura": 910,
+    "altura": 910,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/oficina-EARE.png",
+    "destino": "public/img/noticias/oficina-direcionada-a-juventude-foi-realizada-no-encontro-am/oficina-EARE.webp",
+    "kb": 55,
+    "largura": 474,
+    "altura": 871,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/CARD.jpeg",
+    "destino": "public/img/noticias/oficina-direcionada-a-juventude-foi-realizada-no-encontro-am/capa.webp",
+    "kb": 168,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/10/WhatsApp-Image-2023-10-16-at-14.19.05.jpeg",
+    "destino": "public/img/noticias/em-16-10-e-celebrado-o-dia-mundial-da-alimentacao/capa.webp",
+    "kb": 119,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-19-at-19.33.13.jpeg",
+    "destino": "public/img/noticias/tbt-19a-feira-regional-de-sementes-crioulas-palmeira-pr-25-e/capa.webp",
+    "kb": 197,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/09/Captura-de-tela-2023-09-14-103221.png",
+    "destino": "public/img/noticias/curso-de-pinhao-na-culinaria-inspira-receitas-vencedoras-de/capa.webp",
+    "kb": 44,
+    "largura": 705,
+    "altura": 461,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/08/Captura-de-Tela-2023-08-17-as-16.05.43.png",
+    "destino": "public/img/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario/Captura-de-Tela-2023-08-17-as-16-05-43.webp",
+    "kb": 137,
+    "largura": 1145,
+    "altura": 809,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/08/Captura-de-Tela-2023-08-17-as-16.05.23.png",
+    "destino": "public/img/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario/capa.webp",
+    "kb": 69,
+    "largura": 575,
+    "altura": 809,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/08/ID-Visual-Misereor-em-Rede-2.jpg",
+    "destino": "public/img/noticias/oficina-de-hortinhas-com-garrafa-pet/capa.webp",
+    "kb": 112,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/08/WhatsApp-Image-2023-07-12-at-16.30.33-1.jpeg",
+    "destino": "public/img/noticias/oficina-pinhao-na-culinaria/capa.webp",
+    "kb": 262,
+    "largura": 1600,
+    "altura": 1200,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/07/IMA.png",
+    "destino": "public/img/noticias/pat-planalto-sul-apoia-cadeia-produtiva-do-pinhao-a-conserva/capa.webp",
+    "kb": 84,
+    "largura": 795,
+    "altura": 559,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia1.jpg",
+    "destino": "public/img/noticias/relatorio-do-seminario-virtual-de-integracao-entre-os-projet/capa.webp",
+    "kb": 35,
+    "largura": 500,
+    "altura": 340,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Painel-recebe-equipamentos-destinados-a-selecao-do-pinhao1.jpeg",
+    "destino": "public/img/noticias/painel-recebe-equipamentos-destinados-a-selecao-do-pinhao-os/capa.webp",
+    "kb": 168,
+    "largura": 1280,
+    "altura": 853,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/2019-04-23_15-13-08-2-1-scaled.jpg",
+    "destino": "public/img/noticias/a-importancia-da-cadeia-produtiva-do-pinhao-para-a-conservac/capa.webp",
+    "kb": 249,
+    "largura": 1600,
+    "altura": 1067,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/2019-04-23_15-14-29-2-1-scaled.jpg",
+    "destino": "public/img/noticias/tecnica-gera-araucarias-menores-para-facilitar-a-vida-de-cat/capa.webp",
+    "kb": 238,
+    "largura": 1600,
+    "altura": 1067,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Braulio_Dias.jpeg",
+    "destino": "public/img/noticias/braulio-dias-avalia-avancos-e-desafios-da-agenda-de-biodiver/capa.webp",
+    "kb": 278,
+    "largura": 1600,
+    "altura": 1200,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/ID-Visual-Misereor-em-Rede.png",
+    "destino": "public/img/noticias/o-centro-vianei-promove-oficina-de-preparo-de-oleatos-com-er/capa.webp",
+    "kb": 127,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/ID-Visual-Misereor-em-Rede.jpg",
+    "destino": "public/img/noticias/a-partir-do-mes-de-maio-de-2023-o-centro-vianei-de-educacao/capa.webp",
+    "kb": 83,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/Copia-de-FESTA-DA-COLHEITA-DO-PINHAO.jpg",
+    "destino": "public/img/noticias/araucaria-teu-nome-e-resistencia/capa.webp",
+    "kb": 52,
+    "largura": 910,
+    "altura": 910,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/Seminario-inter.png",
+    "destino": "public/img/noticias/seminario-internacional-pauta-debate-sobre-a-democratizacao/capa.webp",
+    "kb": 23,
+    "largura": 731,
+    "altura": 287,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145749/20220603_fellipeabreu_santacatarina_129484.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220603_fellipeabreu_santacatarina_129484.webp",
+    "kb": 200,
+    "largura": 1080,
+    "altura": 809,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145727/20220530_fellipeabreu_santacatarina_128946.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220530_fellipeabreu_santacatarina_128946.webp",
+    "kb": 153,
+    "largura": 720,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180237/20220604_fellipeabreu_santacatarina_130108.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220604_fellipeabreu_santacatarina_130108.webp",
+    "kb": 106,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145742/20220531_fellipeabreu_santacatarina_129195.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220531_fellipeabreu_santacatarina_129195.webp",
+    "kb": 244,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145800/20220604_fellipeabreu_santacatarina_130026.jpeg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220604_fellipeabreu_santacatarina_130026.webp",
+    "kb": 78,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145739/20220531_fellipeabreu_santacatarina_129134.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220531_fellipeabreu_santacatarina_129134.webp",
+    "kb": 85,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145736/20220530_fellipeabreu_santacatarina_129014.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220530_fellipeabreu_santacatarina_129014.webp",
+    "kb": 90,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145746/20220601_fellipeabreu_santacatarina_129454.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220601_fellipeabreu_santacatarina_129454.webp",
+    "kb": 150,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05145757/20220604_fellipeabreu_santacatarina_129960.jpeg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220604_fellipeabreu_santacatarina_129960.webp",
+    "kb": 123,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://imgs.mongabay.com/wp-content/uploads/sites/29/2023/04/05180604/20220530_fellipeabreu_santacatarina_128704-1.jpg",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/20220530_fellipeabreu_santacatarina_128704-1.webp",
+    "kb": 136,
+    "largura": 1080,
+    "altura": 720,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Coletando-pinhao-comunidades-de-SC-preservam-as-matas-de-araucaria..png",
+    "destino": "public/img/noticias/coletando-pinhao-comunidades-de-sc-preservam-as-matas-de-ara/capa.webp",
+    "kb": 76,
+    "largura": 1330,
+    "altura": 793,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Trabalho-de-grupo-reconhecimento-das-areas-de-restauracao-no-projeto-de-assentamento-Indio-Gaudino-em-Curitibanos..jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/Trabalho-de-grupo-reconhecimento-das-areas-de-restauracao-no-projeto-de-assentamento-Indio-Gaudino-em-Curitibanos.webp",
+    "kb": 78,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Travessia-com-visita-na-reserva-legal-do-projeto-de-assentamento-Sao-Joao-Maria-II-em-Fraiburgo.jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/Travessia-com-visita-na-reserva-legal-do-projeto-de-assentamento-Sao-Joao-Maria-II-em-Fraiburgo.webp",
+    "kb": 218,
+    "largura": 780,
+    "altura": 1040,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Elaboracao-do-diagrama-de-Venn-no-projeto-de-assentamento-Florestan-Fernandes-em-Monte-Carlo.jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/Elaboracao-do-diagrama-de-Venn-no-projeto-de-assentamento-Florestan-Fernandes-em-Monte-Carlo.webp",
+    "kb": 71,
+    "largura": 1200,
+    "altura": 1600,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Almoco-comunitario-no-projeto-de-assentamento-Butia-Verde-em-Fraiburgo..jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/Almoco-comunitario-no-projeto-de-assentamento-Butia-Verde-em-Fraiburgo.webp",
+    "kb": 47,
+    "largura": 780,
+    "altura": 1040,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Travessia-dentro-da-reserva-legal-do-projeto-de-assentamento-1-de-Maio-em-Curitibanos.jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/Travessia-dentro-da-reserva-legal-do-projeto-de-assentamento-1-de-Maio-em-Curitibanos.webp",
+    "kb": 232,
+    "largura": 1400,
+    "altura": 1050,
+    "qualidade": 46
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Quadro.jpg",
+    "destino": "public/img/noticias/centro-vianei-realiza-diagnosticos-rapidos-participativos-dr/capa.webp",
+    "kb": 79,
+    "largura": 1280,
+    "altura": 960,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8839-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8839-Copy.webp",
+    "kb": 107,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8585-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8585-Copy.webp",
+    "kb": 59,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.10.25.jpeg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/WhatsApp-Image-2023-04-19-at-12-10-25.webp",
+    "kb": 95,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.15.17.jpeg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/WhatsApp-Image-2023-04-19-at-12-15-17.webp",
+    "kb": 111,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.18.09.jpeg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/WhatsApp-Image-2023-04-19-at-12-18-09.webp",
+    "kb": 27,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.26.43.jpeg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/WhatsApp-Image-2023-04-19-at-12-26-43.webp",
+    "kb": 102,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8824-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8824-Copy.webp",
+    "kb": 49,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8787-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8787-Copy.webp",
+    "kb": 123,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8801-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8801-Copy.webp",
+    "kb": 103,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8826-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8826-Copy.webp",
+    "kb": 145,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8814-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8814-Copy.webp",
+    "kb": 153,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8760.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8760.webp",
+    "kb": 84,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/WhatsApp-Image-2023-04-19-at-12.38.09.jpeg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/WhatsApp-Image-2023-04-19-at-12-38-09.webp",
+    "kb": 105,
+    "largura": 1400,
+    "altura": 933,
+    "qualidade": 78
+  },
+  {
+    "url": "https://cepagro.org.br/wp-content/uploads/2023/04/IMG_8740-Copy.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8740-Copy.webp",
+    "kb": 116,
+    "largura": 800,
+    "altura": 533,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/Copia-de-banner-80x120cm.jpg",
+    "destino": "public/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/Copia-de-banner-80x120cm.webp",
+    "kb": 95,
+    "largura": 1400,
+    "altura": 2100,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/ID-Visual-Misereor-em-Rede-1.jpg",
+    "destino": "public/img/noticias/centro-vianei-de-educacao-popular-promoveu-no-ultimo-sabado/capa.webp",
+    "kb": 127,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/05/Foto-PMA-oficina-Parana.png",
+    "destino": "public/img/noticias/como-avaliar-os-impactos-gerados-por-um-projeto-de-transform/capa.webp",
+    "kb": 69,
+    "largura": 910,
+    "altura": 910,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia3.jpg",
+    "destino": "public/img/noticias/formacao-sobre-abelhas-nativas-sem-ferrao-fortalece-as-prati/capa.webp",
+    "kb": 215,
+    "largura": 1080,
+    "altura": 1080,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-1.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-1.webp",
+    "kb": 13,
+    "largura": 225,
+    "altura": 300,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-1.jpg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-1-2.webp",
+    "kb": 15,
+    "largura": 300,
+    "altura": 200,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-3.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-3.webp",
+    "kb": 42,
+    "largura": 710,
+    "altura": 514,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-5.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-5.webp",
+    "kb": 38,
+    "largura": 750,
+    "altura": 538,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-6.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-6.webp",
+    "kb": 33,
+    "largura": 750,
+    "altura": 502,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-7.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-7.webp",
+    "kb": 29,
+    "largura": 750,
+    "altura": 548,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-8.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-8.webp",
+    "kb": 8,
+    "largura": 656,
+    "altura": 497,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-9.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-9.webp",
+    "kb": 8,
+    "largura": 670,
+    "altura": 493,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-10.jpg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-10.webp",
+    "kb": 6,
+    "largura": 300,
+    "altura": 162,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-11.jpg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-11.webp",
+    "kb": 10,
+    "largura": 300,
+    "altura": 169,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-12.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-12.webp",
+    "kb": 21,
+    "largura": 225,
+    "altura": 300,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-13.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-13.webp",
+    "kb": 11,
+    "largura": 300,
+    "altura": 247,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-14.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-14.webp",
+    "kb": 39,
+    "largura": 750,
+    "altura": 269,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-15.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-15.webp",
+    "kb": 23,
+    "largura": 400,
+    "altura": 269,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-16.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-16.webp",
+    "kb": 10,
+    "largura": 300,
+    "altura": 178,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-17.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-17.webp",
+    "kb": 12,
+    "largura": 300,
+    "altura": 221,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-18.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-18.webp",
+    "kb": 18,
+    "largura": 400,
+    "altura": 298,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2-19.jpeg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/noticia2-19.webp",
+    "kb": 9,
+    "largura": 400,
+    "altura": 498,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/noticia2.jpg",
+    "destino": "public/img/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos/capa.webp",
+    "kb": 42,
+    "largura": 500,
+    "altura": 340,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-183419.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-183419.webp",
+    "kb": 6,
+    "largura": 423,
+    "altura": 137,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-183551.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-183551.webp",
+    "kb": 23,
+    "largura": 1400,
+    "altura": 222,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Oficina-Pat-06.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Oficina-Pat-06.webp",
+    "kb": 39,
+    "largura": 569,
+    "altura": 413,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Lista-de-presenca-01.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Lista-de-presenca-01.webp",
+    "kb": 57,
+    "largura": 883,
+    "altura": 596,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Lista-de-presenca-02.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Lista-de-presenca-02.webp",
+    "kb": 51,
+    "largura": 884,
+    "altura": 607,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-182752.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-182752.webp",
+    "kb": 13,
+    "largura": 405,
+    "altura": 437,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-182941.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-182941.webp",
+    "kb": 11,
+    "largura": 465,
+    "altura": 280,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Foto-das-atividades.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Foto-das-atividades.webp",
+    "kb": 55,
+    "largura": 943,
+    "altura": 585,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-181551.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-181551.webp",
+    "kb": 39,
+    "largura": 940,
+    "altura": 532,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-183112.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-183112.webp",
+    "kb": 21,
+    "largura": 564,
+    "altura": 322,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Avaliacao-da-oficina.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Avaliacao-da-oficina.webp",
+    "kb": 27,
+    "largura": 664,
+    "altura": 433,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/11/Captura-de-tela-2023-11-20-183309.png",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/Captura-de-tela-2023-11-20-183309.webp",
+    "kb": 43,
+    "largura": 884,
+    "altura": 468,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/projeto-proespecies1.jpg",
+    "destino": "public/img/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pi/capa.webp",
+    "kb": 7,
+    "largura": 500,
+    "altura": 340,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/destaque-mda-2.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/destaque-mda-2.webp",
+    "kb": 72,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/areas-de-abrangencia.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/areas-de-abrangencia.webp",
+    "kb": 90,
+    "largura": 1400,
+    "altura": 756,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/sjose-cerrito-sc.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/sjose-cerrito-sc.webp",
+    "kb": 50,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/tekoa-pora.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/tekoa-pora.webp",
+    "kb": 170,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/teixeira-soares.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/teixeira-soares.webp",
+    "kb": 106,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/tres-arroios.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/tres-arroios.webp",
+    "kb": 96,
+    "largura": 1080,
+    "altura": 583,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/spdagora.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/spdagora.webp",
+    "kb": 148,
+    "largura": 1080,
+    "altura": 310,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/ironiuza.jpg",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/ironiuza.webp",
+    "kb": 22,
+    "largura": 1080,
+    "altura": 310,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/BARRA-logos-MDA-2026.png",
+    "destino": "public/img/projetos/da-terra-a-mesa-mda/barra-logos-mda-2026.webp",
+    "kb": 39,
+    "largura": 1400,
+    "altura": 254,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Screenshot-2023-06-14-at-11.03.53.png",
+    "destino": "public/img/projetos/programa-saberes-e-fazeres-do-pinhao/screenshot-2023-06-14-at-11-03-53.webp",
+    "kb": 202,
+    "largura": 1192,
+    "altura": 1674,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Screenshot-2023-06-14-at-11.07.28.png",
+    "destino": "public/img/projetos/programa-saberes-e-fazeres-do-pinhao/screenshot-2023-06-14-at-11-07-28.webp",
+    "kb": 167,
+    "largura": 1176,
+    "altura": 1642,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Screenshot-2023-06-14-at-11.13.44.png",
+    "destino": "public/img/projetos/programa-saberes-e-fazeres-do-pinhao/screenshot-2023-06-14-at-11-13-44.webp",
+    "kb": 42,
+    "largura": 1086,
+    "altura": 592,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Screenshot-2023-06-14-at-11.21.43.png",
+    "destino": "public/img/projetos/programa-saberes-e-fazeres-do-pinhao/screenshot-2023-06-14-at-11-21-43.webp",
+    "kb": 44,
+    "largura": 1400,
+    "altura": 1028,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/banner-saberes-e-fazeres.jpeg",
+    "destino": "public/img/projetos/programa-saberes-e-fazeres-do-pinhao/banner-saberes-e-fazeres.webp",
+    "kb": 42,
+    "largura": 683,
+    "altura": 1024,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/projeto-estaurar.pdf",
+    "destino": "public/arquivos/projeto-estaurar.pdf",
+    "kb": 789
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/Mapa-2022.jpg",
+    "destino": "public/img/projetos/projeto-misereor-em-rede/mapa-2022.webp",
+    "kb": 218,
+    "largura": 1400,
+    "altura": 1878,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/09/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+    "destino": "public/arquivos/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+    "kb": 11345
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+    "destino": "public/arquivos/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+    "kb": 3380
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia_page-0001-1.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-araucaria-angustifolia_page-0001-1.webp",
+    "kb": 219,
+    "largura": 1050,
+    "altura": 1485,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia_page-0002-1.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-araucaria-angustifolia_page-0002-1.webp",
+    "kb": 242,
+    "largura": 1050,
+    "altura": 1485,
+    "qualidade": 38
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia_page-0003-1.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-araucaria-angustifolia_page-0003-1.webp",
+    "kb": 247,
+    "largura": 1400,
+    "altura": 1980,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/pixurum-3-1.png",
+    "destino": "public/img/projetos/projeto-restaurar/pixurum-3-1.webp",
+    "kb": 10,
+    "largura": 700,
+    "altura": 189,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/pixurum-2-1.png",
+    "destino": "public/img/projetos/projeto-restaurar/pixurum-2-1.webp",
+    "kb": 10,
+    "largura": 700,
+    "altura": 189,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/04/pixurum-1-1.png",
+    "destino": "public/img/projetos/projeto-restaurar/pixurum-1-1.webp",
+    "kb": 9,
+    "largura": 700,
+    "altura": 189,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+    "destino": "public/arquivos/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+    "kb": 3052
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis_page-0001.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-ocotea-catharinensis_page-0001.webp",
+    "kb": 228,
+    "largura": 1400,
+    "altura": 1980,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis_page-0002.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-ocotea-catharinensis_page-0002.webp",
+    "kb": 235,
+    "largura": 1400,
+    "altura": 1980,
+    "qualidade": 62
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis_page-0003.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/cartilha-de-identificacao-ocotea-catharinensis_page-0003.webp",
+    "kb": 229,
+    "largura": 1400,
+    "altura": 1980,
+    "qualidade": 70
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/WhatsApp-Image-2025-10-30-at-09.15.00-1.jpeg",
+    "destino": "public/img/projetos/projeto-restaurar/whatsapp-image-2025-10-30-at-09-15-00-1.webp",
+    "kb": 216,
+    "largura": 768,
+    "altura": 1024,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/12/Foto-Familias-Silvino-Painel-2-2022.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/foto-familias-silvino-painel-2-2022.webp",
+    "kb": 241,
+    "largura": 1080,
+    "altura": 809,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/projeto-restaurar1.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/projeto-restaurar1.webp",
+    "kb": 9,
+    "largura": 500,
+    "altura": 340,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/03/logo-edital-terra-mesa.png",
+    "destino": "public/img/projetos/projeto-restaurar/logo-edital-terra-mesa.webp",
+    "kb": 35,
+    "largura": 1400,
+    "altura": 661,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/06/Design-sem-nome-3.jpg",
+    "destino": "public/img/projetos/projeto-restaurar/design-sem-nome-3.webp",
+    "kb": 28,
+    "largura": 1400,
+    "altura": 788,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/09/capa-catalogo-fotografico-SAT-Pinhao.png",
+    "destino": "public/img/publicacoes/catalogo-fotografico-sat-pinhao.webp",
+    "kb": 129,
+    "largura": 696,
+    "altura": 980,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2026/09/Catalogo-SAT-Pinhao-web.pdf",
+    "destino": "public/arquivos/Catalogo-SAT-Pinhao-web.pdf",
+    "kb": 23083,
+    "aviso": "arquivo grande: 22.5 MB"
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.png",
+    "destino": "public/img/publicacoes/agroecologia-e-genero-centro-vianei.webp",
+    "kb": 109,
+    "largura": 686,
+    "altura": 900,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.pdf",
+    "destino": "public/arquivos/Agroecologia-e-genero-Centro-Vianei.pdf",
+    "kb": 924
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Construcao-social-dos-mercados.png",
+    "destino": "public/img/publicacoes/construcao-social-dos-mercados-no-sul-do-brasil-centro-vianei.webp",
+    "kb": 85,
+    "largura": 700,
+    "altura": 860,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-vianei-final.pdf",
+    "destino": "public/arquivos/Livro-vianei-final.pdf",
+    "kb": 6446
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-sobre-coletanea-Pixurum.pdf",
+    "destino": "public/arquivos/Livro-sobre-coletanea-Pixurum.pdf",
+    "kb": 985
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Povos-do-campo-educacao-e-natureza-Carbono-Social-em-Rede-Centro-Vianei.png",
+    "destino": "public/img/publicacoes/povos-do-campo-educacao-e-natureza-carbono-social-em-rede-centro-vianei.webp",
+    "kb": 45,
+    "largura": 590,
+    "altura": 839,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+    "destino": "public/arquivos/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+    "kb": 829
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Restauracao-ecologica-com-sistemas-agroflorestais-ICRAF-Brasilia.png",
+    "destino": "public/img/publicacoes/1178-2.webp",
+    "kb": 57,
+    "largura": 623,
+    "altura": 873,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+    "destino": "public/arquivos/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+    "kb": 25987,
+    "aviso": "arquivo grande: 25.4 MB"
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agrofloresta-UFPR-NEPEA.png",
+    "destino": "public/img/publicacoes/1175-2.webp",
+    "kb": 91,
+    "largura": 565,
+    "altura": 791,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+    "destino": "public/arquivos/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+    "kb": 11290
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-Embrapa.png",
+    "destino": "public/img/publicacoes/pinhao-na-culinaria-embrapa.webp",
+    "kb": 41,
+    "largura": 700,
+    "altura": 804,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2025/08/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+    "destino": "public/arquivos/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+    "kb": 25139,
+    "aviso": "arquivo grande: 24.5 MB"
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome-9.jpg",
+    "destino": "public/img/publicacoes/producao-de-pinhao-em-sistemas-tradicionais-no-planalto-serrano-catarinense.webp",
+    "kb": 20,
+    "largura": 700,
+    "altura": 700,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/livro-abastecimento-agroecologico-1.jpg",
+    "destino": "public/img/publicacoes/abastecimento-agroecologico-de-consumidores-articulado-com-soberania-e-seguranca-alimentar-nutricional.webp",
+    "kb": 39,
+    "largura": 355,
+    "altura": 500,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/03/livro-abastecimento-agroecologico.pdf",
+    "destino": "public/arquivos/livro-abastecimento-agroecologico.pdf",
+    "kb": 4338
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome-10.jpg",
+    "destino": "public/img/publicacoes/premio-bnds-de-boas-praticas-para-sistemas-agricolas-tradicionais.webp",
+    "kb": 55,
+    "largura": 693,
+    "altura": 980,
+    "qualidade": 78
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/premio_bndes_de_boas_praticas-1.pdf",
+    "destino": "public/arquivos/premio_bndes_de_boas_praticas-1.pdf",
+    "kb": 12993
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2024/06/2006.jpg",
+    "destino": "public/img/publicacoes/cartilha-de-gestao-administrativa-para-grupos-de-coordenacao.webp",
+    "kb": 22,
+    "largura": 700,
+    "altura": 700,
+    "qualidade": 78
+  },
+  {
+    "url": "https://i.ytimg.com/vi/MH-i3CUmR7M/hqdefault.jpg",
+    "destino": "public/img/videos/MH-i3CUmR7M.webp",
+    "kb": 18,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=MH-i3CUmR7M&format=json",
+    "destino": "extraido/curadoria/youtube/MH-i3CUmR7M.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/KX7vhaO62Ok/hqdefault.jpg",
+    "destino": "public/img/videos/KX7vhaO62Ok.webp",
+    "kb": 48,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=KX7vhaO62Ok&format=json",
+    "destino": "extraido/curadoria/youtube/KX7vhaO62Ok.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/m9omNsFPhRA/hqdefault.jpg",
+    "destino": "public/img/videos/m9omNsFPhRA.webp",
+    "kb": 43,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=m9omNsFPhRA&format=json",
+    "destino": "extraido/curadoria/youtube/m9omNsFPhRA.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/dsQm6AtlMq8/hqdefault.jpg",
+    "destino": "public/img/videos/dsQm6AtlMq8.webp",
+    "kb": 41,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=dsQm6AtlMq8&format=json",
+    "destino": "extraido/curadoria/youtube/dsQm6AtlMq8.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/iApGiVdA5RY/hqdefault.jpg",
+    "destino": "public/img/videos/iApGiVdA5RY.webp",
+    "erro": "HTTP 404"
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=iApGiVdA5RY&format=json",
+    "destino": "extraido/curadoria/youtube/iApGiVdA5RY.json",
+    "erro": "HTTP 404"
+  },
+  {
+    "url": "https://i.ytimg.com/vi/7rVAMlIdDWY/hqdefault.jpg",
+    "destino": "public/img/videos/7rVAMlIdDWY.webp",
+    "kb": 35,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=7rVAMlIdDWY&format=json",
+    "destino": "extraido/curadoria/youtube/7rVAMlIdDWY.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/m1K6t_XT8nM/hqdefault.jpg",
+    "destino": "public/img/videos/m1K6t_XT8nM.webp",
+    "erro": "HTTP 404"
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=m1K6t_XT8nM&format=json",
+    "destino": "extraido/curadoria/youtube/m1K6t_XT8nM.json",
+    "erro": "HTTP 404"
+  },
+  {
+    "url": "https://i.ytimg.com/vi/eRvHg6-iNFQ/hqdefault.jpg",
+    "destino": "public/img/videos/eRvHg6-iNFQ.webp",
+    "kb": 42,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=eRvHg6-iNFQ&format=json",
+    "destino": "extraido/curadoria/youtube/eRvHg6-iNFQ.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/l3MjSpbUUDA/hqdefault.jpg",
+    "destino": "public/img/videos/l3MjSpbUUDA.webp",
+    "kb": 31,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=l3MjSpbUUDA&format=json",
+    "destino": "extraido/curadoria/youtube/l3MjSpbUUDA.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/UQM2Uk3QLLQ/hqdefault.jpg",
+    "destino": "public/img/videos/UQM2Uk3QLLQ.webp",
+    "kb": 37,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=UQM2Uk3QLLQ&format=json",
+    "destino": "extraido/curadoria/youtube/UQM2Uk3QLLQ.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/NgPPlcMDImI/hqdefault.jpg",
+    "destino": "public/img/videos/NgPPlcMDImI.webp",
+    "kb": 23,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=NgPPlcMDImI&format=json",
+    "destino": "extraido/curadoria/youtube/NgPPlcMDImI.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/OXSpQ784wO0/hqdefault.jpg",
+    "destino": "public/img/videos/OXSpQ784wO0.webp",
+    "kb": 20,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=OXSpQ784wO0&format=json",
+    "destino": "extraido/curadoria/youtube/OXSpQ784wO0.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/qCisdqoRLLg/hqdefault.jpg",
+    "destino": "public/img/videos/qCisdqoRLLg.webp",
+    "kb": 12,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=qCisdqoRLLg&format=json",
+    "destino": "extraido/curadoria/youtube/qCisdqoRLLg.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/uliaLKhwe_0/hqdefault.jpg",
+    "destino": "public/img/videos/uliaLKhwe_0.webp",
+    "kb": 30,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=uliaLKhwe_0&format=json",
+    "destino": "extraido/curadoria/youtube/uliaLKhwe_0.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/MoHUOLKrHMw/hqdefault.jpg",
+    "destino": "public/img/videos/MoHUOLKrHMw.webp",
+    "kb": 16,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=MoHUOLKrHMw&format=json",
+    "destino": "extraido/curadoria/youtube/MoHUOLKrHMw.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/5B_Ik_JtYdA/hqdefault.jpg",
+    "destino": "public/img/videos/5B_Ik_JtYdA.webp",
+    "kb": 21,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=5B_Ik_JtYdA&format=json",
+    "destino": "extraido/curadoria/youtube/5B_Ik_JtYdA.json",
+    "kb": 1
+  },
+  {
+    "url": "https://i.ytimg.com/vi/XfxLdidKlmE/hqdefault.jpg",
+    "destino": "public/img/videos/XfxLdidKlmE.webp",
+    "kb": 6,
+    "largura": 480,
+    "altura": 360,
+    "qualidade": 78
+  },
+  {
+    "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=XfxLdidKlmE&format=json",
+    "destino": "extraido/curadoria/youtube/XfxLdidKlmE.json",
+    "kb": 1
+  },
+  {
+    "url": "https://vianei.org.br/wp-content/uploads/2023/04/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
+    "destino": "public/arquivos/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
+    "kb": 3366
+  }
+]
