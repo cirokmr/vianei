@@ -18,11 +18,14 @@
  * - destino .webp → converte com sharp (largura/altura máximas; baixa a qualidade até
  *   caber em maxKB, padrão 300 KB).
  * - qualquer outro destino → grava o arquivo como veio (avisa se passar de maxMB, padrão 15).
+ * - PDF maior que maxMB → comprime com o Ghostscript (qualidade "ebook", 150 dpi), se ele estiver
+ *   instalado, e fica com a versão menor. Vale também para PDFs que já estavam no destino.
  * - arquivos que já existem no destino são pulados (rode de novo sem medo).
  * Gera <lista>.resultado.json (tamanho de cada arquivo e erros).
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { carregar } from './carregar.mjs';
 
 const arqLista = process.argv[2];
@@ -38,6 +41,28 @@ const resultado = [];
 let ok = 0;
 let falhas = 0;
 
+let temGs = true;
+/** Comprime um PDF grande com o Ghostscript; devolve a nota do que aconteceu. */
+function comprimirPdf(arquivo, maxMB) {
+  const antes = fs.statSync(arquivo).size;
+  if (antes <= maxMB * 1024 * 1024 || !temGs) return null;
+  const tmp = arquivo + '.gs.pdf';
+  try {
+    execFileSync('gs', ['-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.5', '-dPDFSETTINGS=/ebook', '-dNOPAUSE', '-dBATCH', '-dQUIET', `-sOutputFile=${tmp}`, arquivo], { stdio: 'ignore', timeout: 300000 });
+  } catch (e) {
+    if (e.code === 'ENOENT') temGs = false;
+    fs.rmSync(tmp, { force: true });
+    return temGs ? 'compressão falhou' : 'Ghostscript não instalado: PDF ficou como veio';
+  }
+  const depois = fs.statSync(tmp).size;
+  if (depois < antes) {
+    fs.renameSync(tmp, arquivo);
+    return `comprimido: ${(antes / 1048576).toFixed(1)} MB → ${(depois / 1048576).toFixed(1)} MB`;
+  }
+  fs.rmSync(tmp, { force: true });
+  return 'compressão não reduziu o arquivo';
+}
+
 async function baixar(url) {
   for (let tentativa = 1; tentativa <= 3; tentativa++) {
     try {
@@ -51,12 +76,15 @@ async function baixar(url) {
   }
 }
 
-for (const item of lista) {
+// vários downloads ao mesmo tempo (sites antigos costumam responder devagar)
+const SIMULTANEOS = 6;
+async function processar(item) {
   const { url, destino } = item;
-  if (!url || !destino) continue;
+  if (!url || !destino) return;
   if (fs.existsSync(destino)) {
-    resultado.push({ url, destino, kb: Math.round(fs.statSync(destino).size / 1024), pulado: true });
-    continue;
+    const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15) : null;
+    resultado.push({ url, destino, kb: Math.round(fs.statSync(destino).size / 1024), pulado: true, ...(nota ? { nota } : {}) });
+    return;
   }
   try {
     let corpo;
@@ -87,8 +115,9 @@ for (const item of lista) {
       resultado.push({ url, destino, kb: Math.round(saida.length / 1024), largura: meta.width, altura: meta.height, qualidade });
     } else {
       fs.writeFileSync(destino, corpo);
-      const mb = corpo.length / 1024 / 1024;
-      resultado.push({ url, destino, kb: Math.round(corpo.length / 1024), ...(mb > (item.maxMB ?? 15) ? { aviso: `arquivo grande: ${mb.toFixed(1)} MB` } : {}) });
+      const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15) : null;
+      const kb = Math.round(fs.statSync(destino).size / 1024);
+      resultado.push({ url, destino, kb, ...(nota ? { nota } : {}), ...(kb / 1024 > (item.maxMB ?? 15) ? { aviso: `arquivo grande: ${(kb / 1024).toFixed(1)} MB` } : {}) });
     }
     ok++;
     console.log(`   ✓ ${destino}`);
@@ -98,6 +127,13 @@ for (const item of lista) {
     console.log(`   ✗ ${destino}: ${e.message || e}`);
   }
 }
+const fila = lista.slice();
+await Promise.all(
+  Array.from({ length: SIMULTANEOS }, async () => {
+    while (fila.length) await processar(fila.shift());
+  }),
+);
+resultado.sort((a, b) => a.destino.localeCompare(b.destino));
 
 fs.writeFileSync(arqLista.replace(/\.json$/, '') + '.resultado.json', JSON.stringify(resultado, null, 2) + '\n');
 console.log(`\n✅ ${ok} baixado(s), ${falhas} falha(s), ${resultado.filter((r) => r.pulado).length} já existiam`);

@@ -1496,7 +1496,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2023/03/projeto-estaurar.pdf",
-  "destino": "public/arquivos/projeto-estaurar.pdf"
+  "destino": "public/arquivos/projeto-estaurar.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2023/03/Mapa-2022.jpg",
@@ -1507,11 +1508,13 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/09/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
-  "destino": "public/arquivos/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf"
+  "destino": "public/arquivos/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
-  "destino": "public/arquivos/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf"
+  "destino": "public/arquivos/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia_page-0001-1.jpg",
@@ -1557,7 +1560,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
-  "destino": "public/arquivos/Cartilha-de-identificacao-Ocotea-catharinensis.pdf"
+  "destino": "public/arquivos/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis_page-0001.jpg",
@@ -1624,7 +1628,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2026/09/Catalogo-SAT-Pinhao-web.pdf",
-  "destino": "public/arquivos/Catalogo-SAT-Pinhao-web.pdf"
+  "destino": "public/arquivos/Catalogo-SAT-Pinhao-web.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.png",
@@ -1635,7 +1640,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.pdf",
-  "destino": "public/arquivos/Agroecologia-e-genero-Centro-Vianei.pdf"
+  "destino": "public/arquivos/Agroecologia-e-genero-Centro-Vianei.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Construcao-social-dos-mercados.png",
@@ -1646,11 +1652,13 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-vianei-final.pdf",
-  "destino": "public/arquivos/Livro-vianei-final.pdf"
+  "destino": "public/arquivos/Livro-vianei-final.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-sobre-coletanea-Pixurum.pdf",
-  "destino": "public/arquivos/Livro-sobre-coletanea-Pixurum.pdf"
+  "destino": "public/arquivos/Livro-sobre-coletanea-Pixurum.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Povos-do-campo-educacao-e-natureza-Carbono-Social-em-Rede-Centro-Vianei.png",
@@ -1661,7 +1669,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
-  "destino": "public/arquivos/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf"
+  "destino": "public/arquivos/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Restauracao-ecologica-com-sistemas-agroflorestais-ICRAF-Brasilia.png",
@@ -1672,7 +1681,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
-  "destino": "public/arquivos/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf"
+  "destino": "public/arquivos/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Agrofloresta-UFPR-NEPEA.png",
@@ -1683,7 +1693,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
-  "destino": "public/arquivos/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf"
+  "destino": "public/arquivos/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/Livro-Embrapa.png",
@@ -1694,7 +1705,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2025/08/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
-  "destino": "public/arquivos/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf"
+  "destino": "public/arquivos/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome-9.jpg",
@@ -1712,7 +1724,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2023/03/livro-abastecimento-agroecologico.pdf",
-  "destino": "public/arquivos/livro-abastecimento-agroecologico.pdf"
+  "destino": "public/arquivos/livro-abastecimento-agroecologico.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2024/06/Design-sem-nome-10.jpg",
@@ -1723,7 +1736,8 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2024/06/premio_bndes_de_boas_praticas-1.pdf",
-  "destino": "public/arquivos/premio_bndes_de_boas_praticas-1.pdf"
+  "destino": "public/arquivos/premio_bndes_de_boas_praticas-1.pdf",
+  "maxMB": 8
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2024/06/2006.jpg",
@@ -1773,16 +1787,6 @@
   "destino": "extraido/curadoria/youtube/dsQm6AtlMq8.json"
  },
  {
-  "url": "https://i.ytimg.com/vi/iApGiVdA5RY/hqdefault.jpg",
-  "destino": "public/img/videos/iApGiVdA5RY.webp",
-  "largura": 480,
-  "maxKB": 60
- },
- {
-  "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=iApGiVdA5RY&format=json",
-  "destino": "extraido/curadoria/youtube/iApGiVdA5RY.json"
- },
- {
   "url": "https://i.ytimg.com/vi/7rVAMlIdDWY/hqdefault.jpg",
   "destino": "public/img/videos/7rVAMlIdDWY.webp",
   "largura": 480,
@@ -1791,16 +1795,6 @@
  {
   "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=7rVAMlIdDWY&format=json",
   "destino": "extraido/curadoria/youtube/7rVAMlIdDWY.json"
- },
- {
-  "url": "https://i.ytimg.com/vi/m1K6t_XT8nM/hqdefault.jpg",
-  "destino": "public/img/videos/m1K6t_XT8nM.webp",
-  "largura": 480,
-  "maxKB": 60
- },
- {
-  "url": "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=m1K6t_XT8nM&format=json",
-  "destino": "extraido/curadoria/youtube/m1K6t_XT8nM.json"
  },
  {
   "url": "https://i.ytimg.com/vi/eRvHg6-iNFQ/hqdefault.jpg",
@@ -1904,6 +1898,7 @@
  },
  {
   "url": "https://vianei.org.br/wp-content/uploads/2023/04/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
-  "destino": "public/arquivos/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf"
+  "destino": "public/arquivos/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
+  "maxMB": 8
  }
 ]
