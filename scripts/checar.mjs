@@ -24,6 +24,12 @@ const COBERTURA_MINIMA = 0.7;
 
 const erros = [];
 const avisos = [];
+// avisos repetidos em muitas páginas (títulos longos das notícias antigas…) viram UMA linha
+const agrupados = new Map();
+const agrupar = (tipo, rota, detalhe) => {
+  if (!agrupados.has(tipo)) agrupados.set(tipo, []);
+  agrupados.get(tipo).push(`${rota} (${detalhe})`);
+};
 const infos = [];
 const erro = (m) => erros.push(m);
 const ehCliente = fs.existsSync('cliente.json');
@@ -96,7 +102,7 @@ for (const arq of paginas) {
   const titulo = (html.match(/<title>([\s\S]*?)<\/title>/i) || [])[1]?.trim();
   if (!titulo) erro(`${rota}: sem <title>`);
   else {
-    if (titulo.length > 65) aviso(`${rota}: título longo (${titulo.length} caracteres; ideal até 60)`);
+    if (titulo.length > 65) agrupar('título longo (ideal até 60 caracteres)', rota, titulo.length);
     if (!e404) {
       if (titulos.has(titulo)) aviso(`${rota}: título repetido de ${titulos.get(titulo)} ("${titulo}")`);
       titulos.set(titulo, rota);
@@ -106,7 +112,7 @@ for (const arq of paginas) {
   const metaDesc = (html.match(/<meta[^>]+name=["']description["'][^>]*>/i) || [])[0];
   const desc = metaDesc ? atributo(metaDesc, 'content') : null;
   if (!desc) erro(`${rota}: sem meta description`);
-  else if (desc.length < 50 || desc.length > 165) aviso(`${rota}: meta description com ${desc.length} caracteres (ideal 50–160)`);
+  else if (desc.length < 50 || desc.length > 165) agrupar('meta description fora do ideal (50–160 caracteres)', rota, desc.length);
 
   const h1s = (html.match(/<h1[\s>]/gi) || []).length;
   if (h1s === 0) erro(`${rota}: nenhum <h1>`);
@@ -201,6 +207,10 @@ if (fs.existsSync(dirPaginas)) {
     }
   }
   infos.push('Cobertura de conteúdo:\n\n' + linhaTabela.join('\n'));
+}
+
+for (const [tipo, lista] of agrupados) {
+  aviso(`${lista.length} página(s) com ${tipo}: ${lista.slice(0, 4).join(', ')}${lista.length > 4 ? ` e mais ${lista.length - 4}` : ''}`);
 }
 
 // ---------- relatório ----------

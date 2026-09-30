@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import NextEntry from '@/components/NextEntry';
 import Detalhe from '@/components/Detalhe';
-import { getNoticia, noticias, proximoDe, paramsOuVazio } from '@/lib/content';
+import { getNoticia, noticias, proximoDe, paramsOuVazio, descricaoCurta } from '@/lib/content';
 import { site } from '@/lib/site';
 
 type Params = { params: Promise<{ slug: string }> };
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!n) return {};
   return {
     title: n.titulo,
-    description: n.resumo,
+    description: descricaoCurta(n.resumo),
     alternates: { canonical: `/noticias/${n.slug}/` },
     openGraph: { type: 'article', publishedTime: n.data, images: n.capa ? [{ url: n.capa }] : undefined },
   };

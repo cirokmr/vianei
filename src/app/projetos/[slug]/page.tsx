@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import NextEntry from '@/components/NextEntry';
 import Detalhe from '@/components/Detalhe';
-import { getProjeto, proximoDe, projetos, paramsOuVazio } from '@/lib/content';
+import { getProjeto, proximoDe, projetos, paramsOuVazio, descricaoCurta } from '@/lib/content';
 import { site } from '@/lib/site';
 
 type Params = { params: Promise<{ slug: string }> };
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const img = p.hero?.src ?? p.capa;
   return {
     title: p.titulo,
-    description: p.resumo || p.subtitulo || site.descricao,
+    description: descricaoCurta(p.resumo || p.subtitulo || site.descricao),
     alternates: { canonical: `/projetos/${p.slug}/` },
     openGraph: { images: img ? [{ url: img }] : undefined },
   };

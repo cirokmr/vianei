@@ -123,6 +123,12 @@ export const paginas: Pagina[] = lerPasta('paginas')
   }))
   .sort((a, b) => a.ordem - b.ordem);
 
+/** Texto para a meta description: até ~155 caracteres, cortado no fim de uma palavra. */
+export const descricaoCurta = (texto: string, max = 155) => {
+  const t = texto.replace(/\s+/g, ' ').trim();
+  return t.length <= max ? t : t.slice(0, max - 1).replace(/[\s,;:.—–-]+\S*$/, '') + '…';
+};
+
 export const getProjeto = (slug: string) => projetos.find((p) => p.slug === slug);
 export const getNoticia = (slug: string) => noticias.find((n) => n.slug === slug);
 export const getPagina = (slug: string) => paginas.find((p) => p.slug === slug);
