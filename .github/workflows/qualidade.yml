@@ -8,8 +8,8 @@ name: Qualidade
 
 on:
   push:
-    # main só guarda os workflows (o site mora no branch "fabrica"); prints é o branch das imagens
-    branches-ignore: [prints, main]
+    # o site mora na main (produção na Vercel); prints é o branch das imagens
+    branches-ignore: [prints]
   pull_request:
   workflow_dispatch:
 
