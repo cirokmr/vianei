@@ -1,8 +1,10 @@
 {
   "cliente": "vianei",
   "criado_em": "2026-09-30",
-  "observacoes": "",
+  "observacoes": "Direção de arte: conceito 'O Tempo da Araucária' (aprovado pela equipe nas fases 1–6 do site em Payload), adaptado ao molde. Conteúdo: extração + snapshot do WordPress e material da equipe (extraido/curadoria/).",
   "site_antigo": "https://vianei.org.br",
-  "status": "extraido",
-  "extraido_em": "2026-09-30T13:50:37.938Z"
+  "status": "reconstruido",
+  "extraido_em": "2026-09-30T13:50:37.938Z",
+  "direcao_aprovada_em": "2026-09-26",
+  "reconstruido_em": "2026-09-30"
 }
