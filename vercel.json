@@ -9,13 +9,388 @@
   },
   "redirects": [
     {
-      "source": "/quem-somos.html",
-      "destination": "/sobre/",
+      "source": "/projetos1/",
+      "destination": "/projetos/",
       "permanent": true
     },
     {
-      "source": "/fale-conosco.php",
+      "source": "/projetos1/projeto-restaurar/",
+      "destination": "/projetos/projeto-restaurar/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/projeto-finalistico/",
+      "destination": "/projetos/projeto-restaurar/#projeto-finalistico",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/projetos-de-assentamento/",
+      "destination": "/projetos/projeto-restaurar/#projetos-de-assentamento",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/projetos-de-assentamento/1o-de-maio/",
+      "destination": "/projetos/projeto-restaurar/#1o-de-maio",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/projetos-de-assentamento/indio-galdino-comunidade-irma-jandira/",
+      "destination": "/projetos/projeto-restaurar/#indio-galdino",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/galeria-de-especies/",
+      "destination": "/projetos/projeto-restaurar/#galeria-de-especies",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/galeria-de-especies/araucaria/",
+      "destination": "/projetos/projeto-restaurar/#araucaria",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/galeria-de-especies/canela-preta/",
+      "destination": "/projetos/projeto-restaurar/#canela-preta",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/projeto-restaurar/pixurum-edicao-projeto-restaurar/",
+      "destination": "/projetos/projeto-restaurar/#pixurum",
+      "permanent": true
+    },
+    {
+      "source": "/fale-conosco/",
       "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/obrigado/",
+      "destination": "/contato/",
+      "permanent": true
+    },
+    {
+      "source": "/galeria-de-videos/",
+      "destination": "/videos/",
+      "permanent": true
+    },
+    {
+      "source": "/inicio/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos/projeto-em-rede-da-terra-a-mesa/",
+      "destination": "/projetos/da-terra-a-mesa-mda/",
+      "permanent": true
+    },
+    {
+      "source": "/download/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-1/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-2/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-3/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-4/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-5/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-6/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/download/arquivo-7/",
+      "destination": "/publicacoes/",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/catalogo-fotografico-sat-pinhao/",
+      "destination": "/publicacoes/#catalogo-fotografico-sat-pinhao",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/premio-bnds-de-boas-praticas-para-sistemas-agricolas-tradicionais/",
+      "destination": "/publicacoes/#premio-bnds-de-boas-praticas-para-sistemas-agricolas-tradicionais",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/1178-2/",
+      "destination": "/publicacoes/#1178-2",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/agroecologia-e-genero-centro-vianei/",
+      "destination": "/publicacoes/#agroecologia-e-genero-centro-vianei",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/construcao-social-dos-mercados-no-sul-do-brasil-centro-vianei/",
+      "destination": "/publicacoes/#construcao-social-dos-mercados-no-sul-do-brasil-centro-vianei",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/1184-2/",
+      "destination": "/publicacoes/#1184-2",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/povos-do-campo-educacao-e-natureza-carbono-social-em-rede-centro-vianei/",
+      "destination": "/publicacoes/#povos-do-campo-educacao-e-natureza-carbono-social-em-rede-centro-vianei",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/1175-2/",
+      "destination": "/publicacoes/#1175-2",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/pinhao-na-culinaria-embrapa/",
+      "destination": "/publicacoes/#pinhao-na-culinaria-embrapa",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/revista-abema-8a-edicao-associacao-brasileira-de-entidades-estaduais-de-meio-ambiente/",
+      "destination": "/publicacoes/#revista-abema-8a-edicao-associacao-brasileira-de-entidades-estaduais-de-meio-ambiente",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/producao-de-pinhao-em-sistemas-tradicionais-no-planalto-serrano-catarinense/",
+      "destination": "/publicacoes/#producao-de-pinhao-em-sistemas-tradicionais-no-planalto-serrano-catarinense",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/cartilha-de-gestao-administrativa-para-grupos-de-coordenacao/",
+      "destination": "/publicacoes/#cartilha-de-gestao-administrativa-para-grupos-de-coordenacao",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/construcao-social-dos-mercados-no-sul-do-brasil/",
+      "destination": "/publicacoes/#construcao-social-dos-mercados-no-sul-do-brasil-centro-vianei",
+      "permanent": true
+    },
+    {
+      "source": "/publicacoes/abastecimento-agroecologico-de-consumidores-articulado-com-soberania-e-seguranca-alimentar-nutricional/",
+      "destination": "/publicacoes/#abastecimento-agroecologico-de-consumidores-articulado-com-soberania-e-seguranca-alimentar-nutricional",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%8c%b1-projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural/",
+      "destination": "/noticias/projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%8C%B1-projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural/",
+      "destination": "/noticias/projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%8c%b1-sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia-%f0%9f%8c%be/",
+      "destination": "/noticias/sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%8C%B1-sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia-%F0%9F%8C%BE/",
+      "destination": "/noticias/sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%8c%b2-o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria/",
+      "destination": "/noticias/o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%8C%B2-o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria/",
+      "destination": "/noticias/o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%8c%b2-bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense-%f0%9f%8c%b2/",
+      "destination": "/noticias/bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%8C%B2-bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense-%F0%9F%8C%B2/",
+      "destination": "/noticias/bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%8c%b2-24-de-julho-hoje-e-dia-da-araucaria-%f0%9f%8c%b2/",
+      "destination": "/noticias/24-de-julho-hoje-e-dia-da-araucaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%8C%B2-24-de-julho-hoje-e-dia-da-araucaria-%F0%9F%8C%B2/",
+      "destination": "/noticias/24-de-julho-hoje-e-dia-da-araucaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%f0%9f%93%a3-semeando-saude-agroecologia-e-alimentacao-solidaria/",
+      "destination": "/noticias/semeando-saude-agroecologia-e-alimentacao-solidaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/%F0%9F%93%A3-semeando-saude-agroecologia-e-alimentacao-solidaria/",
+      "destination": "/noticias/semeando-saude-agroecologia-e-alimentacao-solidaria/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/whatsapp-image-2025-10-14-at-15-06-13/",
+      "destination": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/whatsapp-image-2025-10-14-at-15-06-14-1/",
+      "destination": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/whatsapp-image-2025-10-14-at-15-06-14-2/",
+      "destination": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/whatsapp-image-2025-10-14-at-15-06-14/",
+      "destination": "/noticias/tecnicos-do-centro-vianei-participam-de-seminario-sobre-manejo-e-controle-de-taquaras/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2023/03/projeto-estaurar.pdf",
+      "destination": "/arquivos/projeto-estaurar.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2026/09/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+      "destination": "/arquivos/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+      "destination": "/arquivos/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+      "destination": "/arquivos/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2026/09/Catalogo-SAT-Pinhao-web.pdf",
+      "destination": "/arquivos/Catalogo-SAT-Pinhao-web.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.pdf",
+      "destination": "/arquivos/Agroecologia-e-genero-Centro-Vianei.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/Livro-vianei-final.pdf",
+      "destination": "/arquivos/Livro-vianei-final.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/Livro-sobre-coletanea-Pixurum.pdf",
+      "destination": "/arquivos/Livro-sobre-coletanea-Pixurum.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+      "destination": "/arquivos/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+      "destination": "/arquivos/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+      "destination": "/arquivos/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/08/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+      "destination": "/arquivos/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2023/03/livro-abastecimento-agroecologico.pdf",
+      "destination": "/arquivos/livro-abastecimento-agroecologico.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2024/06/premio_bndes_de_boas_praticas-1.pdf",
+      "destination": "/arquivos/premio_bndes_de_boas_praticas-1.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2023/04/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
+      "destination": "/arquivos/Estatuto-da-Associacao-Vianei-de-Cooperacao-e-Intercambio-no-Trabalho.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/bioconstrucao-e-saneamento-ecologico-a-terceira-etapa-do-processo-de-construcao-e-convivencia-centro-vianei-e-casa-de-ba/",
+      "destination": "/noticias/bioconstrucao-e-saneamento-ecologico-a-terceira-etapa-do-processo-de-construcao-e-convivencia-centro-vianei-e-casa-de-barro/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/formacao-sobre-abelhas-nativas-sem-ferrao-fortalece-as-praticas-agroecologicas-e-oferece-alternativas-para-jovens-da-reg/",
+      "destination": "/noticias/formacao-sobre-abelhas-nativas-sem-ferrao-fortalece-as-praticas-agroecologicas-e-oferece-alternativas-para-jovens-da-regiao-sul/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/pat-planalto-sul-apoia-cadeia-produtiva-do-pinhao-a-conservacao-de-especies-e-o-sustento-dos-extrativistas-na-serra-cata/",
+      "destination": "/noticias/pat-planalto-sul-apoia-cadeia-produtiva-do-pinhao-a-conservacao-de-especies-e-o-sustento-dos-extrativistas-na-serra-catarinense/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario-desenvolvidas-na-pandemia-com-efeitos-que-se-estendem-ao-atu/",
+      "destination": "/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario-desenvolvidas-na-pandemia-com-efeitos-que-se-estendem-ao-atual-cenario-de-fome-no-pais/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-municipio-de-lages-junto-a-conferencia-territorial-da-serra-c/",
+      "destination": "/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-municipio-de-lages-junto-a-conferencia-territorial-da-serra-catarinense/",
+      "permanent": true
+    },
+    {
+      "source": "/noticias/reuniao-do-comite-intersetorial-de-acompanhamento-e-monitoramento-da-politica-publica-municipal-para-populacao-em-situac/",
+      "destination": "/noticias/reuniao-do-comite-intersetorial-de-acompanhamento-e-monitoramento-da-politica-publica-municipal-para-populacao-em-situacao-de-rua-comite-pop-rua/",
+      "permanent": true
+    },
+    {
+      "source": "/projetos1/:splat*",
+      "destination": "/projetos/projeto-restaurar/",
+      "permanent": true
+    },
+    {
+      "source": "/categoria-de-projetos/:splat*",
+      "destination": "/projetos/",
+      "permanent": true
+    },
+    {
+      "source": "/download/:splat*",
+      "destination": "/publicacoes/",
       "permanent": true
     }
   ]
