@@ -1,0 +1,191 @@
+{
+  "site": "https://vianei.org.br/",
+  "extraido_em": "2026-09-30T13:49:54.115Z",
+  "logo": {
+    "url_original": "https://vianei.org.br/wp-content/uploads/2023/03/logo1.png",
+    "arquivo": "imagens/logo1.png"
+  },
+  "cores_mais_usadas": [
+    {
+      "hex": "#ffffff",
+      "usos": 9905
+    },
+    {
+      "hex": "#343434",
+      "usos": 2138
+    },
+    {
+      "hex": "#cc3366",
+      "usos": 2019
+    },
+    {
+      "hex": "#a7e952",
+      "usos": 1974
+    },
+    {
+      "hex": "#7d8e57",
+      "usos": 1365
+    },
+    {
+      "hex": "#88af93",
+      "usos": 1359
+    },
+    {
+      "hex": "#69727d",
+      "usos": 990
+    },
+    {
+      "hex": "#33373d",
+      "usos": 648
+    },
+    {
+      "hex": "#556621",
+      "usos": 308
+    },
+    {
+      "hex": "#ab292e",
+      "usos": 156
+    },
+    {
+      "hex": "#a8cf45",
+      "usos": 30
+    },
+    {
+      "hex": "#5d5d5d",
+      "usos": 9
+    }
+  ],
+  "fontes": [
+    "Lora, sans-serif",
+    "Montserrat, sans-serif"
+  ],
+  "google_fonts": [
+    "https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLora%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=swap&ver=6.5.3",
+    "https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CLora%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=swap&ver=6.5.3"
+  ],
+  "contatos": {
+    "telefones": [
+      "002940-2022",
+      "9991555534",
+      "2543631981",
+      "4932338368",
+      "4932338400",
+      "14 2015 2016",
+      "17 2018 2019",
+      "34 2012 1197",
+      "03 2014 1305",
+      "80 2015 1277",
+      "65 2016 1158",
+      "05 2017 1148",
+      "16 2018 1344",
+      "(49) 3233-8368",
+      "(49) 3233-8400",
+      "(49) 3289-1134",
+      "(49) 99196-4286",
+      "(49) 99139-3766",
+      "(49) 99154-0564",
+      "(49) 99131-8596",
+      "(49) 99147-4761",
+      "(49) 99126-7376",
+      "(49) 99170-4210",
+      "(49) 99166-7199",
+      "(49) 99938-1479",
+      "(49) 99173-1083",
+      "(49) 3243-1127",
+      "(49) 99155-1182",
+      "(49) 99101-7106",
+      "(49) 99192-9396",
+      "(49) 99159-3541",
+      "8906200900"
+    ],
+    "emails": [
+      "natalmagnanti@gmail.com",
+      "netto.rui@gmail.com",
+      "zefaleitesilva@gmail.com",
+      "dvsartori@gmail.com",
+      "contato@vianei.org.br",
+      "florestas.imprensa@embrapa.br"
+    ],
+    "whatsapp": [],
+    "redes": [
+      "https://www.facebook.com/CentroDeDireitosHumanosECidadaniaLagess/",
+      "https://www.instagram.com/coperplanaltosul/",
+      "https://www.instagram.com/feira.amigos.da.terra/",
+      "https://www.facebook.com/centrovianei",
+      "https://www.instagram.com/centrovianei/",
+      "https://www.youtube.com/channel/UCkEIv_GvLhWyFuYBl_y5i8w",
+      "https://www.youtube.com/playlist?list=PLZx0c4reEVYUAJgSyqJUmwvWqOgXjCucq",
+      "https://www.youtube.com/watch?v=UQM2Uk3QLLQ&list=PLZx0c4reEVYUAJgSyqJUmwvWqOgXjCucq&index=2",
+      "https://www.instagram.com/p/DPNGSckEdX_/",
+      "https://www.youtube.com/watch?v=NgPPlcMDImI",
+      "https://www.youtube.com/playlist?list=PLCLBLNkIm7fFmlNBVGq3P7k5UyYRX8Dim",
+      "https://www.instagram.com/misereor/",
+      "https://www.instagram.com/tombovideos/",
+      "https://www.instagram.com/agroecologiaaspta/",
+      "https://www.instagram.com/cetapagroecologia/",
+      "https://www.instagram.com/cepagro_agroecologia/",
+      "https://www.instagram.com/coletivotriunfo/",
+      "https://www.instagram.com/explore/tags/agroecologia/",
+      "https://www.instagram.com/explore/tags/sementescrioulas/",
+      "https://www.instagram.com/explore/tags/sustentabilidade/",
+      "https://www.instagram.com/explore/tags/biodiversidade/",
+      "https://www.instagram.com/explore/tags/agriculturafamiliar/",
+      "https://www.youtube.com/playlist?list=PLZx0c4reEVYUMK0msAxSVKK2tlbOFpLt_",
+      "https://www.instagram.com/casadebarrosc/",
+      "https://www.instagram.com/valdemir._s_hoffmann/",
+      "https://www.instagram.com/p/C48EF6CMmyF/?img_index=1",
+      "https://www.instagram.com/movimentosemterra/",
+      "https://www.instagram.com/p/C3fiiOGsRKD/?img_index=1",
+      "https://www.instagram.com/carolcoragem/",
+      "https://www.instagram.com/mst.org.br/",
+      "https://www.instagram.com/explore/tags/centrovianei40anos/",
+      "https://www.instagram.com/p/C2sEX85LfPx/",
+      "https://www.instagram.com/andreza_.ribeiro/",
+      "https://www.youtube.com/watch?v=qCisdqoRLLg",
+      "https://www.youtube.com/@acolhidanacoloniadicasdeviagem",
+      "https://www.youtube.com/watch?v=MoHUOLKrHMw&list=PLmrGr8nJsqqTBOcp4-52hLvFIo9tosKLo",
+      "https://www.youtube.com/live/uliaLKhwe_0?feature=share",
+      "https://www.youtube.com/watch?v=uliaLKhwe_0",
+      "https://www.instagram.com/cras3penha/",
+      "https://youtube.com/playlist?list=PLZx0c4reEVYUAJgSyqJUmwvWqOgXjCucq&si=MB7piYzXcbbzalUA",
+      "https://www.instagram.com/mercadopublicodelages/",
+      "https://www.youtube.com/watch?v=XfxLdidKlmE&list=PLZx0c4reEVYWaW43aWzJXUSLYeOvPyS08"
+    ],
+    "mapa": [
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3528.9631111064077!2d-50.35531188440911!3d-27.810906337959292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e02206cf6648af%3A0x93d4322de9fe93cf!2zQXNzb2NpYcOnw6NvIFZpYW5laSBkZSBDb29wZXJhw6fDo28gZSBJbnRlcmPDom1iaW8gbm8gVHJhYmFsaG8sIEVkdWNhw6fDo28sIEN1bHR1cmEgZSBTYcO6ZGUgLSBBVklDSVRFQ1M!5e0!3m2!1spt-BR!2sbr!4v1679843517208!5m2!1spt-BR!2sbr"
+    ],
+    "cnpj": [
+      "78.492.261/0001-63"
+    ]
+  },
+  "menu": [
+    {
+      "texto": "Início",
+      "link_antigo": "https://vianei.org.br/"
+    },
+    {
+      "texto": "Sobre",
+      "link_antigo": "https://vianei.org.br/quem-somos/"
+    },
+    {
+      "texto": "Projetos",
+      "link_antigo": "https://vianei.org.br/projetos"
+    },
+    {
+      "texto": "Publicações",
+      "link_antigo": "https://vianei.org.br/publicacoes"
+    },
+    {
+      "texto": "Galeria de Vídeos",
+      "link_antigo": "https://vianei.org.br/galeria-de-videos/"
+    },
+    {
+      "texto": "Notícias",
+      "link_antigo": "https://vianei.org.br/noticias"
+    },
+    {
+      "texto": "Fale Conosco",
+      "link_antigo": "https://vianei.org.br/fale-conosco/"
+    }
+  ]
+}

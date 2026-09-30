@@ -1,0 +1,222 @@
+[
+  {
+    "source": "/fale-conosco",
+    "destination": "/contato",
+    "permanent": true
+  },
+  {
+    "source": "/galeria-de-videos",
+    "destination": "/videos",
+    "permanent": true
+  },
+  {
+    "source": "/inicio",
+    "destination": "/",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%8c%b1-projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural",
+    "destination": "/noticias/projeto-em-rede-impulsiona-producao-agroecologica-no-sul-do-brasil-com-foco-em-mulheres-e-juventude-rural",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%8c%b1-sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia-%f0%9f%8c%be",
+    "destination": "/noticias/sementes-crioulas-guardias-da-biodiversidade-e-da-agroecologia",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%8c%b2-24-de-julho-hoje-e-dia-da-araucaria-%f0%9f%8c%b2",
+    "destination": "/noticias/24-de-julho-hoje-e-dia-da-araucaria",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%8c%b2-bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense-%f0%9f%8c%b2",
+    "destination": "/noticias/bem-vindos-ao-seminario-territorial-sat-pinhao-serra-catarinense",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%8c%b2-o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria",
+    "destination": "/noticias/o-centro-vianei-promove-no-dia-13-de-setembro-a-oficina-de-enxertia-de-araucaria",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/%f0%9f%93%a3-semeando-saude-agroecologia-e-alimentacao-solidaria",
+    "destination": "/noticias/semeando-saude-agroecologia-e-alimentacao-solidaria",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/bioconstrucao-e-saneamento-ecologico-a-terceira-etapa-do-processo-de-construcao-e-convivencia-centro-vianei-e-casa-de-barro",
+    "destination": "/noticias/bioconstrucao-e-saneamento-ecologico-a-terceira-etapa-do-processo-de-construcao-e-convivencia-centro-vianei-e-casa-de-ba",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/formacao-sobre-abelhas-nativas-sem-ferrao-fortalece-as-praticas-agroecologicas-e-oferece-alternativas-para-jovens-da-regiao-sul",
+    "destination": "/noticias/formacao-sobre-abelhas-nativas-sem-ferrao-fortalece-as-praticas-agroecologicas-e-oferece-alternativas-para-jovens-da-reg",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/pat-planalto-sul-apoia-cadeia-produtiva-do-pinhao-a-conservacao-de-especies-e-o-sustento-dos-extrativistas-na-serra-catarinense",
+    "destination": "/noticias/pat-planalto-sul-apoia-cadeia-produtiva-do-pinhao-a-conservacao-de-especies-e-o-sustento-dos-extrativistas-na-serra-cata",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario-desenvolvidas-na-pandemia-com-efeitos-que-se-estendem-ao-atual-cenario-de-fome-no-pais",
+    "destination": "/noticias/publicacao-apresenta-iniciativas-de-abastecimento-solidario-desenvolvidas-na-pandemia-com-efeitos-que-se-estendem-ao-atu",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-municipio-de-lages-junto-a-conferencia-territorial-da-serra-catarinense",
+    "destination": "/noticias/realizada-a-terceira-oficina-do-projeto-da-terra-a-mesa-no-municipio-de-lages-junto-a-conferencia-territorial-da-serra-c",
+    "permanent": true
+  },
+  {
+    "source": "/noticias/reuniao-do-comite-intersetorial-de-acompanhamento-e-monitoramento-da-politica-publica-municipal-para-populacao-em-situacao-de-rua-comite-pop-rua",
+    "destination": "/noticias/reuniao-do-comite-intersetorial-de-acompanhamento-e-monitoramento-da-politica-publica-municipal-para-populacao-em-situac",
+    "permanent": true
+  },
+  {
+    "source": "/obrigado",
+    "destination": "/contato",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1",
+    "destination": "/projetos",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar",
+    "destination": "/projetos/projeto-restaurar",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/galeria-de-especies",
+    "destination": "/projetos/projeto-restaurar/galeria-de-especies",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/galeria-de-especies/araucaria",
+    "destination": "/projetos/projeto-restaurar/galeria-de-especies/araucaria",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/galeria-de-especies/canela-preta",
+    "destination": "/projetos/projeto-restaurar/galeria-de-especies/canela-preta",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/pixurum-edicao-projeto-restaurar",
+    "destination": "/projetos/projeto-restaurar/pixurum-edicao-projeto-restaurar",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/projeto-finalistico",
+    "destination": "/projetos/projeto-restaurar/projeto-finalistico",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/projetos-de-assentamento",
+    "destination": "/projetos/projeto-restaurar",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/projetos-de-assentamento/1o-de-maio",
+    "destination": "/projetos/projeto-restaurar/projetos-de-assentamento/1o-de-maio",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/projeto-restaurar/projetos-de-assentamento/indio-galdino-comunidade-irma-jandira",
+    "destination": "/projetos/projeto-restaurar/projetos-de-assentamento/indio-galdino-comunidade-irma-jandira",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2023/03/livro-abastecimento-agroecologico.pdf",
+    "destination": "/api/documentos/file/livro-abastecimento-agroecologico.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2023/03/projeto-estaurar.pdf",
+    "destination": "/api/documentos/file/projeto-estaurar.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2024/06/premio_bndes_de_boas_praticas-1.pdf",
+    "destination": "/api/documentos/file/premio_bndes_de_boas_praticas-1.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+    "destination": "/api/documentos/file/2020-Livro-Pinhao-na-Culinaria-2impres-3.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/Agroecologia-e-genero-Centro-Vianei.pdf",
+    "destination": "/api/documentos/file/Agroecologia-e-genero-Centro-Vianei.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+    "destination": "/api/documentos/file/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+    "destination": "/api/documentos/file/Livro-Carbono-Social-e-artigo-sobre-importancia-social-e-economica-do-Pinhao-na-Serra-Catarinense-1.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/Livro-sobre-coletanea-Pixurum.pdf",
+    "destination": "/api/documentos/file/Livro-sobre-coletanea-Pixurum.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/Livro-vianei-final.pdf",
+    "destination": "/api/documentos/file/Livro-vianei-final.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2025/08/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+    "destination": "/api/documentos/file/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2026/03/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+    "destination": "/api/documentos/file/Cartilha-de-identificacao-Araucaria-angustifolia-1.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2026/03/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+    "destination": "/api/documentos/file/Cartilha-de-identificacao-Ocotea-catharinensis.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2026/09/Catalogo-SAT-Pinhao-web.pdf",
+    "destination": "/api/documentos/file/Catalogo-SAT-Pinhao-web.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/wp-content/uploads/2026/09/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+    "destination": "/api/documentos/file/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+    "permanent": true
+  },
+  {
+    "source": "/projetos1/:path*",
+    "destination": "/projetos/:path*",
+    "permanent": true
+  },
+  {
+    "source": "/categoria-de-projetos/:slug",
+    "destination": "/projetos",
+    "permanent": true
+  },
+  {
+    "source": "/download/:slug",
+    "destination": "/publicacoes",
+    "permanent": true
+  },
+  {
+    "source": "/publicacoes/:slug",
+    "destination": "/publicacoes",
+    "permanent": true
+  }
+]

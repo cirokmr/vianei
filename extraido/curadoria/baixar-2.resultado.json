@@ -1,0 +1,52 @@
+[
+  {
+    "url": "https://vianei.org.br/noticias/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos-municipios-de-abrangencia-do-territorio-planalto-sul/",
+    "destino": "extraido/curadoria/html/diagnostico-da-cadeia-produtiva-do-pinhao-no-territorio-dos-municipios-de-abrangencia-do-territorio-planalto-sul.html",
+    "kb": 260
+  },
+  {
+    "url": "https://vianei.org.br/noticias/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pinhao-em-formato-digital-produto-5-do-contrato/",
+    "destino": "extraido/curadoria/html/plano-de-acao-para-potencializacao-da-cadeia-produtiva-do-pinhao-em-formato-digital-produto-5-do-contrato.html",
+    "kb": 125
+  },
+  {
+    "url": "https://vianei.org.br/noticias/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-mudas-nativas-da-mata-atlantica/",
+    "destino": "extraido/curadoria/html/viveiro-do-centro-vianei-abastece-projeto-restaurar-com-mudas-nativas-da-mata-atlantica.html",
+    "kb": 57
+  },
+  {
+    "url": "file:///-",
+    "destino": "public/arquivos/agrofloresta-aprendendo-a-produzir-com-a-natureza.pdf",
+    "kb": 10170,
+    "pulado": true,
+    "nota": "comprimido: 11.0 MB → 9.9 MB"
+  },
+  {
+    "url": "file:///-",
+    "destino": "public/arquivos/Catalogo-SAT-Pinhao-web.pdf",
+    "kb": 22512,
+    "pulado": true,
+    "nota": "comprimido: 22.0 MB → 22.0 MB"
+  },
+  {
+    "url": "file:///-",
+    "destino": "public/arquivos/premio_bndes_de_boas_praticas-1.pdf",
+    "kb": 5199,
+    "pulado": true,
+    "nota": "comprimido: 11.5 MB → 5.1 MB"
+  },
+  {
+    "url": "file:///-",
+    "destino": "public/arquivos/PROJETO-FINALISTICO-VERSAO-3_compressed.pdf",
+    "kb": 11345,
+    "pulado": true,
+    "nota": "compressão não reduziu o arquivo"
+  },
+  {
+    "url": "file:///-",
+    "destino": "public/arquivos/restauracao_ecologica-dossel-Caatinga-e-Cerrado.pdf",
+    "kb": 11398,
+    "pulado": true,
+    "nota": "comprimido: 12.0 MB → 11.1 MB"
+  }
+]

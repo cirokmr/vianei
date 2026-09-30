@@ -1,0 +1,202 @@
+{
+  "_leia": "Identidade e textos do Centro Vianei. Todos os fatos vêm do site antigo (extraido/) e do material da equipe (extraido/curadoria/). Direção de arte: DIRECAO.md.",
+
+  "nome": "Centro Vianei",
+  "nomeCompleto": "Centro Vianei de Educação Popular",
+  "url": "https://vianei.org.br",
+  "descricao": "Centro Vianei de Educação Popular: educação popular, agroecologia e restauração florestal no Planalto Catarinense, desde 1983.",
+  "corTema": "#1c2616",
+  "fotos": { "tratamento": "natural", "hero": "natural" },
+
+  "logo": null,
+  "marca": {
+    "viewBox": "0 0 100 100",
+    "d": "M50 94 L50 22 M50 30 C45 29 39 25 35 17 M50 30 C55 29 61 25 65 17 M50 44 C41 44 28 39 20 28 M50 44 C59 44 72 39 80 28 M50 58 C39 58 22 54 11 42 M50 58 C61 58 78 54 89 42",
+    "traco": 7
+  },
+  "local": { "cidade": "Lages", "fuso": "America/Sao_Paulo", "pais": "Santa Catarina · Brasil" },
+
+  "contato": {
+    "email": "contato@vianei.org.br",
+    "telefone": "",
+    "whatsapp": "",
+    "endereco": "Av. Papa João XXIII, 1565 – Área Industrial, Lages (SC) · CEP 88514-720",
+    "formEndpoint": "https://formsubmit.co/ajax/contato@vianei.org.br",
+    "assunto": "Contato pelo site — Centro Vianei"
+  },
+  "redes": [
+    { "rotulo": "Instagram", "usuario": "@centrovianei", "href": "https://www.instagram.com/centrovianei/" },
+    { "rotulo": "Facebook", "usuario": "centrovianei", "href": "https://www.facebook.com/centrovianei" },
+    { "rotulo": "YouTube", "href": "https://www.youtube.com/channel/UCkEIv_GvLhWyFuYBl_y5i8w" }
+  ],
+  "nav": [
+    { "rotulo": "Quem somos", "href": "/quem-somos/" },
+    { "rotulo": "Projetos", "href": "/projetos/" },
+    { "rotulo": "Notícias", "href": "/noticias/" },
+    { "rotulo": "Publicações", "href": "/publicacoes/" },
+    { "rotulo": "Vídeos", "href": "/videos/" },
+    { "rotulo": "Contato", "href": "/contato/" }
+  ],
+
+  "seo": { "og": "/img/og.jpg", "ogAlt": "Araucária adulta de copa larga em Painel, na Serra Catarinense" },
+
+  "intro": { "ativa": true, "esquerda": "Centro Vianei", "direita": "Desde 1983", "rotulo": "Amanhecendo" },
+
+  "home": {
+    "secoes": [
+      {
+        "tipo": "hero",
+        "palavra": "Vianei",
+        "nomeH1": "Centro Vianei de Educação Popular",
+        "pergunta": "Educação popular e agroecologia desde 1983.",
+        "legenda": { "display": "No tempo da araucária,", "serif": "aprender junto com quem vive da terra." },
+        "topo": ["Lages · Planalto Catarinense", "Centro Vianei de Educação Popular", "Role para amanhecer ↓"],
+        "base": "Educação popular · Agroecologia · Restauração florestal · SAT Pinhão",
+        "imagens": [
+          { "src": "/img/fotos/pinha.webp", "alt": "" },
+          { "src": "/img/fotos/caminhada.webp", "alt": "" },
+          { "src": "/img/fotos/mudas.webp", "alt": "" },
+          { "src": "/img/fotos/sapecada-de-pinhao.webp", "alt": "" },
+          { "src": "/img/fotos/floresta-araucaria.webp", "alt": "Araucárias contra o céu ao amanhecer, no Planalto Catarinense" }
+        ]
+      },
+      {
+        "tipo": "manifesto",
+        "rotulo": "(01) Quem somos",
+        "titulo": { "display": "Aprendizado coletivo,", "serif": "desenvolvimento sustentável e justiça social." },
+        "texto": "O Centro Vianei de Educação Popular é uma entidade sem fins lucrativos que trabalha com educação popular, agroecologia e restauração florestal. Desde 1983, junto a extrativistas, agricultoras e agricultores familiares e assentados do Planalto Catarinense, promove a autonomia coletiva e a valorização dos saberes e fazeres tradicionais.",
+        "figura": { "src": "/img/fotos/catador-tronco.webp", "alt": "Extrativista sobe o tronco de uma araucária para colher pinhas", "legenda": "Fig. 01 — Na araucária, a colheita do pinhão." }
+      },
+      {
+        "tipo": "marcos",
+        "tema": "escuro",
+        "rotulo": "(02) Nossa história",
+        "titulo": { "display": "Desde 1983,", "serif": "no mesmo território." },
+        "itens": [
+          {
+            "ano": "1983",
+            "titulo": "Nasce o Projeto Vianei",
+            "texto": "Ligado ao Instituto São João Batista Vianei, da Diocese de Lages, o projeto partiu de profissionais das Ciências Humanas e Sociais, com a ideia de uma formação voltada a jovens filhos de agricultores. No início, contou com o apoio do MEC."
+          },
+          {
+            "ano": "1988",
+            "titulo": "Formalização como AVICITECS",
+            "texto": "Em junho de 1988, o Centro Vianei foi formalizado como Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde."
+          },
+          {
+            "ano": "Hoje",
+            "titulo": "Em rede pelo campo",
+            "texto": "O Centro Vianei participa de redes da sociedade civil que trabalham na promoção e assessoria da agricultura familiar, da agroecologia e da soberania e segurança alimentar.",
+            "imagem": { "src": "/img/fotos/restauracao-serra.webp", "alt": "Grupo reunido em um campo com mudas plantadas e morros ao fundo" }
+          }
+        ],
+        "link": { "rotulo": "Quem somos", "href": "/quem-somos/" }
+      },
+      {
+        "tipo": "colecao",
+        "tema": "claro",
+        "rotulo": "(03) Projetos",
+        "titulo": "Projetos",
+        "texto": "{n} projetos com agricultoras, agricultores e extrativistas. Role para percorrer.",
+        "prefixoNumero": "Nº",
+        "fim": { "display": "Todos os", "serif": "projetos" }
+      },
+      {
+        "tipo": "colagem",
+        "tema": "escuro",
+        "rotulo": "(04) Onde atuamos",
+        "titulo": { "display": "No Planalto Catarinense,", "serif": "do campo à cidade." },
+        "nota": "Extrativistas, agricultoras e agricultores familiares e assentados, e consumidores de produtos agroecológicos — preferencialmente jovens e mulheres.",
+        "imagens": [
+          { "src": "/img/fotos/caminhada.webp", "alt": "Grupo caminha por um campo com araucárias ao fundo" },
+          { "src": "/img/fotos/mistica.webp", "alt": "Roda de pessoas em volta de uma mística com sementes e flores no chão de um ginásio" },
+          { "src": "/img/fotos/oficina.webp", "alt": "Agricultores e agricultoras sentados em uma sala durante uma oficina" },
+          { "src": "/img/fotos/mudas.webp", "alt": "Mudas nativas sendo carregadas em um caminhão no viveiro" },
+          { "src": "/img/fotos/festa-da-colheita.webp", "alt": "Pinhões e pinhas debulhadas sobre a grama" }
+        ]
+      },
+      {
+        "tipo": "destaques",
+        "rotulo": "(05) Notícias",
+        "titulo": { "display": "Agora", "serif": "no território" },
+        "quantidade": 3,
+        "soComCapa": true,
+        "link": "Todas as notícias"
+      },
+      {
+        "tipo": "faixa",
+        "tema": "claro",
+        "rotulo": "Quem caminha junto — apoiadores e parceiros",
+        "mostrarRotulo": true,
+        "tamanho": "medio",
+        "estilo": "apagado",
+        "palavras": [
+          "MISEREOR",
+          "IBAMA",
+          "Pró-Espécies",
+          "WWF-Brasil",
+          "CEPAGRO",
+          "CETAP",
+          "AS-PTA",
+          "Cooperativa Ecoserra",
+          "LEAp do CCA-UFSC",
+          "LECERA",
+          "Centro de Ciências Agroveterinárias",
+          "Núcleo de Estudos em Florestas Tropicais – UFSC",
+          "UDESC",
+          "UFSC Curitibanos",
+          "IFSC Urupema",
+          "CDHC Lages",
+          "Cáritas Diocesana de Lages",
+          "Casa Ecumênica de Lages",
+          "Coper Planalto Sul",
+          "Feira Orgânica Amigos da Terra"
+        ]
+      }
+    ]
+  },
+
+  "projetos": {
+    "rotulo": "Projetos · {n} registros",
+    "titulo": "Projetos",
+    "lead": "Educação popular, agroecologia, restauração florestal e a cultura do pinhão, com parceiros no Planalto Catarinense e no Sul do Brasil.",
+    "descricao": "Projetos do Centro Vianei de Educação Popular: Da Terra à Mesa, Saberes e Fazeres do Pinhão, Restaurar, Pró-Espécies e Consumidores e Agricultores em Rede.",
+    "voltar": "← Projetos",
+    "proximo": "Próximo projeto",
+    "prefixoNumero": "Nº",
+    "cursor": "Ver"
+  },
+  "noticias": {
+    "rotulo": "Notícias · {n} publicações",
+    "titulo": "Notícias",
+    "lead": "Oficinas, encontros, seminários e projetos do Centro Vianei, ano a ano.",
+    "descricao": "Notícias do Centro Vianei de Educação Popular: oficinas, encontros e projetos no Planalto Catarinense.",
+    "voltar": "← Notícias",
+    "proximo": "Próxima notícia",
+    "cursor": "Ler",
+    "formatoData": "longo",
+    "capaInteira": true
+  },
+  "contatoPagina": {
+    "rotulo": "Fale conosco",
+    "titulo": { "display": "Estamos aqui", "serif": "por você." },
+    "texto": "Escreva para a equipe do Centro Vianei pelo formulário ou pelo e-mail, e acompanhe o trabalho nas redes.",
+    "descricao": "Fale com o Centro Vianei de Educação Popular: e-mail, endereço em Lages (SC), redes sociais e formulário.",
+    "campoMensagem": "Sua mensagem"
+  },
+  "rodape": {
+    "rotulo": "Contato",
+    "titulo": { "display": "Quer somar ao trabalho", "serif": "no Planalto?" },
+    "texto": "Escreva para a equipe do Centro Vianei de Educação Popular.",
+    "botao": "Vamos conversar",
+    "palavra": "Vianei",
+    "colunas": { "contato": "Redes", "registro": "Acervo", "itens": "projetos" },
+    "logo": { "src": "/img/marca/centro-vianei.webp", "alt": "Centro Vianei de Educação Popular — atuando em Educação Popular e Agroecologia desde 1983", "largura": 1200, "altura": 426 }
+  },
+  "naoEncontrada": {
+    "titulo": "Página não encontrada",
+    "texto": "Esta trilha não existe ou mudou de lugar.",
+    "botao": "Voltar ao início",
+    "link2": { "rotulo": "Ver as notícias", "href": "/noticias/" }
+  }
+}
