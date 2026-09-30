@@ -19,7 +19,8 @@ Com início às 14h, e contará com uma programação voltada à apresentação 
 - 15h10 – Crédito e linhas de financiamento para a agricultura familiar *Andrei Souza Antunes – Gerente da agência Sicoob Painel*
 - 15h40 – Mercados Institucionais (PAA e PNAE) *Cíntia Hoffer – Técnica do Centro Vianei Nikoly Schossler Schmidt – Nutricionista do Município de Painel*
 - 16h20 – Encerramento e café coletivo
-- [[image:0]]
+
+<figure><img src="/img/noticias/centro-vianei-realiza-oficina-sobre-mercados-institucionais/programacao.webp" alt="Cartaz com a programação da oficina do edital Da Terra à Mesa em Painel, das 14h às 16h20" loading="lazy" /></figure>
 
 A oficina tem como objetivo ampliar o acesso das famílias agricultoras às políticas públicas, incentivar o diálogo entre diferentes instituições e apoiar estratégias de comercialização que valorizem a produção agroecológica e local.
 

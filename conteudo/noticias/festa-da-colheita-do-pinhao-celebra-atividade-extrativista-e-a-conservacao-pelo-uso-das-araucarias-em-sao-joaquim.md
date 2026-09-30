@@ -120,5 +120,5 @@ A campanha reunirá os contatos das famílias que trabalham com o produto, tanto
 
 <figure><img src="/img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/Copia-de-banner-80x120cm.webp" alt="Foto da notícia “Festa da Colheita do Pinhão 2023 celebra atividade extrativista e a conservação pelo uso das Araucárias”" loading="lazy" /></figure>
 
-*Por Fernando Angeoletto
-Jornalista do projeto Consumidores e Agricultores em Rede*
+*Por Fernando Angeoletto*
+*Jornalista do projeto Consumidores e Agricultores em Rede*

@@ -98,5 +98,5 @@ Realização e apoio
 
 O 2º Seminário Internacional “Alimentos saudáveis: Redes Agroecológicas de Produção-Consumo” foi organizado pelo Cepagro, Núcleo Santa Catarina da Aliança Pela Alimentação Adequada e Saudável, Associação Slow Food Brasil, LACAF/UFSC, NUPPRE/UFSC e Centro Vianei de Educação Popular. O apoio foi da Misereor, Universidade Federal de Santa Catarina, Centro de Ciências Agrárias da UFSC, Programa de Pós-Graduação em Agroecossistemas/UFSC, SESC, CETAP, AS-PTA, Cresol, CESE e Fundação Inter-Americana.
 
-*Por Fernando Angeoletto
-Jornalista do projeto Consumidores e Agricultores em Rede*
+*Por Fernando Angeoletto*
+*Jornalista do projeto Consumidores e Agricultores em Rede*

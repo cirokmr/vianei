@@ -23,7 +23,7 @@ Ele acrescenta ainda que, durante as visitas às propriedades, a equipe também 
 
 <figure><img src="/img/noticias/parceria-com-produtores-fortalece-acoes-do-projeto-restaurar/WhatsApp-Image-2026-03-26-at-20-03-19.webp" alt="Foto da notícia “Parceria com produtores fortalece ações do Projeto Restaurar no viveiro do Centro Vianei”" loading="lazy" /></figure>
 
-O intercâmbio não se restringe às espécies prioritárias do projeto, como a *Araucaria angustifolia* (araucária), a ***Ocotea porosa *(imbuia) ou a* Ocotea catharinensis* (canela-preta). O viveiro recebe uma diversidade significativa de espécies nativas, especialmente frutíferas.
+O intercâmbio não se restringe às espécies prioritárias do projeto, como a *Araucaria angustifolia* (araucária), a *Ocotea porosa* (imbuia) ou a *Ocotea catharinensis* (canela-preta). O viveiro recebe uma diversidade significativa de espécies nativas, especialmente frutíferas.
 
 O modelo adotado pela maioria das famílias com o viveiro é o escambo de material genético. Essa é uma prática alinhada com a permuta de sementes por mudas e os doadores escolhem as espécies que desejam receber de volta. Alguns preferem aguardar o desenvolvimento de mudas originadas de suas próprias sementes, ainda que o processo demande mais tempo. Outros optam por mudas já disponíveis no viveiro, conforme a sua necessidade.
 

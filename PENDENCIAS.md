@@ -64,3 +64,11 @@ Itens que dependem da equipe ou de uma decisão antes de publicar. Nada disso fo
 - Publicação repetida "Construção social dos mercados no sul do Brasil" (2020): mesmo PDF da edição
   de 2025; o endereço antigo leva a ela (pedido da equipe na fase 3).
 - Páginas de anexo do WordPress (fotos de WhatsApp) — levam à notícia.
+
+## Avisos do controle de qualidade (justificados)
+- **Títulos longos** (59 notícias): são os títulos originais das matérias; não foram encurtados para
+  não mudar o sentido. A equipe pode encurtar no CMS.
+- **Cobertura de conteúdo abaixo de 70%** em `quem-somos`, `home`, `publicacoes`, `fale-conosco` e
+  `obrigado`: os textos institucionais foram reorganizados em capítulos (a lista a–p virou etapas,
+  a diretoria virou o bloco de pessoas, o endereço ganhou pontuação), sem mudar fatos. "Obrigado" era
+  a mensagem automática do formulário antigo (fala em "orçamento") e não foi reproduzida.
