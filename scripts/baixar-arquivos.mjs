@@ -18,8 +18,9 @@
  * - destino .webp → converte com sharp (largura/altura máximas; baixa a qualidade até
  *   caber em maxKB, padrão 300 KB).
  * - qualquer outro destino → grava o arquivo como veio (avisa se passar de maxMB, padrão 15).
- * - PDF maior que maxMB → comprime com o Ghostscript (qualidade "ebook", 150 dpi), se ele estiver
- *   instalado, e fica com a versão menor. Vale também para PDFs que já estavam no destino.
+ * - PDF maior que maxMB → comprime com o Ghostscript (qualidade "ebook", 150 dpi; "dpi": 110 para
+ *   reduzir mais as imagens), se ele estiver instalado, e fica com a versão menor. Vale também para
+ *   PDFs que já estavam no destino.
  * - arquivos que já existem no destino são pulados (rode de novo sem medo).
  * Gera <lista>.resultado.json (tamanho de cada arquivo e erros).
  */
@@ -43,12 +44,15 @@ let falhas = 0;
 
 let temGs = true;
 /** Comprime um PDF grande com o Ghostscript; devolve a nota do que aconteceu. */
-function comprimirPdf(arquivo, maxMB) {
+function comprimirPdf(arquivo, maxMB, dpi) {
   const antes = fs.statSync(arquivo).size;
   if (antes <= maxMB * 1024 * 1024 || !temGs) return null;
   const tmp = arquivo + '.gs.pdf';
   try {
-    execFileSync('gs', ['-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.5', '-dPDFSETTINGS=/ebook', '-dNOPAUSE', '-dBATCH', '-dQUIET', `-sOutputFile=${tmp}`, arquivo], { stdio: 'ignore', timeout: 300000 });
+    const res = dpi
+      ? ['-dDownsampleColorImages=true', '-dDownsampleGrayImages=true', `-dColorImageResolution=${dpi}`, `-dGrayImageResolution=${dpi}`, '-dColorImageDownsampleThreshold=1.0', '-dGrayImageDownsampleThreshold=1.0']
+      : [];
+    execFileSync('gs', ['-sDEVICE=pdfwrite', '-dCompatibilityLevel=1.5', '-dPDFSETTINGS=/ebook', ...res, '-dNOPAUSE', '-dBATCH', '-dQUIET', `-sOutputFile=${tmp}`, arquivo], { stdio: 'ignore', timeout: 300000 });
   } catch (e) {
     if (e.code === 'ENOENT') temGs = false;
     fs.rmSync(tmp, { force: true });
@@ -82,7 +86,7 @@ async function processar(item) {
   const { url, destino } = item;
   if (!url || !destino) return;
   if (fs.existsSync(destino)) {
-    const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15) : null;
+    const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15, item.dpi) : null;
     resultado.push({ url, destino, kb: Math.round(fs.statSync(destino).size / 1024), pulado: true, ...(nota ? { nota } : {}) });
     return;
   }
@@ -115,7 +119,7 @@ async function processar(item) {
       resultado.push({ url, destino, kb: Math.round(saida.length / 1024), largura: meta.width, altura: meta.height, qualidade });
     } else {
       fs.writeFileSync(destino, corpo);
-      const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15) : null;
+      const nota = /\.pdf$/i.test(destino) ? comprimirPdf(destino, item.maxMB ?? 15, item.dpi) : null;
       const kb = Math.round(fs.statSync(destino).size / 1024);
       resultado.push({ url, destino, kb, ...(nota ? { nota } : {}), ...(kb / 1024 > (item.maxMB ?? 15) ? { aviso: `arquivo grande: ${(kb / 1024).toFixed(1)} MB` } : {}) });
     }
