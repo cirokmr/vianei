@@ -7,6 +7,8 @@ export type Titulo = { display: string; serif?: string };
 export type Imagem = { src: string; alt: string };
 export type Link = { rotulo: string; href: string };
 export type Rede = { rotulo: string; usuario?: string; href: string };
+/** Fundo de uma seção da home (cada seção tem um padrão; o site.json pode trocar). */
+export type Tema = 'escuro' | 'claro' | 'destaque';
 
 export type SecaoHero = {
   tipo: 'hero';
@@ -19,14 +21,26 @@ export type SecaoHero = {
 };
 export type SecaoManifesto = {
   tipo: 'manifesto';
+  tema?: Tema;
   rotulo?: string;
   titulo: Titulo;
   texto: string;
   figura?: Imagem & { legenda?: string };
 };
-export type SecaoFaixa = { tipo: 'faixa'; palavras: string[]; rotulo?: string; estilo?: 'contorno' | 'apagado' };
+export type SecaoFaixa = {
+  tipo: 'faixa';
+  tema?: Tema;
+  palavras: string[];
+  rotulo?: string;
+  /** mostra o rótulo acima das faixas (senão ele só é lido por leitores de tela) */
+  mostrarRotulo?: boolean;
+  /** "medio" para palavras longas (nomes de parceiros); padrão: grande */
+  tamanho?: 'grande' | 'medio';
+  estilo?: 'contorno' | 'apagado';
+};
 export type SecaoColecao = {
   tipo: 'colecao';
+  tema?: Tema;
   rotulo?: string;
   titulo: string;
   texto?: string;
@@ -35,6 +49,7 @@ export type SecaoColecao = {
 };
 export type SecaoColagem = {
   tipo: 'colagem';
+  tema?: Tema;
   rotulo?: string;
   titulo: Titulo;
   nota?: string;
@@ -42,13 +57,29 @@ export type SecaoColagem = {
 };
 export type SecaoDestaques = {
   tipo: 'destaques';
+  tema?: Tema;
   rotulo?: string;
   titulo: Titulo;
   quantidade?: number;
   link?: string;
+  /** só notícias com foto de capa */
+  soComCapa?: boolean;
+  /** no máximo uma notícia por categoria (a 1ª categoria de cada uma), para variar os temas */
+  umaPorCategoria?: boolean;
 };
-export type SecaoTexto = { tipo: 'texto'; rotulo?: string; titulo: Titulo; texto?: string; botao?: Link };
-export type Secao = SecaoHero | SecaoManifesto | SecaoFaixa | SecaoColecao | SecaoColagem | SecaoDestaques | SecaoTexto;
+export type SecaoTexto = { tipo: 'texto'; tema?: Tema; rotulo?: string; titulo: Titulo; texto?: string; botao?: Link };
+/** Linha do tempo: anos grandes que "acendem" com a rolagem, cada um com título e texto. */
+export type Marco = { ano: string; titulo: string; texto?: string; imagem?: Imagem & { legenda?: string } };
+export type SecaoMarcos = { tipo: 'marcos'; tema?: Tema; rotulo?: string; titulo: Titulo; itens: Marco[]; link?: Link };
+export type Secao =
+  | SecaoHero
+  | SecaoManifesto
+  | SecaoFaixa
+  | SecaoColecao
+  | SecaoColagem
+  | SecaoDestaques
+  | SecaoTexto
+  | SecaoMarcos;
 
 export type TextosLista = {
   rotulo: string;
@@ -84,10 +115,24 @@ export type Site = {
   intro: { ativa: boolean; esquerda: string; direita: string; rotulo: string };
   home: { secoes: Secao[] };
   projetos: TextosLista & { prefixoNumero: string };
-  noticias: TextosLista;
+  /**
+   * formatoData: "curto" = 08 mai 2026 (padrão) · "longo" = 8 de maio de 2026.
+   * capaInteira: a capa da notícia aparece inteira, sem corte (cartazes, convites com texto).
+   */
+  noticias: TextosLista & { formatoData?: 'curto' | 'longo'; capaInteira?: boolean };
   contatoPagina: { rotulo: string; titulo: Titulo; texto: string; descricao: string; campoMensagem: string };
-  rodape: { rotulo: string; titulo: Titulo; texto: string; botao: string; palavra: string };
-  naoEncontrada: { titulo: string; texto: string; botao: string };
+  rodape: {
+    rotulo: string;
+    titulo: Titulo;
+    texto: string;
+    botao: string;
+    palavra: string;
+    /** títulos das colunas do rodapé (padrão: Contato, Registro) e o nome dos itens contados */
+    colunas?: { contato?: string; registro?: string; itens?: string };
+    /** logotipo mostrado no rodapé (arquivo colorido, sobre o fundo escuro) */
+    logo?: Imagem & { largura: number; altura: number };
+  };
+  naoEncontrada: { titulo: string; texto: string; botao: string; link2?: Link };
   /** tratamento das fotos; hero: 'natural' deixa a foto do hero colorida em qualquer modo */
   fotos?: { tratamento: 'natural' | 'duotone' | 'misto' | 'pb'; hero?: 'natural' | 'tratado' };
   /** créditos de fotos de terceiros (licenças CC BY / CC BY-SA exigem), mostrados no rodapé */

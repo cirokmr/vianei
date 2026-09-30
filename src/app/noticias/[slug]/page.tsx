@@ -58,9 +58,14 @@ export default async function NoticiaPage({ params }: Params) {
 
         {n.capa && n.tipo !== 'clipping' && (
           <div className="detail-cover tema-escuro">
-            <div className="media detail-cover__media detail-cover__media--post" data-reveal="img" data-now data-delay="0.2">
+            <div
+              className={`media detail-cover__media detail-cover__media--post${t.capaInteira ? ' detail-cover__media--inteira' : ''}`}
+              data-reveal="img"
+              data-now
+              data-delay="0.2"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={n.capa} alt="" data-parallax="0.14" fetchPriority="high" />
+              <img src={n.capa} alt="" data-parallax={t.capaInteira ? undefined : '0.14'} fetchPriority="high" />
             </div>
           </div>
         )}

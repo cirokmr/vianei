@@ -18,6 +18,14 @@ direto. Estes blocos já têm estilo pronto (em `src/styles/pages.css`):
 | Trabalhos alternados | obra + texto, lado a lado | `<div class="works"><article class="work"><figure class="work__media"><img …/></figure><div class="work__text">…</div></article>…</div>` |
 | Recorte de imprensa | clipping emoldurado | `<figure class="clip"><img …/></figure>` |
 | Links em linha | lista de links | `<p class="links"><a …>…</a> <a …>…</a></p>` |
+| Estante (publicações) | capa + data + título + botão de download | `<div class="covers"><article class="cover" id="slug"><a class="cover__media" href="x.pdf"><img …/></a><p class="cover__meta">Agosto de 2025 · Autor</p><h3 class="cover__title">Título</h3><a class="cover__link" href="x.pdf">Baixar PDF</a></article>…</div>` |
+| Estante de vídeos | miniatura 16:9 + título + link | `<div class="covers covers--video"><article class="cover">…</article></div>` (mesma estrutura; `cover__nota` para "citado em…") |
+| Vídeo incorporado | YouTube/Vimeo no texto | `<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/ID" title="…" loading="lazy" allowfullscreen></iframe></div>` |
+| Âncora | link direto a um trecho | qualquer bloco com `id="nome"` (ex.: `<h2 class="chapter" id="nome">`); o link `/pagina/#nome` rola até ele |
 
 Imagens em blocos HTML: sempre `alt="…"` e `loading="lazy"`.
 Todos os blocos animam sozinhos ao entrar na tela.
+
+A estante (`.covers`) é o jeito de manter **publicações, vídeos, materiais para baixar** numa
+página comum (editável pelo CMS): cada item é um `<article class="cover">`. O `id` do item
+permite redirecionar endereços antigos para ele (`/publicacoes/#slug`).

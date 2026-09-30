@@ -41,7 +41,7 @@ export default function Manifesto({ dados }: { dados: SecaoManifesto }) {
   }, ref);
 
   return (
-    <section className="manifesto tema-claro" ref={ref} aria-labelledby="manifesto-title">
+    <section className={`manifesto tema-${dados.tema ?? 'claro'}`} ref={ref} aria-labelledby="manifesto-title">
       <div className={`wrap manifesto__grid${figura ? '' : ' manifesto__grid--sem-figura'}`}>
         <div className="manifesto__head">
           {rotulo && <p className="mono eyebrow">{rotulo}</p>}

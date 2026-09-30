@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { lerDocumento } from './markdown';
+import { site } from './site';
 
 const RAIZ = path.join(process.cwd(), 'conteudo');
 
@@ -71,7 +72,11 @@ export type Noticia = {
   html: string;
 };
 
-const fmtData = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+// site.json → noticias.formatoData: "curto" (08 mai 2026, padrão) ou "longo" (8 de maio de 2026)
+const fmtData =
+  site.noticias.formatoData === 'longo'
+    ? new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    : new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
 
 export const noticias: Noticia[] = lerPasta('noticias')
   .map(({ slug, dados, html, texto }) => {
