@@ -46,13 +46,13 @@ o ano do início da grande destruição.
 
 <div class="tabela"><table><tbody><tr><td><strong>Acontecimento</strong></td><td><strong>Tempo estimado*</strong></td><td><strong>Comparado a 1 ano </strong><strong>(365 dias)</strong></td></tr><tr><td>Big Bang</td><td>13.500.000,000 anos</td><td>365 dias</td></tr><tr><td>Formação da Via Láctea</td><td>13.000.000.000 anos</td><td>351 dias</td></tr><tr><td>Formação do Sistema Solar</td><td>4.600.000.000 anos</td><td>124 dias</td></tr><tr><td>Formação da crosta terrestre</td><td>4.500.000.000 anos</td><td>121 dias</td></tr><tr><td>Surgimento dos Procariontes</td><td>4.000.000.000 anos</td><td>108 dias</td></tr><tr><td>Início da existência das Araucárias</td><td>250.000.000 anos</td><td>6 Dias, 18 horas</td></tr><tr><td>Primeiras espécies humanas (Homo erectus)</td><td>2.000.000 anos</td><td>1 hora, 17 minutos</td></tr><tr><td>1908 Início da grande destruição</td><td>120 anos</td><td>16,8 milésimos de segundo</td></tr></tbody></table></div>
 
-* Aproximadamente
+(*) Aproximadamente
 
 Tabela 2: Do início da formação da crosta terrestre (4,5 bilhões de anos) até 1908...o ano do início da grande destruição...
 
 <div class="tabela"><table><tbody><tr><td><strong>Acontecimento</strong></td><td><strong>Tempo estimado*</strong></td><td><strong>Comparado a 1 ano </strong><strong>(365 dias)</strong></td></tr><tr><td>Formação da crosta terrestre</td><td>4.500.000.000 anos</td><td>365 dias</td></tr><tr><td>Surgimento dos Procariontes</td><td>4.000.000.000 anos</td><td>324 dias</td></tr><tr><td>Início da existência das Araucárias</td><td>250.000.000 anos</td><td>20 Dias, 6 horas</td></tr><tr><td>Primeiras espécies humanas (Homo erectus)</td><td>2.000.000 anos</td><td>3 horas, 53 minutos</td></tr><tr><td>1908 Início da grande destruição</td><td>120 anos</td><td>50,45 milésimos de segundo</td></tr></tbody></table></div>
 
-* Aproximadamente
+(*) Aproximadamente
 
 ¹São assim chamadas porque suas sementes têm a forma de cones ou pinhas. Essas sementes, por sua vez, ficam expostas, sem nenhum fruto ou casca para protegê-las. As folhas geralmente são pequenas e em forma de agulha, conservando-se verdes todo o ano (Wikipédia, 2022).
 
