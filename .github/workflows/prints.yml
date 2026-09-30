@@ -11,6 +11,10 @@ on:
         description: "Máximo de páginas"
         required: false
         default: "14"
+      rotas:
+        description: "Páginas a mais, separadas por vírgula (ex.: /noticias/minha-noticia/,/sobre/)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -43,7 +47,8 @@ jobs:
       - name: Tirar prints
         env:
           MAX: ${{ inputs.max }}
-        run: node scripts/prints.mjs --max "${MAX:-14}"
+          ROTAS: ${{ inputs.rotas }}
+        run: node scripts/prints.mjs --max "${MAX:-14}" --rotas "$ROTAS"
 
       - name: Salvar no branch "prints"
         env:
