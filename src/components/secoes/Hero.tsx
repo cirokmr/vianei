@@ -25,7 +25,7 @@ export default function Hero({ dados }: { dados: SecaoHero }) {
       return;
     }
 
-    const word = SplitText.create(q('.hero__word')[0], { type: 'chars', mask: 'chars', charsClass: 'sc' });
+    const word = SplitText.create(q('.hero__word-txt')[0], { type: 'chars', mask: 'chars', charsClass: 'sc' });
     const qEl = q('.hero__q')[0];
     const question = qEl ? SplitText.create(qEl, { type: 'words', mask: 'words', wordsClass: 'sw' }) : null;
     const caption = SplitText.create(q('.hero__caption')[0], { type: 'lines', mask: 'lines', linesClass: 'sl' });
@@ -102,7 +102,10 @@ export default function Hero({ dados }: { dados: SecaoHero }) {
 
       {pergunta && <p className="hero__q serif-i">{pergunta}</p>}
 
-      <h1 className="hero__word display">{palavra}</h1>
+      <h1 className="hero__word display">
+        {dados.nomeH1 && dados.nomeH1 !== palavra && <span className="sr-only">{dados.nomeH1} — </span>}
+        <span className="hero__word-txt">{palavra}</span>
+      </h1>
 
       <p className="hero__caption">
         <span className="display">{legenda.display}</span> {legenda.serif && <span className="serif-i">{legenda.serif}</span>}

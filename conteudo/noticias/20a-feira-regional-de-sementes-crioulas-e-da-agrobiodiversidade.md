@@ -34,13 +34,9 @@ Para Natal João Magnanti, coordenador do projeto pelo Centro Vianei, o lançame
 
 > *“Esse projeto nasce do trabalho coletivo, de iniciativas que vêm das comunidades, como a partilha de sementes crioulas. Ao mesmo tempo, recebe o suporte institucional necessário para crescer. É um passo importante para garantir a soberania alimentar e a autonomia das famílias agricultoras frente ao modelo imposto pelo agronegócio.”*
 
-<figure><img src="/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/Geane-Natal-e-Gisa.webp" alt="Geane Bezerra (MDA), Natal Magnanti (Centro Vianei) e Gisa Garcia (Cepagro)" loading="lazy" /></figure>
+<figure><img src="/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/Geane-Natal-e-Gisa.webp" alt="Geane Bezerra (MDA), Natal Magnanti (Centro Vianei) e Gisa Garcia (Cepagro)" loading="lazy" /><figcaption>Geane Bezerra (MDA), Natal Magnanti (Centro Vianei) e Gisa Garcia (Cepagro)</figcaption></figure>
 
-### Geane Bezerra (MDA), Natal Magnanti (Centro Vianei) e Gisa Garcia (Cepagro)
-
-<figure><img src="/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/reuniao-com-MDA.webp" alt="Foto da notícia “20ª Feira Regional de Sementes Crioulas e da Agrobiodiversidade”" loading="lazy" /></figure>
-
-### Reunião entre Centro Vianei, Cepagro, AS-PTA, Cemear, CETAP e superintendências do MDA, MDA SC e MDA PR durante a Feira.
+<figure><img src="/img/noticias/20a-feira-regional-de-sementes-crioulas-e-da-agrobiodiversid/reuniao-com-MDA.webp" alt="Reunião entre Centro Vianei, Cepagro, AS-PTA, Cemear, CETAP e superintendências do MDA, MDA SC e MDA PR durante a Feira." loading="lazy" /><figcaption>Reunião entre Centro Vianei, Cepagro, AS-PTA, Cemear, CETAP e superintendências do MDA, MDA SC e MDA PR durante a Feira.</figcaption></figure>
 
 # Feira celebra a diversidade e a autonomia
 

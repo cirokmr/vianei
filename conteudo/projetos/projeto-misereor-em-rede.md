@@ -4,7 +4,7 @@ ordem: 5
 titulo: "Consumidores e Agricultores em Rede"
 subtitulo: "Apoio Misereor da Alemanha"
 tipo: "Agroecologia"
-quando: "Aprovado em dezembro de 2015"
+quando: "2016 a 2024 · quatro edições"
 resumo: "Dinâmicas locais e regionais de produção, processamento e abastecimento agroecológico, articulando o campo e a cidade no Sul do Brasil."
 tags: ["Abastecimento", "Campo e cidade", "Segurança alimentar"]
 capa: "/img/fotos/oficina.webp"

@@ -8,7 +8,7 @@ capa: /img/fotos/araucaria-painel.webp
 ordem: 1
 ---
 
-<p class="lead">O Centro Vianei de Educação Popular é uma entidade sem fins lucrativos, de direito privado, que trabalha com educação popular, agroecologia, restauração florestal e outras temáticas. Tem existência não formal desde 1983 e, em junho de 1988, foi formalizado como AVICITECS – Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde.</p>
+<p class="lead">O Centro Vianei tem existência não formal desde 1983 e, em junho de 1988, foi formalizado como AVICITECS – Associação Vianei de Cooperação e Intercâmbio no Trabalho, Educação, Cultura e Saúde.</p>
 
 <h2 class="chapter" id="historia"><span>01</span>Nossa história</h2>
 

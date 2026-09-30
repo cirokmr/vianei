@@ -4,7 +4,6 @@ ordem: 4
 titulo: "Projeto Pró-Espécies"
 subtitulo: "A cadeia produtiva do pinhão no PAT Planalto Sul"
 tipo: "Restauração florestal · SAT Pinhão"
-quando: "Plano de Ação Territorial Planalto Sul"
 resumo: "Plano de ação para a cadeia produtiva do pinhão no Plano de Ação Territorial (PAT) Planalto Sul, contribuindo na conservação das espécies ameaçadas de extinção."
 tags: ["SAT Pinhão", "Conservação", "PAT Planalto Sul"]
 capa: "/img/fotos/araucaria-vertical.webp"

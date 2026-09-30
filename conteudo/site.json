@@ -47,6 +47,7 @@
       {
         "tipo": "hero",
         "palavra": "Vianei",
+        "nomeH1": "Centro Vianei de Educação Popular",
         "pergunta": "Educação popular e agroecologia desde 1983.",
         "legenda": { "display": "No tempo da araucária,", "serif": "aprender junto com quem vive da terra." },
         "topo": ["Lages · Planalto Catarinense", "Centro Vianei de Educação Popular", "Role para amanhecer ↓"],

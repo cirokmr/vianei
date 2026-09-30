@@ -4,7 +4,7 @@ ordem: 3
 titulo: "Projeto Restaurar"
 subtitulo: "Restauração da vegetação nativa em 127,52 hectares"
 tipo: "Restauração florestal"
-quando: "Chamamento Público IBAMA nº 02/2018"
+quando: "Previsto até 2031"
 resumo: "Ações de restauração da vegetação nativa com ênfase em espécies ameaçadas de extinção — araucária, imbuia, canela-preta e xaxim — em assentamentos, RPPNs e um parque estadual de Santa Catarina."
 tags: ["Restauração florestal", "IBAMA", "Espécies ameaçadas"]
 capa: "/img/fotos/mudas.webp"
@@ -165,9 +165,7 @@ Criado em 1989, o Pixurum circulou até o ano 2000, consolidando-se como um inst
 
 Após um intervalo sem publicações, o jornal é retomado, mantendo seu nome e identidade original. O Pixurum renasce como um informativo trimestral vinculado ao Projeto Restaurar, reafirmando seu compromisso com a comunicação popular e com a valorização dos saberes construídos nos territórios.
 
-<figure><img src="/img/projetos/projeto-restaurar/coletania-pixurum-1986-a-2000.webp" alt="Capa da coletânea do Pixurum, edições de 1989 a 2000" loading="lazy" /></figure>
-
-## Edições históricas (1989–2000)
+<figure><img src="/img/projetos/projeto-restaurar/coletania-pixurum-1986-a-2000.webp" alt="Capa da coletânea do Pixurum, edições de 1989 a 2000" loading="lazy" /><figcaption>Edições históricas (1989–2000)</figcaption></figure>
 
 A coletânea completa do Pixurum, com edições publicadas entre 1989 e 2000, está disponível para download. Além do Pixurum, a página de publicações do Centro Vianei de Educação Popular reúne uma diversidade de materiais que dialogam com temas centrais da atuação da instituição. Estão disponíveis conteúdos voltados à agroecologia, às relações de gênero no campo, à construção social de mercados, à educação e aos modos de vida de povos e comunidades do campo, além de publicações sobre restauração ecológica, sistemas agroflorestais, sociobiodiversidade e políticas ambientais.
 
@@ -199,4 +197,4 @@ Pixurum #1 – Jul./Set.2025
 
 O Pixurum segue como um espaço de construção coletiva, onde diferentes vozes e experiências se encontram. A cada edição, reafirma-se o compromisso com a agroecologia, a memória e o fortalecimento das comunidades.
 
-<figure><img src="/img/projetos/projeto-restaurar/afcb4887-4ff7-f2ec-13bd-9d0a865181e6.webp" alt="Logotipos das organizações que apoiam o Pixurum e o Projeto Restaurar" loading="lazy" /></figure>
+<figure class="logos"><img src="/img/projetos/projeto-restaurar/afcb4887-4ff7-f2ec-13bd-9d0a865181e6.webp" alt="Logotipos das organizações que apoiam o Pixurum e o Projeto Restaurar" loading="lazy" /></figure>

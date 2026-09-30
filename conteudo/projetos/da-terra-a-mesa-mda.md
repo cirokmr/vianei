@@ -30,21 +30,15 @@ O projeto está presente em 51 municípios da Região Sul do Brasil, abrangendo 
 
 As famílias participantes recebem apoio para aprimorar seus sistemas produtivos, com acesso a insumos, sementes, mudas, equipamentos e outras estruturas necessárias para ampliar a produção agroecológica.
 
-<figure><img src="/img/projetos/da-terra-a-mesa-mda/sjose-cerrito-sc.webp" alt="Oficina em sala com agricultores e técnicos em São José do Cerrito (SC)" loading="lazy" /></figure>
-
-## Acompanhamento técnico
+<figure><img src="/img/projetos/da-terra-a-mesa-mda/sjose-cerrito-sc.webp" alt="Oficina em sala com agricultores e técnicos em São José do Cerrito (SC)" loading="lazy" /><figcaption>Acompanhamento técnico</figcaption></figure>
 
 Equipes técnicas realizam visitas periódicas às propriedades rurais, construindo soluções junto às famílias e valorizando os conhecimentos desenvolvidos nos próprios territórios.
 
-<figure><img src="/img/projetos/da-terra-a-mesa-mda/tekoa-pora.webp" alt="Grupo reunido ao ar livre numa oficina na Aldeia Tekoá Porã (SC)" loading="lazy" /></figure>
-
-## Formação e troca de saberes
+<figure><img src="/img/projetos/da-terra-a-mesa-mda/tekoa-pora.webp" alt="Grupo reunido ao ar livre numa oficina na Aldeia Tekoá Porã (SC)" loading="lazy" /><figcaption>Formação e troca de saberes</figcaption></figure>
 
 São promovidas oficinas, cursos e intercâmbios que reúnem agricultoras, agricultores, estudantes, professores, técnicos e organizações locais para compartilhar experiências e fortalecer a agroecologia.
 
-<figure><img src="/img/projetos/da-terra-a-mesa-mda/teixeira-soares.webp" alt="Roda de pessoas em volta de uma mandala de sementes em Teixeira Soares (PR)" loading="lazy" /></figure>
-
-## Inovação e tecnologias sociais
+<figure><img src="/img/projetos/da-terra-a-mesa-mda/teixeira-soares.webp" alt="Roda de pessoas em volta de uma mandala de sementes em Teixeira Soares (PR)" loading="lazy" /><figcaption>Inovação e tecnologias sociais</figcaption></figure>
 
 Experiências bem-sucedidas desenvolvidas pelas famílias e comunidades são registradas e compartilhadas, ampliando o acesso ao conhecimento e inspirando novas iniciativas.
 
@@ -88,7 +82,7 @@ Além disso, o projeto prioriza o atendimento a povos indígenas, comunidades qu
 
 O projeto é executado pelo Centro Vianei, em parceria com Cepagro, AS-PTA, CETAP e Cemear, com recursos do 1º edital "Da Terra à Mesa", promovido pelo Ministério do Desenvolvimento Agrário e Agricultura Familiar (MDA), Governo Federal.
 
-<figure><img src="/img/projetos/da-terra-a-mesa-mda/barra-logos-mda-2026.webp" alt="Logotipos das organizações e do governo federal que realizam o projeto" loading="lazy" /></figure>
+<figure class="logos"><img src="/img/projetos/da-terra-a-mesa-mda/barra-logos-mda-2026.webp" alt="Logotipos das organizações e do governo federal que realizam o projeto" loading="lazy" /></figure>
 
 <h2 class="chapter" id="resultados-2025"><span>07</span>O primeiro ano, em números</h2>
 

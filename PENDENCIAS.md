@@ -31,8 +31,19 @@ Itens que dependem da equipe ou de uma decisão antes de publicar. Nada disso fo
       aparece no rodapé. Com um SVG de uma cor dá para usá-lo também no menu.
 - [ ] **Downloads:** a antiga seção "Downloads" só tinha "Lorem ipsum" (arquivos de teste); ela não foi
       migrada e os endereços levam a /publicacoes/. Definir se haverá outros arquivos.
-- [ ] **Websérie Da Terra à Mesa:** a galeria antiga mostrava os episódios 3 a 8 (e dois repetidos em
-      versões diferentes). Mandar os links dos episódios 1 e 2, se houver.
+- [ ] **Websérie Da Terra à Mesa:** a galeria antiga mostrava os episódios 3 a 8. Mandar os links dos
+      episódios 1 e 2, se houver. Dois vídeos da galeria antiga (`iApGiVdA5RY`, "ep6… a rede que protege
+      polinizadores", e `m1K6t_XT8nM`, "ep5…", segunda versão) não existem mais no YouTube (miniatura e
+      oEmbed respondem 404 em 30/09/2026): ficaram de fora. Se foram republicados, mandar o link novo.
+- [ ] **Datas das publicações:** o site antigo mostrava a data de envio ao WordPress como "data da
+      publicação" (ex.: a Coletânea Pixurum 1989–2000 aparecia como agosto de 2025). O site novo não mostra
+      essas datas; se a equipe quiser, informar o ano de cada publicação.
+
+## Dados pessoais (LGPD)
+- [ ] **Nomes e celulares de pessoas nas notícias**: "Diagnóstico da cadeia produtiva do pinhão…" (lista de
+      produtores e contatos, com vários celulares (49) 9…) e "Plano de ação… PRODUTO 5" (nomes de participantes
+      e contatos) republicam dados pessoais que estavam no site antigo. A equipe deve confirmar se essas pessoas
+      autorizaram a publicação; se não, remover os telefones (e, se for o caso, os nomes) desses textos.
 
 ## Direitos autorais e reproduções
 - [ ] **Citação de Paulo Freire** ("Ninguém nasce feito…"), que estava em "Quem somos": não foi

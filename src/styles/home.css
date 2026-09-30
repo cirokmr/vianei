@@ -263,7 +263,8 @@ html.reduced .hero__caption { display: none; }
     padding: 110px var(--gutter) 60px;
   }
   .acervo__track::-webkit-scrollbar { display: none; }
-  .acervo__head { width: 80vw; }
+  /* o título da coleção é o 1º ponto de encaixe: aparece antes dos cartões */
+  .acervo__head { width: 80vw; scroll-snap-align: start; }
   .acard { width: 74vw; scroll-snap-align: start; }
   .acard--low { transform: none; }
   .acervo__progress { display: none; }
@@ -298,11 +299,12 @@ html.reduced .hero__caption { display: none; }
 .p4 { width: 21vw; aspect-ratio: 3 / 2; right: 9vw; bottom: 12%; }
 .p5 { width: 11vw; aspect-ratio: 1; left: 45vw; top: 3%; }
 @media (max-width: 899px) {
-  .collage { min-height: 118svh; padding-block: 16vh; }
-  .p1 { width: 30vw; left: -4vw; top: 3%; }
-  .p2 { width: 36vw; right: -6vw; top: 7%; }
-  .p3 { width: 28vw; left: 3vw; bottom: 2%; }
-  .p4 { width: 34vw; right: -4vw; bottom: 4%; }
+  /* no celular as fotos ficam inteiras dentro da tela, sem sobra escura */
+  .collage { min-height: 0; padding-block: calc(34vw + 40px); }
+  .p1 { width: 34vw; left: 4vw; top: 16px; }
+  .p2 { width: 40vw; right: 4vw; top: 40px; }
+  .p3 { width: 30vw; left: 6vw; bottom: 24px; }
+  .p4 { width: 38vw; right: 4vw; bottom: 12px; }
   .p5 { display: none; }
 }
 
@@ -376,3 +378,4 @@ html.js:not(.reduced) .marco__ano-fill { clip-path: inset(100% 0 0 0); }
 @media (max-width: 899px) {
   .marco { grid-template-columns: 1fr; align-items: start; }
 }
+.hero__word-txt { display: inline-block; }

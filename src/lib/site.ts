@@ -13,6 +13,8 @@ export type Tema = 'escuro' | 'claro' | 'destaque';
 export type SecaoHero = {
   tipo: 'hero';
   palavra: string;
+  /** nome completo lido por leitores de tela e buscadores no <h1> (a palavra gigante continua curta) */
+  nomeH1?: string;
   pergunta?: string;
   legenda: Titulo;
   topo?: string[];
