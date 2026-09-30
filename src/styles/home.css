@@ -265,6 +265,7 @@ html.reduced .hero__caption { display: none; }
   .acervo__track::-webkit-scrollbar { display: none; }
   /* o título da coleção é o 1º ponto de encaixe: aparece antes dos cartões */
   .acervo__head { width: 80vw; scroll-snap-align: start; }
+  .acervo__title .display { font-size: var(--fs-xl); }
   .acard { width: 74vw; scroll-snap-align: start; }
   .acard--low { transform: none; }
   .acervo__progress { display: none; }
@@ -300,7 +301,7 @@ html.reduced .hero__caption { display: none; }
 .p5 { width: 11vw; aspect-ratio: 1; left: 45vw; top: 3%; }
 @media (max-width: 899px) {
   /* no celular as fotos ficam inteiras dentro da tela, sem sobra escura */
-  .collage { min-height: 0; padding-block: calc(34vw + 40px); }
+  .collage { min-height: 0; padding-block: calc(44vw + 48px); }
   .p1 { width: 34vw; left: 4vw; top: 16px; }
   .p2 { width: 40vw; right: 4vw; top: 40px; }
   .p3 { width: 30vw; left: 6vw; bottom: 24px; }

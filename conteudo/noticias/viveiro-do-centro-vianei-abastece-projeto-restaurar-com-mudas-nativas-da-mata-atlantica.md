@@ -57,7 +57,7 @@ O Centro Vianei conta com o apoio dos laboratórios de Ecologia Aplicada (Leap),
 
 Números do Viveiro do Centro Vianei
 
-<div class="tabela"><table><tbody><tr><td><strong>Espécie</strong></td><td><strong>Mudas (Unidades)</strong></td></tr><tr><td>Angico-vermelho</td><td class="num">4.158</td></tr><tr><td>Araçá</td><td class="num">154</td></tr><tr><td>Araucária</td><td class="num">25.256</td></tr><tr><td>Bracatinga</td><td class="num">1.000</td></tr><tr><td>Butiá</td><td class="num">924</td></tr><tr><td>Cedro-rosa</td><td class="num">1.170</td></tr><tr><td>Cereja-preta</td><td class="num">154</td></tr><tr><td>Goiaba-serrana</td><td class="num">385</td></tr><tr><td>Guabiju</td><td class="num">77</td></tr><tr><td>Pinheiro-bravo</td><td class="num">243</td></tr><tr><td>Pitanga</td><td class="num">462</td></tr><tr><td><strong>TOTAL</strong></td><td><strong>33.983</strong></td></tr></tbody></table></div>
+<div class="tabela"><table><tbody><tr><td><strong>Espécie</strong></td><td><strong>Mudas (Unidades)</strong></td></tr><tr><td>Angico-vermelho</td><td class="num">4.158</td></tr><tr><td>Araçá</td><td class="num">154</td></tr><tr><td>Araucária</td><td class="num">25.256</td></tr><tr><td>Bracatinga</td><td class="num">1.000</td></tr><tr><td>Butiá</td><td class="num">924</td></tr><tr><td>Cedro-rosa</td><td class="num">1.170</td></tr><tr><td>Cereja-preta</td><td class="num">154</td></tr><tr><td>Goiaba-serrana</td><td class="num">385</td></tr><tr><td>Guabiju</td><td class="num">77</td></tr><tr><td>Pinheiro-bravo</td><td class="num">243</td></tr><tr><td>Pitanga</td><td class="num">462</td></tr><tr><td><strong>TOTAL</strong></td><td class="num"><strong>33.983</strong></td></tr></tbody></table></div>
 
 Dados coletados em dezembro de 2025*
 
