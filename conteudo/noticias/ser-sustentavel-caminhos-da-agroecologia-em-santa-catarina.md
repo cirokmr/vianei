@@ -3,6 +3,7 @@ titulo: "Ser Sustentável, caminhos da agroecologia em Santa Catarina."
 data: 2023-07-16
 resumo: "O conceito é amplo e envolve questões sociais, ambientais, culturais e econômicas, que definem o que é considerado orgânico, justo e sustentável. Este documentário apresenta iniciativas e histórias de"
 categorias: ["Agroecologia"]
+capa: /img/videos/qCisdqoRLLg.webp
 ---
 
 O que é ser agroecológico?

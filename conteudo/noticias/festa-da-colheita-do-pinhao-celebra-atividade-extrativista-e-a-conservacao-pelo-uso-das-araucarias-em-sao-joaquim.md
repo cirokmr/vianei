@@ -3,6 +3,7 @@ titulo: "Festa da Colheita do Pinhão 2023 celebra atividade extrativista e a co
 data: 2023-04-01
 resumo: "O primeiro fim de semana de abril marcou o início da safra do pinhão, de acordo com a regulação dos órgãos ambientais catarinenses."
 categorias: ["SAT Pinhão"]
+capa: /img/noticias/festa-da-colheita-do-pinhao-celebra-atividade-extrativista-e/IMG_8839-Copy.webp
 ---
 
 A data foi celebrada com a Festa da Colheita do Pinhão, com duração de 2 dias, organizada pelo Centro Vianei de Educação Popular e o SINTRAF (Sindicato dos Trabalhadores na Agricultura Familiar de São Joaquim e Região) no município de São Joaquim. Composto por um Seminário e uma Travessia (vivência ao ar livre), o evento abriu espaço para discussão sobre as demandas da cadeia extrativista aliadas à urgente regeneração das Araucárias e conservação dos seus remanescentes.

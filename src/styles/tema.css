@@ -68,28 +68,20 @@
 .serif-i { font-weight: 360; letter-spacing: -0.015em; }
 .mono { letter-spacing: 0.14em; font-weight: 500; font-size: 12px; }
 
-/* títulos longos, intertítulos e títulos de cartões também em Fraunces */
-.title-long,
-.prose :is(h2, h3, h4),
-.hlist__title,
-.ncard__title,
-.acard__title,
-.marco__titulo,
-.prose .cover__title,
-.detail-hero__sub {
+/* títulos longos, intertítulos e títulos de cartões também em Fraunces
+   (":root" na frente: este arquivo carrega antes de components/home/pages.css) */
+:root :is(.title-long, .prose h2, .prose h3, .prose h4, .hlist__title, .ncard__title, .acard__title, .marco__titulo, .prose .cover__title, .detail-hero__sub) {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.02em;
 }
-.title-long { line-height: 1.04; }
-.prose h2 { font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
-.prose .chapter { font-family: var(--font-display); font-style: normal; font-weight: 380; }
-.prose .pull,
-.prose blockquote { font-family: var(--font-serif); font-weight: 360; }
-.acard__title { line-height: 1.02; }
-.hlist__title { font-weight: 400; line-height: 1.12; }
-.ncard__title { font-size: clamp(1.35rem, 1.7vw, 1.7rem); line-height: 1.15; }
+:root .title-long { line-height: 1.04; }
+:root .prose h2 { font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
+:root :is(.prose .pull, .prose blockquote, .prose .chapter) { font-weight: 360; }
+:root .acard__title { line-height: 1.02; }
+:root .hlist__title { line-height: 1.12; }
+:root .ncard__title { font-size: clamp(1.35rem, 1.7vw, 1.7rem); line-height: 1.15; }
 
 /* texto corrido um pouco mais leve e arejado */
-.prose { font-size: 1.1rem; line-height: 1.7; }
-.manifesto__body { font-weight: 400; letter-spacing: -0.01em; }
+:root .prose { font-size: 1.1rem; line-height: 1.7; }
+:root .manifesto__body { font-weight: 400; letter-spacing: -0.01em; }

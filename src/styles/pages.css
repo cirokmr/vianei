@@ -506,7 +506,7 @@
    covers--video: miniaturas 16:9 (vídeos). */
 .prose .covers {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(190px, 40vw), 1fr));
   gap: clamp(28px, 3vw, 44px) clamp(16px, 2vw, 28px);
   margin: 1.4em 0 0;
 }
@@ -551,11 +551,10 @@
 }
 .prose .cover__link::after { content: ' ↓'; }
 .prose .cover__link[target='_blank']::after { content: ' ↗'; }
+.prose .covers--video { grid-template-columns: repeat(auto-fill, minmax(min(260px, 80vw), 1fr)); }
 .prose .covers--video .cover__media { aspect-ratio: 16 / 9; }
-@media (max-width: 700px) {
-  .prose .covers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .prose .covers--video { grid-template-columns: 1fr; }
-}
+/* página que é uma estante (sem ficha lateral): usa a largura toda */
+.detail-aside:empty + .prose:has(.covers) { grid-column: 1 / -1; max-width: none; }
 
 /* ---------- Vídeo incorporado (YouTube/Vimeo) ----------
    <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/ID" title="…" loading="lazy" allowfullscreen></iframe></div> */

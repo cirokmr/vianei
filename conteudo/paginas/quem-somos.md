@@ -26,7 +26,7 @@ O Centro Vianei participa de redes da sociedade civil que trabalham na promoçã
 
 <h2 class="chapter" id="proposito"><span>02</span>Propósito</h2>
 
-<p class="pull">Por meio do aprendizado coletivo, promover o desenvolvimento sustentável e a justiça social.</p>
+<p class="pull">O Centro Vianei de Educação Popular, por meio do aprendizado coletivo, tem como propósito a promoção do desenvolvimento sustentável e da justiça social.</p>
 
 Por meio de alternativas técnicas e da organização socioeconômica da classe popular, o Centro Vianei trabalha promovendo a autonomia coletiva. Prima pela afirmação cultural, social e econômica, possibilitando o desenvolvimento de uma construção cidadã junto a cada pessoa envolvida nos processos provocados pela entidade.
 
