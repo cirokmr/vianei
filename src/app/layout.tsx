@@ -1,11 +1,9 @@
 import type { Metadata, Viewport } from 'next';
 // Fontes self-hosted (sem requisição externa). Para trocar, instale o pacote
 // @fontsource do novo tipo e ajuste os imports abaixo + os tokens --font-* no CSS.
-import '@fontsource-variable/archivo/wdth.css';
-import '@fontsource/instrument-serif/400.css';
-import '@fontsource/instrument-serif/400-italic.css';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
+import '@fontsource-variable/inter-tight';
 import './globals.css';
 import '@/styles/tema.css';
 import '@/styles/components.css';

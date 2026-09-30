@@ -11,45 +11,85 @@
    ========================================================================== */
 
 :root {
-  --escuro: #111214;
-  --escuro-2: #17191c;
-  --escuro-3: #202328;
-  --claro: #eeeae3;
-  --claro-2: #dfd9ce;
-  --destaque: #5b74ff;
-  --destaque-2: #8c9dff;
-  --apoio: #1f2a44;
+  /* Centro Vianei — "O Tempo da Araucária": a luz do dia na Serra Catarinense.
+     Mata à noite, papel e neblina de manhã, o verde-limão do logotipo como luz. */
+  --escuro: #1c2616;      /* mata (noite na mata) */
+  --escuro-2: #222d1b;
+  --escuro-3: #2b3723;
+  --claro: #f4efe6;       /* papel */
+  --claro-2: #e9e6df;     /* neblina */
+  --destaque: #a8cf45;    /* limão, do logotipo */
+  --destaque-2: #c3e07a;
+  --apoio: #8c3b24;       /* pinhão */
 
-  /* Fontes: display (títulos em caixa-alta), serif (acentos em itálico), mono (metadados).
-     Os pacotes @fontsource correspondentes são importados em src/app/layout.tsx. */
-  --font-sans: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --font-serif: 'Instrument Serif', 'Times New Roman', Georgia, serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  /* O limão não tem contraste sobre o papel (1,6:1): lá o acento vira musgo (5,5:1). */
+  --destaque-sobre-claro: #556621;
 
-  /* Cor de destaque para TEXTO sobre fundo claro (se --destaque não tiver contraste). */
-  /* --destaque-sobre-claro: #3d55d9; */
-
-  /* Duotone (site.json → fotos.tratamento = "duotone" ou "misto"): sombra e luz das fotos. */
+  /* Duotone (não usado: fotos em cor natural). */
   --duo-sombra: var(--escuro);
   --duo-luz: var(--claro);
 
-  /* Display: largura (eixo wdth, 125 = expandida, 100 = normal), peso e quanto
-     cada letra ocupa em "em" — usado para a palavra gigante caber na tela. */
-  --display-largura: 125%;
-  --display-peso: 860;
-  --display-em-por-letra: 0.94;
+  /* Fontes: só duas, como na direção aprovada.
+     Fraunces (serifa variável, eixo óptico) nos títulos e nos itálicos;
+     Inter Tight no texto e nos rótulos em caixa-alta (o papel do "mono" do molde). */
+  --font-display: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter Tight Variable', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --font-mono: 'Inter Tight Variable', 'Inter Tight', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Display em caixa baixa, peso leve, como uma revista de natureza impressa.
+     Fraunces não tem eixo de largura: --display-largura 100%. */
+  --display-largura: 100%;
+  --display-peso: 360;
+  --display-caixa: none;
+  --display-espaco: -0.025em;
+  --display-entrelinha: 0.92;
+  --display-em-por-letra: 0.56;
+  --cond-largura: 100%;
+  --cond-peso: 400;
 
   --gutter: clamp(16px, 3.2vw, 48px);
   --max: 1680px;
   --nav-h: 76px;
 
-  --fs-mega: clamp(4.4rem, 24.5vw, 30rem);
-  --fs-xxl: clamp(3rem, 10.5vw, 11rem);
-  --fs-xl: clamp(2.5rem, 6.6vw, 7rem);
-  --fs-l: clamp(1.9rem, 3.8vw, 3.8rem);
-  --fs-m: clamp(1.3rem, 2.1vw, 1.9rem);
-  --fs-body: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+  --fs-mega: clamp(4.4rem, 22vw, 26rem);
+  --fs-xxl: clamp(3rem, 9vw, 9.5rem);
+  --fs-xl: clamp(2.3rem, 5.6vw, 6rem);
+  --fs-l: clamp(1.8rem, 3.4vw, 3.4rem);
+  --fs-m: clamp(1.25rem, 1.9vw, 1.75rem);
+  --fs-body: clamp(1rem, 0.96rem + 0.2vw, 1.12rem);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-inout: cubic-bezier(0.76, 0, 0.24, 1);
 }
+
+/* ---------- Tipografia do Vianei (só família, peso e ritmo; layout é do molde) ---------- */
+.display { font-optical-sizing: auto; }
+.serif-i { font-weight: 360; letter-spacing: -0.015em; }
+.mono { letter-spacing: 0.14em; font-weight: 500; font-size: 12px; }
+
+/* títulos longos, intertítulos e títulos de cartões também em Fraunces */
+.title-long,
+.prose :is(h2, h3, h4),
+.hlist__title,
+.ncard__title,
+.acard__title,
+.marco__titulo,
+.prose .cover__title,
+.detail-hero__sub {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+.title-long { line-height: 1.04; }
+.prose h2 { font-size: clamp(1.7rem, 2.6vw, 2.4rem); }
+.prose .chapter { font-family: var(--font-display); font-style: normal; font-weight: 380; }
+.prose .pull,
+.prose blockquote { font-family: var(--font-serif); font-weight: 360; }
+.acard__title { line-height: 1.02; }
+.hlist__title { font-weight: 400; line-height: 1.12; }
+.ncard__title { font-size: clamp(1.35rem, 1.7vw, 1.7rem); line-height: 1.15; }
+
+/* texto corrido um pouco mais leve e arejado */
+.prose { font-size: 1.1rem; line-height: 1.7; }
+.manifesto__body { font-weight: 400; letter-spacing: -0.01em; }

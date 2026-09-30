@@ -1,5 +1,5 @@
 {
-  "name": "fabrica-sites-starter",
+  "name": "vianei",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,9 +15,8 @@
     "proposta": "node scripts/comparar.mjs"
   },
   "dependencies": {
-    "@fontsource-variable/archivo": "^5.3.0",
-    "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@fontsource/instrument-serif": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.2.0",
+    "@fontsource-variable/inter-tight": "^5.2.0",
     "@gsap/react": "^2.1.2",
     "gsap": "^3.15.0",
     "next": "^16.3.6",
